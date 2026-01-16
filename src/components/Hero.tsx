@@ -32,25 +32,24 @@ const Hero = () => {
               </span>
             </motion.div>
             
-            {/* Headline - SEO optimized */}
+            {/* Headline - Benefit-focused */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              <span className="text-primary">Marketing-Automatisierung</span> & HighLevel-Setups für dein Online-Business in{" "}
-              <span className="text-primary">Bielefeld</span> und deutschlandweit
+              Mehr Kunden, weniger Chaos – <span className="text-primary">dein Marketing auf Autopilot</span>
             </motion.h1>
             
-            {/* Subheadline - SEO optimized */}
+            {/* Subheadline - Clear value proposition */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
             >
-              Ich begleite dich beim Aufbau deines Marketing-Systems mit GoHighLevel – von Funnel-Erstellung über CRM-Setup bis zur vollständigen Automatisierung. Für Selbstständige, Agenturen und SaaS-Anbieter.
+              Ich richte dein GoHighLevel-System ein, automatisiere deine Kundengewinnung und spare dir jeden Monat Stunden an manueller Arbeit. Endlich Zeit für das, was wirklich zählt.
             </motion.p>
             
             {/* Premium CTAs */}
