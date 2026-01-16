@@ -116,7 +116,7 @@ const Hero = () => {
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
               
-              {/* GoHighLevel Badge - Bottom Right Overlay */}
+              {/* GoHighLevel Badge - Bottom Right Overlay - weiter außen */}
               <motion.a
                 href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
                 target="_blank"
@@ -125,7 +125,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -bottom-6 -right-6 md:bottom-0 md:right-0 lg:bottom-2 lg:right-2 hover:scale-110 transition-transform duration-300"
+                className="absolute -bottom-10 -right-10 md:-bottom-8 md:-right-8 lg:-bottom-6 lg:-right-6 hover:scale-110 transition-transform duration-300"
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/40 rounded-lg blur-xl" />
@@ -137,7 +137,7 @@ const Hero = () => {
                 </div>
               </motion.a>
               
-              {/* Funnelmate Badge - Bottom Left Overlay */}
+              {/* Funnelmate Badge - Bottom Left Overlay - kleiner */}
               <motion.a
                 href="https://funnelmate.io/partner/gaetano"
                 target="_blank"
@@ -146,14 +146,14 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute -bottom-6 -left-6 md:bottom-0 md:left-0 lg:bottom-2 lg:left-2 hover:scale-110 transition-transform duration-300"
+                className="absolute -bottom-8 -left-8 md:-bottom-6 md:-left-6 lg:-bottom-4 lg:-left-4 hover:scale-110 transition-transform duration-300"
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/40 rounded-lg blur-xl" />
                   <img 
                     src={funnelmateBadge} 
                     alt="Funnelmate Certified Expert Badge" 
-                    className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 drop-shadow-2xl"
+                    className="relative w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 drop-shadow-2xl"
                   />
                 </div>
               </motion.a>
