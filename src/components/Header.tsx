@@ -7,8 +7,6 @@ import logo from "@/assets/logo.png";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Leistungen", href: "/leistungen" },
-  { label: "Links", href: "/links" },
-  { label: "Vergleich", href: "/highlevel-vs-funnelmate" },
   { label: "Kontakt", href: "/#kontakt" },
 ];
 
@@ -30,7 +28,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="GF Logo" className="w-10 h-10" />
+          <img src={logo} alt="GF Logo" className="w-14 h-14" />
           <span className="font-display text-xl tracking-wide text-foreground">
             Gaetano Ficarra
           </span>

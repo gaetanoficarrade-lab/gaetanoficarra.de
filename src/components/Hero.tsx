@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 import portrait from "@/assets/gaetano-portrait.jpg";
 import badge from "@/assets/ghl-badge.png";
 
@@ -20,29 +21,38 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-start text-left order-2 lg:order-1"
           >
-            {/* Badge */}
-            <motion.a
-              href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            {/* Logo - Larger & Prominent */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
               className="mb-8"
             >
               <img 
-                src={badge} 
-                alt="GoHighLevel Certified Admin Badge" 
-                className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300"
+                src={logo} 
+                alt="GF Logo" 
+                className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40"
               />
-            </motion.a>
+            </motion.div>
             
-            {/* Headline - Larger & More Impactful */}
+            {/* Certified Expert Badge Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm tracking-widest uppercase font-body">
+                ✓ Zertifizierter GoHighLevel Experte
+              </span>
+            </motion.div>
+            
+            {/* Headline - Adjusted Size */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-6 leading-[1.1]"
+              className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
               Skaliere dein Business mit smarten{" "}
               <span className="text-primary">HighLevel-Funnel</span> und{" "}
@@ -89,7 +99,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
-          {/* Portrait Image - Larger */}
+          {/* Portrait Image with Badge Overlay */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -104,6 +114,26 @@ const Hero = () => {
                 alt="Gaetano Ficarra" 
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
+              
+              {/* GoHighLevel Badge - Bottom Right Overlay */}
+              <motion.a
+                href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="absolute -bottom-4 -right-4 md:bottom-2 md:right-2 lg:bottom-4 lg:right-4 hover:scale-110 transition-transform duration-300"
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/30 rounded-lg blur-xl" />
+                  <img 
+                    src={badge} 
+                    alt="GoHighLevel Certified Admin Badge" 
+                    className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 drop-shadow-2xl"
+                  />
+                </div>
+              </motion.a>
             </div>
           </motion.div>
         </div>

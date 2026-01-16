@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
               <a 
-                href="https://patrickmentler.de/?am_id=gaetano" 
+                href="https://funnelmate.io/?am_id=gaetano" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body"

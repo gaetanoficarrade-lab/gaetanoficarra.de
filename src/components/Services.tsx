@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Settings, Users, Headphones, TrendingUp, Zap, Repeat, ArrowRight } from "lucide-react";
+import { Settings, Users, Headphones, TrendingUp, Zap, Repeat, ArrowRight, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -71,7 +71,7 @@ const Services = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -87,11 +87,63 @@ const Services = () => {
           ))}
         </div>
 
+        {/* SaaS Provider Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="max-w-4xl mx-auto mb-16"
+        >
+          <div className="bg-gradient-to-br from-background to-muted/20 border border-primary/20 p-10 md:p-12 rounded-lg">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                <Building2 className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-display text-2xl md:text-3xl text-foreground">
+                Für <span className="text-primary">SaaS-Anbieter</span>
+              </h3>
+            </div>
+            
+            <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
+              Du bist SaaS-Anbieter und nutzt GoHighLevel als Basis für dein Produkt? Ich unterstütze dich und deine Kunden mit professionellem Support:
+            </p>
+            
+            <ul className="space-y-4 mb-8">
+              {[
+                "Regelmäßige Q&A Calls mit deinen Kunden",
+                "Beantwortung technischer und strategischer Fragen",
+                "Unterstützung bei Problemfällen & Troubleshooting",
+                "Professioneller Kundensupport für dein SaaS-Produkt"
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                  className="flex items-start gap-3 text-foreground font-body"
+                >
+                  <span className="text-primary mt-1">✓</span>
+                  {item}
+                </motion.li>
+              ))}
+            </ul>
+            
+            <a
+              href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
+            >
+              Jetzt Gespräch vereinbaren <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </motion.div>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
           className="text-center"
         >
           <Link
