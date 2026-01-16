@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, MapPin, Phone, Calendar, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Calendar, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -10,7 +11,7 @@ const Contact = () => {
   return (
     <section id="kontakt" className="py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -29,67 +30,56 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {/* Free Consultation */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-card border border-primary/30 p-8 rounded-lg"
+          {/* Free Consultation Card - Centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-card border border-primary/30 p-10 md:p-12 rounded-lg text-center mb-10"
+          >
+            <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-6 mx-auto">
+              <Calendar className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">Kostenloses Erstgespräch</h3>
+            <p className="text-muted-foreground font-body mb-8 leading-relaxed max-w-xl mx-auto">
+              In 15-30 Minuten besprechen wir deine aktuelle Situation, deine Ziele und wie ich dir helfen kann. Komplett unverbindlich.
+            </p>
+            <a
+              href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
+              style={{
+                boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
+              }}
             >
-              <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg mb-6">
-                <Calendar className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-display text-2xl text-foreground mb-4">Kostenloses Erstgespräch</h3>
-              <p className="text-muted-foreground font-body mb-6 leading-relaxed">
-                In 15-30 Minuten besprechen wir deine aktuelle Situation, deine Ziele und wie ich dir helfen kann. Komplett unverbindlich.
-              </p>
-              <a
-                href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-8 py-4 text-sm tracking-widest uppercase font-body text-white rounded-sm transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(135deg, hsl(168 76% 48%), hsl(168 76% 42%), hsl(168 76% 36%))',
-                  boxShadow: '0 0 20px hsl(168 76% 42% / 0.25)'
-                }}
-              >
-                Termin vereinbaren
-              </a>
-            </motion.div>
+              Termin vereinbaren
+            </a>
+          </motion.div>
 
-            {/* Support Call */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-card border border-border p-8 rounded-lg"
+          {/* Support Call Hint */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mb-16 p-6 border border-border rounded-lg bg-card/50"
+          >
+            <p className="text-muted-foreground font-body mb-3">
+              Du hast ein <span className="text-foreground">konkretes Problem</span> oder brauchst schnelle Hilfe?
+            </p>
+            <Link
+              to="/leistungen"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
             >
-              <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg mb-6">
-                <MessageCircle className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-display text-2xl text-foreground mb-4">Support-Call buchen</h3>
-              <p className="text-muted-foreground font-body mb-2 leading-relaxed">
-                Schnelle Hilfe bei konkreten Fragen oder Problemen mit HighLevel. Ich löse dein Problem in Echtzeit.
-              </p>
-              <p className="text-primary font-display text-xl mb-6">197€ pro Stunde</p>
-              <a
-                href="https://ghl.gaetanoficarra.de/support_call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-8 py-4 text-sm tracking-widest uppercase font-body text-foreground border border-silver/30 rounded-sm transition-all duration-300 hover:border-silver/60 bg-card/50"
-              >
-                Support-Call buchen
-              </a>
-            </motion.div>
-          </div>
+              Dann ist ein Support-Call vielleicht das Richtige für dich <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
 
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="grid md:grid-cols-3 gap-8 pt-12 border-t border-border"
           >
             {[

@@ -81,10 +81,9 @@ const Hero = () => {
                 href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-white overflow-hidden rounded-sm transition-all duration-300 hover:scale-105"
+                className="group relative inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
                 style={{
-                  background: 'linear-gradient(135deg, hsl(168 76% 48%), hsl(168 76% 42%), hsl(168 76% 36%))',
-                  boxShadow: '0 0 30px hsl(168 76% 42% / 0.3), inset 0 1px 0 hsl(168 76% 60% / 0.3)'
+                  boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
                 }}
               >
                 <span className="relative z-10">Kostenloses Erstgespräch</span>

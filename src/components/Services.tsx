@@ -10,8 +10,6 @@ const services = [
     title: "Done-For-You Setup",
     description: "Ich richte dein HighLevel komplett für dich ein. Funnels, Automations, CRM – alles perfekt konfiguriert und startklar. Du lehnst dich zurück, ich mache den Rest.",
     benefits: ["Komplett fertig eingerichtet", "Funnels & Automationen", "CRM-Setup & Integrationen", "30 Tage Support inklusive"],
-    cta: "Projekt anfragen",
-    ctaLink: "https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU",
     popular: true,
   },
   {
@@ -19,8 +17,6 @@ const services = [
     title: "Done-With-You Live",
     description: "Wir arbeiten gemeinsam live an deinem System. Du lernst dabei, stellst Fragen und bekommst gleichzeitig alles professionell eingerichtet.",
     benefits: ["Live Zusammenarbeit", "Du lernst während wir bauen", "Aufnahmen aller Sessions", "60 Tage Support inklusive"],
-    cta: "Session buchen",
-    ctaLink: "https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU",
     popular: false,
   },
   {
@@ -28,8 +24,6 @@ const services = [
     title: "Support-Call",
     description: "Steckst du fest oder hast eine spezifische Frage? Buche einen 1:1 Support-Call und ich löse dein Problem schnell und unkompliziert.",
     benefits: ["1:1 Video-Call", "Bildschirmfreigabe", "Problemlösung in Echtzeit", "Aufnahme des Calls"],
-    cta: "Call buchen • 197€/h",
-    ctaLink: "https://ghl.gaetanoficarra.de/support_call",
     popular: false,
   },
 ];
@@ -89,7 +83,7 @@ const Services = () => {
               <h3 className="font-display text-xl md:text-2xl text-foreground mb-4">{service.title}</h3>
               <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">{service.description}</p>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3">
                 {service.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground">
                     <span className="text-primary mt-0.5">✓</span>
@@ -97,19 +91,6 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-
-              <a
-                href={service.ctaLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block text-center py-4 text-sm uppercase tracking-widest font-body transition-all duration-300 rounded-sm ${
-                  service.popular 
-                    ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
-                    : 'border border-primary text-primary hover:bg-primary/10'
-                }`}
-              >
-                {service.cta}
-              </a>
             </motion.div>
           ))}
         </div>
@@ -157,15 +138,6 @@ const Services = () => {
                 </motion.li>
               ))}
             </ul>
-            
-            <a
-              href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
-            >
-              Jetzt Gespräch vereinbaren <ArrowRight className="w-4 h-4" />
-            </a>
           </div>
         </motion.div>
 
@@ -178,9 +150,12 @@ const Services = () => {
         >
           <Link
             to="/leistungen"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-sm font-body text-sm uppercase tracking-widest transition-all duration-300 hover:bg-primary/90 hover:scale-105"
+            style={{
+              boxShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+            }}
           >
-            Alle Leistungen im Detail <ArrowRight className="w-4 h-4" />
+            Alle Leistungen & Preise <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
       </div>

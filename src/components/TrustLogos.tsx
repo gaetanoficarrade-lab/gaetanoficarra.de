@@ -51,6 +51,9 @@ const TrustLogos = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  // Double the partners array for seamless infinite scroll
+  const duplicatedPartners = [...partners, ...partners];
+
   return (
     <section className="py-12 md:py-16 relative overflow-hidden" ref={ref}>
       <div className="container mx-auto px-6">
@@ -65,32 +68,49 @@ const TrustLogos = () => {
           </span>
         </motion.div>
 
-        {/* Clean logo row - no boxes, just logos */}
+        {/* Infinite scrolling logo slider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-14"
+          className="relative overflow-hidden"
         >
-          {partners.map((partner, index) => (
-            <motion.a
-              key={partner.name}
-              href={partner.url}
-              target={partner.url !== "#" ? "_blank" : undefined}
-              rel={partner.url !== "#" ? "noopener noreferrer" : undefined}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="group transition-all duration-300 hover:scale-110"
-              title={partner.name}
-            >
-              <img 
-                src={partner.logo} 
-                alt={`${partner.name} Logo`}
-                className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-              />
-            </motion.a>
-          ))}
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling container */}
+          <motion.div
+            className="flex items-center gap-12 md:gap-16"
+            animate={{
+              x: [0, -50 * partners.length * 3],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 25,
+                ease: "linear",
+              },
+            }}
+          >
+            {duplicatedPartners.map((partner, index) => (
+              <a
+                key={`${partner.name}-${index}`}
+                href={partner.url}
+                target={partner.url !== "#" ? "_blank" : undefined}
+                rel={partner.url !== "#" ? "noopener noreferrer" : undefined}
+                className="flex-shrink-0 transition-all duration-300 hover:scale-110"
+                title={partner.name}
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={`${partner.name} Logo`}
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </a>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* SEO hidden text */}
