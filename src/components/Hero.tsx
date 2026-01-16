@@ -39,7 +39,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Mehr Kunden, weniger Chaos – <span className="text-primary">dein Marketing auf Autopilot</span>
+              Skaliere dein Business mit einem <span className="text-primary">Marketing-System</span>, das für dich arbeitet
             </motion.h1>
             
             {/* Subheadline - Clear value proposition */}
@@ -47,10 +47,28 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
+              className="font-body text-muted-foreground text-lg md:text-xl mb-8 max-w-xl leading-relaxed"
             >
-              Ich richte dein GoHighLevel-System ein, automatisiere deine Kundengewinnung und spare dir jeden Monat Stunden an manueller Arbeit. Endlich Zeit für das, was wirklich zählt.
+              Ich richte dein GoHighLevel so ein, dass du Leads automatisch gewinnst, Kunden bindest und Zeit sparst. Keine 10 verschiedenen Tools mehr – nur ein System, das funktioniert.
             </motion.p>
+
+            {/* Trust indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+              className="flex flex-wrap gap-6 mb-10 text-sm font-body text-muted-foreground"
+            >
+              <span className="flex items-center gap-2">
+                <span className="text-primary">✓</span> 3+ Jahre Erfahrung
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-primary">✓</span> 100% HighLevel Fokus
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-primary">✓</span> Zertifizierter Admin
+              </span>
+            </motion.div>
             
             {/* Premium CTAs */}
             <motion.div
