@@ -6,7 +6,7 @@ const Impressum = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24 pb-20">
+      <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="font-display text-4xl md:text-5xl text-foreground mb-12">
             <span className="text-primary">Impressum</span>
