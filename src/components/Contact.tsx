@@ -84,7 +84,7 @@ const Contact = () => {
           >
             {[
               { icon: Mail, label: "E-Mail", value: "kontakt@gaetanoficarra.de", href: "mailto:kontakt@gaetanoficarra.de" },
-              { icon: Phone, label: "Telefon", value: "0152 31039640", href: "tel:+4915231039640" },
+              { icon: Phone, label: "WhatsApp", value: "0152 23856537", href: "https://api.whatsapp.com/send/?phone=4915223856537&text=Hey%2C+ich+bin+an+einer+Zusammenarbeit+%0Ainteressiert+und+h%C3%A4tte+gerne+weitere+Infos.&type=phone_number&app_absent=0", external: true },
               { icon: MapPin, label: "Standort", value: "Bielefeld, Deutschland", href: null },
             ].map((item, index) => (
               <div key={index} className="text-center group">
@@ -95,7 +95,11 @@ const Contact = () => {
                   {item.label}
                 </div>
                 {item.href ? (
-                  <a href={item.href} className="text-foreground font-body hover:text-primary transition-colors">
+                  <a 
+                    href={item.href} 
+                    className="text-foreground font-body hover:text-primary transition-colors"
+                    {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  >
                     {item.value}
                   </a>
                 ) : (

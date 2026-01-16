@@ -137,7 +137,7 @@ const FAQ = () => {
             <p className="text-muted-foreground font-body">
               Deine Frage ist nicht dabei?{" "}
               <a
-                href="https://wa.me/4915231039640"
+                href="https://api.whatsapp.com/send/?phone=4915223856537&text=Hey%2C+ich+bin+an+einer+Zusammenarbeit+%0Ainteressiert+und+h%C3%A4tte+gerne+weitere+Infos.&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
