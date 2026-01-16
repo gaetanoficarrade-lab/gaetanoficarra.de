@@ -116,8 +116,8 @@ const Hero = () => {
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
               
-              {/* Badges Container - Right Side, Stacked Vertically */}
-              <div className="absolute -right-8 md:-right-10 lg:-right-12 top-1/2 -translate-y-1/2 flex flex-col gap-3 md:gap-4">
+              {/* Badges Container - Bottom, Side by Side */}
+              <div className="absolute -bottom-8 md:-bottom-10 lg:-bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 md:gap-4">
                 {/* GoHighLevel Badge */}
                 <motion.a
                   href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
