@@ -12,23 +12,23 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* 1. Hero - Erste Aufmerksamkeit & Hauptversprechen */}
+        {/* 1. Hero - Aufmerksamkeit & Hauptnutzen */}
         <Hero />
         
         {/* 2. Trust Logos - Sofortige Vertrauenssignale */}
         <TrustLogos />
         
-        {/* 3. Services - Was ich anbiete (Problem → Lösung) */}
+        {/* 3. Services - Was du bekommst (Lösung) */}
         <Services />
         
-        {/* 4. Über mich - Expertise & Erfahrung */}
+        {/* 4. Kontakt - Primärer Call to Action */}
+        <Contact />
+        
+        {/* 5. Über mich - Wer dahinter steht */}
         <About />
         
-        {/* 5. FAQ - Einwände behandeln */}
+        {/* 6. FAQ - Letzte Fragen klären */}
         <FAQ />
-        
-        {/* 6. Kontakt - Call to Action */}
-        <Contact />
       </main>
       <Footer />
     </div>
