@@ -46,10 +46,16 @@
     --silver-light: 0 0% 85%;
     --platinum: 220 5% 65%;
     
+    /* CTA Button color - elegant teal/emerald */
+    --cta: 168 76% 42%;
+    --cta-foreground: 0 0% 100%;
+    --cta-hover: 168 76% 36%;
+    
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(43 80% 60%), hsl(43 74% 49%), hsl(43 70% 35%));
     --gradient-silver: linear-gradient(135deg, hsl(0 0% 85%), hsl(0 0% 75%), hsl(0 0% 55%));
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 3%));
+    --gradient-cta: linear-gradient(135deg, hsl(168 76% 48%), hsl(168 76% 42%), hsl(168 76% 36%));
     
     /* Typography */
     --font-display: 'Cormorant Garamond', serif;
@@ -57,6 +63,7 @@
     
     /* Shadows */
     --shadow-gold: 0 0 30px hsl(43 74% 49% / 0.15);
+    --shadow-cta: 0 0 30px hsl(168 76% 42% / 0.25);
     --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
 
     --sidebar-background: 0 0% 6%;

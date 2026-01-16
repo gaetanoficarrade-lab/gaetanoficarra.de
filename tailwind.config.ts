@@ -71,6 +71,11 @@ export default {
           light: "hsl(var(--silver-light))",
         },
         platinum: "hsl(var(--platinum))",
+        cta: {
+          DEFAULT: "hsl(var(--cta))",
+          foreground: "hsl(var(--cta-foreground))",
+          hover: "hsl(var(--cta-hover))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
