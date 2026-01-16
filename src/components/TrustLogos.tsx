@@ -111,7 +111,7 @@ const TrustLogos = () => {
                     alt={`${partner.name} Logo`}
                     className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
                       isLargeLogo ? 'h-14 md:h-16 lg:h-20' : 'h-10 md:h-12 lg:h-14'
-                    }`}
+                    } ${partner.name === "OCTA Steuerberater" ? 'brightness-0 invert' : ''}`}
                   />
                 </a>
               );
