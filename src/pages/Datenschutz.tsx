@@ -30,7 +30,7 @@ const Datenschutz = () => {
                 Elverdisser Str. 51<br />
                 33729 Bielefeld<br />
                 <br />
-                Telefon: 015231039640<br />
+                WhatsApp: 0152 23856537<br />
                 E-Mail: kontakt@gaetanoficarra.de
               </p>
             </section>
@@ -82,7 +82,7 @@ const Datenschutz = () => {
               </p>
               <p className="mt-4">
                 E-Mail: kontakt@gaetanoficarra.de<br />
-                Telefon: 015231039640
+                WhatsApp: 0152 23856537
               </p>
             </section>
 

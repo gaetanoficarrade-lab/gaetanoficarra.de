@@ -43,7 +43,7 @@ const Footer = () => {
             <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Partner & Social</h4>
             <div className="flex gap-4 mb-4">
               <a 
-                href="https://wa.me/4915231039640" 
+                href="https://api.whatsapp.com/send/?phone=4915223856537&text=Hey%2C+ich+bin+an+einer+Zusammenarbeit+%0Ainteressiert+und+h%C3%A4tte+gerne+weitere+Infos.&type=phone_number&app_absent=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
