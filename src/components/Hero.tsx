@@ -114,7 +114,7 @@ const Hero = () => {
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
               
-              {/* GoHighLevel Badge - 5 o'clock position */}
+              {/* GoHighLevel Badge - 5 o'clock position, sitting on circle edge */}
               <motion.a
                 href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
                 target="_blank"
@@ -123,10 +123,10 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute bottom-[12%] right-[5%] md:bottom-[10%] md:right-[3%] hover:scale-110 transition-transform duration-300"
+                className="absolute -bottom-[8%] right-[8%] md:-bottom-[6%] md:right-[10%] hover:scale-110 transition-transform duration-300"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-primary/50 rounded-full blur-2xl scale-125" />
+                  <div className="absolute inset-0 bg-primary/25 rounded-full blur-xl scale-110" />
                   <img 
                     src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png" 
                     alt="GoHighLevel Certified Admin Badge" 
