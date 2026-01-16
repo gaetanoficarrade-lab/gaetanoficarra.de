@@ -267,10 +267,9 @@ const Leistungen = () => {
                 href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-white transition-all duration-300 hover:scale-105 rounded-sm"
+                className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
                 style={{
-                  background: 'linear-gradient(135deg, hsl(168 76% 48%), hsl(168 76% 42%), hsl(168 76% 36%))',
-                  boxShadow: '0 0 30px hsl(168 76% 42% / 0.3), inset 0 1px 0 hsl(168 76% 60% / 0.3)'
+                  boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
                 }}
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
