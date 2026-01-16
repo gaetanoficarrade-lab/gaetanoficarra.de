@@ -134,21 +134,17 @@ const FAQ = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-center mt-12"
           >
-            <p className="text-muted-foreground font-body mb-6">
-              Deine Frage ist nicht dabei? Kein Problem!
+            <p className="text-muted-foreground font-body">
+              Deine Frage ist nicht dabei?{" "}
+              <a
+                href="https://wa.me/4915231039640"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Schreib mir auf WhatsApp →
+              </a>
             </p>
-            <a
-              href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-body text-white rounded-sm transition-all duration-300 hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, hsl(168 76% 48%), hsl(168 76% 42%), hsl(168 76% 36%))',
-                boxShadow: '0 0 20px hsl(168 76% 42% / 0.25)'
-              }}
-            >
-              Kostenloses Erstgespräch buchen
-            </a>
           </motion.div>
         </div>
       </div>
