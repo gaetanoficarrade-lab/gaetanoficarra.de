@@ -1,22 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Leistungen", href: "/leistungen" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Home", href: "/", isAnchor: false },
+  { label: "Leistungen", href: "/leistungen", isAnchor: false },
+  { label: "Kontakt", href: "/#kontakt", isAnchor: true },
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
+    if (href.startsWith("/#")) return false;
     return location.pathname.startsWith(href);
+  };
+
+  const handleNavClick = (item: typeof navItems[0], e: React.MouseEvent) => {
+    if (item.isAnchor) {
+      e.preventDefault();
+      const targetId = item.href.replace("/#", "");
+      
+      if (location.pathname === "/") {
+        // Already on homepage, just scroll
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to homepage first, then scroll
+        navigate("/");
+        setTimeout(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    }
+    setIsMenuOpen(false);
   };
 
   return (
@@ -40,6 +67,7 @@ const Header = () => {
             <Link
               key={item.label}
               to={item.href}
+              onClick={(e) => handleNavClick(item, e)}
               className={`transition-colors duration-300 text-sm tracking-widest uppercase font-body ${
                 isActive(item.href) 
                   ? "text-primary" 
@@ -84,7 +112,7 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleNavClick(item, e)}
                   className={`transition-colors duration-300 text-sm tracking-widest uppercase font-body py-2 ${
                     isActive(item.href) 
                       ? "text-primary" 
