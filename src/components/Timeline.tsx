@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react";
+import { openPopup, BOOKING_URLS } from "@/lib/popup";
 
 const steps = [
   {
@@ -126,17 +127,15 @@ const Timeline = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mt-16"
           >
-            <a
-              href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
               className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 rounded-sm transition-all duration-300 hover:scale-105"
               style={{
                 boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
               }}
             >
               Jetzt Erstgespräch vereinbaren
-            </a>
+            </button>
             <p className="text-muted-foreground text-sm font-body mt-4">
               Kurz sprechen, Setup verstehen, nächsten Schritt klären
             </p>

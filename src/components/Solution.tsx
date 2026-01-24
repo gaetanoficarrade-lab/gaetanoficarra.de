@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, Mail, LayoutTemplate, Calendar, GraduationCap, Workflow, ArrowRight } from "lucide-react";
 import automationWorkspace from "@/assets/automation-workspace.jpg";
+import { openPopup, BOOKING_URLS } from "@/lib/popup";
 
 const features = [
   {
@@ -112,14 +113,12 @@ const Solution = () => {
               Funnelmate ist mächtig, aber nur, wenn es richtig konfiguriert ist. Als zertifizierter Admin richte ich
               dein System so ein, dass es von Tag 1 an funktioniert. Keine Lernkurve, keine technischen Hürden.
             </p>
-            <a
-              href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
             >
               Jetzt Erstgespräch vereinbaren <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>

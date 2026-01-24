@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { openPopup, BOOKING_URLS } from "@/lib/popup";
 
 const mainServices = [
   {
@@ -200,14 +201,12 @@ const Leistungen = () => {
                             <p className="font-display text-3xl text-primary">{service.price}</p>
                             <p className="text-muted-foreground text-sm font-body">{service.priceNote}</p>
                           </div>
-                          <a
-                            href={service.ctaLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <button
+                            onClick={() => openPopup(service.ctaLink === BOOKING_URLS.supportCall ? BOOKING_URLS.supportCall : BOOKING_URLS.erstgespraech)}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
                           >
                             {service.cta} <ArrowRight className="w-4 h-4" />
-                          </a>
+                          </button>
                         </div>
                       </div>
 
@@ -281,17 +280,15 @@ const Leistungen = () => {
                 Kein Problem. In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Option für deine
                 Situation am besten geeignet ist.
               </p>
-              <a
-                href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
                 className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
                 style={{
                   boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                 }}
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>

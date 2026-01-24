@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Check, X, ArrowRight, Globe, Users, Euro, Headphones } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { openPopup, BOOKING_URLS } from "@/lib/popup";
 
 const comparisonData = [
   { feature: "CRM & Pipeline Management", alternative: "HubSpot / Pipedrive", cost: "~50€/Mo" },
@@ -216,14 +217,12 @@ const HighLevelVsFunnelmate = () => {
                 In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Plattform am besten zu deinen
                 Anforderungen passt.
               </p>
-              <a
-                href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300"
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>

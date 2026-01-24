@@ -3,6 +3,7 @@ import { Globe, ExternalLink, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import badge from "@/assets/ghl-badge.png";
+import { openPopup, BOOKING_URLS } from "@/lib/popup";
 
 const links = [
   {
@@ -38,15 +39,17 @@ const links = [
   {
     title: "Kostenloses Erstgespräch",
     description: "Buche jetzt deinen Termin",
-    url: "https://lp.gaetanoficarra.de/highlevel-erstgespraech",
+    url: BOOKING_URLS.erstgespraech,
     internal: false,
     highlight: true,
+    popup: true,
   },
   {
     title: "Support-Call buchen (197€)",
     description: "Schnelle Hilfe bei HighLevel-Fragen",
-    url: "https://lp.gaetanoficarra.de/support_call",
+    url: BOOKING_URLS.supportCall,
     internal: false,
+    popup: true,
   },
 ];
 
@@ -84,15 +87,21 @@ const LinksPage = () => {
           {/* Links Grid */}
           <div className="space-y-4">
             {links.map((link, index) => (
-              <motion.a
+              <motion.button
                 key={link.title}
-                href={link.internal ? undefined : link.url}
-                {...(link.internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                onClick={link.internal ? () => (window.location.href = link.url) : undefined}
+                onClick={() => {
+                  if (link.internal) {
+                    window.location.href = link.url;
+                  } else if ((link as any).popup) {
+                    openPopup(link.url);
+                  } else {
+                    window.open(link.url, "_blank", "noopener,noreferrer");
+                  }
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`block w-full p-5 rounded-lg border transition-all duration-300 hover:scale-[1.02] ${
+                className={`block w-full p-5 rounded-lg border transition-all duration-300 hover:scale-[1.02] text-left ${
                   link.highlight
                     ? "bg-primary/10 border-primary hover:bg-primary/20"
                     : "bg-card border-border hover:border-primary/50"
@@ -111,7 +120,7 @@ const LinksPage = () => {
                     <ExternalLink className="w-5 h-5 text-primary flex-shrink-0" />
                   )}
                 </div>
-              </motion.a>
+              </motion.button>
             ))}
           </div>
         </div>

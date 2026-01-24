@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { AlertTriangle, Layers, Clock, Zap, ArrowRight } from "lucide-react";
+import { openPopup, BOOKING_URLS } from "@/lib/popup";
 
 const problems = [
   {
@@ -94,14 +95,12 @@ const ProblemSolution = () => {
                   Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1
                   funktioniert.
                 </p>
-                <a
-                  href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
                 >
                   Jetzt Erstgespräch buchen <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
 
               <div className="space-y-4">
