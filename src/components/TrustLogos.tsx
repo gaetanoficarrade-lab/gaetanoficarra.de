@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import gohighlevelLogo from "@/assets/gohighlevel-logo.jpg";
 import funnelmateLogo from "@/assets/funnelmate-logo.png";
-import funnelmateExperte from "@/assets/funnelmate-experte.png";
+import funnelmateCertifiedExpert from "@/assets/funnelmate-certified-expert.png";
 import patrickMentlerLogo from "@/assets/patrick-mentler-logo.png";
 import octaLogo from "@/assets/octa-logo.png";
 import cssIcon from "@/assets/css-icon.png";
@@ -21,8 +21,8 @@ const partners = [
     url: "https://funnelmate.io/?am_id=gaetano",
   },
   {
-    name: "Funnelmate Experte",
-    logo: funnelmateExperte,
+    name: "Funnelmate Certified Expert",
+    logo: funnelmateCertifiedExpert,
     url: "https://funnelmate.io/?am_id=gaetano",
   },
   {
@@ -96,7 +96,7 @@ const TrustLogos = () => {
           >
             {duplicatedPartners.map((partner, index) => {
               // Larger sizes for specific logos
-              const isLargeLogo = partner.name === "OCTA Steuerberater" || partner.name === "Funnelmate Experte";
+              const isLargeLogo = partner.name === "OCTA Steuerberater" || partner.name === "Funnelmate Certified Expert";
               return (
                 <a
                   key={`${partner.name}-${index}`}
