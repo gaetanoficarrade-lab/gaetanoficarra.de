@@ -55,10 +55,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
-          <img src={logo} alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld" className="w-16 h-16 md:w-20 md:h-20" />
-          <span className="font-display text-xl tracking-wide text-foreground">
-            Gaetano Ficarra
-          </span>
+          <img src={logo} alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld" className="h-10 md:h-12 w-auto" />
         </Link>
         
         {/* Desktop Navigation */}
@@ -81,7 +78,7 @@ const Header = () => {
             href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300"
+            className="bg-gradient-cta text-cta-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:opacity-90 transition-all duration-300 rounded-md"
           >
             Termin buchen
           </a>
@@ -126,7 +123,7 @@ const Header = () => {
                 href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary text-primary-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 text-center mt-4"
+                className="bg-gradient-cta text-cta-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:opacity-90 transition-all duration-300 text-center mt-4 rounded-md"
               >
                 Termin buchen
               </a>

@@ -61,21 +61,32 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        cyan: {
+          DEFAULT: "hsl(var(--cyan))",
+          light: "hsl(var(--cyan-light))",
+          dark: "hsl(var(--cyan-dark))",
         },
-        silver: {
-          DEFAULT: "hsl(var(--silver))",
-          light: "hsl(var(--silver-light))",
+        magenta: {
+          DEFAULT: "hsl(var(--magenta))",
+          light: "hsl(var(--magenta-light))",
+          dark: "hsl(var(--magenta-dark))",
         },
-        platinum: "hsl(var(--platinum))",
         cta: {
           DEFAULT: "hsl(var(--cta))",
           foreground: "hsl(var(--cta-foreground))",
           hover: "hsl(var(--cta-hover))",
         },
+        // Legacy color aliases for compatibility
+        gold: {
+          DEFAULT: "hsl(var(--primary))",
+          light: "hsl(var(--cyan-light))",
+          dark: "hsl(var(--cyan-dark))",
+        },
+        silver: {
+          DEFAULT: "hsl(var(--secondary))",
+          light: "hsl(var(--magenta-light))",
+        },
+        platinum: "hsl(var(--muted-foreground))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -96,8 +107,12 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(43 74% 49% / 0.1)" },
-          "50%": { boxShadow: "0 0 40px hsl(43 74% 49% / 0.25)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(190 90% 50% / 0.15)" },
+          "50%": { boxShadow: "0 0 40px hsl(260 85% 55% / 0.3)" },
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
       animation: {
@@ -105,6 +120,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.8s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 3s ease-in-out infinite",
       },
     },
   },
