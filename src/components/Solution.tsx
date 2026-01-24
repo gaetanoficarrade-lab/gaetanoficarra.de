@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, Mail, LayoutTemplate, Calendar, GraduationCap, Workflow, ArrowRight } from "lucide-react";
 import automationWorkspace from "@/assets/automation-workspace.jpg";
-import { openPopup, BOOKING_URLS } from "@/lib/popup";
+import { useBookingModal } from "@/hooks/useBookingModal";
 
 const features = [
   {
@@ -41,6 +41,7 @@ const features = [
 const Solution = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { openBooking } = useBookingModal();
 
   return (
     <section className="py-24 md:py-32 relative" ref={ref}>
@@ -114,7 +115,7 @@ const Solution = () => {
               dein System so ein, dass es von Tag 1 an funktioniert. Keine Lernkurve, keine technischen Hürden.
             </p>
             <button
-              onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
+              onClick={() => openBooking("erstgespraech")}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
             >
               Jetzt Erstgespräch vereinbaren <ArrowRight className="w-4 h-4" />

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { AlertTriangle, Layers, Clock, Zap, ArrowRight } from "lucide-react";
-import { openPopup, BOOKING_URLS } from "@/lib/popup";
+import { useBookingModal } from "@/hooks/useBookingModal";
 
 const problems = [
   {
@@ -35,6 +35,7 @@ const solutions = [
 const ProblemSolution = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { openBooking } = useBookingModal();
 
   return (
     <section className="py-24 md:py-32 relative" ref={ref}>
@@ -96,7 +97,7 @@ const ProblemSolution = () => {
                   funktioniert.
                 </p>
                 <button
-                  onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
+                  onClick={() => openBooking("erstgespraech")}
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
                 >
                   Jetzt Erstgespräch buchen <ArrowRight className="w-4 h-4" />

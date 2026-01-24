@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import portrait from "@/assets/gaetano-portrait.jpg";
-import { openPopup, BOOKING_URLS } from "@/lib/popup";
+import { useBookingModal } from "@/hooks/useBookingModal";
 
 const Hero = () => {
+  const { openBooking } = useBookingModal();
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background gradient overlay */}
@@ -65,7 +66,7 @@ const Hero = () => {
             >
               <div className="flex flex-col items-start sm:items-start">
                 <button
-                  onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
+                  onClick={() => openBooking("erstgespraech")}
                   className="group relative inline-flex items-center justify-center px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
                   style={{
                     boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { openPopup, BOOKING_URLS } from "@/lib/popup";
+import { useBookingModal } from "@/hooks/useBookingModal";
 
 const mainServices = [
   {
@@ -126,6 +126,8 @@ const additionalServices = [
 ];
 
 const Leistungen = () => {
+  const { openBooking } = useBookingModal();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -202,7 +204,7 @@ const Leistungen = () => {
                             <p className="text-muted-foreground text-sm font-body">{service.priceNote}</p>
                           </div>
                           <button
-                            onClick={() => openPopup(service.ctaLink === BOOKING_URLS.supportCall ? BOOKING_URLS.supportCall : BOOKING_URLS.erstgespraech)}
+                            onClick={() => openBooking(service.ctaLink.includes("support_call") ? "supportCall" : "erstgespraech")}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
                           >
                             {service.cta} <ArrowRight className="w-4 h-4" />
@@ -281,7 +283,7 @@ const Leistungen = () => {
                 Situation am besten geeignet ist.
               </p>
               <button
-                onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
+                onClick={() => openBooking("erstgespraech")}
                 className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
                 style={{
                   boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",

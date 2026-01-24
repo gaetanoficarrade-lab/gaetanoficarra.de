@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
-import { openPopup, BOOKING_URLS } from "@/lib/popup";
+import { useBookingModal } from "@/hooks/useBookingModal";
+
 const navItems = [
   { label: "Home", href: "/", isAnchor: false },
   { label: "Leistungen", href: "/leistungen", isAnchor: false },
@@ -14,6 +15,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { openBooking } = useBookingModal();
 
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
@@ -77,7 +79,7 @@ const Header = () => {
             </Link>
           ))}
           <button
-            onClick={() => openPopup(BOOKING_URLS.erstgespraech)}
+            onClick={() => openBooking("erstgespraech")}
             className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md"
           >
             Termin buchen
@@ -119,7 +121,7 @@ const Header = () => {
               ))}
               <button
                 onClick={() => {
-                  openPopup(BOOKING_URLS.erstgespraech);
+                  openBooking("erstgespraech");
                   setIsMenuOpen(false);
                 }}
                 className="bg-primary text-primary-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 text-center mt-4 rounded-md"

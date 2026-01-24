@@ -3,7 +3,7 @@ import { Globe, ExternalLink, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import badge from "@/assets/ghl-badge.png";
-import { openPopup, BOOKING_URLS } from "@/lib/popup";
+import { useBookingModal } from "@/hooks/useBookingModal";
 
 const links = [
   {
@@ -39,21 +39,23 @@ const links = [
   {
     title: "Kostenloses Erstgespräch",
     description: "Buche jetzt deinen Termin",
-    url: BOOKING_URLS.erstgespraech,
+    url: "",
     internal: false,
     highlight: true,
-    popup: true,
+    bookingType: "erstgespraech" as const,
   },
   {
     title: "Support-Call buchen (197€)",
     description: "Schnelle Hilfe bei HighLevel-Fragen",
-    url: BOOKING_URLS.supportCall,
+    url: "",
     internal: false,
-    popup: true,
+    bookingType: "supportCall" as const,
   },
 ];
 
 const LinksPage = () => {
+  const { openBooking } = useBookingModal();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -92,8 +94,8 @@ const LinksPage = () => {
                 onClick={() => {
                   if (link.internal) {
                     window.location.href = link.url;
-                  } else if ((link as any).popup) {
-                    openPopup(link.url);
+                  } else if ((link as any).bookingType) {
+                    openBooking((link as any).bookingType);
                   } else {
                     window.open(link.url, "_blank", "noopener,noreferrer");
                   }
