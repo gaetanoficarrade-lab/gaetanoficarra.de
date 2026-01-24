@@ -47,7 +47,7 @@ const Migration = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+            className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-16"
           >
             {migrationTools.map((tool, index) => (
               <motion.div
