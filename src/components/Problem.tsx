@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Layers, AlertTriangle, Clock, TrendingDown, Link2Off, EuroIcon } from "lucide-react";
+import systemIntegration from "@/assets/system-integration.jpg";
 
 const problems = [
   {
@@ -82,15 +83,24 @@ const Problem = () => {
             ))}
           </div>
 
-          {/* Closing statement - no solution yet */}
-          <motion.p
+          {/* Visual + Closing statement */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-center text-muted-foreground font-body text-lg mt-16 max-w-2xl mx-auto"
+            className="mt-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
           >
-            Wenn du dich hier wiedererkennst, bist du nicht allein. Das Software-Chaos ist der Alltag für die meisten Online-Unternehmer.
-          </motion.p>
+            <div className="flex-shrink-0">
+              <img 
+                src={systemIntegration} 
+                alt="Verstreute Tools konsolidieren" 
+                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border border-border/50 shadow-lg"
+              />
+            </div>
+            <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
+              Wenn du dich hier wiedererkennst, bist du nicht allein. Das Software-Chaos ist der Alltag für die meisten Online-Unternehmer.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>

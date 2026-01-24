@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, Mail, LayoutTemplate, Calendar, GraduationCap, Workflow, ArrowRight } from "lucide-react";
+import automationWorkspace from "@/assets/automation-workspace.jpg";
 
 const features = [
   {
@@ -63,6 +64,23 @@ const Solution = () => {
             </p>
           </motion.div>
 
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-16"
+          >
+            <div className="relative overflow-hidden rounded-xl border border-border">
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10" />
+              <img 
+                src={automationWorkspace} 
+                alt="Professionelle Marketing Automation Workflows" 
+                className="w-full h-64 md:h-80 lg:h-96 object-cover"
+              />
+            </div>
+          </motion.div>
+
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
             {features.map((feature, index) => (
@@ -101,7 +119,7 @@ const Solution = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
             >
-              Jetzt System-Analyse starten <ArrowRight className="w-4 h-4" />
+              Jetzt Erstgespräch vereinbaren <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
         </div>

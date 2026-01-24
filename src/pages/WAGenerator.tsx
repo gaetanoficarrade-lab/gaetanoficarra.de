@@ -50,7 +50,7 @@ const WAGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24 pb-20">
+      <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
