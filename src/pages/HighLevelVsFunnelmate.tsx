@@ -40,7 +40,7 @@ const HighLevelVsFunnelmate = () => {
               className="text-center max-w-3xl mx-auto mb-16"
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-                <span className="text-primary">HighLevel</span> vs <span className="text-primary">Funnelmate</span>
+                <span className="text-gradient-primary">HighLevel</span> vs <span className="text-gradient-primary">Funnelmate</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
                 Beide Plattformen nutzen die gleiche Technologie – aber welche ist die richtige für dich?
@@ -67,7 +67,7 @@ const HighLevelVsFunnelmate = () => {
               className="mb-20"
             >
               <h2 className="font-display text-3xl text-center text-foreground mb-8">
-                Ein Tool ersetzt <span className="text-primary">alles</span>
+                Ein Tool ersetzt <span className="text-gradient-primary">alles</span>
               </h2>
               
               <div className="overflow-x-auto">
@@ -110,7 +110,7 @@ const HighLevelVsFunnelmate = () => {
               className="mb-20"
             >
               <h2 className="font-display text-3xl text-center text-foreground mb-8">
-                Direkt-<span className="text-primary">Vergleich</span>
+                Direkt-<span className="text-gradient-primary">Vergleich</span>
               </h2>
               
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

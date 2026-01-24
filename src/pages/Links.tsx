@@ -78,7 +78,7 @@ const LinksPage = () => {
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-2">
               Gaetano Ficarra
             </h1>
-            <p className="text-primary font-display text-xl md:text-2xl font-semibold">
+            <p className="text-gradient-primary font-display text-xl md:text-2xl font-semibold">
               Zertifizierter GoHighLevel Admin
             </p>
           </motion.div>

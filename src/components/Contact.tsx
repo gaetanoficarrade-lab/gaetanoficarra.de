@@ -23,7 +23,7 @@ const Contact = () => {
               Kontakt
             </span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground">
-              Lass uns <span className="text-primary">sprechen</span>
+              Lass uns <span className="text-gradient-primary">sprechen</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto">
               Ob Fragen, Beratung oder direkte Zusammenarbeit – ich bin für dich da.

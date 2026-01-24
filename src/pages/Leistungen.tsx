@@ -122,7 +122,7 @@ const Leistungen = () => {
                 Leistungen
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
-                Wähle die <span className="text-primary">passende Option</span> für dich
+                Wähle die <span className="text-gradient-primary">passende Option</span> für dich
               </h1>
               <p className="text-muted-foreground text-lg font-body">
                 Ob du alles abgeben, gemeinsam lernen oder schnelle Hilfe brauchst – ich habe das richtige Angebot für dich.
@@ -222,7 +222,7 @@ const Leistungen = () => {
                 Weitere Services
               </span>
               <h2 className="font-display text-3xl md:text-4xl text-foreground mt-4">
-                Das biete ich <span className="text-primary">außerdem</span> an
+                Das biete ich <span className="text-gradient-primary">außerdem</span> an
               </h2>
             </motion.div>
 

@@ -84,7 +84,7 @@ const Testimonials = () => {
             Kundenstimmen
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-            Was meine <span className="text-primary">Kunden</span> sagen
+            Was meine <span className="text-gradient-primary">Kunden</span> sagen
           </h2>
         </motion.div>
 

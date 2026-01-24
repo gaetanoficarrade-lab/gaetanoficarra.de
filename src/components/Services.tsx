@@ -124,7 +124,7 @@ const Services = () => {
               </div>
               <div>
                 <h3 className="font-display text-2xl md:text-3xl text-foreground">
-                  Für <span className="text-primary">SaaS-Anbieter</span>
+127:                   Für <span className="text-gradient-primary">SaaS-Anbieter</span>
                 </h3>
                 <p className="text-muted-foreground text-sm font-body">White-Label & Custom Solutions</p>
               </div>
