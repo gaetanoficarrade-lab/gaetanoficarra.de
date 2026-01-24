@@ -27,49 +27,31 @@ const Hero = () => {
               className="mb-6"
             >
               <span className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm tracking-widest uppercase font-body">
-                ✓ Zertifizierter GoHighLevel Experte
+                ✓ Zertifizierter GoHighLevel Admin
               </span>
             </motion.div>
             
-            {/* Headline - Benefit-focused */}
+            {/* Headline - Vision & Ergebnis */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Skaliere dein Business mit einem <span className="text-primary">Marketing-System</span>, das für dich arbeitet
+              Mehr Zeit für dein Wachstum und <span className="text-primary">volle Kontrolle</span> durch ein zentrales, vollautomatisiertes Business-System!
             </motion.h1>
             
-            {/* Subheadline - Clear value proposition */}
+            {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-body text-muted-foreground text-lg md:text-xl mb-8 max-w-xl leading-relaxed"
+              className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
             >
-              Ich richte dein GoHighLevel so ein, dass du Leads automatisch gewinnst, Kunden bindest und Zeit sparst. Keine 10 verschiedenen Tools mehr – nur ein System, das funktioniert.
+              Gewinne täglich neue Leads und Kunden mit einer All-in-One-Lösung, die dein Marketing-Chaos beendet. Verabschiede dich von manueller Listenpflege und fehlerhaften Tool-Schnittstellen – ich richte dir mit Funnelmate (powered by HighLevel) ein Marketing-Setup ein, das reibungslos läuft und dein Online-Business planbar skaliert.
             </motion.p>
-
-            {/* Trust indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="flex flex-wrap gap-6 mb-10 text-sm font-body text-muted-foreground"
-            >
-              <span className="flex items-center gap-2">
-                <span className="text-primary">✓</span> 3+ Jahre Erfahrung
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="text-primary">✓</span> 100% HighLevel Fokus
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="text-primary">✓</span> Zertifizierter Admin
-              </span>
-            </motion.div>
             
-            {/* Premium CTAs */}
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,15 +67,8 @@ const Hero = () => {
                   boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
                 }}
               >
-                <span className="relative z-10">Kostenloses Erstgespräch</span>
+                <span className="relative z-10">System prüfen lassen</span>
                 <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </a>
-              <a
-                href="/leistungen"
-                className="group relative inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-foreground border border-silver/30 rounded-sm overflow-hidden transition-all duration-300 hover:border-silver/60 bg-card/50 backdrop-blur-sm"
-              >
-                <span className="relative z-10">Leistungen entdecken</span>
-                <div className="absolute inset-0 bg-silver/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </a>
             </motion.div>
           </motion.div>
@@ -110,7 +85,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-platinum/10 rounded-full blur-3xl scale-110" />
               <img 
                 src={portrait} 
-                alt="Gaetano Ficarra - GoHighLevel Experte aus Bielefeld" 
+                alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin" 
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
               

@@ -1,12 +1,13 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import TrustLogos from "@/components/TrustLogos";
-import ProblemSolution from "@/components/ProblemSolution";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
-import About from "@/components/About";
+import Orientation from "@/components/Orientation";
+import Problem from "@/components/Problem";
+import Guide from "@/components/Guide";
+import Solution from "@/components/Solution";
+import Migration from "@/components/Migration";
+import Qualification from "@/components/Qualification";
 import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,29 +15,32 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* 1. Hero - Aufmerksamkeit, Hauptnutzen, Vertrauen */}
+        {/* 1. Hero - Vision & Ergebnis */}
         <Hero />
         
-        {/* 2. Trust Logos - Sofortige Vertrauenssignale */}
-        <TrustLogos />
+        {/* 2. Orientierung - Für wen ist die Seite */}
+        <Orientation />
         
-        {/* 3. Problem/Lösung - Warum sie dich brauchen */}
-        <ProblemSolution />
+        {/* 3. Problem - Kunde erkennt sich wieder */}
+        <Problem />
         
-        {/* 4. Services - Was du anbietest */}
-        <Services />
+        {/* 4. Guide - Positionierung als technischer Architekt */}
+        <Guide />
         
-        {/* 5. Testimonials - Social Proof */}
-        <Testimonials />
+        {/* 5. Lösung - Funnelmate funktional erklären */}
+        <Solution />
         
-        {/* 6. Über mich - Wer dahinter steht */}
-        <About />
+        {/* 6. Alternativen & Migration */}
+        <Migration />
         
-        {/* 7. FAQ - Letzte Einwände behandeln */}
+        {/* 7. Zielgruppen-Qualifizierung */}
+        <Qualification />
+        
+        {/* 8. FAQ - Einwände abbauen */}
         <FAQ />
         
-        {/* 8. Kontakt - Finaler Call to Action */}
-        <Contact />
+        {/* 9. Abschluss-CTA - System-Analyse */}
+        <FinalCTA />
       </main>
       <Footer />
     </div>

@@ -11,43 +11,44 @@ import {
 
 const faqs = [
   {
-    question: "Muss ich vorher Erfahrung mit HighLevel oder FunnelMate haben?",
-    answer: "Nein, absolut nicht. Mein Service ist darauf ausgelegt, dir die Technik komplett abzunehmen. Wenn wir \"Done-For-You\" zusammenarbeiten, richte ich alles für dich ein. In der \"Done-With-You\" Variante zeige ich dir Schritt für Schritt, wie du das System bedienst, sodass du am Ende volle Kontrolle hast, ohne vorher Experte sein zu müssen."
+    question: "Was genau macht ein zertifizierter GoHighLevel Admin?",
+    answer: "Ich bin der technische Architekt deines Business. Während andere nur die Oberfläche nutzen, baue ich im Hintergrund die Logik in Funnelmate: Komplexe Workflows, API-Verknüpfungen und Sales-Pipelines. Ich nehme dir die Technik ab, damit du dich auf dein Kerngeschäft konzentrieren kannst."
   },
   {
-    question: "Was passiert, wenn ich mehrere Tools gleichzeitig nutze?",
-    answer: "Das ist genau das Problem, das wir lösen. GoHighLevel ersetzt Tools wie ActiveCampaign, ClickFunnels, Calendly und viele mehr. Wir ziehen deine Daten sicher um und konsolidieren alles in einem System. Das spart nicht nur Kosten, sondern eliminiert auch Fehlerquellen durch unzuverlässige Schnittstellen (Zaps)."
+    question: "Ich nutze bereits Tools wie ClickFunnels oder ActiveCampaign. Kann ich meine Daten umziehen?",
+    answer: "Ja, absolut. Ein Schwerpunkt meiner Arbeit ist die Migration. Ich helfe dir dabei, Kontakte, Tags und Listen sicher in dein neues Funnelmate-Setup (basierend auf GHL) zu übertragen – ohne Datenverlust oder Unterbrechung."
   },
   {
-    question: "Wie lange dauert so ein Setup?",
-    answer: "Das kommt auf den Umfang an. Ein Basis-Setup mit Funnel, E-Mail-Automation und CRM-Anbindung steht meist innerhalb von 2-4 Wochen. Komplexere Systeme mit Mitgliederbereichen oder tiefgehenden SaaS-Strukturen können etwas länger dauern. Im Erstgespräch gebe ich dir eine genaue Einschätzung."
+    question: "Ist das System in Deutschland DSGVO-konform nutzbar?",
+    answer: "Ja. Ich unterstütze dich dabei, Funnelmate so zu konfigurieren, dass es den deutschen Datenschutzbestimmungen entspricht – von Double-Opt-In-Verfahren bis hin zu den korrekten AV-Verträgen."
   },
   {
-    question: "Kann ich nur einzelne Prozesse einrichten lassen oder nur das komplette System?",
-    answer: "Beides ist möglich. Viele Kunden starten mit einem spezifischen Problem (z.B. Lead-Qualifizierung) und erweitern das System später. Da HighLevel modular aufgebaut ist, können wir klein anfangen und gesund wachsen."
+    question: "Ersetzt Funnelmate wirklich alle meine bisherigen Software-Abos?",
+    answer: "In fast allen Fällen: Ja. Da Funnelmate die Infrastruktur von GoHighLevel nutzt, ersetzt es CRM, Mail-Tools, Funnel-Builder, Termin-Buchungssysteme und Kursplattformen. Das spart massive monatliche Fixkosten."
   },
   {
-    question: "Lohnt sich der Einsatz für kleine Unternehmen?",
-    answer: "Ja, gerade für kleine Teams oder Soloselbstständige ist Zeit die wertvollste Ressource. Automatisierung übernimmt die Aufgaben eines virtuellen Assistenten – 24/7 und fehlerfrei. Oft amortisieren sich die Kosten schon durch die Einsparung anderer Software-Abos."
+    question: "Ich habe bereits eine SaaS-Agentur. Wie kannst du mein Team entlasten?",
+    answer: "Für SaaS-Anbieter agiere ich als technischer Backbone. Ich übernehme das Onboarding, erstelle Master-Snapshots und löse komplexe Support-Anfragen, damit dein Team sich voll auf Sales und Wachstum konzentrieren kann."
   },
   {
-    question: "Bekomme ich Schulung oder Support nach der Umsetzung?",
-    answer: "Ich lasse dich nicht allein. Nach jedem Setup gibt es eine Übergabe und Einführung. Zudem biete ich regelmäßige Support-Calls an, in denen wir technische Fragen klären oder Strategien anpassen können."
+    question: "Brauche ich technisches Vorwissen für die Bedienung?",
+    answer: "Nein. Mein Ziel sind fertige Ready-to-use-Systeme. Du erhältst eine Einweisung in dein individuelles Setup, damit du die täglichen Aufgaben ohne IT-Kenntnisse im Griff hast, während ich die komplexe Logik im Hintergrund warte."
   },
   {
-    question: "Ist die Nutzung von GoHighLevel in Deutschland DSGVO-konform?",
-    answer: "Ja, GoHighLevel kann DSGVO-konform genutzt werden. Es gibt Funktionen für Double-Opt-In, Cookie-Consent-Anbindungen und Auftragsverarbeitungsverträge (AVV). Ich unterstütze dich dabei, die technischen Einstellungen so zu wählen, dass sie den deutschen Datenschutzstandards entsprechen."
+    question: "Was ist der Vorteil eines externen Admins gegenüber dem GHL-Standard-Support?",
+    answer: "Der Standard-Support ist oft allgemein und auf Englisch. Ich biete dir individuelle, deutsche Lösungen, die genau auf deine Strategie zugeschnitten sind. Ich denke proaktiv mit, statt nur Tickets abzuarbeiten."
   },
   {
-    question: "Warum sollte ich einen Experten für mein HighLevel-Setup buchen?",
-    answer: "HighLevel ist extrem mächtig, kann aber am Anfang erschlagend wirken. Ein Experte spart dir Monate an Einarbeitungszeit und verhindert teure Fehler in der Automatisierung. Ich kenne die Best Practices und sorge dafür, dass dein System von Tag 1 an stabil und konvertierend läuft."
+    question: "Wie lange dauert die Einrichtung eines kompletten Systems?",
+    answer: "Ein Basis-Setup steht meist innerhalb einer Woche. Umfangreiche Migrationen oder komplexe Automatisierungsketten für Agenturen dauern in der Regel 2 bis 3 Wochen."
   },
   {
-    question: "Wie erstelle ich einen WhatsApp Link für mein Marketing?",
-    answer: "Dafür habe ich ein kostenloses Tool erstellt! Du findest meinen WhatsApp Link Generator direkt hier auf der Website. Einfach Nummer und Text eingeben und den Link sofort nutzen.",
-    hasLink: true,
-    linkText: "WhatsApp Link Generator",
-    linkUrl: "/wa-generator"
+    question: "Kann ich meine bestehende Webseite (z. B. WordPress) anbinden?",
+    answer: "Ja, das ist problemlos möglich. Wir integrieren Funnelmate-Elemente wie Formulare, Kalender oder Chat-Widgets einfach via Code-Snippet in deine aktuelle Seite."
+  },
+  {
+    question: "Bietest du auch individuelle Snapshots oder Vorlagen an?",
+    answer: "Ja, ich entwickle maßgeschneiderte GHL-Snapshots für verschiedene Branchen. Diese enthalten bereits fertige Funnels und Automatisierungen, die wir schnell an dein Branding in Funnelmate anpassen."
   },
 ];
 
@@ -81,7 +82,7 @@ const FAQ = () => {
               Häufig gestellte <span className="text-primary">Fragen</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto">
-              Hier findest du Antworten auf die wichtigsten Fragen rund um GoHighLevel, Marketing-Automatisierung und meine Dienstleistungen.
+              Hier findest du Antworten auf die wichtigsten Fragen rund um Funnelmate, GoHighLevel und meine Dienstleistungen.
             </p>
           </motion.div>
 
@@ -110,17 +111,7 @@ const FAQ = () => {
                     itemProp="acceptedAnswer" 
                     itemType="https://schema.org/Answer"
                   >
-                    <span itemProp="text">
-                      {faq.answer}
-                      {faq.hasLink && (
-                        <>
-                          {" "}
-                          <Link to={faq.linkUrl || "#"} className="text-primary hover:underline">
-                            → {faq.linkText}
-                          </Link>
-                        </>
-                      )}
-                    </span>
+                    <span itemProp="text">{faq.answer}</span>
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -137,7 +128,7 @@ const FAQ = () => {
             <p className="text-muted-foreground font-body">
               Deine Frage ist nicht dabei?{" "}
               <a
-                href="https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20mit%20dir%20interessiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos."
+                href="https://wa.me/4915223856537?text=Hey%2C%20ich%20habe%20eine%20Frage%20zu%20deinen%20Leistungen."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
