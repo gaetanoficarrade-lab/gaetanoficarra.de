@@ -38,9 +38,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Skaliere dein Business mit smarten{" "}
-              <span className="text-gradient-primary">HighLevel-Funnel</span> und{" "}
-              <span className="text-gradient-primary">vollautomatisierten Prozessen</span> ohne Tool-Chaos
+              Mehr Zeit für dein Wachstum und{" "}
+              <span className="text-gradient-primary">volle Kontrolle</span> durch ein zentrales,
+              vollautomatisiertes Business-System!
             </motion.h1>
 
             {/* Subheadline */}
