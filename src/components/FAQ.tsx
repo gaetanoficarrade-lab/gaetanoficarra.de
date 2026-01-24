@@ -1,146 +1,120 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Funnelmate Experte | GoHighLevel Automation & CRM | Gaetano Ficarra</title>
+    
+    <meta name="description" content="Zertifizierter GoHighLevel & Funnelmate Experte. Beseitige dein Software-Chaos mit All-in-One Marketing Automatisierung. Jetzt 14 Tage kostenlos testen!" />
+    <meta name="keywords" content="Funnelmate Experte, GoHighLevel Admin, Marketing Automatisierung KMU, Software-Chaos beseitigen, GHL Snapshots, CRM Migration, Gaetano Ficarra" />
+    <meta name="author" content="Gaetano Ficarra" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <meta name="google-site-verification" content="LShAxBXccIRDjOLWtut4j_rjxiPm0FpxSg-WUPQIdCU" />
+    
+    <link rel="canonical" href="https://funnelmate-experte.de/" />
 
-const faqs = [
-  {
-    question: "Was genau macht ein zertifizierter GoHighLevel Admin?",
-    answer: "Ich bin der technische Architekt deines Business. Während andere nur die Oberfläche nutzen, baue ich im Hintergrund die Logik in Funnelmate: Komplexe Workflows, API-Verknüpfungen und Sales-Pipelines. Ich nehme dir die Technik ab, damit du dich auf dein Kerngeschäft konzentrieren kannst."
-  },
-  {
-    question: "Ich nutze bereits Tools wie ClickFunnels oder ActiveCampaign. Kann ich meine Daten umziehen?",
-    answer: "Ja, absolut. Ein Schwerpunkt meiner Arbeit ist die Migration. Ich helfe dir dabei, Kontakte, Tags und Listen sicher in dein neues Funnelmate-Setup (basierend auf GHL) zu übertragen – ohne Datenverlust oder Unterbrechung."
-  },
-  {
-    question: "Ist das System in Deutschland DSGVO-orientiert nutzbar?",
-    answer: "Ja. Ich schaffe die technische Basis, damit Funnelmate unter Berücksichtigung gängiger Anforderungen der deutschen Datenschutzbestimmungen genutzt werden kann – beispielsweise durch Double-Opt-In-Verfahren, saubere Kontaktverwaltung und strukturierte Prozesse. Wichtig: Dies stellt keine Rechtsberatung dar und ich übernehme keine juristische Verantwortung oder Garantie für die vollständige DSGVO-Konformität. Bei spezifischen rechtlichen Fragen empfehle ich die Zusammenarbeit mit einem Datenschutzberater oder Anwalt."
-  },
-  {
-    question: "Ersetzt Funnelmate wirklich alle meine bisherigen Software-Abos?",
-    answer: "In fast allen Fällen: Ja. Da Funnelmate die Infrastruktur von GoHighLevel nutzt, ersetzt es CRM, Mail-Tools, Funnel-Builder, Termin-Buchungssysteme und Kursplattformen. Das spart massive monatliche Fixkosten."
-  },
-  {
-    question: "Ich habe bereits eine SaaS-Agentur. Wie kannst du mein Team entlasten?",
-    answer: "Für SaaS-Anbieter agiere ich als technischer Backbone. Ich übernehme das Onboarding, erstelle Master-Snapshots und löse komplexe Support-Anfragen, damit dein Team sich voll auf Sales und Wachstum konzentrieren kann."
-  },
-  {
-    question: "Brauche ich technisches Vorwissen für die Bedienung?",
-    answer: "Nein. Mein Ziel sind fertige Ready-to-use-Systeme. Du erhältst eine Einweisung in dein individuelles Setup, damit du die täglichen Aufgaben ohne IT-Kenntnisse im Griff hast, während ich die komplexe Logik im Hintergrund warte."
-  },
-  {
-    question: "Was ist der Vorteil eines externen Admins gegenüber dem GHL-Standard-Support?",
-    answer: "Der Standard-Support ist oft allgemein und auf Englisch. Ich biete dir individuelle, deutsche Lösungen, die genau auf deine Strategie zugeschnitten sind. Ich denke proaktiv mit, statt nur Tickets abzuarbeiten."
-  },
-  {
-    question: "Wie lange dauert die Einrichtung eines kompletten Systems?",
-    answer: "Ein Basis-Setup steht meist innerhalb einer Woche. Umfangreiche Migrationen oder komplexe Automatisierungsketten für Agenturen dauern in der Regel 2 bis 3 Wochen."
-  },
-  {
-    question: "Kann ich meine bestehende Webseite (z. B. WordPress) anbinden?",
-    answer: "Ja, das ist problemlos möglich. Wir integrieren Funnelmate-Elemente wie Formulare, Kalender oder Chat-Widgets einfach via Code-Snippet in deine aktuelle Seite."
-  },
-  {
-    question: "Bietest du auch individuelle Snapshots oder Vorlagen an?",
-    answer: "Ja, ich entwickle maßgeschneiderte GHL-Snapshots für verschiedene Branchen. Diese enthalten bereits fertige Funnels und Automatisierungen, die wir schnell an dein Branding in Funnelmate anpassen."
-  },
-];
+    <meta name="geo.region" content="DE-NW" />
+    <meta name="geo.placename" content="Bielefeld" />
+    <meta name="geo.position" content="52.0302;8.5325" />
+    <meta name="ICBM" content="52.0302, 8.5325" />
 
-const FAQ = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
-  return (
-    <section id="faq" className="py-32 bg-card relative" ref={ref} itemScope itemType="https://schema.org/FAQPage">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">
-              FAQ
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground">
-              Häufig gestellte <span className="text-primary">Fragen</span>
-            </h2>
-            <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto">
-              Hier findest du Antworten auf die wichtigsten Fragen rund um Funnelmate, GoHighLevel und meine Dienstleistungen.
-            </p>
-          </motion.div>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://funnelmate-experte.de/" />
+    <meta property="og:title" content="Funnelmate & GoHighLevel Experte Deutschland | Gaetano Ficarra" />
+    <meta property="og:description" content="Skaliere dein Business mit Funnelmate. CRM, Funnels & Automation ohne Tool-Chaos. Starte deine 14-tägige Testphase!" />
+    <meta property="og:image" content="https://funnelmate-experte.de/og-image.png" />
+    <meta property="og:site_name" content="Gaetano Ficarra" />
+    <meta property="og:locale" content="de_DE" />
 
-          {/* FAQ Accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="bg-background border border-border rounded-lg px-6 data-[state=open]:border-primary/30"
-                  itemScope 
-                  itemProp="mainEntity" 
-                  itemType="https://schema.org/Question"
-                >
-                  <AccordionTrigger className="font-display text-lg text-foreground hover:text-primary py-6 text-left">
-                    <span itemProp="name">{faq.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent 
-                    className="text-muted-foreground font-body leading-relaxed pb-6"
-                    itemScope 
-                    itemProp="acceptedAnswer" 
-                    itemType="https://schema.org/Answer"
-                  >
-                    <span itemProp="text">{faq.answer}</span>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Funnelmate Experte Deutschland | Gaetano Ficarra" />
+    <meta name="twitter:description" content="Zertifizierter Experte für Marketing Automation & CRM." />
+    <meta name="twitter:image" content="https://funnelmate-experte.de/og-image.png" />
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center mt-12"
-          >
-            <p className="text-muted-foreground font-body">
-              Deine Frage ist nicht dabei?{" "}
-              <a
-                href="https://wa.me/4915223856537?text=Hey%2C%20ich%20habe%20eine%20Frage%20zu%20deinen%20Leistungen."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                Schreib mir auf WhatsApp →
-              </a>
-            </p>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-};
+    <script src="https://klick.gaetanoficarra.de/js/external-tracking.js" data-tracking-id="tk_a1c7f88e0ebd4bd183cc790312b64850"></script>
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/94ab3aed51e2a5dc06eca48c3e528e00/script.js"></script>
+    <script async type="text/javascript" data-cookieyes="cookie_cat_analytics" src="https://www.googletagmanager.com/gtag/js?id=G-6GTNR9L14T"></script>
+    <script type="text/javascript" data-cookieyes="cookie_cat_analytics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6GTNR9L14T');
+    </script>
 
-export default FAQ;
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Gaetano Ficarra - Funnelmate & GoHighLevel Experte",
+          "image": "https://funnelmate-experte.de/assets/gaetano-portrait-p9wDaVXy.jpg",
+          "url": "https://funnelmate-experte.de",
+          "telephone": "+4915223856537",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Elverdisser Str. 51",
+            "addressLocality": "Bielefeld",
+            "postalCode": "33729",
+            "addressCountry": "DE"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Was genau macht ein zertifizierter GoHighLevel Admin?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ich bin der technische Architekt deines Business. Während andere nur die Oberfläche nutzen, baue ich im Hintergrund die Logik in Funnelmate: Komplexe Workflows, API-Verknüpfungen und Sales-Pipelines. Ich nehme dir die Technik ab, damit du dich auf dein Kerngeschäft konzentrieren kannst."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ich nutze bereits Tools wie ClickFunnels oder ActiveCampaign. Kann ich meine Daten umziehen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja, absolut. Ein Schwerpunkt meiner Arbeit ist die Migration. Ich helfe dir dabei, Kontakte, Tags und Listen sicher in dein neues Funnelmate-Setup (basierend auf GHL) zu übertragen – ohne Datenverlust oder Unterbrechung."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ist das System in Deutschland DSGVO-orientiert nutzbar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Ich schaffe die technische Basis, damit Funnelmate unter Berücksichtigung gängiger Anforderungen der deutschen Datenschutzbestimmungen genutzt werden kann – beispielsweise durch Double-Opt-In-Verfahren. Wichtig: Dies stellt keine Rechtsberatung dar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ersetzt Funnelmate wirklich alle meine bisherigen Software-Abos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In fast allen Fällen: Ja. Da Funnelmate die Infrastruktur von GoHighLevel nutzt, ersetzt es CRM, Mail-Tools, Funnel-Builder, Termin-Buchungssysteme und Kursplattformen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Brauche ich technisches Vorwissen für die Bedienung?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. Mein Ziel sind fertige Ready-to-use-Systeme. Du erhältst eine Einweisung in dein individuelles Setup, damit du die täglichen Aufgaben ohne IT-Kenntnisse im Griff hast."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
