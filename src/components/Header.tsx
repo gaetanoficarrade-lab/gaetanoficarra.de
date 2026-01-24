@@ -21,11 +21,11 @@ const Header = () => {
     return location.pathname.startsWith(href);
   };
 
-  const handleNavClick = (item: typeof navItems[0], e: React.MouseEvent) => {
+  const handleNavClick = (item: (typeof navItems)[0], e: React.MouseEvent) => {
     if (item.isAnchor) {
       e.preventDefault();
       const targetId = item.href.replace("/#", "");
-      
+
       if (location.pathname === "/") {
         // Already on homepage, just scroll
         const element = document.getElementById(targetId);
@@ -55,9 +55,13 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
-          <img src={logo} alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld" className="h-12 md:h-14 w-auto" />
+          <img
+            src={logo}
+            alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld"
+            className="h-12 md:h-14 w-auto"
+          />
         </Link>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
@@ -66,16 +70,14 @@ const Header = () => {
               to={item.href}
               onClick={(e) => handleNavClick(item, e)}
               className={`transition-colors duration-300 text-sm tracking-widest uppercase font-body ${
-                isActive(item.href) 
-                  ? "text-primary" 
-                  : "text-muted-foreground hover:text-primary"
+                isActive(item.href) ? "text-primary" : "text-muted-foreground hover:text-primary"
               }`}
             >
               {item.label}
             </Link>
           ))}
           <a
-            href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+            href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md"
@@ -111,16 +113,14 @@ const Header = () => {
                   to={item.href}
                   onClick={(e) => handleNavClick(item, e)}
                   className={`transition-colors duration-300 text-sm tracking-widest uppercase font-body py-2 ${
-                    isActive(item.href) 
-                      ? "text-primary" 
-                      : "text-muted-foreground hover:text-primary"
+                    isActive(item.href) ? "text-primary" : "text-muted-foreground hover:text-primary"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
               <a
-                href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+                href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 text-center mt-4 rounded-md"
