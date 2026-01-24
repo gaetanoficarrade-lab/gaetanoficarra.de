@@ -55,7 +55,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
-          <img src={logo} alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld" className="h-12 md:h-14 w-auto" />
         </Link>
         
         {/* Desktop Navigation */}

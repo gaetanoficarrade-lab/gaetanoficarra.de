@@ -22,7 +22,7 @@ const About = () => {
               Über Mich
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Hey, ich bin <span className="text-primary">Gaetano</span>
+              Hey, ich bin <span className="text-gradient-primary">Gaetano</span>
             </h2>
           </motion.div>
 

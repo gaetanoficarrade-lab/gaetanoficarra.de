@@ -20,7 +20,8 @@ const FinalCTA = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Nächster Schritt</span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground">
-              Lass uns dein Marketing-System <span className="text-primary">aufräumen</span>
+              Bereit, dein Marketing auf das{" "}
+              <span className="text-gradient-primary">nächste Level</span> zu bringen?
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
               Kein Verkaufsgespräch. Kein Druck. Nur eine ehrliche Analyse deiner aktuellen Situation und ein klarer

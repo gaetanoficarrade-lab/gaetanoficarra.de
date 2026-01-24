@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="GF Logo" className="h-10 w-auto" />
+              <img src={logo} alt="GF Logo" className="h-14 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm font-body leading-relaxed">
               Marketing-Systemberater für Selbstständige. Zertifizierter HighLevel-Experte.

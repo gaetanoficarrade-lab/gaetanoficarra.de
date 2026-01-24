@@ -68,7 +68,7 @@ const Services = () => {
         >
           <span className="text-primary text-sm tracking-widest uppercase font-body">Leistungen</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-            So kann ich <span className="text-primary">dich unterstützen</span>
+            So kann ich dich <span className="text-gradient-primary">unterstützen</span>
           </h2>
           <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
             Ob komplette Einrichtung, gemeinsames Arbeiten oder schnelle Hilfe bei Problemen, wähle die Option, die zu

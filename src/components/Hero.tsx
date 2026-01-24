@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
 
       {/* Subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(43_74%_49%/0.05)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(190_90%_50%/0.08)_0%,_transparent_70%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -38,8 +38,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Mehr Zeit für dein Wachstum und <span className="text-primary">volle Kontrolle</span> durch ein zentrales,
-              vollautomatisiertes Business-System!
+              Skaliere dein Business mit smarten{" "}
+              <span className="text-gradient-primary">HighLevel-Funnel</span> und{" "}
+              <span className="text-gradient-primary">vollautomatisierten Prozessen</span> ohne Tool-Chaos
             </motion.h1>
 
             {/* Subheadline */}

@@ -56,7 +56,7 @@ const FAQ = () => {
               <span className="text-sm font-medium uppercase tracking-wider">Häufige Fragen</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Deine Fragen, meine Antworten
+              Die meist gestellten <span className="text-gradient-primary">Fragen</span>
             </h2>
             <p className="text-muted-foreground text-lg">
               Hier findest du Antworten auf die häufigsten Fragen zu meiner Arbeit und Funnelmate.
