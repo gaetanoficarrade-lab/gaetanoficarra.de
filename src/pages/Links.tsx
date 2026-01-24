@@ -54,7 +54,7 @@ const LinksPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24 pb-20">
+      <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-2xl">
           {/* Profile Header */}
           <motion.div
@@ -72,14 +72,14 @@ const LinksPage = () => {
               <img 
                 src={badge} 
                 alt="GoHighLevel Certified Admin Badge" 
-                className="h-20 w-auto mx-auto hover:scale-105 transition-transform duration-300"
+                className="h-32 md:h-40 w-auto mx-auto hover:scale-105 transition-transform duration-300"
               />
             </a>
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-2">
               Gaetano Ficarra
             </h1>
-            <p className="text-muted-foreground font-body">
-              Zertifizierter HighLevel-Experte
+            <p className="text-primary font-display text-xl md:text-2xl font-semibold">
+              Zertifizierter GoHighLevel Admin
             </p>
           </motion.div>
 
