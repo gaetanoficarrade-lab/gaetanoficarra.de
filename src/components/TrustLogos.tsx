@@ -95,8 +95,17 @@ const TrustLogos = () => {
             }}
           >
             {duplicatedPartners.map((partner, index) => {
-              // Larger sizes for specific logos
-              const isLargeLogo = partner.name === "OCTA Steuerberater" || partner.name === "Funnelmate Certified Expert";
+              // Size categories for logos
+              const isLargeLogo = partner.name === "OCTA Steuerberater" || partner.name === "Funnelmate Certified Expert" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
+              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "HTML5" || partner.name === "CSS3";
+              
+              let sizeClass = 'h-12 md:h-14 lg:h-16'; // default medium
+              if (isLargeLogo) {
+                sizeClass = 'h-14 md:h-18 lg:h-20';
+              } else if (isMediumLogo) {
+                sizeClass = 'h-12 md:h-16 lg:h-18';
+              }
+              
               return (
                 <a
                   key={`${partner.name}-${index}`}
@@ -109,9 +118,7 @@ const TrustLogos = () => {
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} Logo`}
-                    className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
-                      isLargeLogo ? 'h-14 md:h-16 lg:h-20' : 'h-10 md:h-12 lg:h-14'
-                    } ${partner.name === "OCTA Steuerberater" ? 'brightness-0 invert' : ''}`}
+                    className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
                   />
                 </a>
               );
