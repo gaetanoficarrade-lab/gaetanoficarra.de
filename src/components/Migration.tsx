@@ -12,6 +12,7 @@ const migrationTools = [
   { name: "Coachy", keyword: "Coachy Alternative All-in-One" },
   { name: "GetResponse", keyword: "GetResponse Alternative" },
   { name: "Mailchimp", keyword: "Mailchimp Alternative" },
+  { name: "ManyChat", keyword: "ManyChat Alternative" },
 ];
 
 const Migration = () => {

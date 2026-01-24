@@ -69,7 +69,7 @@ const Guide = () => {
                   { label: "Zertifizierter", value: "GoHighLevel Admin" },
                   { label: "Fokus", value: "Backend & Workflows" },
                   { label: "Erfahrung", value: "5+ Jahre Online Business" },
-                  { label: "Tools", value: "Funnelmate, ManyChat & mehr" },
+                  { label: "Spezialgebiet", value: "Migration & Automatisierung" },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
