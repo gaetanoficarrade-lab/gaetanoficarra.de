@@ -58,18 +58,23 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-wrap gap-4"
             >
-              <a
-                href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
-                style={{
-                  boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
-                }}
-              >
-                <span className="relative z-10">System prüfen lassen</span>
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </a>
+              <div className="flex flex-col items-start">
+                <a
+                  href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
+                  style={{
+                    boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
+                  }}
+                >
+                  <span className="relative z-10">Jetzt Erstgespräch vereinbaren</span>
+                  <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                </a>
+                <span className="text-muted-foreground text-sm font-body mt-3">
+                  Kurz sprechen, Setup verstehen, nächsten Schritt klären
+                </span>
+              </div>
             </motion.div>
           </motion.div>
           

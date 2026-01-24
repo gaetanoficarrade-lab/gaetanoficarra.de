@@ -52,8 +52,11 @@ const FinalCTA = () => {
                 boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
               }}
             >
-              System-Analyse starten
+              Jetzt Erstgespräch vereinbaren
             </a>
+            <p className="text-muted-foreground text-sm font-body mt-4">
+              Kurz sprechen, Setup verstehen, nächsten Schritt klären
+            </p>
           </motion.div>
 
           {/* Contact Info */}

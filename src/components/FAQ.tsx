@@ -19,8 +19,8 @@ const faqs = [
     answer: "Ja, absolut. Ein Schwerpunkt meiner Arbeit ist die Migration. Ich helfe dir dabei, Kontakte, Tags und Listen sicher in dein neues Funnelmate-Setup (basierend auf GHL) zu übertragen – ohne Datenverlust oder Unterbrechung."
   },
   {
-    question: "Ist das System in Deutschland DSGVO-konform nutzbar?",
-    answer: "Ja. Ich unterstütze dich dabei, Funnelmate so zu konfigurieren, dass es den deutschen Datenschutzbestimmungen entspricht – von Double-Opt-In-Verfahren bis hin zu den korrekten AV-Verträgen."
+    question: "Ist das System in Deutschland DSGVO-orientiert nutzbar?",
+    answer: "Ja. Ich schaffe die technische Basis, damit Funnelmate unter Berücksichtigung gängiger Anforderungen der deutschen Datenschutzbestimmungen genutzt werden kann – beispielsweise durch Double-Opt-In-Verfahren, saubere Kontaktverwaltung und strukturierte Prozesse. Wichtig: Dies stellt keine Rechtsberatung dar und ich übernehme keine juristische Verantwortung oder Garantie für die vollständige DSGVO-Konformität. Bei spezifischen rechtlichen Fragen empfehle ich die Zusammenarbeit mit einem Datenschutzberater oder Anwalt."
   },
   {
     question: "Ersetzt Funnelmate wirklich alle meine bisherigen Software-Abos?",
