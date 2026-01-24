@@ -96,14 +96,17 @@ const TrustLogos = () => {
           >
             {duplicatedPartners.map((partner, index) => {
               // Size categories for logos
-              const isLargeLogo = partner.name === "OCTA Steuerberater" || partner.name === "Funnelmate Certified Expert" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
-              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "HTML5" || partner.name === "CSS3";
+              const isOctaLogo = partner.name === "OCTA Steuerberater";
+              const isLargeLogo = partner.name === "Funnelmate Certified Expert";
+              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "HTML5" || partner.name === "CSS3" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
               
-              let sizeClass = 'h-12 md:h-14 lg:h-16'; // default medium
-              if (isLargeLogo) {
-                sizeClass = 'h-14 md:h-18 lg:h-20';
+              let sizeClass = 'h-12 md:h-14 lg:h-16'; // default
+              if (isOctaLogo) {
+                sizeClass = 'h-16 md:h-20 lg:h-24'; // OCTA bigger
+              } else if (isLargeLogo) {
+                sizeClass = 'h-14 md:h-18 lg:h-20'; // Funnelmate Certified Expert
               } else if (isMediumLogo) {
-                sizeClass = 'h-12 md:h-16 lg:h-18';
+                sizeClass = 'h-10 md:h-12 lg:h-14'; // Funnelmate, Patrick Mentler, GHL, HTML, CSS smaller
               }
               
               return (
