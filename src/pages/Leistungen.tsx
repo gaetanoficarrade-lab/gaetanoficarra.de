@@ -1,5 +1,18 @@
 import { motion } from "framer-motion";
-import { CheckCircle, Settings, Users, Headphones, TrendingUp, Zap, Repeat, ArrowRight, Building2, Clock, Shield, Sparkles } from "lucide-react";
+import {
+  CheckCircle,
+  Settings,
+  Users,
+  Headphones,
+  TrendingUp,
+  Zap,
+  Repeat,
+  ArrowRight,
+  Building2,
+  Clock,
+  Shield,
+  Sparkles,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -8,7 +21,8 @@ const mainServices = [
     icon: Settings,
     title: "Done-For-You Setup",
     subtitle: "Ich mache alles für dich",
-    description: "Du lehnst dich zurück, ich baue dein komplettes Marketing-System. Von der ersten Landingpage bis zur letzten Automation – alles wird professionell eingerichtet und optimiert.",
+    description:
+      "Du lehnst dich zurück, ich baue dein komplettes Marketing-System. Von der ersten Landingpage bis zur letzten Automation – alles wird professionell eingerichtet und optimiert.",
     features: [
       "Komplette GoHighLevel Einrichtung von A bis Z",
       "Funnels, Landingpages & Webseiten",
@@ -28,13 +42,14 @@ const mainServices = [
     ctaLink: "https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU",
     popular: true,
     price: "Auf Anfrage",
-    priceNote: "Individuell nach Projektumfang"
+    priceNote: "Individuell nach Projektumfang",
   },
   {
     icon: Users,
     title: "Done-With-You Live",
     subtitle: "Wir bauen es gemeinsam",
-    description: "Du willst lernen, wie HighLevel funktioniert, während du es einrichtest? In Live-Sessions arbeiten wir gemeinsam an deinem System. Du stellst Fragen, ich zeige dir alles.",
+    description:
+      "Du willst lernen, wie HighLevel funktioniert, während du es einrichtest? In Live-Sessions arbeiten wir gemeinsam an deinem System. Du stellst Fragen, ich zeige dir alles.",
     features: [
       "Live Zusammenarbeit per Video-Call",
       "Du lernst während wir bauen",
@@ -53,13 +68,14 @@ const mainServices = [
     ctaLink: "https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU",
     popular: false,
     price: "Auf Anfrage",
-    priceNote: "Nach Anzahl der Sessions"
+    priceNote: "Nach Anzahl der Sessions",
   },
   {
     icon: Headphones,
     title: "Support-Call",
     subtitle: "Schnelle Hilfe bei Problemen",
-    description: "Steckst du fest? Funktioniert etwas nicht? Hast du eine spezifische Frage? Buche einen Support-Call und ich löse dein Problem schnell und unkompliziert.",
+    description:
+      "Steckst du fest? Funktioniert etwas nicht? Hast du eine spezifische Frage? Buche einen Support-Call und ich löse dein Problem schnell und unkompliziert.",
     features: [
       "1:1 Video-Call mit Bildschirmfreigabe",
       "Problemlösung in Echtzeit",
@@ -74,10 +90,10 @@ const mainServices = [
       { icon: Sparkles, text: "Aufnahme zum Nachschauen" },
     ],
     cta: "Call buchen",
-    ctaLink: "https://ghl.gaetanoficarra.de/support_call",
+    ctaLink: "https://lp.gaetanoficarra.de/support_call",
     popular: false,
     price: "197€",
-    priceNote: "Pro Stunde"
+    priceNote: "Pro Stunde",
   },
 ];
 
@@ -85,22 +101,26 @@ const additionalServices = [
   {
     icon: TrendingUp,
     title: "Strategieberatung",
-    description: "Du weißt nicht, wo du anfangen sollst? Gemeinsam entwickeln wir eine Strategie, wie du das Maximum aus HighLevel herausholst und dein Marketing auf das nächste Level bringst."
+    description:
+      "Du weißt nicht, wo du anfangen sollst? Gemeinsam entwickeln wir eine Strategie, wie du das Maximum aus HighLevel herausholst und dein Marketing auf das nächste Level bringst.",
   },
   {
     icon: Zap,
     title: "Automation & Workflows",
-    description: "Automatisiere deine Prozesse und spare wertvolle Zeit. Ich erstelle intelligente Workflows, die für dich arbeiten – von Lead-Nurturing bis zur Kundenbindung."
+    description:
+      "Automatisiere deine Prozesse und spare wertvolle Zeit. Ich erstelle intelligente Workflows, die für dich arbeiten – von Lead-Nurturing bis zur Kundenbindung.",
   },
   {
     icon: Repeat,
     title: "Migration & Umzug",
-    description: "Du wechselst von einem anderen Tool zu HighLevel? Ich übertrage deine Funnels, Kontakte und Daten sauber und reibungslos – ohne Datenchaos oder Ausfallzeiten."
+    description:
+      "Du wechselst von einem anderen Tool zu HighLevel? Ich übertrage deine Funnels, Kontakte und Daten sauber und reibungslos – ohne Datenchaos oder Ausfallzeiten.",
   },
   {
     icon: Building2,
     title: "SaaS-Partner Support",
-    description: "Du bist SaaS-Anbieter mit HighLevel als Basis? Ich übernehme Q&A-Calls, technischen Support und Troubleshooting für deine Endkunden – professionell und zuverlässig."
+    description:
+      "Du bist SaaS-Anbieter mit HighLevel als Basis? Ich übernehme Q&A-Calls, technischen Support und Troubleshooting für deine Endkunden – professionell und zuverlässig.",
   },
 ];
 
@@ -118,14 +138,13 @@ const Leistungen = () => {
               transition={{ duration: 0.6 }}
               className="text-center max-w-3xl mx-auto mb-16"
             >
-              <span className="text-primary text-sm tracking-widest uppercase font-body">
-                Leistungen
-              </span>
+              <span className="text-primary text-sm tracking-widest uppercase font-body">Leistungen</span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
                 Wähle die <span className="text-gradient-primary">passende Option</span> für dich
               </h1>
               <p className="text-muted-foreground text-lg font-body">
-                Ob du alles abgeben, gemeinsam lernen oder schnelle Hilfe brauchst – ich habe das richtige Angebot für dich.
+                Ob du alles abgeben, gemeinsam lernen oder schnelle Hilfe brauchst – ich habe das richtige Angebot für
+                dich.
               </p>
             </motion.div>
 
@@ -138,7 +157,7 @@ const Leistungen = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className={`relative bg-card border rounded-xl overflow-hidden ${
-                    service.popular ? 'border-primary' : 'border-border'
+                    service.popular ? "border-primary" : "border-border"
                   }`}
                 >
                   {service.popular && (
@@ -146,7 +165,7 @@ const Leistungen = () => {
                       Meistgebucht
                     </div>
                   )}
-                  
+
                   <div className="p-8 md:p-12">
                     <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
                       {/* Left Column - Info */}
@@ -160,7 +179,7 @@ const Leistungen = () => {
                             <p className="text-primary text-sm font-body">{service.subtitle}</p>
                           </div>
                         </div>
-                        
+
                         <p className="text-muted-foreground font-body text-lg leading-relaxed mb-8">
                           {service.description}
                         </p>
@@ -218,9 +237,7 @@ const Leistungen = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <span className="text-primary text-sm tracking-widest uppercase font-body">
-                Weitere Services
-              </span>
+              <span className="text-primary text-sm tracking-widest uppercase font-body">Weitere Services</span>
               <h2 className="font-display text-3xl md:text-4xl text-foreground mt-4">
                 Das biete ich <span className="text-gradient-primary">außerdem</span> an
               </h2>
@@ -261,7 +278,8 @@ const Leistungen = () => {
                 Nicht sicher, was zu dir passt?
               </h2>
               <p className="text-muted-foreground font-body mb-8 text-lg">
-                Kein Problem. In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Option für deine Situation am besten geeignet ist.
+                Kein Problem. In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Option für deine
+                Situation am besten geeignet ist.
               </p>
               <a
                 href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
@@ -269,7 +287,7 @@ const Leistungen = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
                 style={{
-                  boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
+                  boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                 }}
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />

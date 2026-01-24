@@ -45,7 +45,7 @@ const links = [
   {
     title: "Support-Call buchen (197€)",
     description: "Schnelle Hilfe bei HighLevel-Fragen",
-    url: "https://ghl.gaetanoficarra.de/support_call",
+    url: "https://lp.gaetanoficarra.de/support_call",
     internal: false,
   },
 ];
@@ -69,15 +69,13 @@ const LinksPage = () => {
               rel="noopener noreferrer"
               className="inline-block mb-6"
             >
-              <img 
-                src={badge} 
-                alt="GoHighLevel Certified Admin Badge" 
+              <img
+                src={badge}
+                alt="GoHighLevel Certified Admin Badge"
                 className="h-32 md:h-40 w-auto mx-auto hover:scale-105 transition-transform duration-300"
               />
             </a>
-            <h1 className="font-display text-3xl md:text-4xl text-foreground mb-2">
-              Gaetano Ficarra
-            </h1>
+            <h1 className="font-display text-3xl md:text-4xl text-foreground mb-2">Gaetano Ficarra</h1>
             <p className="text-gradient-primary font-display text-xl md:text-2xl font-semibold">
               Zertifizierter GoHighLevel Admin
             </p>
@@ -90,24 +88,22 @@ const LinksPage = () => {
                 key={link.title}
                 href={link.internal ? undefined : link.url}
                 {...(link.internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                onClick={link.internal ? () => window.location.href = link.url : undefined}
+                onClick={link.internal ? () => (window.location.href = link.url) : undefined}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className={`block w-full p-5 rounded-lg border transition-all duration-300 hover:scale-[1.02] ${
-                  link.highlight 
-                    ? 'bg-primary/10 border-primary hover:bg-primary/20' 
-                    : 'bg-card border-border hover:border-primary/50'
+                  link.highlight
+                    ? "bg-primary/10 border-primary hover:bg-primary/20"
+                    : "bg-card border-border hover:border-primary/50"
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className={`font-display text-lg mb-1 ${link.highlight ? 'text-primary' : 'text-foreground'}`}>
+                    <h3 className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}>
                       {link.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm font-body">
-                      {link.description}
-                    </p>
+                    <p className="text-muted-foreground text-sm font-body">{link.description}</p>
                   </div>
                   {link.internal ? (
                     <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
