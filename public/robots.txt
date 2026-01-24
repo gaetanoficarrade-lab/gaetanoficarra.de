@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://gohighlevel-experte.de/sitemap.xml
+Sitemap: https://funnelmate-experte.de/sitemap.xml

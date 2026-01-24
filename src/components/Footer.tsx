@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Facebook, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
+import ghlBadge from "@/assets/ghl-badge.png";
+import funnelmateBadge from "@/assets/funnelmate-certified-expert.png";
 
 const Footer = () => {
   return (
     <footer className="py-16 border-t border-border bg-card">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
@@ -95,6 +97,37 @@ const Footer = () => {
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body"
               >
                 Funnelmate.io
+              </a>
+            </div>
+          </div>
+
+          {/* Certifications */}
+          <div>
+            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Zertifizierungen</h4>
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.gohighlevel.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <img 
+                  src={ghlBadge} 
+                  alt="GoHighLevel Certified Admin" 
+                  className="h-20 w-auto object-contain"
+                />
+              </a>
+              <a 
+                href="https://funnelmate.io/?am_id=gaetano" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <img 
+                  src={funnelmateBadge} 
+                  alt="Funnelmate Certified Expert" 
+                  className="h-20 w-auto object-contain"
+                />
               </a>
             </div>
           </div>
