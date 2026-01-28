@@ -1,56 +1,58 @@
 import { motion } from "framer-motion";
-import { Globe, ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import badge from "@/assets/ghl-badge.png";
-
-const links = [
-  {
-    title: "Meine Website",
-    description: "Entdecke meine Leistungen und Services",
-    url: "/",
-    internal: true,
-  },
-  {
-    title: "HighLevel vs Funnelmate",
-    description: "Detaillierter Vergleich der beiden Plattformen",
-    url: "/highlevel-vs-funnelmate",
-    internal: true,
-  },
-  {
-    title: "Funnelmate 14-Tage-Testphase",
-    description: "Deutsche All-in-One Lösung testen",
-    url: "https://funnelmate.io/?am_id=gaetano",
-    internal: false,
-  },
-  {
-    title: "HighLevel 14-Tage-Testphase",
-    description: "Internationale All-in-One Lösung testen",
-    url: "https://www.gohighlevel.com/14-day-trial?fp_ref=gaetano",
-    internal: false,
-  },
-  {
-    title: "Patrick Mentler (Partner)",
-    description: "Mein Partner für Marketing & Business",
-    url: "https://patrickmentler.de/?am_id=gaetano",
-    internal: false,
-  },
-  {
-    title: "Kostenloses Erstgespräch",
-    description: "Buche jetzt deinen Termin",
-    url: "https://lp.gaetanoficarra.de/erstgesraech",
-    internal: false,
-    highlight: true,
-  },
-  {
-    title: "Support-Call buchen (197€)",
-    description: "Schnelle Hilfe bei HighLevel-Fragen",
-    url: "https://lp.gaetanoficarra.de/support_call",
-    internal: false,
-  },
-];
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const LinksPage = () => {
+  const { openQuizModal } = useQuizModal();
+
+  const links = [
+    {
+      title: "Meine Website",
+      description: "Entdecke meine Leistungen und Services",
+      url: "/",
+      internal: true,
+    },
+    {
+      title: "HighLevel vs Funnelmate",
+      description: "Detaillierter Vergleich der beiden Plattformen",
+      url: "/highlevel-vs-funnelmate",
+      internal: true,
+    },
+    {
+      title: "Funnelmate 14-Tage-Testphase",
+      description: "Deutsche All-in-One Lösung testen",
+      url: "https://funnelmate.io/?am_id=gaetano",
+      internal: false,
+    },
+    {
+      title: "HighLevel 14-Tage-Testphase",
+      description: "Internationale All-in-One Lösung testen",
+      url: "https://www.gohighlevel.com/14-day-trial?fp_ref=gaetano",
+      internal: false,
+    },
+    {
+      title: "Patrick Mentler (Partner)",
+      description: "Mein Partner für Marketing & Business",
+      url: "https://patrickmentler.de/?am_id=gaetano",
+      internal: false,
+    },
+    {
+      title: "Kostenloses Erstgespräch",
+      description: "Buche jetzt deinen Termin",
+      isQuizModal: true,
+      highlight: true,
+    },
+    {
+      title: "Support-Call buchen (197€)",
+      description: "Schnelle Hilfe bei HighLevel-Fragen",
+      url: "https://lp.gaetanoficarra.de/support_call",
+      internal: false,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -83,36 +85,65 @@ const LinksPage = () => {
 
           {/* Links Grid */}
           <div className="space-y-4">
-            {links.map((link, index) => (
-              <motion.a
-                key={link.title}
-                href={link.url}
-                target={link.internal ? "_self" : "_blank"}
-                rel={link.internal ? undefined : "noopener noreferrer"}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`block w-full p-5 rounded-lg border transition-all duration-300 hover:scale-[1.02] text-left ${
-                  link.highlight
-                    ? "bg-primary/10 border-primary hover:bg-primary/20"
-                    : "bg-card border-border hover:border-primary/50"
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}>
-                      {link.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm font-body">{link.description}</p>
+            {links.map((link, index) => {
+              if (link.isQuizModal) {
+                return (
+                  <motion.button
+                    key={link.title}
+                    onClick={openQuizModal}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className={`block w-full p-5 rounded-lg border transition-all duration-300 hover:scale-[1.02] text-left ${
+                      link.highlight
+                        ? "bg-primary/10 border-primary hover:bg-primary/20"
+                        : "bg-card border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}>
+                          {link.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm font-body">{link.description}</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
+                    </div>
+                  </motion.button>
+                );
+              }
+
+              return (
+                <motion.a
+                  key={link.title}
+                  href={link.url}
+                  target={link.internal ? "_self" : "_blank"}
+                  rel={link.internal ? undefined : "noopener noreferrer"}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className={`block w-full p-5 rounded-lg border transition-all duration-300 hover:scale-[1.02] text-left ${
+                    link.highlight
+                      ? "bg-primary/10 border-primary hover:bg-primary/20"
+                      : "bg-card border-border hover:border-primary/50"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}>
+                        {link.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm font-body">{link.description}</p>
+                    </div>
+                    {link.internal ? (
+                      <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
+                    ) : (
+                      <ExternalLink className="w-5 h-5 text-primary flex-shrink-0" />
+                    )}
                   </div>
-                  {link.internal ? (
-                    <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
-                  ) : (
-                    <ExternalLink className="w-5 h-5 text-primary flex-shrink-0" />
-                  )}
-                </div>
-              </motion.a>
-            ))}
+                </motion.a>
+              );
+            })}
           </div>
         </div>
       </main>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Shield, Clock, Database } from "lucide-react";
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const migrationTools = [
   { name: "ClickFunnels", keyword: "ClickFunnels Alternative deutsch" },
@@ -18,6 +19,7 @@ const migrationTools = [
 const Migration = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { openQuizModal } = useQuizModal();
 
   return (
     <section className="py-24 md:py-32 bg-card relative" ref={ref}>
@@ -104,14 +106,12 @@ const Migration = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mt-16"
           >
-            <a
-              href="https://lp.gaetanoficarra.de/erstgesraech"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openQuizModal}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
             >
               Migration besprechen <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>

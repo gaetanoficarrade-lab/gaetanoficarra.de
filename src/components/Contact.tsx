@@ -3,10 +3,12 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Mail, MapPin, Phone, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { openQuizModal } = useQuizModal();
 
   return (
     <section id="kontakt" className="py-32 relative" ref={ref}>
@@ -43,17 +45,15 @@ const Contact = () => {
               In 15-30 Minuten besprechen wir deine aktuelle Situation, deine Ziele und wie ich dir helfen kann.
               Komplett unverbindlich.
             </p>
-            <a
-              href="https://lp.gaetanoficarra.de/erstgesraech"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openQuizModal}
               className="inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
               style={{
                 boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
               }}
             >
               Termin vereinbaren
-            </a>
+            </button>
           </motion.div>
 
           {/* Support Call Hint */}

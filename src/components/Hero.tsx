@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import portrait from "@/assets/gaetano-portrait.jpg";
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const Hero = () => {
+  const { openQuizModal } = useQuizModal();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background gradient overlay */}
@@ -63,10 +66,8 @@ const Hero = () => {
               className="flex flex-wrap gap-4"
             >
               <div className="flex flex-col items-start sm:items-start">
-                <a
-                  href="https://lp.gaetanoficarra.de/erstgesraech"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={openQuizModal}
                   className="group relative inline-flex items-center justify-center px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
                   style={{
                     boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
@@ -74,7 +75,7 @@ const Hero = () => {
                 >
                   <span className="relative z-10">Jetzt Erstgespräch vereinbaren</span>
                   <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                </a>
+                </button>
                 <span className="text-muted-foreground text-xs sm:text-sm font-body mt-3 max-w-[280px] sm:max-w-none">
                   Kurz sprechen, Setup verstehen, nächsten Schritt klären
                 </span>

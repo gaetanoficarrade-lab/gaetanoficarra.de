@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const mainServices = [
   {
@@ -39,7 +40,7 @@ const mainServices = [
       { icon: Sparkles, text: "Best Practices aus 3+ Jahren Erfahrung" },
     ],
     cta: "Projekt anfragen",
-    ctaLink: "https://lp.gaetanoficarra.de/erstgesraech",
+    ctaType: "erstgespraech" as const,
     popular: true,
     price: "Auf Anfrage",
     priceNote: "Individuell nach Projektumfang",
@@ -65,7 +66,7 @@ const mainServices = [
       { icon: Sparkles, text: "Perfekt für Hands-on-Typen" },
     ],
     cta: "Sessions buchen",
-    ctaLink: "https://lp.gaetanoficarra.de/erstgesraech",
+    ctaType: "erstgespraech" as const,
     popular: false,
     price: "Auf Anfrage",
     priceNote: "Nach Anzahl der Sessions",
@@ -90,7 +91,7 @@ const mainServices = [
       { icon: Sparkles, text: "Aufnahme zum Nachschauen" },
     ],
     cta: "Call buchen",
-    ctaLink: "https://lp.gaetanoficarra.de/support_call",
+    ctaType: "support" as const,
     popular: false,
     price: "197€",
     priceNote: "Pro Stunde",
@@ -125,6 +126,16 @@ const additionalServices = [
 ];
 
 const Leistungen = () => {
+  const { openQuizModal } = useQuizModal();
+
+  const handleCTAClick = (ctaType: "erstgespraech" | "support") => {
+    if (ctaType === "erstgespraech") {
+      openQuizModal();
+    } else {
+      window.open("https://lp.gaetanoficarra.de/support_call", "_blank");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -200,14 +211,12 @@ const Leistungen = () => {
                             <p className="font-display text-3xl text-primary">{service.price}</p>
                             <p className="text-muted-foreground text-sm font-body">{service.priceNote}</p>
                           </div>
-                          <a
-                            href={service.ctaLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <button
+                            onClick={() => handleCTAClick(service.ctaType)}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
                           >
                             {service.cta} <ArrowRight className="w-4 h-4" />
-                          </a>
+                          </button>
                         </div>
                       </div>
 
@@ -281,17 +290,15 @@ const Leistungen = () => {
                 Kein Problem. In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Option für deine
                 Situation am besten geeignet ist.
               </p>
-              <a
-                href="https://lp.gaetanoficarra.de/erstgesraech"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openQuizModal}
                 className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
                 style={{
                   boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                 }}
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>

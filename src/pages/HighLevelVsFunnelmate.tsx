@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Check, X, ArrowRight, Globe, Users, Euro, Headphones } from "lucide-react";
+import { Check, ArrowRight, Globe, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const comparisonData = [
   { feature: "CRM & Pipeline Management", alternative: "HubSpot / Pipedrive", cost: "~50€/Mo" },
@@ -16,16 +17,9 @@ const comparisonData = [
   { feature: "Bewertungen & Reputation", alternative: "Trustpilot / ProvenExpert", cost: "~30€/Mo" },
 ];
 
-const platformComparison = [
-  { aspect: "Sprache", highlevel: "Englisch", funnelmate: "Deutsch" },
-  { aspect: "Support", highlevel: "Englisch (Chat/Email)", funnelmate: "Deutsch (Chat/Zoom/Community)" },
-  { aspect: "Community", highlevel: "Facebook (EN)", funnelmate: "Facebook + Slack (DE)" },
-  { aspect: "Preis ab", highlevel: "$97/Mo", funnelmate: "€129/Mo" },
-  { aspect: "Lokalisierung", highlevel: "International", funnelmate: "DACH-Region" },
-  { aspect: "Rechtliches", highlevel: "US-Standard", funnelmate: "DSGVO-konform" },
-];
-
 const HighLevelVsFunnelmate = () => {
+  const { openQuizModal } = useQuizModal();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -92,7 +86,7 @@ const HighLevelVsFunnelmate = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {comparisonData.map((row, index) => (
+                    {comparisonData.map((row) => (
                       <tr key={row.feature} className="border-b border-border/50 hover:bg-card/50 transition-colors">
                         <td className="py-4 px-4 font-body text-foreground">{row.feature}</td>
                         <td className="py-4 px-4 font-body text-muted-foreground">{row.alternative}</td>
@@ -216,14 +210,12 @@ const HighLevelVsFunnelmate = () => {
                 In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Plattform am besten zu deinen
                 Anforderungen passt.
               </p>
-              <a
-                href="https://lp.gaetanoficarra.de/erstgesraech"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openQuizModal}
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300"
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>

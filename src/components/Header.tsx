@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import { useQuizModal } from "@/context/QuizModalContext";
 
 const navItems = [
   { label: "Home", href: "/", isAnchor: false },
@@ -14,6 +15,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { openQuizModal } = useQuizModal();
 
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
@@ -76,14 +78,12 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
-          <a
-            href="https://lp.gaetanoficarra.de/erstgesraech"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={openQuizModal}
             className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md"
           >
             Termin buchen
-          </a>
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -119,15 +119,15 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href="https://lp.gaetanoficarra.de/erstgesraech"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  openQuizModal();
+                }}
                 className="bg-primary text-primary-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 text-center mt-4 rounded-md"
               >
                 Termin buchen
-              </a>
+              </button>
             </div>
           </motion.nav>
         )}
