@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, CheckCircle, ArrowRight } from "lucide-react";
+import funnelGuidePreview from "@/assets/funnel-guide-preview.png";
 
 const ExitIntentPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ const ExitIntentPopup = () => {
   const closePopup = () => setIsOpen(false);
 
   const features = [
-    "Funnel-Plan in 15 Minuten erstellen",
+    "Funnel-Plan in 15 Minuten",
     "KI-gestützte Textgenerierung",
     "Fertige Checklisten & Templates"
   ];
@@ -70,7 +71,7 @@ const ExitIntentPopup = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f0f23] border border-white/10 shadow-2xl"
+            className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f0f23] border border-white/10 shadow-2xl"
           >
             {/* Gradient Accent Top */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
@@ -88,25 +89,19 @@ const ExitIntentPopup = () => {
             </button>
 
             {/* Content */}
-            <div className="relative p-8 text-center">
+            <div className="relative p-6 md:p-8">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 mb-6">
-                <Sparkles className="w-4 h-4 text-purple-400" />
-                <span className="text-sm font-medium text-white/80">
-                  Bevor du gehst...
-                </span>
-              </div>
-
-              {/* Logo/Icon */}
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" strokeLinejoin="round" />
-                  <path d="M13 13l6 6" strokeLinecap="round" />
-                </svg>
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10">
+                  <Sparkles className="w-4 h-4 text-purple-400" />
+                  <span className="text-sm font-medium text-white/80">
+                    Bevor du gehst...
+                  </span>
+                </div>
               </div>
 
               {/* Headline */}
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 text-center">
                 Kennst du schon den{" "}
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Funnel Guide
@@ -115,43 +110,61 @@ const ExitIntentPopup = () => {
               </h2>
 
               {/* Subheadline */}
-              <p className="text-white/60 text-lg mb-6 max-w-md mx-auto">
+              <p className="text-white/60 text-center mb-5 max-w-md mx-auto">
                 Erstelle deinen kompletten Funnel-Plan in nur 15 Minuten – mit KI-Power.
               </p>
 
-              {/* Features */}
-              <div className="space-y-3 mb-8">
+              {/* Preview Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="relative mb-5 rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-purple-500/20"
+              >
+                <img 
+                  src={funnelGuidePreview} 
+                  alt="Funnel Guide Tool Preview" 
+                  className="w-full h-auto"
+                />
+                {/* Gradient Overlay unten */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#16213e] to-transparent" />
+              </motion.div>
+
+              {/* Features - horizontal on desktop */}
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + index * 0.1 }}
-                    className="flex items-center justify-center gap-3 text-white/80"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    className="flex items-center gap-2 text-white/80 text-sm"
                   >
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                     <span>{feature}</span>
                   </motion.div>
                 ))}
               </div>
 
               {/* CTA Button */}
-              <motion.a
-                href="https://funnelguide.funnelmate-experte.de/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-shadow"
-              >
-                Kostenlos ausprobieren
-                <ArrowRight className="w-5 h-5" />
-              </motion.a>
+              <div className="text-center">
+                <motion.a
+                  href="https://funnelguide.funnelmate-experte.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-shadow"
+                >
+                  Kostenlos ausprobieren
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
 
-              {/* Secondary Text */}
-              <p className="text-white/40 text-sm mt-4">
-                100% kostenlos • Keine Kreditkarte nötig
-              </p>
+                {/* Secondary Text */}
+                <p className="text-white/40 text-sm mt-3">
+                  100% kostenlos • Keine Kreditkarte nötig
+                </p>
+              </div>
             </div>
           </motion.div>
         </motion.div>
