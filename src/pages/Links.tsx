@@ -22,6 +22,12 @@ const LinksPage = () => {
       internal: true,
     },
     {
+      title: "Funnel-Guide für kurze Zeit Gratis",
+      description: "Hol dir jetzt den kostenlosen Funnel-Guide",
+      url: "https://funnelguide.funnelmate-experte.de/",
+      internal: false,
+    },
+    {
       title: "Funnelmate 14-Tage-Testphase",
       description: "Deutsche All-in-One Lösung testen",
       url: "https://funnelmate.io/?am_id=gaetano",
@@ -36,7 +42,7 @@ const LinksPage = () => {
     {
       title: "Patrick Mentler (Partner)",
       description: "Mein Partner für Marketing & Business",
-      url: "https://patrickmentler.de/?am_id=gaetano",
+      url: "https://funnelmate.io/?am_id=gaetano",
       internal: false,
     },
     {
