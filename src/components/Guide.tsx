@@ -56,7 +56,7 @@ const Guide = () => {
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich sorge dafür, dass dein System verständlich aufgebaut ist, stabil läuft und ohne ständiges Nachjustieren funktioniert – als Grundlage für planbares Wachstum.
+                Ich sorge dafür, dass dein System verständlich aufgebaut ist, stabil läuft und ohne ständiges Nachjustieren funktioniert, als Grundlage für planbares Wachstum.
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
