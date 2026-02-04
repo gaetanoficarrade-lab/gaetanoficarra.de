@@ -48,7 +48,7 @@ const Guide = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich bin Gaetano Ficarra. Meine Aufgabe ist es, dir ein zentrales Marketing-System aufzubauen, das zuverlässig funktioniert – damit du dich auf Kunden, Umsatz und Wachstum konzentrieren kannst.
+                Ich bin Gaetano Ficarra. Meine Aufgabe ist es, dir ein zentrales Marketing-System aufzubauen, das zuverlässig funktioniert, damit du dich auf Kunden, Umsatz und Wachstum konzentrieren kannst.
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
