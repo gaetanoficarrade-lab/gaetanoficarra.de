@@ -41,8 +41,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Mehr Zeit für dein <span className="text-gradient-primary">Wachstum</span>
-              und <span className="text-gradient-primary">volle Kontrolle</span>
+              Mehr Zeit für dein <span className="text-gradient-primary">Wachstum </span>
+              und <span className="text-gradient-primary">volle Kontrolle </span>
               durch ein sauber aufgebautes Business-System!
             </motion.h1>
 
