@@ -20,10 +20,10 @@ import { useQuizModal } from "@/context/QuizModalContext";
 const mainServices = [
   {
     icon: Settings,
-    title: "Done-For-You Setup",
+    title: "Komplett-Setup",
     subtitle: "Ich mache alles für dich",
     description:
-      "Du lehnst dich zurück, ich baue dein komplettes Marketing-System. Von der ersten Landingpage bis zur letzten Automation – alles wird professionell eingerichtet und optimiert.",
+      "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     features: [
       "Komplette GoHighLevel Einrichtung von A bis Z",
       "Funnels, Landingpages & Webseiten",
@@ -35,11 +35,11 @@ const mainServices = [
       "30 Tage Support nach Projektabschluss",
     ],
     benefits: [
-      { icon: Clock, text: "Spart dir Wochen an Einarbeitungszeit" },
-      { icon: Shield, text: "Professionelle Umsetzung ohne Fehler" },
-      { icon: Sparkles, text: "Best Practices aus 3+ Jahren Erfahrung" },
+      { icon: Clock, text: "Du arbeitest mit einem vollständig eingerichteten System" },
+      { icon: Shield, text: "Routineaufgaben laufen im Hintergrund" },
+      { icon: Sparkles, text: "Technikfragen spielen im Alltag keine Rolle mehr" },
     ],
-    cta: "Projekt anfragen",
+    cta: "System-Analyse starten",
     ctaType: "erstgespraech" as const,
     popular: true,
     price: "Auf Anfrage",
@@ -47,10 +47,10 @@ const mainServices = [
   },
   {
     icon: Users,
-    title: "Done-With-You Live",
-    subtitle: "Wir bauen es gemeinsam",
+    title: "Gemeinsam aufbauen",
+    subtitle: "Wir bauen es zusammen",
     description:
-      "Du willst lernen, wie HighLevel funktioniert, während du es einrichtest? In Live-Sessions arbeiten wir gemeinsam an deinem System. Du stellst Fragen, ich zeige dir alles.",
+      "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
     features: [
       "Live Zusammenarbeit per Video-Call",
       "Du lernst während wir bauen",
@@ -61,11 +61,11 @@ const mainServices = [
       "60 Tage Support nach Projektabschluss",
     ],
     benefits: [
-      { icon: Clock, text: "Du verstehst dein System vollständig" },
-      { icon: Shield, text: "Kannst später selbst Änderungen machen" },
-      { icon: Sparkles, text: "Perfekt für Hands-on-Typen" },
+      { icon: Clock, text: "Du verstehst, wie dein System funktioniert" },
+      { icon: Shield, text: "Änderungen kannst du sicher einschätzen" },
+      { icon: Sparkles, text: "Alle Abläufe sind dokumentiert und nachvollziehbar" },
     ],
-    cta: "Sessions buchen",
+    cta: "System-Analyse starten",
     ctaType: "erstgespraech" as const,
     popular: false,
     price: "Auf Anfrage",
@@ -76,7 +76,7 @@ const mainServices = [
     title: "Support-Call",
     subtitle: "Schnelle Hilfe bei Problemen",
     description:
-      "Steckst du fest? Funktioniert etwas nicht? Hast du eine spezifische Frage? Buche einen Support-Call und ich löse dein Problem schnell und unkompliziert.",
+      "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
     features: [
       "1:1 Video-Call mit Bildschirmfreigabe",
       "Problemlösung in Echtzeit",
@@ -86,9 +86,9 @@ const mainServices = [
       "Nachbereitung per E-Mail",
     ],
     benefits: [
-      { icon: Clock, text: "Sofortige Hilfe ohne lange Wartezeit" },
-      { icon: Shield, text: "Experten-Wissen für dein spezifisches Problem" },
-      { icon: Sparkles, text: "Aufnahme zum Nachschauen" },
+      { icon: Clock, text: "Du bekommst eine klare Antwort auf dein konkretes Problem" },
+      { icon: Shield, text: "Lösungen statt langem Suchen" },
+      { icon: Sparkles, text: "Direkte Umsetzung im Call" },
     ],
     cta: "Call buchen",
     ctaType: "support" as const,
@@ -297,7 +297,7 @@ const Leistungen = () => {
                   boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                 }}
               >
-                Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
+                System-Analyse starten <ArrowRight className="w-4 h-4" />
               </button>
             </motion.div>
           </div>
