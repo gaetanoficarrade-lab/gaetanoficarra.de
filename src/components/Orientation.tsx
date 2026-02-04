@@ -42,7 +42,7 @@ const Orientation = () => {
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
               Du willst keine neuen Tools lernen, keine Systeme vergleichen und nicht an Technik basteln. Du willst ein zentrales Setup,
-              das zuverlässig Leads sammelt, Termine koordiniert und Follow-ups automatisiert. Genau das baue ich für dich.
+              das zuverlässig Leads sammelt, Termine koordiniert und Follow-ups zuverlässig abbildet. Genau das baue ich für dich.
             </p>
           </motion.div>
 

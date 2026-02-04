@@ -48,18 +48,19 @@ const Guide = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich bin Gaetano Ficarra, zertifizierter GoHighLevel Admin. Meine Aufgabe ist es, dir ein System aufzubauen,
-                das zuverlässig funktioniert, damit du dich auf Kunden und Umsatz konzentrieren kannst.
+                Ich bin Gaetano Ficarra. Meine Aufgabe ist es, dir ein zentrales Marketing-System aufzubauen, das zuverlässig funktioniert – damit du dich auf Kunden, Umsatz und Wachstum konzentrieren kannst.
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Du sollst keine Tools lernen, keine Technik basteln und keine Schnittstellen debuggen. Das ist mein Job.
-                Ich denke in Prozessen und baue dir ein zentrales Setup, das Leads sammelt, Termine koordiniert und Follow-ups automatisiert.
+                Du sollst keine neuen Tools lernen, keine Technik basteln und keine Schnittstellen debuggen. Das ist mein Job. Ich denke in Prozessen und setze dir ein sauberes Setup auf, in dem Leads, Termine und Follow-ups klar strukturiert zusammenlaufen.
+              </p>
+
+              <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
+                Ich sorge dafür, dass dein System verständlich aufgebaut ist, stabil läuft und ohne ständiges Nachjustieren funktioniert – als Grundlage für planbares Wachstum.
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
-                Mit Erfahrung in Migration, komplexer Automatisierung und DSGVO-konformer Einrichtung bringe ich Ordnung
-                in dein Business, sodass du endlich planbar wachsen kannst.
+                Als zertifizierter GoHighLevel Admin mit Erfahrung in Migration, komplexen Automationen und DSGVO-konformer Einrichtung stelle ich sicher, dass dein System nicht nur heute funktioniert, sondern auch langfristig tragfähig ist.
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border">

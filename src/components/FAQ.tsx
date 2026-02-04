@@ -9,40 +9,40 @@ import { HelpCircle } from "lucide-react";
 const FAQ = () => {
   const faqs = [
     {
-      question: "Was genau macht ein zertifizierter GoHighLevel Admin?",
-      answer: "Ich bin der technische Architekt deines Business. Während andere nur die Oberfläche nutzen, baue ich im Hintergrund die Logik in Funnelmate: Komplexe Workflows, API-Verknüpfungen und Sales-Pipelines. Ich nehme dir die Technik ab, damit du dich auf dein Kerngeschäft konzentrieren kannst."
+      question: "Brauche ich technisches Vorwissen für die Bedienung?",
+      answer: "Nein. Du musst kein technisches Vorwissen mitbringen. Ich richte das System so ein, dass es für dich verständlich und nutzbar ist. Du bekommst eine Einführung und auf Wunsch auch weitere Unterstützung, falls später Fragen auftauchen."
     },
     {
       question: "Ich nutze bereits Tools wie ClickFunnels oder ActiveCampaign. Kann ich meine Daten umziehen?",
-      answer: "Ja, absolut. Ein Schwerpunkt meiner Arbeit ist die Migration. Ich helfe dir dabei, Kontakte, Tags und Listen sicher in dein neues Funnelmate-Setup (basierend auf GHL) zu übertragen – ohne Datenverlust oder Unterbrechung."
+      answer: "Ja. Bestehende Kontakte, Listen, Tags, Automationen und grundlegende Strukturen können in der Regel übernommen werden. Die Migration erfolgt geplant und kontrolliert, sodass dein laufendes Business davon nicht beeinträchtigt wird."
     },
     {
       question: "Ist das System in Deutschland DSGVO-orientiert nutzbar?",
-      answer: "Ja. Ich schaffe die technische Basis, damit Funnelmate unter Berücksichtigung gängiger Anforderungen der deutschen Datenschutzbestimmungen genutzt werden kann – beispielsweise durch Double-Opt-In-Verfahren. Wichtig: Dies stellt keine Rechtsberatung dar."
+      answer: "Ja. Die technische Plattform erfüllt mit Zertifizierungen wie ISO 27001 hohe Sicherheitsstandards. Entscheidend ist jedoch immer die korrekte Nutzung. Ich achte bei der Einrichtung darauf, dass Prozesse, Datenflüsse und Einstellungen DSGVO-orientiert umgesetzt werden. Die rechtliche Verantwortung liegt am Ende beim Nutzer, wie bei jedem anderen Tool auch."
     },
     {
       question: "Ersetzt Funnelmate wirklich alle meine bisherigen Software-Abos?",
-      answer: "In fast allen Fällen: Ja. Da Funnelmate die Infrastruktur von GoHighLevel nutzt, ersetzt es CRM, Mail-Tools, Funnel-Builder, Termin-Buchungssysteme und Kursplattformen."
-    },
-    {
-      question: "Brauche ich technisches Vorwissen für die Bedienung?",
-      answer: "Nein. Mein Ziel sind fertige Ready-to-use-Systeme. Du erhältst eine Einweisung in dein individuelles Setup, damit du die täglichen Aufgaben ohne IT-Kenntnisse im Griff hast."
-    },
-    {
-      question: "Warum ein externer Admin statt offizieller GoHighLevel-Support?",
-      answer: "Der offizielle Support ist englischsprachig und auf allgemeine Fragen ausgerichtet. Ich biete individuelle, deutschsprachige Lösungen, die exakt auf dein Business zugeschnitten sind."
+      answer: "In den meisten Fällen ja. Funnelmate ersetzt typischerweise CRM-Systeme, E-Mail-Tools, Funnel-Builder, Terminbuchungssysteme und einfache Kursplattformen. Spezialtools können im Einzelfall weiterhin sinnvoll sein, sind aber oft nicht mehr notwendig."
     },
     {
       question: "Wie lange dauert eine komplette System-Einrichtung?",
-      answer: "Das hängt vom Umfang ab. Ein Basis-Setup mit CRM, Kalender und E-Mail-Automatisierung ist in 1-2 Wochen erledigt. Komplexere Projekte mit Mitgliederbereichen und API-Integrationen brauchen 2-3 Wochen."
+      answer: "Das hängt vom Umfang ab. Ein Basis-Setup mit CRM, Kalender und E-Mail-Automatisierung ist meist innerhalb von ein bis zwei Wochen umgesetzt. Größere Setups mit Mitgliedsbereichen oder Integrationen benötigen entsprechend mehr Zeit. Die grundlegende Struktur steht jedoch oft schon nach wenigen Tagen."
+    },
+    {
+      question: "Warum ein externer Admin statt offizieller GoHighLevel-Support?",
+      answer: "Der offizielle Support ist englischsprachig und auf allgemeine Fragen ausgerichtet. Ich biete dir eine individuelle, deutschsprachige Umsetzung, die direkt auf dein Business zugeschnitten ist. Außerdem bekommst du nicht nur Antworten, sondern konkrete Lösungen, die ich auch umsetze – und das in der Regel deutlich schneller."
+    },
+    {
+      question: "Was genau macht ein zertifizierter GoHighLevel Admin?",
+      answer: "Ich bin der technische Architekt deines Systems. Ich plane und baue die Logik im Hintergrund: Workflows, Automationen, Pipelines und Integrationen. Du nutzt am Ende ein funktionierendes System, ohne dich mit der Technik beschäftigen zu müssen."
     },
     {
       question: "Kann ich Funnelmate mit meiner WordPress-Seite verbinden?",
-      answer: "Ja, problemlos. Formulare, Kalender und Chat-Widgets lassen sich über einfache Code-Snippets einbinden. Falls du eine komplett neue Seite brauchst, kann ich diese auch direkt in Funnelmate erstellen."
+      answer: "Ja, problemlos. Formulare, Kalender oder andere Elemente lassen sich einfach in bestehende WordPress-Seiten integrieren. Alternativ können Seiten auch direkt innerhalb des Systems abgebildet werden, wenn das sinnvoll ist."
     },
     {
       question: "Was sind Snapshots und warum sollten mich diese interessieren?",
-      answer: "Snapshots sind fertige, branchenspezifische Templates. Statt bei Null anzufangen, bekommst du ein vorkonfiguriertes System, das ich genau an deine Bedürfnisse anpasse. Das spart Zeit und Kosten."
+      answer: "Snapshots sind vorbereitete Systemstrukturen und Abläufe. Für dich als Nutzer sind sie kein Thema im Alltag. Relevant ist nur, dass dein System schneller, sauberer und erprobt aufgebaut wird, statt bei null zu starten."
     }
   ];
 

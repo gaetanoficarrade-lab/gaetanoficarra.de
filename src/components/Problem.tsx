@@ -103,7 +103,8 @@ const Problem = () => {
               />
             </div>
             <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
-              Wenn du regelmäßig Anfragen bekommst, aber trotzdem das Gefühl hast, ständig hinterherzurennen, dann liegt es nicht an dir. Es fehlt ein System, das für dich arbeitet.
+              Wenn du regelmäßig Anfragen bekommst, aber trotzdem das Gefühl hast, ständig hinterherzurennen, liegt das nicht an dir.
+              Es fehlt ein zentrales System. Genau das baue ich für dich auf.
             </p>
           </motion.div>
         </div>

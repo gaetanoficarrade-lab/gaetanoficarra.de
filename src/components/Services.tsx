@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Settings, Users, Headphones, ArrowRight, Building2 } from "lucide-react";
+import { Settings, Users, Headphones, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -11,10 +11,10 @@ const services = [
     description:
       "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     benefits: [
-      "Fertig eingerichtet & funktionsfähig",
-      "Alle Prozesse automatisiert",
-      "Kein Technik-Wissen nötig",
-      "30 Tage Support inklusive",
+      "Kein Einarbeiten in neue Tools",
+      "Keine manuelle Nacharbeit mehr",
+      "Keine Technik-Fragen mehr im Alltag",
+      "30 Tage Support – falls doch mal was ist",
     ],
     popular: true,
   },
@@ -24,10 +24,10 @@ const services = [
     description:
       "Wir arbeiten live zusammen an deinem System. Du verstehst, was passiert, kannst Fragen stellen und hast am Ende volle Klarheit.",
     benefits: [
-      "Live Zusammenarbeit",
-      "Volle Transparenz",
-      "Aufnahmen aller Sessions",
-      "60 Tage Support inklusive",
+      "Keine Black Box – du verstehst dein System",
+      "Keine Unsicherheit bei Änderungen",
+      "Alles dokumentiert – kein Wissen geht verloren",
+      "60 Tage Support – du bist nicht allein",
     ],
     popular: false,
   },
@@ -36,7 +36,12 @@ const services = [
     title: "Support-Call",
     description:
       "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
-    benefits: ["1:1 Video-Call", "Bildschirmfreigabe", "Problemlösung in Echtzeit", "Aufnahme des Calls"],
+    benefits: [
+      "Kein langes Suchen nach Lösungen",
+      "Kein Warten auf Support-Tickets",
+      "Kein Rätselraten – klare Antworten",
+      "Problem gelöst – du kannst weitermachen",
+    ],
     popular: false,
   },
 ];
@@ -110,51 +115,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* SaaS Provider Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="max-w-4xl mx-auto mb-16"
-        >
-          <div className="bg-gradient-to-br from-background to-muted/20 border border-primary/20 p-10 md:p-12 rounded-lg">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                <Building2 className="w-7 h-7 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-display text-2xl md:text-3xl text-foreground">
-                  Für <span className="text-gradient-primary">SaaS-Anbieter</span>
-                </h3>
-                <p className="text-muted-foreground text-sm font-body">White-Label & Custom Solutions</p>
-              </div>
-            </div>
-
-            <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-              Du bist SaaS-Anbieter und brauchst professionellen Support für deine Kunden? Ich übernehme das für dich:
-            </p>
-
-            <ul className="space-y-4 mb-8">
-              {[
-                "Regelmäßige Q&A Calls mit deinen Endkunden",
-                "Technischer & strategischer Support für deine Nutzer",
-                "Troubleshooting & Problemlösung",
-                "Professioneller Kundensupport für dein SaaS-Produkt",
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="flex items-start gap-3 text-foreground font-body"
-                >
-                  <span className="text-primary mt-1">✓</span>
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
 
         {/* CTA */}
         <motion.div

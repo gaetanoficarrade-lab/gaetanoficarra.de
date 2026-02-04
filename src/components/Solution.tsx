@@ -9,32 +9,32 @@ const features = [
   {
     icon: Users,
     title: "CRM",
-    description: "Alle Kontakte, Leads und Kunden an einem Ort. Keine verstreuten Listen mehr.",
+    description: "Kein manuelles Pflegen von Kontaktlisten. Leads, Kunden und Anfragen sind automatisch sauber erfasst.",
   },
   {
     icon: Mail,
     title: "E-Mail-Marketing",
-    description: "Newsletter, Sequenzen und Automationen ohne externes Tool.",
+    description: "Kein Copy-Paste zwischen Tools. Newsletter und Sequenzen laufen im Hintergrund – ohne dein Zutun.",
   },
   {
     icon: LayoutTemplate,
     title: "Funnel-Builder",
-    description: "Landing Pages, Sales Funnels und Opt-in-Seiten. Alles integriert.",
+    description: "Keine externen Page-Builder mehr. Landing Pages und Funnels sind direkt im System – du musst dich um nichts kümmern.",
   },
   {
     icon: Calendar,
     title: "Terminbuchung",
-    description: "Calendly-Alternative direkt im System. Sync mit deinem Kalender.",
+    description: "Keine Terminabsprache mehr per Mail. Interessenten buchen selbst – du bekommst nur noch Kalendereinträge.",
   },
   {
     icon: GraduationCap,
     title: "Mitgliederbereiche",
-    description: "Online-Kurse und geschützte Inhalte ohne Kajabi oder Coachy.",
+    description: "Keine Extra-Plattform für Kurse. Inhalte sind geschützt abrufbar – ohne zusätzliche Logins oder Zugänge zu verwalten.",
   },
   {
     icon: Workflow,
     title: "Automatisierungen",
-    description: "Komplexe Workflows, die Leads qualifizieren und Kunden betreuen.",
+    description: "Kein manuelles Nachfassen. Follow-ups, Erinnerungen und Abläufe passieren automatisch – du bist raus.",
   },
 ];
 
