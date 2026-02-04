@@ -23,7 +23,7 @@ const services = [
     icon: Users,
     title: "Gemeinsam aufbauen",
     description:
-      "Wir arbeiten live zusammen an deinem System. Du verstehst, was passiert, kannst Fragen stellen und hast am Ende volle Klarheit.",
+      "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
     benefits: [
       "Du verstehst, wie dein System funktioniert",
       "Änderungen kannst du sicher einschätzen",
