@@ -53,10 +53,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
             >
-              Gewinne täglich neue Leads und Kunden mit einer All-in-One-Lösung, die dein Marketing-Chaos beendet.
-              Verabschiede dich von manueller Listenpflege und fehlerhaften Tool-Schnittstellen. Ich richte dir mit
-              Funnelmate (powered by HighLevel) ein Marketing-Setup ein, das reibungslos läuft und dein Online-Business
-              planbar skaliert.
+              Ich helfe dir, Leads, Termine und Follow-ups sauber zu organisieren, indem ich dir ein zentrales
+              Marketing-System aufsetze, das ohne manuelle Prozesse funktioniert.
             </motion.p>
 
             {/* CTA */}
