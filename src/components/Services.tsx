@@ -11,10 +11,11 @@ const services = [
     description:
       "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     benefits: [
-      "Kein Einarbeiten in neue Tools",
-      "Keine manuelle Nacharbeit mehr",
-      "Keine Technik-Fragen mehr im Alltag",
-      "30 Tage Support – falls doch mal was ist",
+      "Du arbeitest mit einem vollständig eingerichteten System",
+      "Routineaufgaben laufen im Hintergrund",
+      "Technikfragen spielen im Alltag keine Rolle mehr",
+      "Du kannst dich auf Kunden und Umsatz konzentrieren",
+      "30 Tage Support für Anpassungen und Fragen",
     ],
     popular: true,
   },
@@ -24,10 +25,11 @@ const services = [
     description:
       "Wir arbeiten live zusammen an deinem System. Du verstehst, was passiert, kannst Fragen stellen und hast am Ende volle Klarheit.",
     benefits: [
-      "Keine Black Box – du verstehst dein System",
-      "Keine Unsicherheit bei Änderungen",
-      "Alles dokumentiert – kein Wissen geht verloren",
-      "60 Tage Support – du bist nicht allein",
+      "Du verstehst, wie dein System funktioniert",
+      "Änderungen kannst du sicher einschätzen",
+      "Alle Abläufe sind dokumentiert und nachvollziehbar",
+      "Wissen bleibt bei dir und geht nicht verloren",
+      "60 Tage Support für Rückfragen und Feinschliff",
     ],
     popular: false,
   },
@@ -37,10 +39,10 @@ const services = [
     description:
       "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
     benefits: [
-      "Kein langes Suchen nach Lösungen",
-      "Kein Warten auf Support-Tickets",
-      "Kein Rätselraten – klare Antworten",
-      "Problem gelöst – du kannst weitermachen",
+      "Du bekommst eine klare Antwort auf dein konkretes Problem",
+      "Lösungen statt langem Suchen",
+      "Direkte Umsetzung im Call",
+      "Du kannst danach sofort weitermachen",
     ],
     popular: false,
   },
