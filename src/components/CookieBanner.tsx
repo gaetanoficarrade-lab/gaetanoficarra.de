@@ -39,11 +39,13 @@ const CookieBanner = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentWithTimestamp));
     setIsVisible(false);
 
-    // Enable/disable analytics based on consent
-    if (newConsent.analytics && typeof window !== 'undefined') {
-      // Google Analytics is already loaded, this just tracks consent
-      window.gtag?.('consent', 'update', {
-        analytics_storage: 'granted',
+    // Update Google Analytics consent
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: newConsent.analytics ? 'granted' : 'denied',
+        ad_storage: newConsent.marketing ? 'granted' : 'denied',
+        ad_user_data: newConsent.marketing ? 'granted' : 'denied',
+        ad_personalization: newConsent.marketing ? 'granted' : 'denied',
       });
     }
   };
