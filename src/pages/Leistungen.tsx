@@ -93,7 +93,7 @@ const mainServices = [
     cta: "Call buchen",
     ctaType: "support" as const,
     popular: false,
-    price: "197€",
+    price: "250€",
     priceNote: "Pro Stunde",
   },
 ];
