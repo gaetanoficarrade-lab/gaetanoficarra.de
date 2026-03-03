@@ -52,7 +52,7 @@ const LinksPage = () => {
       highlight: true,
     },
     {
-      title: "Support-Call buchen (197€)",
+      title: "Support-Call buchen (250€)",
       description: "Schnelle Hilfe bei HighLevel-Fragen",
       url: "https://lp.gaetanoficarra.de/support_call",
       internal: false,
