@@ -25,6 +25,7 @@ const UTMGenerator = lazy(() => import("./pages/UTMGenerator"));
 const Absage = lazy(() => import("./pages/Absage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
+const AdminBlog = lazy(() => import("./pages/AdminBlog"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
