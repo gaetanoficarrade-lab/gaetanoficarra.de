@@ -142,6 +142,36 @@ const Leistungen = () => {
       <SEOHead
         title="GoHighLevel Setup & Funnelmate Einrichtung — Gaetano Ficarra"
         description="Professionelles GoHighLevel Setup für dein Business. CRM-Aufbau, Funnel-Erstellung & Automation-Konfiguration durch zertifizierten Admin in Bielefeld."
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+          { name: "Leistungen", url: "https://gaetanoficarra.de/leistungen" },
+        ]}
+        jsonLd={[
+          {
+            "@type": "Service",
+            "name": "GoHighLevel Komplett-Setup",
+            "description": "Komplette Einrichtung deines GoHighLevel/Funnelmate Systems: CRM, Pipelines, Automationen, Funnels und Integrationen.",
+            "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+            "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
+            "serviceType": "Marketing Automation Setup"
+          },
+          {
+            "@type": "Service",
+            "name": "GoHighLevel Coaching & Begleitung",
+            "description": "Gemeinsamer Systemaufbau mit strategischer und technischer Begleitung durch einen zertifizierten GoHighLevel Admin.",
+            "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+            "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
+            "serviceType": "CRM Consulting"
+          },
+          {
+            "@type": "Service",
+            "name": "GoHighLevel Support-Call",
+            "description": "Individuelle Support-Calls für konkrete Fragen und Probleme mit GoHighLevel oder Funnelmate.",
+            "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+            "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
+            "serviceType": "Technical Support"
+          }
+        ]}
       />
       <Header />
       <main className="pt-24">
