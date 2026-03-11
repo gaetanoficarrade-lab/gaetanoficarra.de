@@ -1,10 +1,15 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Impressum = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Impressum | Gaetano Ficarra"
+        description="Impressum von Gaetano Ficarra – Angaben gemäß § 5 TMG. Kontakt, Adresse und rechtliche Informationen."
+      />
       <Header />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-4xl">

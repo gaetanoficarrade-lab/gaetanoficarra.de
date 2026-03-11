@@ -13,10 +13,16 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Gaetano Ficarra | GoHighLevel & Funnelmate Experte | Marketing Automation"
+        description="Zertifizierter GoHighLevel & Funnelmate Experte. Beseitige dein Software-Chaos mit All-in-One Marketing Automatisierung. Jetzt 14 Tage kostenlos testen!"
+        canonical="https://gaetanoficarra.de/"
+      />
       <Header />
       <main>
         {/* 1. Hero - Vision & Ergebnis */}

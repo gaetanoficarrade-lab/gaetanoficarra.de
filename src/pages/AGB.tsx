@@ -1,9 +1,14 @@
 import Header from "@/components/Header";
+import SEOHead from "@/components/SEOHead";
 import Footer from "@/components/Footer";
 
 const AGB = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="AGB | Gaetano Ficarra"
+        description="Allgemeine Geschäftsbedingungen von Gaetano Ficarra. Geltungsbereich, Leistungsumfang, Vergütung und mehr."
+      />
       <Header />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-4xl">

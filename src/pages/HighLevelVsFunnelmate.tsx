@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEOHead from "@/components/SEOHead";
 import { Check, ArrowRight, Globe, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -22,6 +23,10 @@ const HighLevelVsFunnelmate = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="HighLevel vs. Funnelmate – Vergleich | Gaetano Ficarra"
+        description="HighLevel oder Funnelmate? Vergleiche Funktionen, Kosten und Vorteile der All-in-One Marketing-Plattformen für dein Business."
+      />
       <Header />
       <main className="pt-24">
         {/* Hero Section */}

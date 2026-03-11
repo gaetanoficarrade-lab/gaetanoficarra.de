@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEOHead from "@/components/SEOHead";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -61,6 +62,10 @@ const LinksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Links | Gaetano Ficarra – Alle wichtigen Links"
+        description="Alle wichtigen Links von Gaetano Ficarra auf einen Blick: Erstgespräch, Leistungen, Blog und mehr."
+      />
       <Header />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-2xl">
