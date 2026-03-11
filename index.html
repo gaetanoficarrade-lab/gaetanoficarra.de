@@ -74,6 +74,7 @@
     <!-- GTM loaded after DOM is ready to avoid render-blocking -->
     <script>
       window.addEventListener('load', function() {
+        if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
         var s = document.createElement('script');
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6GTNR9L14T';
         s.async = true;
