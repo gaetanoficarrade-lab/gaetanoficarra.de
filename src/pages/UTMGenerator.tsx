@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
-import { Copy, Check, Link, Plus, Trash2 } from "lucide-react";
+import { Copy, Check, Link as LinkIcon, Plus, Trash2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
