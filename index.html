@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GTNR9L14T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -13,9 +12,6 @@
         'ad_personalization': 'denied',
         'wait_for_update': 500
       });
-
-      gtag('js', new Date());
-      gtag('config', 'G-6GTNR9L14T');
     </script>
 
     <meta charset="UTF-8" />
@@ -177,5 +173,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- GTM loaded after DOM is ready to avoid render-blocking -->
+    <script>
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6GTNR9L14T';
+        s.async = true;
+        s.onload = function() {
+          gtag('js', new Date());
+          gtag('config', 'G-6GTNR9L14T');
+        };
+        document.head.appendChild(s);
+      });
+    </script>
   </body>
 </html>

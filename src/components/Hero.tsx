@@ -96,6 +96,7 @@ const Hero = () => {
                 src={portrait}
                 alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
+                fetchPriority="high"
               />
 
               {/* GoHighLevel Badge - 5 o'clock position, sitting on circle edge */}
@@ -115,6 +116,7 @@ const Hero = () => {
                     src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png"
                     alt="GoHighLevel Certified Admin Badge"
                     className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 drop-shadow-2xl"
+                    loading="lazy"
                   />
                 </div>
               </motion.a>
