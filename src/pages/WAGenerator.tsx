@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Copy, Check, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";

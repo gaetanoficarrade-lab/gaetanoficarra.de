@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
