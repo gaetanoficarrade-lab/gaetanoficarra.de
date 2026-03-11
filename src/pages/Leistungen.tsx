@@ -345,35 +345,6 @@ const Leistungen = () => {
               </div>
             </motion.div>
 
-            {/* Cross-Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto"
-            >
-              <Link
-                to="/wa-generator"
-                className="flex items-center gap-3 p-4 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors group"
-              >
-                <span className="text-primary text-lg">📱</span>
-                <div>
-                  <span className="text-foreground font-body text-sm group-hover:text-primary transition-colors">WhatsApp Link Generator</span>
-                  <p className="text-muted-foreground text-xs font-body">Kostenlos wa.me Links erstellen</p>
-                </div>
-              </Link>
-              <Link
-                to="/utm-generator"
-                className="flex items-center gap-3 p-4 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors group"
-              >
-                <span className="text-primary text-lg">🔗</span>
-                <div>
-                  <span className="text-foreground font-body text-sm group-hover:text-primary transition-colors">UTM Generator</span>
-                  <p className="text-muted-foreground text-xs font-body">Marketing-Links tracken</p>
-                </div>
-              </Link>
-            </motion.div>
           </div>
         </section>
       </main>

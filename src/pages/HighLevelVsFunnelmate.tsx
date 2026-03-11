@@ -495,12 +495,6 @@ const HighLevelVsFunnelmate = () => {
                 >
                   Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
                 </button>
-                <Link
-                  to="/leistungen"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
-                >
-                  Alle Leistungen & Preise <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
             </motion.div>
           </div>

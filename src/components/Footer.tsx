@@ -19,24 +19,24 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Seiten */}
           <div>
-            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Navigation</h4>
+            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Seiten</h4>
             <nav className="flex flex-col gap-2">
               <Link to="/" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Home</Link>
-              <Link to="/leistungen" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Leistungen</Link>
-              <Link to="/links" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Links</Link>
-              <Link to="/highlevel-vs-funnelmate" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">HighLevel vs Funnelmate</Link>
-              <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Blog</Link>
+              <Link to="/leistungen" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Leistungen & Preise</Link>
+              <Link to="/highlevel-vs-funnelmate" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">GoHighLevel vs Funnelmate</Link>
+              <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Blog & Ressourcen</Link>
+              <Link to="/links" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Alle Links</Link>
             </nav>
           </div>
 
           {/* Tools */}
           <div>
-            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Tools</h4>
+            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Kostenlose Tools</h4>
             <nav className="flex flex-col gap-2">
-              <Link to="/wa-generator" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">WhatsApp Generator</Link>
-              <Link to="/utm-generator" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">UTM Generator</Link>
+              <Link to="/wa-generator" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">WhatsApp Link Generator</Link>
+              <Link to="/utm-generator" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">UTM Parameter Generator</Link>
             </nav>
           </div>
 
