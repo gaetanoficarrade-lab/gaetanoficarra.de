@@ -25,6 +25,18 @@ const Blog = () => {
       <SEOHead
         title="Marketing Automation Blog — Tipps & Insights | Gaetano Ficarra"
         description="Praxistipps zu Marketing Automation, CRM, Funnelmate und GoHighLevel. Lerne, wie du dein Business mit smarten Tools skalierst."
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+          { name: "Blog", url: "https://gaetanoficarra.de/blog" },
+        ]}
+        jsonLd={{
+          "@type": "Blog",
+          "name": "Marketing Automation Blog",
+          "url": "https://gaetanoficarra.de/blog",
+          "description": "Praxistipps zu Marketing Automation, CRM, Funnelmate und GoHighLevel.",
+          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+          "inLanguage": "de-DE"
+        }}
       />
       <Header />
       <main className="min-h-screen pt-24 pb-20 bg-background">
