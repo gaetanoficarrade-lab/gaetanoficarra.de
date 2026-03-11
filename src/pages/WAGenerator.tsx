@@ -50,6 +50,10 @@ const WAGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="WhatsApp Link Generator | Gaetano Ficarra"
+        description="Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht. Perfekt für Marketing, Support und Lead-Generierung."
+      />
       <Header />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-2xl">

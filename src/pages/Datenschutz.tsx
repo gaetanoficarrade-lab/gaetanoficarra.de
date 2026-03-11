@@ -5,6 +5,10 @@ import Footer from "@/components/Footer";
 const Datenschutz = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Datenschutzerklärung | Gaetano Ficarra"
+        description="Datenschutzerklärung von Gaetano Ficarra. Informationen zur Datenverarbeitung, Ihren Rechten und den eingesetzten Diensten."
+      />
       <Header />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-4xl">

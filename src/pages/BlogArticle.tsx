@@ -85,9 +85,11 @@ const BlogArticle = () => {
 
   return (
     <>
-      {/* SEO meta tags via document head */}
-      <title>{post.metaTitle}</title>
-      <meta name="description" content={post.metaDescription} />
+      <SEOHead
+        title={post.metaTitle}
+        description={post.metaDescription}
+        canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
+      />
 
       <Header />
       <main className="min-h-screen pt-24 pb-20 bg-background">

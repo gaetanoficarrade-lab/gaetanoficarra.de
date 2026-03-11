@@ -139,6 +139,10 @@ const Leistungen = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Leistungen | Gaetano Ficarra – Funnelmate & GoHighLevel Experte"
+        description="Komplett-Setup, gemeinsamer Aufbau oder Support-Calls – entdecke meine Leistungen rund um Funnelmate & GoHighLevel für dein Business."
+      />
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
