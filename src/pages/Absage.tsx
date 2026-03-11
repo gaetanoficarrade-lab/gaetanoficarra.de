@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEOHead from "@/components/SEOHead";
 import gaetanoAbsage from "@/assets/gaetano-absage.png";
 
 const Absage = () => {

@@ -78,7 +78,7 @@ const HighLevelVsFunnelmate = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="GoHighLevel vs. Funnelmate 2026 — Der direkte Vergleich"
-        description="Zertifizierter Experte erklärt den Unterschied zwischen GoHighLevel und Funnelmate. Welches Tool passt zu deinem Business?"
+        description="GoHighLevel oder Funnelmate? Zertifizierter Experte vergleicht Funktionen, Preise & Vorteile für den DACH-Raum. Finde das richtige CRM-Tool."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "GoHighLevel vs. Funnelmate", url: "https://gaetanoficarra.de/highlevel-vs-funnelmate" },

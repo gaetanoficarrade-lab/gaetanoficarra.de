@@ -24,7 +24,7 @@ const Blog = () => {
     <>
       <SEOHead
         title="Marketing Automation Blog — Tipps & Insights | Gaetano Ficarra"
-        description="Praxistipps zu Marketing Automation, CRM, Funnelmate und GoHighLevel. Lerne, wie du dein Business mit smarten Tools skalierst."
+        description="Marketing Automation Blog: Praxistipps zu GoHighLevel, Funnelmate & CRM-Strategie. Wissen für Selbstständige, die ihr Business skalieren wollen."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Blog", url: "https://gaetanoficarra.de/blog" },
