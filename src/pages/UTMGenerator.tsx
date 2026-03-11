@@ -112,7 +112,7 @@ const UTMGenerator = () => {
             className="text-center mb-12"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mx-auto mb-6">
-              <Link className="w-8 h-8 text-primary" />
+              <LinkIcon className="w-8 h-8 text-primary" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">
               UTM <span className="text-primary">Parameter Generator</span>
