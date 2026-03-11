@@ -96,7 +96,7 @@ const SEOHead = ({
     }
 
     return () => {
-      document.title = "Gaetano Ficarra | GoHighLevel & Funnelmate Experte | Marketing Automation";
+      document.title = "Gaetano Ficarra — GoHighLevel & Funnelmate Experte für Marketing Automation";
       scriptIds.forEach((id) => {
         const el = document.getElementById(id);
         if (el) el.remove();
