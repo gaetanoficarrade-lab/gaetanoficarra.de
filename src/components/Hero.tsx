@@ -41,9 +41,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Dein zertifizierter <span className="text-gradient-primary">GoHighLevel Experte </span>
-              für <span className="text-gradient-primary">Marketing Automation </span>
-              im DACH-Raum
+              Mehr Zeit für dein <span className="text-gradient-primary">Wachstum </span>
+              und volle Kontrolle durch ein sauber aufgebautes <span className="text-gradient-primary">Business-System!</span>
             </motion.h1>
 
             {/* Subheadline */}
