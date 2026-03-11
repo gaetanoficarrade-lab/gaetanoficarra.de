@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     name: "Monique King",
-    role: "Local Guide",
+    role: "Google Bewertung",
     text: "Wir haben in den letzten Wochen intensiv geprüft, ob wir mit unserem Business zu GoHighLevel wechseln. In diesem Zusammenhang haben wir viele Gespräche mit sogenannten Expert:innen geführt, viele Versprechen gehört und unterschiedliche Modelle erklärt bekommen. Genau deshalb können wir sagen: Gaetano war für uns eine der wohltuendsten Erfahrungen in diesem Prozess. Er hängt nicht an irgendeiner Agenda, drängt nicht in eine Richtung. Stattdessen hört er wirklich zu, stellt kluge Fragen und gibt eine ehrliche Einschätzung. Fachlich ist er sehr gut aufgestellt. Keine unnötige Komplexität, keine Buzzwords, sondern konkrete Lösungen und saubere Strategien. Wir können Gaetano uneingeschränkt empfehlen.",
     rating: 5,
     image: "",
