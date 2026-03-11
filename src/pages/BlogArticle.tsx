@@ -89,6 +89,24 @@ const BlogArticle = () => {
         title={post.metaTitle}
         description={post.metaDescription}
         canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
+        ogType="article"
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+          { name: "Blog", url: "https://gaetanoficarra.de/blog" },
+          { name: post.title, url: `https://gaetanoficarra.de/blog/${post.slug}` },
+        ]}
+        jsonLd={{
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.metaDescription,
+          "url": `https://gaetanoficarra.de/blog/${post.slug}`,
+          "datePublished": post.date,
+          "dateModified": post.date,
+          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+          "publisher": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+          "inLanguage": "de-DE",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": `https://gaetanoficarra.de/blog/${post.slug}` }
+        }}
       />
 
       <Header />

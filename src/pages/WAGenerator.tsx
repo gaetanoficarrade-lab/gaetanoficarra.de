@@ -53,6 +53,20 @@ const WAGenerator = () => {
       <SEOHead
         title="Kostenloser WhatsApp Link Generator — Gaetano Ficarra"
         description="Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht. Perfekt für Marketing, Support und Lead-Generierung."
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+          { name: "WhatsApp Link Generator", url: "https://gaetanoficarra.de/wa-generator" },
+        ]}
+        jsonLd={{
+          "@type": "WebApplication",
+          "name": "WhatsApp Link Generator",
+          "url": "https://gaetanoficarra.de/wa-generator",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+          "description": "Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht. Perfekt für Marketing, Support und Lead-Generierung."
+        }}
       />
       <Header />
       <main className="pt-32 pb-20">

@@ -74,6 +74,20 @@ const UTMGenerator = () => {
       <SEOHead
         title="Kostenloser UTM-Generator — Marketing Links erstellen"
         description="Erstelle UTM-Parameter für Google Analytics in Sekunden. Kostenloser Tool-Rechner von Gaetano Ficarra."
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+          { name: "UTM Generator", url: "https://gaetanoficarra.de/utm-generator" },
+        ]}
+        jsonLd={{
+          "@type": "WebApplication",
+          "name": "UTM-Generator",
+          "url": "https://gaetanoficarra.de/utm-generator",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+          "description": "Erstelle UTM-Parameter für Google Analytics in Sekunden. Kostenloser Tool-Rechner."
+        }}
       />
       <Header />
       <main className="pt-32 pb-20">
