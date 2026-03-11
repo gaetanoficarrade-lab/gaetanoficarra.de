@@ -22,6 +22,9 @@ const Index = () => {
         title="Gaetano Ficarra | GoHighLevel & Funnelmate Experte | Marketing Automation"
         description="Zertifizierter GoHighLevel & Funnelmate Experte. Beseitige dein Software-Chaos mit All-in-One Marketing Automatisierung. Jetzt 14 Tage kostenlos testen!"
         canonical="https://gaetanoficarra.de/"
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+        ]}
       />
       <Header />
       <main>
