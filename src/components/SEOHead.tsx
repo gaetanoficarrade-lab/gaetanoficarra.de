@@ -64,6 +64,61 @@ const SEOHead = ({
     // Dynamic JSON-LD
     const scriptIds: string[] = [];
 
+    // Global Person schema
+    const personSchema = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gaetano Ficarra",
+      "jobTitle": "Marketing Automation & GoHighLevel Experte",
+      "url": BASE_URL,
+      "image": `${BASE_URL}/og-image.png`,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bielefeld",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/gaetano-ficarra/",
+        "https://www.instagram.com/gaetano.ficarra/",
+        "https://g.co/kgs/abc123"
+      ]
+    };
+    const personScript = document.createElement("script");
+    personScript.type = "application/ld+json";
+    personScript.id = "seo-person-ld";
+    personScript.textContent = JSON.stringify(personSchema);
+    document.head.appendChild(personScript);
+    scriptIds.push("seo-person-ld");
+
+    // Global ProfessionalService schema
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Gaetano Ficarra",
+      "description": "Zertifizierter GoHighLevel & Funnelmate Experte für Marketing Automation, CRM-Setup und Funnel-Aufbau im DACH-Raum.",
+      "url": BASE_URL,
+      "image": `${BASE_URL}/og-image.png`,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bielefeld",
+        "addressRegion": "NRW",
+        "addressCountry": "DE"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Deutschland" },
+        { "@type": "Country", "name": "Österreich" },
+        { "@type": "Country", "name": "Schweiz" }
+      ],
+      "priceRange": "€€",
+      "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building"]
+    };
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "seo-professional-service-ld";
+    serviceScript.textContent = JSON.stringify(serviceSchema);
+    document.head.appendChild(serviceScript);
+    scriptIds.push("seo-professional-service-ld");
+
     if (breadcrumbs && breadcrumbs.length > 0) {
       const bcSchema = {
         "@context": "https://schema.org",
