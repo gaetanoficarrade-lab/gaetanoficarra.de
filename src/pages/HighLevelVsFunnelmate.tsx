@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
 import { Check, ArrowRight, Globe, Users, Shield, Zap, HelpCircle, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuizModal } from "@/context/QuizModalContext";
@@ -487,12 +488,20 @@ const HighLevelVsFunnelmate = () => {
               <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto text-lg">
                 In einem kostenlosen Erstgespräch analysiere ich deine aktuelle Situation und empfehle dir die passende Lösung – unverbindlich und ehrlich.
               </p>
-              <button
-                onClick={openQuizModal}
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300"
-              >
-                Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button
+                  onClick={openQuizModal}
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300"
+                >
+                  Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
+                </button>
+                <Link
+                  to="/leistungen"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
+                >
+                  Alle Leistungen & Preise <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>

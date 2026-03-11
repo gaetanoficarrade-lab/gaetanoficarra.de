@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
-import { Copy, Check, MessageCircle } from "lucide-react";
+import { Copy, Check, MessageCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -241,6 +242,35 @@ const WAGenerator = () => {
                 </div>
               ))}
             </div>
+          </motion.div>
+
+          {/* Cross-Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-8 grid sm:grid-cols-2 gap-4"
+          >
+            <Link
+              to="/utm-generator"
+              className="flex items-center justify-between p-4 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors group"
+            >
+              <div>
+                <span className="text-foreground font-body text-sm group-hover:text-primary transition-colors">UTM Generator</span>
+                <p className="text-muted-foreground text-xs font-body">Marketing-Links mit Tracking erstellen</p>
+              </div>
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            </Link>
+            <Link
+              to="/leistungen"
+              className="flex items-center justify-between p-4 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors group"
+            >
+              <div>
+                <span className="text-foreground font-body text-sm group-hover:text-primary transition-colors">Leistungen & Preise</span>
+                <p className="text-muted-foreground text-xs font-body">GoHighLevel Setup, Coaching & Support</p>
+              </div>
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            </Link>
           </motion.div>
         </div>
       </main>
