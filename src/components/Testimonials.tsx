@@ -6,14 +6,14 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Anna-Lena Hickmann",
-    role: "Local Guide",
+    role: "Google Bewertung",
     text: "Tolle Erfahrung und ich kann Gaetano nur empfehlen! Er hat mir im 90 Minuten Beratungscall sauber und schnell erklärt und ich konnte direkt umsetzen. Das hätte mich sonst wahrscheinlich Stunden an Recherchearbeit und ganz viele Nerven gekostet. Die Kommunikation war auch schnell und ich bin sehr froh auch kurzfristig einen Termin bekommen zu haben :) Gaetano hat eine freundliche und unkomplizierte Art. Wenn ich ab jetzt ein Thema mit HighLevel / Stripe habe, weiß ich, wem ich als erstes schreibe.",
     rating: 5,
     image: "",
   },
   {
     name: "Monique King",
-    role: "Local Guide",
+    role: "Google Bewertung",
     text: "Wir haben in den letzten Wochen intensiv geprüft, ob wir mit unserem Business zu GoHighLevel wechseln. In diesem Zusammenhang haben wir viele Gespräche mit sogenannten Expert:innen geführt, viele Versprechen gehört und unterschiedliche Modelle erklärt bekommen. Genau deshalb können wir sagen: Gaetano war für uns eine der wohltuendsten Erfahrungen in diesem Prozess. Er hängt nicht an irgendeiner Agenda, drängt nicht in eine Richtung. Stattdessen hört er wirklich zu, stellt kluge Fragen und gibt eine ehrliche Einschätzung. Fachlich ist er sehr gut aufgestellt. Keine unnötige Komplexität, keine Buzzwords, sondern konkrete Lösungen und saubere Strategien. Wir können Gaetano uneingeschränkt empfehlen.",
     rating: 5,
     image: "",
