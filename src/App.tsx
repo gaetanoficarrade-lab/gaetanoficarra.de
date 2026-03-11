@@ -18,6 +18,8 @@ import Impressum from "./pages/Impressum";
 import WAGenerator from "./pages/WAGenerator";
 import UTMGenerator from "./pages/UTMGenerator";
 import Absage from "./pages/Absage";
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
