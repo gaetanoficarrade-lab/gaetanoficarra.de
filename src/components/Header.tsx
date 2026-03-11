@@ -8,6 +8,7 @@ import { useQuizModal } from "@/context/QuizModalContext";
 const navItems = [
   { label: "Home", href: "/", isAnchor: false },
   { label: "Leistungen", href: "/leistungen", isAnchor: false },
+  { label: "Blog", href: "/blog", isAnchor: false },
   { label: "Kontakt", href: "/#kontakt", isAnchor: true },
 ];
 

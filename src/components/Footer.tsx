@@ -27,6 +27,7 @@ const Footer = () => {
               <Link to="/leistungen" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Leistungen</Link>
               <Link to="/links" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Links</Link>
               <Link to="/highlevel-vs-funnelmate" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">HighLevel vs Funnelmate</Link>
+              <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Blog</Link>
             </nav>
           </div>
 
