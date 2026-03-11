@@ -22,11 +22,14 @@ const server = await preview({
   preview: { port: 3333 },
 });
 
+const address = server.httpServer.address();
+const port = address.port;
+
 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
 for (const route of routes) {
   const page = await browser.newPage();
-  await page.goto(`http://localhost:3333${route}`, { waitUntil: 'networkidle0' });
+  await page.goto(`http://localhost:${port}${route}`, { waitUntil: 'networkidle0' });
   const html = await page.content();
   
   const dir = path.join('/var/www/gaetanoficarra/dist', route);
