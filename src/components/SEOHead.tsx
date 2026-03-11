@@ -24,6 +24,18 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
+/** Upsert a JSON-LD script by ID — prevents duplicates after pre-rendering */
+const upsertJsonLd = (id: string, data: Record<string, unknown>) => {
+  let el = document.getElementById(id) as HTMLScriptElement | null;
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = id;
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data);
+};
+
 const SEOHead = ({
   title,
   description,
@@ -61,49 +73,35 @@ const SEOHead = ({
     setMeta("name", "twitter:description", ogDescription || description);
     setMeta("name", "twitter:image", ogImage);
 
-    // Dynamic JSON-LD
+    // Track IDs for cleanup on unmount
     const scriptIds: string[] = [];
 
     // Global Person schema
-    const personSchema = {
+    upsertJsonLd("seo-person-ld", {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gaetano Ficarra",
       "jobTitle": "Marketing Automation & GoHighLevel Experte",
       "url": BASE_URL,
       "image": `${BASE_URL}/og-image.png`,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bielefeld",
-        "addressCountry": "DE"
-      },
+      "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressCountry": "DE" },
       "sameAs": [
         "https://www.linkedin.com/in/gaetano-ficarra/",
         "https://www.instagram.com/gaetano.ficarra/",
         "https://g.co/kgs/abc123"
       ]
-    };
-    const personScript = document.createElement("script");
-    personScript.type = "application/ld+json";
-    personScript.id = "seo-person-ld";
-    personScript.textContent = JSON.stringify(personSchema);
-    document.head.appendChild(personScript);
+    });
     scriptIds.push("seo-person-ld");
 
     // Global ProfessionalService schema
-    const serviceSchema = {
+    upsertJsonLd("seo-professional-service-ld", {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Gaetano Ficarra",
       "description": "Zertifizierter GoHighLevel & Funnelmate Experte für Marketing Automation, CRM-Setup und Funnel-Aufbau im DACH-Raum.",
       "url": BASE_URL,
       "image": `${BASE_URL}/og-image.png`,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bielefeld",
-        "addressRegion": "NRW",
-        "addressCountry": "DE"
-      },
+      "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressRegion": "NRW", "addressCountry": "DE" },
       "areaServed": [
         { "@type": "Country", "name": "Deutschland" },
         { "@type": "Country", "name": "Österreich" },
@@ -111,16 +109,12 @@ const SEOHead = ({
       ],
       "priceRange": "€€",
       "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building"]
-    };
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "seo-professional-service-ld";
-    serviceScript.textContent = JSON.stringify(serviceSchema);
-    document.head.appendChild(serviceScript);
+    });
     scriptIds.push("seo-professional-service-ld");
 
+    // Breadcrumbs
     if (breadcrumbs && breadcrumbs.length > 0) {
-      const bcSchema = {
+      upsertJsonLd("seo-breadcrumb-ld", {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": breadcrumbs.map((bc, i) => ({
@@ -129,23 +123,15 @@ const SEOHead = ({
           "name": bc.name,
           "item": bc.url,
         })),
-      };
-      const bcScript = document.createElement("script");
-      bcScript.type = "application/ld+json";
-      bcScript.id = "seo-breadcrumb-ld";
-      bcScript.textContent = JSON.stringify(bcSchema);
-      document.head.appendChild(bcScript);
+      });
       scriptIds.push("seo-breadcrumb-ld");
     }
 
+    // Page-specific schemas
     if (jsonLd) {
       const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
       schemas.forEach((schema, i) => {
-        const script = document.createElement("script");
-        script.type = "application/ld+json";
-        script.id = `seo-page-ld-${i}`;
-        script.textContent = JSON.stringify({ "@context": "https://schema.org", ...schema });
-        document.head.appendChild(script);
+        upsertJsonLd(`seo-page-ld-${i}`, { "@context": "https://schema.org", ...schema });
         scriptIds.push(`seo-page-ld-${i}`);
       });
     }
