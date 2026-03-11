@@ -63,7 +63,7 @@ const Blog = () => {
               Hier entsteht demnächst ein <span className="text-gradient-primary">Blog</span>
             </h2>
             <p className="text-muted-foreground font-body text-lg">
-              Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Funnelmate. Schau bald wieder vorbei!
+              Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing. Schau bald wieder vorbei!
             </p>
           </motion.div>
         </section>
