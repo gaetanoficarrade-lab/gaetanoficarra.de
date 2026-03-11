@@ -51,22 +51,33 @@ const WAGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Kostenloser WhatsApp Link Generator — Gaetano Ficarra"
-        description="Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht. Perfekt für Marketing, Support und Lead-Generierung."
+        title="Kostenloser WhatsApp Link Generator — wa.me Link erstellen"
+        description="Erstelle kostenlos einen WhatsApp-Link (wa.me) mit vorgefertigter Nachricht. Perfekt für Marketing, Support, Lead-Generierung und GoHighLevel."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "WhatsApp Link Generator", url: "https://gaetanoficarra.de/wa-generator" },
         ]}
-        jsonLd={{
-          "@type": "WebApplication",
-          "name": "WhatsApp Link Generator",
-          "url": "https://gaetanoficarra.de/wa-generator",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "Web",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
-          "description": "Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht. Perfekt für Marketing, Support und Lead-Generierung."
-        }}
+        jsonLd={[
+          {
+            "@type": "WebApplication",
+            "name": "WhatsApp Link Generator",
+            "url": "https://gaetanoficarra.de/wa-generator",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+            "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+            "description": "Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Was ist ein wa.me Link?", "acceptedAnswer": { "@type": "Answer", "text": "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet – ohne die Nummer speichern zu müssen." } },
+              { "@type": "Question", "name": "Funktioniert der WhatsApp-Link auf Desktop und Mobil?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Auf Mobilgeräten öffnet sich die WhatsApp-App, auf dem Desktop die Web-Version oder Desktop-App." } },
+              { "@type": "Question", "name": "Kann ich WhatsApp-Links in GoHighLevel verwenden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Du kannst wa.me Links in GoHighLevel-Funnels, E-Mails, SMS und Workflows einbinden, um Leads direkt per WhatsApp zu kontaktieren." } },
+              { "@type": "Question", "name": "Ist der WhatsApp Link Generator kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, komplett kostenlos und ohne Registrierung nutzbar." } }
+            ]
+          }
+        ]}
       />
       <Header />
       <main className="pt-32 pb-20">
@@ -83,8 +94,8 @@ const WAGenerator = () => {
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">
               WhatsApp <span className="text-primary">Link Generator</span>
             </h1>
-            <p className="text-muted-foreground font-body">
-              Erstelle einen direkten WhatsApp-Link mit vordefinierter Nachricht
+            <p className="text-muted-foreground font-body text-lg max-w-lg mx-auto">
+              Erstelle einen direkten wa.me-Link mit vordefinierter Nachricht — kostenlos und ohne Anmeldung
             </p>
           </motion.div>
 
@@ -155,6 +166,81 @@ const WAGenerator = () => {
                 Link testen
               </a>
             )}
+          </motion.div>
+
+          {/* SEO Content: Was ist ein WhatsApp Link? */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 bg-card border border-border p-8 rounded-lg"
+          >
+            <h2 className="font-display text-2xl text-foreground mb-6">Was ist ein WhatsApp Link (wa.me)?</h2>
+            <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+              Ein wa.me-Link ist die offizielle Methode, um einen direkten WhatsApp-Chat zu öffnen – ohne dass der Empfänger deine Nummer vorher speichern muss. Du gibst einfach die Telefonnummer und optional eine vorgefertigte Nachricht ein, und der Generator erstellt den fertigen Link.
+            </p>
+            <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+              Das Format ist einfach: <code className="text-primary bg-primary/10 px-2 py-0.5 rounded text-sm">https://wa.me/49XXXXXXXXXXX?text=Deine+Nachricht</code>. Auf Mobilgeräten öffnet sich die WhatsApp-App, auf dem Desktop WhatsApp Web oder die Desktop-App.
+            </p>
+
+            <h3 className="font-display text-xl text-foreground mb-4 mt-8">Einsatzmöglichkeiten für WhatsApp Links</h3>
+            <ul className="font-body text-muted-foreground space-y-3">
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Marketing & Lead-Generierung</strong> – Platziere WhatsApp-Links auf Landingpages, in E-Mails oder Social Media Posts, damit Interessenten dich direkt kontaktieren können.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Kundensupport</strong> – Biete einen schnellen Draht zum Support, ohne E-Mail-Formulare oder Wartezeiten.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">GoHighLevel & Funnelmate</strong> – Integriere wa.me-Links in deine Funnels, Automatisierungen und Follow-up-Sequenzen für maximale Conversion.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Social Media Bio</strong> – Verwende den Link in deiner Instagram- oder LinkedIn-Bio für direkte Anfragen.</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-8 bg-card border border-border p-8 rounded-lg"
+          >
+            <h2 className="font-display text-2xl text-foreground mb-6">Häufige Fragen zum WhatsApp Link Generator</h2>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "Was ist ein wa.me Link?",
+                  a: "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet – ohne die Nummer speichern zu müssen."
+                },
+                {
+                  q: "Funktioniert der WhatsApp-Link auf Desktop und Mobil?",
+                  a: "Ja. Auf Mobilgeräten öffnet sich die WhatsApp-App, auf dem Desktop die Web-Version oder Desktop-App."
+                },
+                {
+                  q: "Kann ich WhatsApp-Links in GoHighLevel verwenden?",
+                  a: "Ja. Du kannst wa.me Links in GoHighLevel-Funnels, E-Mails, SMS und Workflows einbinden, um Leads direkt per WhatsApp zu kontaktieren."
+                },
+                {
+                  q: "Ist der WhatsApp Link Generator kostenlos?",
+                  a: "Ja, komplett kostenlos und ohne Registrierung nutzbar."
+                },
+                {
+                  q: "Kann ich eine vordefinierte Nachricht hinzufügen?",
+                  a: "Ja. Gib einfach deine gewünschte Nachricht in das Textfeld ein. Sie wird automatisch URL-codiert und an den Link angehängt. Der Empfänger sieht die Nachricht dann als Entwurf im Chat."
+                },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-border pb-4 last:border-0 last:pb-0">
+                  <h3 className="font-display text-lg text-foreground mb-2">{faq.q}</h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </main>
