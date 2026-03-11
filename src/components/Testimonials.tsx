@@ -5,42 +5,20 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Marco S.",
-    role: "Agenturinhaber",
-    text: "Gaetano hat mein komplettes HighLevel Setup übernommen und innerhalb von 2 Wochen war alles startklar. Seitdem laufen meine Automationen reibungslos und ich spare jeden Tag mehrere Stunden.",
+    name: "Anna-Lena Hickmann",
+    role: "Local Guide",
+    text: "Tolle Erfahrung und ich kann Gaetano nur empfehlen! Er hat mir im 90 Minuten Beratungscall sauber und schnell erklärt und ich konnte direkt umsetzen. Das hätte mich sonst wahrscheinlich Stunden an Recherchearbeit und ganz viele Nerven gekostet. Die Kommunikation war auch schnell und ich bin sehr froh auch kurzfristig einen Termin bekommen zu haben :) Gaetano hat eine freundliche und unkomplizierte Art. Wenn ich ab jetzt ein Thema mit HighLevel / Stripe habe, weiß ich, wem ich als erstes schreibe.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    image: "",
   },
   {
-    name: "Julia K.",
-    role: "Online-Unternehmerin",
-    text: "Die Done-With-You Sessions waren genau das Richtige für mich. Ich wollte verstehen, was ich tue und nicht nur ein fertiges System haben. Gaetano hat mir alles geduldig erklärt.",
+    name: "Monique King",
+    role: "Local Guide",
+    text: "Wir haben in den letzten Wochen intensiv geprüft, ob wir mit unserem Business zu GoHighLevel wechseln. In diesem Zusammenhang haben wir viele Gespräche mit sogenannten Expert:innen geführt, viele Versprechen gehört und unterschiedliche Modelle erklärt bekommen. Genau deshalb können wir sagen: Gaetano war für uns eine der wohltuendsten Erfahrungen in diesem Prozess. Er hängt nicht an irgendeiner Agenda, drängt nicht in eine Richtung. Stattdessen hört er wirklich zu, stellt kluge Fragen und gibt eine ehrliche Einschätzung. Fachlich ist er sehr gut aufgestellt. Keine unnötige Komplexität, keine Buzzwords, sondern konkrete Lösungen und saubere Strategien. Wir können Gaetano uneingeschränkt empfehlen.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    name: "Thomas M.",
-    role: "Berater",
-    text: "Endlich ein Partner, der versteht, was ich brauche. Gaetano hat mein komplettes System strukturiert und aufgeräumt. Jetzt weiß ich immer, wo was ist.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    name: "Sarah L.",
-    role: "Coach & Beraterin",
-    text: "Endlich jemand, der HighLevel wirklich versteht! Kein Blabla, sondern handfeste Lösungen. Mein Funnel konvertiert jetzt doppelt so gut wie vorher.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    name: "Patrick R.",
-    role: "Marketing-Berater",
-    text: "Der Support-Call hat mir Stunden an Recherche erspart. Gaetano hat mein Problem in 20 Minuten gelöst, wofür ich selbst Tage gebraucht hätte.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    image: "",
   },
 ];
-
 const Testimonials = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
