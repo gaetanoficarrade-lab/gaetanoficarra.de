@@ -83,6 +83,7 @@ const Absage = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 
