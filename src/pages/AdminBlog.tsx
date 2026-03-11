@@ -22,11 +22,50 @@ const emptyPost: EditorPost = {
   published: false,
 };
 
+const ADMIN_PASSWORD = "21071981";
+
 const AdminBlog = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [editing, setEditing] = useState<EditorPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+
+  if (!authenticated) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <Card className="w-full max-w-sm">
+          <CardHeader>
+            <CardTitle>Admin-Zugang</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Input
+              type="password"
+              placeholder="Passwort eingeben"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && passwordInput === ADMIN_PASSWORD) setAuthenticated(true);
+              }}
+            />
+            <Button
+              className="w-full"
+              onClick={() => {
+                if (passwordInput === ADMIN_PASSWORD) {
+                  setAuthenticated(true);
+                } else {
+                  toast({ title: "Falsches Passwort", variant: "destructive" });
+                }
+              }}
+            >
+              Anmelden
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   const fetchPosts = async () => {
     setLoading(true);
