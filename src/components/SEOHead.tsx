@@ -98,7 +98,7 @@ const SEOHead = ({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Gaetano Ficarra",
-      "description": "Zertifizierter GoHighLevel & Funnelmate Experte für Marketing Automation, CRM-Setup und Funnel-Aufbau im DACH-Raum.",
+      "description": "Marketing Automation Berater für Selbstständige, Coaches und Dienstleister im DACH-Raum. Zertifizierter GoHighLevel Admin aus Bielefeld.",
       "url": BASE_URL,
       "image": `${BASE_URL}/og-image.png`,
       "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressRegion": "NRW", "addressCountry": "DE" },
