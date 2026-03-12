@@ -19,9 +19,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Gaetano Ficarra | GoHighLevel & Funnelmate Experte | Marketing Automation"
-        description="Zertifizierter GoHighLevel & Funnelmate Experte aus Bielefeld. Marketing Automation, CRM-Setup & Funnel-Aufbau — alles aus einer Hand. Jetzt Erstgespräch sichern!"
+        title="Marketing Automation Berater für Selbstständige | Gaetano Ficarra"
+        description="Ich baue dir ein zentrales Marketing-System: Leads, Termine und Follow-ups — automatisiert, ohne Tool-Chaos. Zertifizierter Admin aus Bielefeld für Coaches, Berater und Dienstleister."
         canonical="https://gaetanoficarra.de/"
+        ogTitle="Marketing Automation Berater für Selbstständige | Gaetano Ficarra"
+        ogDescription="Ich baue dir ein zentrales Marketing-System: Leads, Termine und Follow-ups — automatisiert, ohne Tool-Chaos."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
         ]}

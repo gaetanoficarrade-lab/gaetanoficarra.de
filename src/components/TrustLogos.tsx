@@ -130,10 +130,6 @@ const TrustLogos = () => {
           </motion.div>
         </motion.div>
 
-        {/* SEO hidden text */}
-        <div className="sr-only">
-          <p>GoHighLevel Partner Bielefeld, Funnelmate Experte Deutschland, HighLevel Agentur NRW, Marketing Automatisierung, CRM Beratung, Funnel Builder, Online Marketing Bielefeld, Patrick Mentler Partner, OCTA Steuerberater, HTML5 CSS3 Webentwicklung</p>
-        </div>
       </div>
     </section>
   );
