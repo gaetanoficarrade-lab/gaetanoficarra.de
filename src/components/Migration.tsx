@@ -47,7 +47,7 @@ const Migration = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-16"
+            className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-16"
           >
             {migrationTools.map((tool, index) => (
               <motion.div
@@ -55,9 +55,9 @@ const Migration = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
-                className="bg-background border border-border p-6 rounded-lg text-center hover:border-primary/30 transition-colors"
+                className="bg-background border border-border px-3 py-4 md:p-6 rounded-lg text-center hover:border-primary/30 transition-colors"
               >
-                <span className="font-display text-lg text-foreground">{tool.name}</span>
+                <span className="font-display text-base md:text-lg text-foreground">{tool.name}</span>
               </motion.div>
             ))}
           </motion.div>
