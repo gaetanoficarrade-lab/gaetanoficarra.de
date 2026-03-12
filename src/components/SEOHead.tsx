@@ -88,7 +88,7 @@ const SEOHead = ({
       "sameAs": [
         "https://www.linkedin.com/in/gaetano-ficarra/",
         "https://www.instagram.com/gaetano.ficarra/",
-        "https://g.co/kgs/abc123"
+        "https://share.google/x4un2oyPVnb9DxDXL"
       ]
     });
     scriptIds.push("seo-person-ld");
