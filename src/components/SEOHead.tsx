@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const BASE_URL = "https://gaetanoficarra.de";
 
@@ -24,6 +24,16 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
+const setCanonical = (href: string) => {
+  let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!link) {
+    link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    document.head.appendChild(link);
+  }
+  link.setAttribute("href", href);
+};
+
 /** Upsert a JSON-LD script by ID — prevents duplicates after pre-rendering */
 const upsertJsonLd = (id: string, data: Record<string, unknown>) => {
   let el = document.getElementById(id) as HTMLScriptElement | null;
@@ -34,6 +44,37 @@ const upsertJsonLd = (id: string, data: Record<string, unknown>) => {
     document.head.appendChild(el);
   }
   el.textContent = JSON.stringify(data);
+};
+
+/**
+ * Apply critical SEO tags synchronously (outside useEffect) so they are
+ * present in the DOM when Puppeteer calls page.content().
+ */
+const applyCriticalTags = (
+  title: string,
+  description: string,
+  canonical: string,
+  ogTitle: string,
+  ogDescription: string,
+  ogImage: string,
+  ogType: string,
+) => {
+  document.title = title;
+  setMeta("name", "description", description);
+  setCanonical(canonical);
+
+  setMeta("property", "og:title", ogTitle);
+  setMeta("property", "og:description", ogDescription);
+  setMeta("property", "og:url", canonical);
+  setMeta("property", "og:image", ogImage);
+  setMeta("property", "og:type", ogType);
+  setMeta("property", "og:site_name", "Gaetano Ficarra");
+  setMeta("property", "og:locale", "de_DE");
+
+  setMeta("name", "twitter:card", "summary_large_image");
+  setMeta("name", "twitter:title", ogTitle);
+  setMeta("name", "twitter:description", ogDescription);
+  setMeta("name", "twitter:image", ogImage);
 };
 
 const SEOHead = ({
@@ -47,31 +88,21 @@ const SEOHead = ({
   jsonLd,
   breadcrumbs,
 }: SEOHeadProps) => {
+  const canonicalUrl = canonical || `${BASE_URL}${window.location.pathname}`;
+  const resolvedOgTitle = ogTitle || title;
+  const resolvedOgDesc = ogDescription || description;
+
+  // Apply critical tags synchronously during render — ensures they exist
+  // in the DOM before Puppeteer snapshots, regardless of useEffect timing.
+  const appliedRef = useRef(false);
+  if (!appliedRef.current) {
+    applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
+    appliedRef.current = true;
+  }
+
   useEffect(() => {
-    document.title = title;
-    setMeta("name", "description", description);
-
-    const canonicalUrl = canonical || `${BASE_URL}${window.location.pathname}`;
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    link.setAttribute("href", canonicalUrl);
-
-    setMeta("property", "og:title", ogTitle || title);
-    setMeta("property", "og:description", ogDescription || description);
-    setMeta("property", "og:url", canonicalUrl);
-    setMeta("property", "og:image", ogImage);
-    setMeta("property", "og:type", ogType);
-    setMeta("property", "og:site_name", "Gaetano Ficarra");
-    setMeta("property", "og:locale", "de_DE");
-
-    setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:title", ogTitle || title);
-    setMeta("name", "twitter:description", ogDescription || description);
-    setMeta("name", "twitter:image", ogImage);
+    // Re-apply on prop changes (client-side navigation)
+    applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
 
     // Track IDs for cleanup on unmount
     const scriptIds: string[] = [];
@@ -143,7 +174,7 @@ const SEOHead = ({
         if (el) el.remove();
       });
     };
-  }, [title, description, canonical, ogTitle, ogDescription, ogImage, ogType, jsonLd, breadcrumbs]);
+  }, [title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType, jsonLd, breadcrumbs]);
 
   return null;
 };
