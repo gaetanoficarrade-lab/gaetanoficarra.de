@@ -38,7 +38,7 @@ const Orientation = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Orientierung</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Für Unternehmer, die <span className="text-primary">Klarheit</span> wollen statt Tool-Chaos
+              Marketing Automation für <span className="text-primary">Coaches, Berater</span> und Dienstleister
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
               Du willst keine neuen Tools lernen, keine Systeme vergleichen und nicht an Technik basteln. Du willst ein zentrales Setup,
