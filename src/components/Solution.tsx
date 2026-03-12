@@ -56,7 +56,7 @@ const Solution = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Die Lösung</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Ein zentrales System <span className="text-gradient-primary">das für dich arbeitet</span>
+              GoHighLevel Setup & CRM Einrichtung — <span className="text-gradient-primary">alles aus einer Hand</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
               Statt fünf einzelner Tools, die nicht miteinander sprechen, bekommst du ein sauber aufgebautes System.
