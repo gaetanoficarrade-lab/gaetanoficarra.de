@@ -81,14 +81,14 @@ const SEOHead = ({
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gaetano Ficarra",
-      "jobTitle": "Marketing Automation & GoHighLevel Experte",
+      "jobTitle": "Marketing Automation Berater für Selbstständige",
       "url": BASE_URL,
       "image": `${BASE_URL}/og-image.png`,
       "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressCountry": "DE" },
       "sameAs": [
         "https://www.linkedin.com/in/gaetano-ficarra/",
         "https://www.instagram.com/gaetano.ficarra/",
-        "https://g.co/kgs/abc123"
+        "https://share.google/x4un2oyPVnb9DxDXL"
       ]
     });
     scriptIds.push("seo-person-ld");
@@ -98,7 +98,7 @@ const SEOHead = ({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Gaetano Ficarra",
-      "description": "Zertifizierter GoHighLevel & Funnelmate Experte für Marketing Automation, CRM-Setup und Funnel-Aufbau im DACH-Raum.",
+      "description": "Marketing Automation Berater für Selbstständige, Coaches und Dienstleister im DACH-Raum. Zertifizierter GoHighLevel Admin aus Bielefeld.",
       "url": BASE_URL,
       "image": `${BASE_URL}/og-image.png`,
       "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressRegion": "NRW", "addressCountry": "DE" },
@@ -108,7 +108,7 @@ const SEOHead = ({
         { "@type": "Country", "name": "Schweiz" }
       ],
       "priceRange": "€€",
-      "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building"]
+      "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building", "Marketing Automation Beratung", "CRM Setup", "Business Systeme"]
     });
     scriptIds.push("seo-professional-service-ld");
 
