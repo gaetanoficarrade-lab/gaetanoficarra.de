@@ -18,6 +18,13 @@ const testimonials = [
     rating: 5,
     image: "",
   },
+  {
+    name: "OCTA Steuerberater",
+    role: "Google Bewertung",
+    text: "Gaetano unterstützt unsere Kanzlei seit über zwei Jahren in den Bereichen IT, KI, Marketing sowie Social Media. Besonders bei der Optimierung von Prozessen in diesen Feldern bringt er viel Klarheit und Struktur hinein. Seine Ideen sind praxisnah, gut durchdacht und lassen sich im Kanzleialltag direkt umsetzen. Die Zusammenarbeit ist unkompliziert, verlässlich und bringt echten Mehrwert. Unsere Empfehlung geht klar raus.",
+    rating: 5,
+    image: "",
+  },
 ];
 const Testimonials = () => {
   const ref = useRef(null);
