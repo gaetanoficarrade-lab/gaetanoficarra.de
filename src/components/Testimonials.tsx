@@ -25,6 +25,13 @@ const testimonials = [
     rating: 5,
     image: "",
   },
+  {
+    name: "Marion Pütz",
+    role: "Google Bewertung",
+    text: "Gaetano hat mir in einer ganz dringenden Situation eine super Lösung meines Problems erstellt. Und für mich abends noch einen Funnel zum Laufen gebracht. Danach hatte ich ein geniales Erklärungsvideo von Gaetano, bekommen, damit ich selber weiter den Funnel bearbeite, wenn ich es brauche. Ein dickes Dankeschön!",
+    rating: 5,
+    image: "",
+  },
 ];
 
 const Testimonials = () => {
