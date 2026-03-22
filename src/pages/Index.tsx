@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroGaetano from "@/components/HeroGaetano";
 import TrustLogos from "@/components/TrustLogos";
 import Orientation from "@/components/Orientation";
 import Problem from "@/components/Problem";
