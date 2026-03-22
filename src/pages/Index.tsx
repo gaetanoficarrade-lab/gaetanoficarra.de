@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import HeroGaetano from "@/components/ui/hero-gaetano";
+import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
 import Orientation from "@/components/Orientation";
 import Problem from "@/components/Problem";
@@ -45,7 +45,7 @@ const Index = () => {
       <Header />
       <main>
         {/* 1. Hero - Vision & Ergebnis */}
-        <HeroGaetano />
+        <Hero />
         
         {/* Trust Logos - Glaubwürdigkeit */}
         <TrustLogos />
