@@ -58,8 +58,7 @@ const WAGenerator = () => {
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "WhatsApp Link Generator", url: "https://gaetanoficarra.de/wa-generator" },
         ]}
-        jsonLd={[
-          {
+        jsonLd={{
             "@type": "WebApplication",
             "name": "WhatsApp Link Generator",
             "url": "https://gaetanoficarra.de/wa-generator",
@@ -68,17 +67,7 @@ const WAGenerator = () => {
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
             "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "description": "Erstelle kostenlos einen WhatsApp-Link mit vorgefertigter Nachricht."
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Was ist ein wa.me Link?", "acceptedAnswer": { "@type": "Answer", "text": "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet – ohne die Nummer speichern zu müssen." } },
-              { "@type": "Question", "name": "Funktioniert der WhatsApp-Link auf Desktop und Mobil?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Auf Mobilgeräten öffnet sich die WhatsApp-App, auf dem Desktop die Web-Version oder Desktop-App." } },
-              { "@type": "Question", "name": "Kann ich WhatsApp-Links in GoHighLevel verwenden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Du kannst wa.me Links in GoHighLevel-Funnels, E-Mails, SMS und Workflows einbinden, um Leads direkt per WhatsApp zu kontaktieren." } },
-              { "@type": "Question", "name": "Ist der WhatsApp Link Generator kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, komplett kostenlos und ohne Registrierung nutzbar." } }
-            ]
-          }
-        ]}
+        }}
       />
       <Header />
       <main className="pt-32 pb-20">

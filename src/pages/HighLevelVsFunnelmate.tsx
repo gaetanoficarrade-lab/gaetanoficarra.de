@@ -83,18 +83,7 @@ const HighLevelVsFunnelmate = () => {
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "GoHighLevel vs. Funnelmate", url: "https://gaetanoficarra.de/highlevel-vs-funnelmate" },
         ]}
-        jsonLd={{
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "Ist Funnelmate wirklich dasselbe wie GoHighLevel?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Funnelmate basiert technisch zu 100% auf GoHighLevel. Es handelt sich um einen White-Label-Reseller – du bekommst exakt dieselbe Software mit deutschen Lokalisierungen." } },
-            { "@type": "Question", "name": "Kann ich von GoHighLevel zu Funnelmate wechseln?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ein Wechsel ist möglich. Deine Daten können über Snapshots oder die API migriert werden. Der Prozess ist in der Regel innerhalb weniger Tage abgeschlossen." } },
-            { "@type": "Question", "name": "Ist Funnelmate DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Funnelmate bietet EU-Server-Standorte, AV-Vertrag und verschlüsselte Datenübertragung. Entscheidend ist die korrekte Konfiguration – z.B. Double-Opt-In, Cookie-Consent, Datenschutzerklärung." } },
-            { "@type": "Question", "name": "Was kostet GoHighLevel vs. Funnelmate?", "acceptedAnswer": { "@type": "Answer", "text": "GoHighLevel startet bei $97/Monat, Funnelmate bei €129/Monat. Beide bieten eine 14-tägige kostenlose Testphase." } },
-            { "@type": "Question", "name": "Welche Plattform eignet sich besser für Agenturen?", "acceptedAnswer": { "@type": "Answer", "text": "Beide bieten einen SaaS-Modus für Sub-Accounts. GoHighLevel hat den größeren internationalen Marketplace, Funnelmate punktet im DACH-Raum durch deutschen Support." } },
-            { "@type": "Question", "name": "Brauche ich einen Experten für GoHighLevel?", "acceptedAnswer": { "@type": "Answer", "text": "Die Lernkurve ist steil. Ein Experte spart Wochen an Einarbeitungszeit und verhindert kostspielige Fehler bei der Einrichtung von Workflows, Automationen und Integrationen." } },
-            { "@type": "Question", "name": "Kann ich bestehende Tools mit GoHighLevel verbinden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Beide Plattformen bieten API, Webhooks und native Integrationen (Stripe, Zoom, Google Calendar, Facebook Ads, WordPress). Über Zapier oder Make lassen sich auch weitere Tools verbinden." } }
-          ]
-        }}
+      
       />
       <Header />
       <main className="pt-24">
