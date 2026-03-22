@@ -45,7 +45,7 @@ const Index = () => {
       <Header />
       <main>
         {/* 1. Hero - Vision & Ergebnis */}
-        <Hero />
+        <HeroGaetano />
         
         {/* Trust Logos - Glaubwürdigkeit */}
         <TrustLogos />
