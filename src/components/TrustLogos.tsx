@@ -12,36 +12,43 @@ import htmlIcon from "@/assets/html-icon.png";
 const partners = [
   {
     name: "GoHighLevel",
+    alt: "GoHighLevel zertifizierter Partner",
     logo: gohighlevelLogo,
     url: "https://www.gohighlevel.com/?fp_ref=gaetano62",
   },
   {
     name: "Funnelmate",
+    alt: "Funnelmate White-Label Partner",
     logo: funnelmateLogo,
     url: "https://funnelmate.io/?am_id=gaetano",
   },
   {
     name: "Funnelmate Certified Expert",
+    alt: "Funnelmate Certified Expert Badge",
     logo: funnelmateCertifiedExpert,
     url: "https://funnelmate.io/?am_id=gaetano",
   },
   {
     name: "Patrick Mentler",
+    alt: "Patrick Mentler Funnelmate Gründer",
     logo: patrickMentlerLogo,
     url: "https://funnelmate.io/?am_id=gaetano",
   },
   {
     name: "OCTA Steuerberater",
+    alt: "OCTA Steuerberater Bielefeld Kundenprojekt",
     logo: octaLogo,
     url: "#",
   },
   {
     name: "HTML5",
+    alt: "HTML5",
     logo: htmlIcon,
     url: "#",
   },
   {
     name: "CSS3",
+    alt: "CSS3",
     logo: cssIcon,
     url: "#",
   },
