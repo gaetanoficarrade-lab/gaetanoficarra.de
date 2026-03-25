@@ -86,6 +86,7 @@ const SEOHead = ({
   ogDescription,
   ogImage = `${BASE_URL}/og-image.png`,
   ogType = "website",
+  noIndex = false,
   jsonLd,
   breadcrumbs,
 }: SEOHeadProps) => {
