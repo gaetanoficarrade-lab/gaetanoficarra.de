@@ -107,6 +107,7 @@ const BlogArticle = () => {
         description={post.description}
         canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
         ogType="article"
+        ogImage={post.cover_image || "https://gaetanoficarra.de/og-image.png"}
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Blog", url: "https://gaetanoficarra.de/blog" },
@@ -116,6 +117,7 @@ const BlogArticle = () => {
           "@type": "BlogPosting",
           "headline": post.title,
           "description": post.description,
+          "image": post.cover_image || "https://gaetanoficarra.de/og-image.png",
           "url": `https://gaetanoficarra.de/blog/${post.slug}`,
           "datePublished": post.published_at,
           "dateModified": post.published_at,
