@@ -94,6 +94,8 @@ const Hero = () => {
                 src={portrait}
                 alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
+                width={500}
+                height={500}
                 fetchPriority="high"
               />
 
