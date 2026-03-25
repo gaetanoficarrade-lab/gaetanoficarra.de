@@ -37,6 +37,8 @@ const About = () => {
                   src={portrait}
                   alt="Gaetano Ficarra - Marketing-Systemberater aus Bielefeld"
                   className="relative w-full max-w-md rounded-2xl border border-border shadow-xl"
+                  width={448}
+                  height={448}
                   loading="lazy"
                 />
               </div>
