@@ -139,6 +139,25 @@ const Blog = () => {
               ))}
             </div>
           )}
+
+          {/* Vergleichs-Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="max-w-3xl mx-auto mt-16 rounded-xl border border-primary/20 bg-card p-8 md:p-10 text-center"
+          >
+            <p className="text-muted-foreground font-body text-lg mb-4">
+              Nicht sicher welches Tool das Richtige ist?
+            </p>
+            <Link
+              to="/highlevel-vs-funnelmate"
+              className="inline-flex items-center gap-2 text-primary font-body text-sm tracking-widest uppercase hover:gap-3 transition-all duration-300"
+            >
+              GoHighLevel vs. Funnelmate — der direkte Vergleich
+              <ArrowRight size={16} />
+            </Link>
+          </motion.div>
         </section>
       </main>
       <Footer />
