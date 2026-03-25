@@ -41,7 +41,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              <span className="text-gradient-primary">Marketing Automation Berater</span> für Selbstständige — mehr Zeit, weniger Chaos
+              <span className="text-gradient-primary">Marketing Automation Berater für Coaches, Berater & Dienstleister</span> — mehr Zeit, weniger Chaos
             </motion.h1>
 
             {/* Subheadline */}
