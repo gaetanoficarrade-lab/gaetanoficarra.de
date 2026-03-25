@@ -126,7 +126,7 @@ const Footer = () => {
               >
                 <img 
                   src={funnelmateBadge} 
-                  alt="Funnelmate Certified Expert" 
+                  alt="Gaetano Ficarra Funnelmate Certified Expert Badge" 
                   className="h-20 w-auto object-contain"
                   loading="lazy"
                 />

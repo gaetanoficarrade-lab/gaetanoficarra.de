@@ -127,7 +127,7 @@ const TrustLogos = () => {
                 >
                   <img 
                     src={partner.logo} 
-                    alt={`${partner.name} Logo`}
+                    alt={partner.alt}
                     className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
                     loading="lazy"
                   />
