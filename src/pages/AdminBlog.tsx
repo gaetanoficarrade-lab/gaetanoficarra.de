@@ -83,6 +83,7 @@ const AdminBlog = () => {
           </CardContent>
         </Card>
       </div>
+      </>
     );
   }
 
