@@ -91,10 +91,11 @@ const SEOHead = ({
   breadcrumbs,
 }: SEOHeadProps) => {
   const rawCanonical = canonical || `${BASE_URL}${window.location.pathname}`;
-  // Ensure trailing slash on all pages except the homepage
-  const canonicalUrl = rawCanonical === BASE_URL || rawCanonical === `${BASE_URL}/`
+  // Homepage keeps trailing slash; all other pages have no trailing slash
+  const isHome = rawCanonical === BASE_URL || rawCanonical === `${BASE_URL}/`;
+  const canonicalUrl = isHome
     ? `${BASE_URL}/`
-    : rawCanonical.endsWith("/") ? rawCanonical : `${rawCanonical}/`;
+    : rawCanonical.replace(/\/+$/, "");
   const resolvedOgTitle = ogTitle || title;
   const resolvedOgDesc = ogDescription || description;
 
