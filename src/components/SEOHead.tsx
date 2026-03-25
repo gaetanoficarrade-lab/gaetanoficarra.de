@@ -10,6 +10,7 @@ interface SEOHeadProps {
   ogDescription?: string;
   ogImage?: string;
   ogType?: string;
+  noIndex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   breadcrumbs?: { name: string; url: string }[];
 }
