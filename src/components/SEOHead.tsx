@@ -25,6 +25,11 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
+const removeMeta = (attr: string, key: string) => {
+  const el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (el) el.remove();
+};
+
 const setCanonical = (href: string) => {
   let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
   if (!link) {
@@ -35,7 +40,6 @@ const setCanonical = (href: string) => {
   link.setAttribute("href", href);
 };
 
-/** Upsert a JSON-LD script by ID — prevents duplicates after pre-rendering */
 const upsertJsonLd = (id: string, data: Record<string, unknown>) => {
   let el = document.getElementById(id) as HTMLScriptElement | null;
   if (!el) {
@@ -47,26 +51,29 @@ const upsertJsonLd = (id: string, data: Record<string, unknown>) => {
   el.textContent = JSON.stringify(data);
 };
 
-/**
- * Apply critical SEO tags synchronously (outside useEffect) so they are
- * present in the DOM when Puppeteer calls page.content().
- */
-const applyCriticalTags = (
+const resolveCanonical = (canonical: string | undefined, pathname: string): string => {
+  const raw = canonical || `${BASE_URL}${pathname}`;
+  const isHome = raw === BASE_URL || raw === `${BASE_URL}/`;
+  return isHome ? `${BASE_URL}/` : raw.replace(/\/+$/, "");
+};
+
+const applyAllTags = (
   title: string,
   description: string,
-  canonical: string,
+  canonicalUrl: string,
   ogTitle: string,
   ogDescription: string,
   ogImage: string,
   ogType: string,
+  noIndex: boolean,
 ) => {
   document.title = title;
   setMeta("name", "description", description);
-  setCanonical(canonical);
+  setCanonical(canonicalUrl);
 
   setMeta("property", "og:title", ogTitle);
   setMeta("property", "og:description", ogDescription);
-  setMeta("property", "og:url", canonical);
+  setMeta("property", "og:url", canonicalUrl);
   setMeta("property", "og:image", ogImage);
   setMeta("property", "og:type", ogType);
   setMeta("property", "og:site_name", "Gaetano Ficarra");
@@ -76,6 +83,12 @@ const applyCriticalTags = (
   setMeta("name", "twitter:title", ogTitle);
   setMeta("name", "twitter:description", ogDescription);
   setMeta("name", "twitter:image", ogImage);
+
+  if (noIndex) {
+    setMeta("name", "robots", "noindex, nofollow");
+  } else {
+    removeMeta("name", "robots");
+  }
 };
 
 const SEOHead = ({
@@ -90,95 +103,100 @@ const SEOHead = ({
   jsonLd,
   breadcrumbs,
 }: SEOHeadProps) => {
-  const rawCanonical = canonical || `${BASE_URL}${window.location.pathname}`;
-  // Homepage keeps trailing slash; all other pages have no trailing slash
-  const isHome = rawCanonical === BASE_URL || rawCanonical === `${BASE_URL}/`;
-  const canonicalUrl = isHome
-    ? `${BASE_URL}/`
-    : rawCanonical.replace(/\/+$/, "");
+  const canonicalUrl = resolveCanonical(canonical, window.location.pathname);
   const resolvedOgTitle = ogTitle || title;
   const resolvedOgDesc = ogDescription || description;
 
-  // Apply critical tags synchronously during render — ensures they exist
-  // in the DOM before Puppeteer snapshots, regardless of useEffect timing.
-  const appliedRef = useRef(false);
-  if (!appliedRef.current) {
-    applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
-    if (noIndex) {
-      setMeta("name", "robots", "noindex, nofollow");
-    }
-    appliedRef.current = true;
+  // Synchronous render — für Puppeteer Prerendering kritisch
+  const appliedRef = useRef<string>("");
+  const currentKey = `${title}|${canonicalUrl}|${noIndex}`;
+  if (appliedRef.current !== currentKey) {
+    applyAllTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType, noIndex);
+    appliedRef.current = currentKey;
   }
 
   useEffect(() => {
-    applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
+    // Beim Client-Side-Navigation nochmals setzen
+    applyAllTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType, noIndex);
 
-    if (noIndex) {
-      setMeta("name", "robots", "noindex, nofollow");
-    } else {
-      const robotsMeta = document.querySelector('meta[name="robots"]');
-      if (robotsMeta) robotsMeta.remove();
-    }
-
-    // Track IDs for cleanup on unmount
     const scriptIds: string[] = [];
 
-    // Global Person schema
     upsertJsonLd("seo-person-ld", {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Gaetano Ficarra",
-      "jobTitle": "Marketing Automation Berater für Selbstständige",
-      "url": BASE_URL,
-      "image": `${BASE_URL}/og-image.png`,
-      "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressCountry": "DE" },
-      "sameAs": [
+      name: "Gaetano Ficarra",
+      jobTitle: "Marketing Automation Berater für Selbstständige",
+      url: BASE_URL,
+      image: `${BASE_URL}/og-image.png`,
+      address: { "@type": "PostalAddress", addressLocality: "Bielefeld", addressCountry: "DE" },
+      sameAs: [
         "https://www.linkedin.com/in/gaetano-ficarra/",
         "https://www.instagram.com/gaetano.ficarra/",
-        "https://share.google/x4un2oyPVnb9DxDXL"
-      ]
+        "https://share.google/x4un2oyPVnb9DxDXL",
+      ],
     });
     scriptIds.push("seo-person-ld");
 
-    // Global ProfessionalService schema
     upsertJsonLd("seo-professional-service-ld", {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Gaetano Ficarra",
-      "description": "Marketing Automation Berater für Selbstständige, Coaches und Dienstleister im DACH-Raum. Zertifizierter GoHighLevel Admin aus Bielefeld.",
-      "url": BASE_URL,
-      "image": `${BASE_URL}/og-image.png`,
-      "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressRegion": "NRW", "addressCountry": "DE" },
-      "areaServed": [
-        { "@type": "Country", "name": "Deutschland" },
-        { "@type": "Country", "name": "Österreich" },
-        { "@type": "Country", "name": "Schweiz" }
+      name: "Gaetano Ficarra",
+      description:
+        "Marketing Automation Berater für Selbstständige, Coaches und Dienstleister im DACH-Raum. Zertifizierter GoHighLevel Admin aus Bielefeld.",
+      url: BASE_URL,
+      image: `${BASE_URL}/og-image.png`,
+      telephone: "+49-152-23856537",
+      email: "kontakt@gaetanoficarra.de",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Elverdisser Str. 51",
+        addressLocality: "Bielefeld",
+        postalCode: "33729",
+        addressRegion: "NRW",
+        addressCountry: "DE",
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
       ],
-      "priceRange": "€€",
-      "telephone": "+49-152-23856537",
-      "email": "kontakt@gaetanoficarra.de",
-      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"}],
-      "hasMap": "https://maps.google.com/?q=Elverdisser+Str.+51,+33729+Bielefeld",
-      "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building", "Marketing Automation Beratung", "CRM Setup", "Business Systeme"]
+      areaServed: [
+        { "@type": "Country", name: "Deutschland" },
+        { "@type": "Country", name: "Österreich" },
+        { "@type": "Country", name: "Schweiz" },
+      ],
+      priceRange: "€€",
+      hasMap: "https://maps.google.com/?q=Elverdisser+Str.+51,+33729+Bielefeld",
+      knowsAbout: [
+        "GoHighLevel",
+        "Funnelmate",
+        "Marketing Automation",
+        "CRM",
+        "Funnel Building",
+        "Marketing Automation Beratung",
+        "CRM Setup",
+        "Business Systeme",
+      ],
     });
     scriptIds.push("seo-professional-service-ld");
 
-    // Breadcrumbs
     if (breadcrumbs && breadcrumbs.length > 0) {
       upsertJsonLd("seo-breadcrumb-ld", {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": breadcrumbs.map((bc, i) => ({
+        itemListElement: breadcrumbs.map((bc, i) => ({
           "@type": "ListItem",
-          "position": i + 1,
-          "name": bc.name,
-          "item": bc.url,
+          position: i + 1,
+          name: bc.name,
+          item: bc.url,
         })),
       });
       scriptIds.push("seo-breadcrumb-ld");
     }
 
-    // Page-specific schemas
     if (jsonLd) {
       const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
       schemas.forEach((schema, i) => {
@@ -188,13 +206,23 @@ const SEOHead = ({
     }
 
     return () => {
-      document.title = "Gaetano Ficarra — GoHighLevel & Funnelmate Experte für Marketing Automation";
       scriptIds.forEach((id) => {
         const el = document.getElementById(id);
         if (el) el.remove();
       });
     };
-  }, [title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType, jsonLd, breadcrumbs]);
+  }, [
+    title,
+    description,
+    canonicalUrl,
+    resolvedOgTitle,
+    resolvedOgDesc,
+    ogImage,
+    ogType,
+    noIndex,
+    jsonLd,
+    breadcrumbs,
+  ]);
 
   return null;
 };
