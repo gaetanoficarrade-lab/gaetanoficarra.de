@@ -5,24 +5,9 @@ import { AlertTriangle, Layers, Clock, Zap, ArrowRight } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const problems = [
-  {
-    icon: Layers,
-    title: "Zu viele Tools",
-    description:
-      "CRM, E-Mail-Tool, Funnel-Builder, Terminbuchung – du zahlst für 10 verschiedene Plattformen und verlierst den Überblick.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Leads gehen verloren",
-    description:
-      "Ohne System verschwinden Interessenten. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei der Konkurrenz.",
-  },
-  {
-    icon: Clock,
-    title: "Stunden an Handarbeit",
-    description:
-      "Copy-Paste, manuelle E-Mails, ständiges Hin- und Herwechseln. Zeit, die du für dein eigentliches Business verlierst.",
-  },
+  { icon: Layers, title: "Zu viele Tools", description: "CRM, E-Mail-Tool, Funnel-Builder, Terminbuchung – du zahlst für 10 verschiedene Plattformen und verlierst den Überblick." },
+  { icon: AlertTriangle, title: "Leads gehen verloren", description: "Ohne System verschwinden Interessenten. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei der Konkurrenz." },
+  { icon: Clock, title: "Stunden an Handarbeit", description: "Copy-Paste, manuelle E-Mails, ständiges Hin- und Herwechseln. Zeit, die du für dein eigentliches Business verlierst." },
 ];
 
 const solutions = [
@@ -41,7 +26,6 @@ const ProblemSolution = () => {
     <section className="py-24 md:py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Problem Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -54,7 +38,6 @@ const ProblemSolution = () => {
             </h2>
           </motion.div>
 
-          {/* Problems Grid */}
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-24">
             {problems.map((problem, index) => (
               <motion.div
@@ -62,7 +45,8 @@ const ProblemSolution = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
-                className="bg-card border border-destructive/20 p-8 rounded-lg text-center hover:border-destructive/40 transition-colors"
+                className="glass-card p-8 text-center"
+                style={{ borderColor: "hsl(var(--destructive) / 0.15)" }}
               >
                 <div className="flex items-center justify-center w-14 h-14 bg-destructive/10 rounded-full mx-auto mb-6">
                   <problem.icon className="w-7 h-7 text-destructive" />
@@ -73,12 +57,12 @@ const ProblemSolution = () => {
             ))}
           </div>
 
-          {/* Solution Section */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="bg-gradient-to-br from-card to-primary/5 border border-primary/20 p-10 md:p-14 rounded-lg"
+            className="glass-card-premium p-10 md:p-14"
+            style={{ borderColor: "hsl(var(--primary) / 0.2)" }}
           >
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
@@ -93,8 +77,7 @@ const ProblemSolution = () => {
                 </h3>
                 <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
                   Mit GoHighLevel bekommst du alles in einer Plattform: CRM, E-Mail-Marketing, Funnels, Terminbuchung,
-                  Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1
-                  funktioniert.
+                  Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1 funktioniert.
                 </p>
                 <button
                   onClick={openQuizModal}
@@ -111,7 +94,7 @@ const ProblemSolution = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                    className="flex items-start gap-4 bg-background/50 p-4 rounded-lg border border-border"
+                    className="flex items-start gap-4 glass-card p-4"
                   >
                     <span className="text-primary text-xl">✓</span>
                     <span className="text-foreground font-body">{solution}</span>

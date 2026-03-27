@@ -8,7 +8,7 @@ const Guide = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="guide" className="py-24 md:py-32 bg-card relative" ref={ref}>
+    <section id="guide" className="py-24 md:py-32 glass-section relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -32,11 +32,11 @@ const Guide = () => {
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-2xl scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl blur-2xl scale-105" />
                 <img
                   src={portrait}
                   alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
-                  className="relative w-full max-w-md rounded-2xl border border-border shadow-xl"
+                  className="relative w-full max-w-md rounded-2xl border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
                   width={448}
                   height={448}
                   loading="lazy"
@@ -53,20 +53,17 @@ const Guide = () => {
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
                 Ich bin Gaetano Ficarra. Meine Aufgabe ist es, dir ein zentrales Marketing-System aufzubauen, das zuverlässig funktioniert, damit du dich auf Kunden, Umsatz und Wachstum konzentrieren kannst.
               </p>
-
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
                 Du sollst keine neuen Tools lernen, keine Technik basteln und keine Schnittstellen debuggen. Das ist mein Job. Ich denke in Prozessen und setze dir ein sauberes Setup auf, in dem Leads, Termine und Follow-ups klar strukturiert zusammenlaufen.
               </p>
-
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
                 Ich sorge dafür, dass dein System verständlich aufgebaut ist, stabil läuft und ohne ständiges Nachjustieren funktioniert, als Grundlage für planbares Wachstum.
               </p>
-
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
                 Als zertifizierter GoHighLevel Admin mit Erfahrung in Migration, komplexen Automationen und DSGVO-konformer Einrichtung stelle ich sicher, dass dein System nicht nur heute funktioniert, sondern auch langfristig tragfähig ist.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border">
+              <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border/50">
                 {[
                   { label: "Zertifizierter", value: "GoHighLevel Admin" },
                   { label: "Fokus", value: "Ordnung & Klarheit" },

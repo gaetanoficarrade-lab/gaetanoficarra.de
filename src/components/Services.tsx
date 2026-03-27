@@ -8,8 +8,7 @@ const services = [
   {
     icon: Settings,
     title: "Komplett-Setup",
-    description:
-      "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
+    description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     benefits: [
       "Du arbeitest mit einem vollständig eingerichteten System",
       "Routineaufgaben laufen im Hintergrund",
@@ -22,8 +21,7 @@ const services = [
   {
     icon: Users,
     title: "Gemeinsam aufbauen",
-    description:
-      "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
+    description: "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
     benefits: [
       "Du verstehst, wie dein System funktioniert",
       "Änderungen kannst du sicher einschätzen",
@@ -36,8 +34,7 @@ const services = [
   {
     icon: Headphones,
     title: "Support-Call",
-    description:
-      "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
+    description: "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
     benefits: [
       "Du bekommst eine klare Antwort auf dein konkretes Problem",
       "Lösungen statt langem Suchen",
@@ -53,9 +50,9 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="leistungen" className="py-24 md:py-32 bg-card relative" ref={ref}>
+    <section id="leistungen" className="py-24 md:py-32 glass-section relative" ref={ref}>
       {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.02]">
         <div
           className="absolute inset-0"
           style={{
@@ -78,8 +75,7 @@ const Services = () => {
             So kann ich dich <span className="text-gradient-primary">unterstützen</span>
           </h2>
           <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
-            Ob komplette Einrichtung, gemeinsames Arbeiten oder schnelle Hilfe bei Problemen, wähle die Option, die zu
-            dir passt.
+            Ob komplette Einrichtung, gemeinsames Arbeiten oder schnelle Hilfe bei Problemen, wähle die Option, die zu dir passt.
           </p>
         </motion.div>
 
@@ -91,8 +87,8 @@ const Services = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
-              className={`relative group p-8 bg-background border rounded-lg transition-all duration-500 hover:glow-gold ${
-                service.popular ? "border-primary" : "border-border hover:border-primary/30"
+              className={`relative group p-8 glass-card-premium ${
+                service.popular ? "!border-primary/30" : ""
               }`}
             >
               {service.popular && (
@@ -117,7 +113,6 @@ const Services = () => {
           ))}
         </div>
 
-
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,9 +122,9 @@ const Services = () => {
         >
           <Link
             to="/leistungen"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-sm font-body text-sm uppercase tracking-widest transition-all duration-300 hover:bg-primary/90 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-body text-sm uppercase tracking-widest transition-all duration-300 hover:bg-primary/90 hover:scale-105"
             style={{
-              boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
+              boxShadow: "0 0 20px hsl(var(--primary) / 0.2)",
             }}
           >
             Alle Leistungen & Preise <ArrowRight className="w-4 h-4" />

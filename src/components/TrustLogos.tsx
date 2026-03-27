@@ -10,55 +10,18 @@ import cssIcon from "@/assets/css-icon.png";
 import htmlIcon from "@/assets/html-icon.png";
 
 const partners = [
-  {
-    name: "GoHighLevel",
-    alt: "GoHighLevel zertifizierter Partner",
-    logo: gohighlevelLogo,
-    url: "https://www.gohighlevel.com/?fp_ref=gaetano62",
-  },
-  {
-    name: "Funnelmate",
-    alt: "Funnelmate White-Label Partner",
-    logo: funnelmateLogo,
-    url: "https://funnelmate.io/?am_id=gaetano",
-  },
-  {
-    name: "Funnelmate Certified Expert",
-    alt: "Funnelmate Certified Expert Badge",
-    logo: funnelmateCertifiedExpert,
-    url: "https://funnelmate.io/?am_id=gaetano",
-  },
-  {
-    name: "Patrick Mentler",
-    alt: "Patrick Mentler Funnelmate Gründer",
-    logo: patrickMentlerLogo,
-    url: "https://funnelmate.io/?am_id=gaetano",
-  },
-  {
-    name: "OCTA Steuerberater",
-    alt: "OCTA Steuerberater Bielefeld Kundenprojekt",
-    logo: octaLogo,
-    url: "#",
-  },
-  {
-    name: "HTML5",
-    alt: "HTML5",
-    logo: htmlIcon,
-    url: "#",
-  },
-  {
-    name: "CSS3",
-    alt: "CSS3",
-    logo: cssIcon,
-    url: "#",
-  },
+  { name: "GoHighLevel", alt: "GoHighLevel zertifizierter Partner", logo: gohighlevelLogo, url: "https://www.gohighlevel.com/?fp_ref=gaetano62" },
+  { name: "Funnelmate", alt: "Funnelmate White-Label Partner", logo: funnelmateLogo, url: "https://funnelmate.io/?am_id=gaetano" },
+  { name: "Funnelmate Certified Expert", alt: "Funnelmate Certified Expert Badge", logo: funnelmateCertifiedExpert, url: "https://funnelmate.io/?am_id=gaetano" },
+  { name: "Patrick Mentler", alt: "Patrick Mentler Funnelmate Gründer", logo: patrickMentlerLogo, url: "https://funnelmate.io/?am_id=gaetano" },
+  { name: "OCTA Steuerberater", alt: "OCTA Steuerberater Bielefeld Kundenprojekt", logo: octaLogo, url: "#" },
+  { name: "HTML5", alt: "HTML5", logo: htmlIcon, url: "#" },
+  { name: "CSS3", alt: "CSS3", logo: cssIcon, url: "#" },
 ];
 
 const TrustLogos = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  // Double the partners array for seamless infinite scroll
   const duplicatedPartners = [...partners, ...partners];
 
   return (
@@ -75,46 +38,29 @@ const TrustLogos = () => {
           </span>
         </motion.div>
 
-        {/* Infinite scrolling logo slider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative overflow-hidden"
         >
-          {/* Gradient fade edges */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
           
-          {/* Scrolling container */}
           <motion.div
             className="flex items-center gap-12 md:gap-16"
-            animate={{
-              x: [0, -50 * partners.length * 3],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 25,
-                ease: "linear",
-              },
-            }}
+            animate={{ x: [0, -50 * partners.length * 3] }}
+            transition={{ x: { repeat: Infinity, repeatType: "loop", duration: 25, ease: "linear" } }}
           >
             {duplicatedPartners.map((partner, index) => {
-              // Size categories for logos
               const isOctaLogo = partner.name === "OCTA Steuerberater";
               const isLargeLogo = partner.name === "Funnelmate Certified Expert";
               const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "HTML5" || partner.name === "CSS3" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
               
-              let sizeClass = 'h-12 md:h-14 lg:h-16'; // default
-              if (isOctaLogo) {
-                sizeClass = 'h-16 md:h-20 lg:h-24'; // OCTA bigger
-              } else if (isLargeLogo) {
-                sizeClass = 'h-14 md:h-18 lg:h-20'; // Funnelmate Certified Expert
-              } else if (isMediumLogo) {
-                sizeClass = 'h-10 md:h-12 lg:h-14'; // Funnelmate, Patrick Mentler, GHL, HTML, CSS smaller
-              }
+              let sizeClass = 'h-12 md:h-14 lg:h-16';
+              if (isOctaLogo) sizeClass = 'h-16 md:h-20 lg:h-24';
+              else if (isLargeLogo) sizeClass = 'h-14 md:h-18 lg:h-20';
+              else if (isMediumLogo) sizeClass = 'h-10 md:h-12 lg:h-14';
               
               return (
                 <a
@@ -128,7 +74,7 @@ const TrustLogos = () => {
                   <img 
                     src={partner.logo} 
                     alt={partner.alt}
-                    className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
+                    className={`w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
                     loading="lazy"
                   />
                 </a>
@@ -136,7 +82,6 @@ const TrustLogos = () => {
             })}
           </motion.div>
         </motion.div>
-
       </div>
     </section>
   );

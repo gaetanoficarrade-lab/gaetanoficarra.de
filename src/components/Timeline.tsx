@@ -5,30 +5,10 @@ import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react"
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const steps = [
-  {
-    icon: MessageCircle,
-    step: "01",
-    title: "Erstgespräch",
-    description: "Wir sprechen über deine Situation, Ziele und Herausforderungen. Kein Verkaufsdruck, nur Klarheit.",
-  },
-  {
-    icon: ClipboardCheck,
-    step: "02",
-    title: "Analyse & Planung",
-    description: "Ich analysiere deine bestehenden Tools und erstelle einen konkreten Plan für dein neues System.",
-  },
-  {
-    icon: Rocket,
-    step: "03",
-    title: "Einrichtung & Migration",
-    description: "Dein Funnelmate-System wird aufgebaut, bestehende Daten migriert und alles konfiguriert.",
-  },
-  {
-    icon: Headphones,
-    step: "04",
-    title: "Go-Live & Support",
-    description: "Dein System geht live. Du bekommst eine Einweisung und laufenden Support für Fragen.",
-  },
+  { icon: MessageCircle, step: "01", title: "Erstgespräch", description: "Wir sprechen über deine Situation, Ziele und Herausforderungen. Kein Verkaufsdruck, nur Klarheit." },
+  { icon: ClipboardCheck, step: "02", title: "Analyse & Planung", description: "Ich analysiere deine bestehenden Tools und erstelle einen konkreten Plan für dein neues System." },
+  { icon: Rocket, step: "03", title: "Einrichtung & Migration", description: "Dein Funnelmate-System wird aufgebaut, bestehende Daten migriert und alles konfiguriert." },
+  { icon: Headphones, step: "04", title: "Go-Live & Support", description: "Dein System geht live. Du bekommst eine Einweisung und laufenden Support für Fragen." },
 ];
 
 const Timeline = () => {
@@ -39,7 +19,7 @@ const Timeline = () => {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-white/20 to-background" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -61,10 +41,8 @@ const Timeline = () => {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Vertical line - visible on desktop */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
 
-            {/* Steps */}
             <div className="space-y-12 lg:space-y-0">
               {steps.map((step, index) => (
                 <motion.div
@@ -76,32 +54,26 @@ const Timeline = () => {
                     index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
                 >
-                  {/* Content Card */}
                   <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className="bg-card border border-border p-6 md:p-8 rounded-lg hover:border-primary/30 transition-colors"
+                      className="glass-card-premium p-6 md:p-8"
                     >
                       <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-6 h-6 text-primary" />
                         </div>
                         <div className={index % 2 === 0 ? "lg:text-right" : ""}>
-                          <span className="text-primary text-xs tracking-widest uppercase font-body">
-                            Schritt {step.step}
-                          </span>
+                          <span className="text-primary text-xs tracking-widest uppercase font-body">Schritt {step.step}</span>
                           <h3 className="font-display text-xl text-foreground">{step.title}</h3>
                         </div>
                       </div>
-                      <p
-                        className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}
-                      >
+                      <p className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
                         {step.description}
                       </p>
                     </motion.div>
                   </div>
 
-                  {/* Center dot - visible on desktop */}
                   <div className="hidden lg:flex items-center justify-center w-20 flex-shrink-0">
                     <motion.div
                       initial={{ scale: 0 }}
@@ -109,12 +81,11 @@ const Timeline = () => {
                       transition={{ duration: 0.4, delay: 0.2 * (index + 1) }}
                       className="relative"
                     >
-                      <div className="absolute inset-0 bg-primary/20 rounded-full blur-md scale-150" />
+                      <div className="absolute inset-0 bg-primary/15 rounded-full blur-md scale-150" />
                       <div className="w-4 h-4 bg-primary rounded-full relative z-10" />
                     </motion.div>
                   </div>
 
-                  {/* Spacer for alternating layout */}
                   <div className="hidden lg:block lg:w-[calc(50%-40px)]" />
                 </motion.div>
               ))}
@@ -130,10 +101,8 @@ const Timeline = () => {
           >
             <button
               onClick={openQuizModal}
-              className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 rounded-sm transition-all duration-300 hover:scale-105"
-              style={{
-                boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
-              }}
+              className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 rounded-md transition-all duration-300 hover:scale-105"
+              style={{ boxShadow: "0 0 20px hsl(var(--primary) / 0.2)" }}
             >
               System-Analyse starten
             </button>

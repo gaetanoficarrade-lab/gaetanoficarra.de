@@ -39,9 +39,9 @@ const Testimonials = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 md:py-32 bg-card relative overflow-hidden" ref={ref}>
+    <section className="py-24 md:py-32 glass-section relative overflow-hidden" ref={ref}>
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
           backgroundSize: '40px 40px'
@@ -49,22 +49,18 @@ const Testimonials = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm tracking-widest uppercase font-body">
-            Kundenstimmen
-          </span>
+          <span className="text-primary text-sm tracking-widest uppercase font-body">Kundenstimmen</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
             Was meine <span className="text-gradient-primary">Kunden</span> sagen
           </h2>
         </motion.div>
 
-        {/* Testimonials Grid */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -74,32 +70,24 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-background border border-border rounded-lg p-8 relative overflow-hidden"
+              className="glass-card-premium p-8 relative overflow-hidden"
             >
               <Quote className="absolute -top-2 -left-2 w-12 h-12 text-primary/10" />
 
-              {/* Stars */}
               <div className="flex gap-1 mb-4 relative z-10">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
 
-              {/* Text */}
               <p className="text-sm text-foreground font-body leading-relaxed mb-6 italic relative z-10">
                 "{testimonial.text}"
               </p>
 
-              {/* Author */}
               <div className="flex items-center gap-3 relative z-10">
                 <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 bg-primary/10 flex items-center justify-center flex-shrink-0">
                   {testimonial.image ? (
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" loading="lazy" />
                   ) : (
                     <span className="font-display text-primary text-sm">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
@@ -107,12 +95,8 @@ const Testimonials = () => {
                   )}
                 </div>
                 <div>
-                  <div className="font-display text-foreground text-sm">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-muted-foreground text-xs font-body">
-                    {testimonial.role}
-                  </div>
+                  <div className="font-display text-foreground text-sm">{testimonial.name}</div>
+                  <div className="text-muted-foreground text-xs font-body">{testimonial.role}</div>
                 </div>
               </div>
             </div>

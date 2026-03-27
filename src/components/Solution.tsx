@@ -6,36 +6,12 @@ import automationWorkspace from "@/assets/automation-workspace.jpg";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const features = [
-  {
-    icon: Users,
-    title: "CRM",
-    description: "Kein manuelles Pflegen von Kontaktlisten. Leads, Kunden und Anfragen sind automatisch sauber erfasst.",
-  },
-  {
-    icon: Mail,
-    title: "E-Mail-Marketing",
-    description: "Kein Copy-Paste zwischen Tools. Newsletter und Sequenzen laufen im Hintergrund – ohne dein Zutun.",
-  },
-  {
-    icon: LayoutTemplate,
-    title: "Funnel-Builder",
-    description: "Keine externen Page-Builder mehr. Landing Pages und Funnels sind direkt im System – du musst dich um nichts kümmern.",
-  },
-  {
-    icon: Calendar,
-    title: "Terminbuchung",
-    description: "Keine Terminabsprache mehr per Mail. Interessenten buchen selbst – du bekommst nur noch Kalendereinträge.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Mitgliederbereiche",
-    description: "Keine Extra-Plattform für Kurse. Inhalte sind geschützt abrufbar – ohne zusätzliche Logins oder Zugänge zu verwalten.",
-  },
-  {
-    icon: Workflow,
-    title: "Automatisierungen",
-    description: "Kein manuelles Nachfassen. Follow-ups, Erinnerungen und Abläufe passieren automatisch – du bist raus.",
-  },
+  { icon: Users, title: "CRM", description: "Kein manuelles Pflegen von Kontaktlisten. Leads, Kunden und Anfragen sind automatisch sauber erfasst." },
+  { icon: Mail, title: "E-Mail-Marketing", description: "Kein Copy-Paste zwischen Tools. Newsletter und Sequenzen laufen im Hintergrund – ohne dein Zutun." },
+  { icon: LayoutTemplate, title: "Funnel-Builder", description: "Keine externen Page-Builder mehr. Landing Pages und Funnels sind direkt im System – du musst dich um nichts kümmern." },
+  { icon: Calendar, title: "Terminbuchung", description: "Keine Terminabsprache mehr per Mail. Interessenten buchen selbst – du bekommst nur noch Kalendereinträge." },
+  { icon: GraduationCap, title: "Mitgliederbereiche", description: "Keine Extra-Plattform für Kurse. Inhalte sind geschützt abrufbar – ohne zusätzliche Logins oder Zugänge zu verwalten." },
+  { icon: Workflow, title: "Automatisierungen", description: "Kein manuelles Nachfassen. Follow-ups, Erinnerungen und Abläufe passieren automatisch – du bist raus." },
 ];
 
 const Solution = () => {
@@ -71,8 +47,8 @@ const Solution = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-16"
           >
-            <div className="relative overflow-hidden rounded-xl border border-border">
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10" />
+            <div className="relative overflow-hidden rounded-xl border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.08)]">
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent z-10" />
               <img
                 src={automationWorkspace}
                 alt="Professionelle Marketing Automation Workflows"
@@ -92,7 +68,7 @@ const Solution = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
-                className="bg-card border border-border p-8 rounded-lg hover:border-primary/30 transition-colors"
+                className="glass-card-premium p-8"
               >
                 <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-6">
                   <feature.icon className="w-7 h-7 text-primary" />
@@ -108,7 +84,8 @@ const Solution = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-gradient-to-br from-card to-primary/5 border border-primary/20 p-10 md:p-12 rounded-lg text-center"
+            className="glass-card-premium p-10 md:p-12 text-center"
+            style={{ borderColor: "hsl(var(--primary) / 0.2)" }}
           >
             <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">
               Der Unterschied: <span className="text-primary">Ich baue es für dich</span>

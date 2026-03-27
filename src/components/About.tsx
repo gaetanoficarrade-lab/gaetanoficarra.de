@@ -8,7 +8,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="über-mich" className="py-24 md:py-32 bg-card relative" ref={ref}>
+    <section id="über-mich" className="py-24 md:py-32 glass-section relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -24,7 +24,6 @@ const About = () => {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Image */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -32,11 +31,11 @@ const About = () => {
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-2xl scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl blur-2xl scale-105" />
                 <img
                   src={portrait}
                   alt="Gaetano Ficarra - Marketing-Systemberater aus Bielefeld"
-                  className="relative w-full max-w-md rounded-2xl border border-border shadow-xl"
+                  className="relative w-full max-w-md rounded-2xl border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
                   width={448}
                   height={448}
                   loading="lazy"
@@ -44,7 +43,6 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Content */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -55,13 +53,12 @@ const About = () => {
                 ausschließlich mit GoHighLevel und habe Unternehmen dabei geholfen, ihr Marketing zu automatisieren und
                 Zeit zu sparen.
               </p>
-
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
                 Mein Ziel ist es, dir ein System aufzubauen, das für dich arbeitet, damit du dich auf das konzentrieren
                 kannst, was du am besten kannst: Dein Business.
               </p>
 
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/50">
                 {[
                   { number: "3+", label: "Jahre Erfahrung" },
                   { number: "100%", label: "HighLevel Fokus" },

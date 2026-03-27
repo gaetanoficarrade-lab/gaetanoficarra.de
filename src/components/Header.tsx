@@ -37,13 +37,11 @@ const Header = () => {
       const targetId = item.href.replace("/#", "");
 
       if (location.pathname === "/") {
-        // Already on homepage, just scroll
         const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        // Navigate to homepage first, then scroll
         navigate("/");
         setTimeout(() => {
           const element = document.getElementById(targetId);
@@ -61,8 +59,10 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border overflow-hidden transition-colors duration-500 ${
-        scrolled ? "bg-background/90" : "bg-background/70"
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b overflow-hidden transition-all duration-500 ${
+        scrolled
+          ? "bg-white/70 border-white/60 shadow-[0_4px_30px_rgba(0,0,0,0.05)]"
+          : "bg-white/40 border-white/40"
       }`}
     >
       {/* Shimmer stripes */}
@@ -95,7 +95,7 @@ const Header = () => {
           ))}
           <button
             onClick={openQuizModal}
-            className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md"
+            className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
           >
             Termin buchen
           </button>
@@ -119,7 +119,7 @@ const Header = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border"
+            className="lg:hidden bg-white/80 backdrop-blur-xl border-t border-white/60"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => (

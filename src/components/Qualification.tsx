@@ -25,17 +25,13 @@ const Qualification = () => {
     <section className="py-24 md:py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">
-              Zielgruppe
-            </span>
+            <span className="text-primary text-sm tracking-widest uppercase font-body">Zielgruppe</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Für wen ich <span className="text-primary">der richtige Partner</span> bin
             </h2>
@@ -44,14 +40,13 @@ const Qualification = () => {
             </p>
           </motion.div>
 
-          {/* Two Column Layout */}
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Suitable For */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-card border border-primary/20 p-8 md:p-10 rounded-lg"
+              className="glass-card-premium p-8 md:p-10"
+              style={{ borderColor: "hsl(var(--primary) / 0.2)" }}
             >
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -75,12 +70,11 @@ const Qualification = () => {
               </ul>
             </motion.div>
 
-            {/* Not Suitable For */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-card border border-border p-8 md:p-10 rounded-lg"
+              className="glass-card p-8 md:p-10"
             >
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
