@@ -76,7 +76,7 @@ const Qualification = () => {
                 <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
                   <X className="w-6 h-6 text-muted-foreground" />
                 </div>
-                <h3 className="font-display text-xl text-foreground">Nicht geeignet für</h3>
+                 <h3 className="font-display text-xl text-foreground">Nicht das Richtige wenn:</h3>
               </div>
               <ul className="space-y-4">
                 {notSuitableFor.map((item, index) => (
