@@ -7,33 +7,33 @@ import systemIntegration from "@/assets/system-integration.jpg";
 const problems = [
   {
     icon: Layers,
-    title: "Zu viele Tools",
-    description: "CRM hier, E-Mail-Tool dort, Funnel-Builder woanders. Du zahlst für ein Dutzend Plattformen und keins spricht wirklich mit dem anderen.",
+    title: "Alles hängt an dir persönlich",
+    description: "Wenn du krank bist oder drei Tage nicht erreichbar, bricht das halbe Business ein. Das ist keine Selbstständigkeit – das ist eine andere Form von Anstellung.",
   },
   {
     icon: Link2Off,
-    title: "Fehlerhafte Schnittstellen",
-    description: "Zapier-Zaps, die brechen. Make-Szenarien, die nicht triggern. Du verbringst Stunden damit, herauszufinden, warum deine Automatisierung nicht funktioniert.",
+    title: "Tool-Chaos ohne Ende",
+    description: "Hier ein CRM, dort ein E-Mail-Tool, woanders ein Funnel-Builder. Du zahlst jeden Monat für ein Dutzend Plattformen die sich nicht kennen – und trotzdem läuft es nicht rund.",
   },
   {
     icon: Clock,
-    title: "Manuelle Prozesse",
-    description: "Listen exportieren, importieren, abgleichen. Kontakte von Hand taggen. Follow-ups manuell verschicken. Jeden Tag die gleichen Routinen.",
+    title: "Follow-ups die niemand verschickt",
+    description: "80 % der Abschlüsse entstehen erst nach mehreren Kontaktpunkten. Aber wer hat die Zeit, jeden Lead manuell nachzufassen? Die meisten kaufen irgendwann bei jemandem der einfach drangeblieben ist.",
   },
   {
     icon: AlertTriangle,
-    title: "Fehlende Übersicht",
-    description: "Wo ist welcher Lead? Wer hat was gekauft? Was wurde schon kontaktiert? Du springst zwischen Tabs und verlierst trotzdem den Überblick.",
-  },
-  {
-    icon: EuroIcon,
-    title: "Steigende Softwarekosten",
-    description: "ActiveCampaign, ClickFunnels, Calendly, Zoom, Kajabi... Jeden Monat gehen Hunderte Euro für Tools drauf, die du nur halb nutzt.",
+    title: "Kein Überblick – nur ein ungutes Gefühl",
+    description: "Wo steht welcher Lead? Wer wurde kontaktiert? Wer ist kurz vorm Abschluss? Du weißt es irgendwie – aber eben nicht wirklich.",
   },
   {
     icon: TrendingDown,
-    title: "Leads gehen verloren",
-    description: "Ohne ein funktionierendes System verschwinden Interessenten im Nirgendwo. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei anderen.",
+    title: "Skalierung die sich anfühlt wie gegen eine Wand laufen",
+    description: "Mehr Kunden bedeutet bei dir mehr Arbeit, nicht mehr Freiheit. Das Hamsterrad dreht sich schneller – aber du kommst nicht vom Fleck.",
+  },
+  {
+    icon: EuroIcon,
+    title: "Softwarekosten die sich nicht rechnen",
+    description: "Hunderte Euro jeden Monat für Tools die du nie zu 20 % nutzt. Und das eine System das alles zusammenhält – das fehlt.",
   },
 ];
 
@@ -52,14 +52,16 @@ const Problem = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">Das Problem</span>
+             <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">Das Problem</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Dein Wachstum scheitert nicht am Marketing{" "}
-              <span className="text-gradient-primary">sondern an fehlender Struktur</span>
+              Du kennst das Gefühl.{" "}
+              <span className="text-gradient-primary">Selbstständig – und trotzdem selbst und ständig.</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Du bekommst Anfragen und Leads, aber sie versickern im System-Chaos. Manuelle Prozesse, unübersichtliche Tools
-              und fehlende Automatisierung kosten dich Zeit, Nerven und letztlich Umsatz.
+              Du hast dir das anders vorgestellt. Mehr Freiheit. Mehr Kontrolle. Selbst entscheiden wann, wo und mit wem du arbeitest.
+              Stattdessen sitzt du abends noch am Laptop, onboardest neue Kunden per Hand, jagst Follow-ups hinterher – und fragst dich:
+              Hab ich auf die Anfrage von gestern schon geantwortet? Das ist die Zeit-gegen-Geld-Falle. Nicht weil du etwas falsch machst.
+              Sondern weil kein System dahinter ist. Und das ändere ich.
             </p>
           </motion.div>
 
@@ -101,8 +103,7 @@ const Problem = () => {
               />
             </div>
             <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
-              Wenn du regelmäßig Anfragen bekommst, aber trotzdem das Gefühl hast, ständig hinterherzurennen, liegt das nicht an dir.
-              Es fehlt ein zentrales System. Genau das baue ich für dich auf.
+              Kein einziger dieser Punkte ist deine Schuld. Sie haben alle dieselbe Ursache: kein System. Genau das ändere ich.
             </p>
           </motion.div>
         </div>
