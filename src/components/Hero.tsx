@@ -13,6 +13,50 @@ const Hero = () => {
       {/* Subtle radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(190_90%_50%/0.08)_0%,_transparent_70%)]" />
 
+      {/* Shimmer stripes */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute inset-0 w-[200%] h-full"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.08) 50%, transparent 100%)",
+            animation: "shimmer-ltr 10s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute inset-0 w-[200%] h-full"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.06) 50%, transparent 100%)",
+            animation: "shimmer-rtl 14s ease-in-out infinite",
+          }}
+        />
+      </div>
+
+      {/* Floating Orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "500px",
+            height: "500px",
+            top: "10%",
+            left: "-5%",
+            background: "radial-gradient(circle, hsl(var(--primary) / 0.07) 0%, transparent 70%)",
+            animation: "float-orb-1 16s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "600px",
+            height: "600px",
+            bottom: "5%",
+            right: "-10%",
+            background: "radial-gradient(circle, hsl(var(--secondary) / 0.05) 0%, transparent 70%)",
+            animation: "float-orb-2 20s ease-in-out infinite reverse",
+          }}
+        />
+      </div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}

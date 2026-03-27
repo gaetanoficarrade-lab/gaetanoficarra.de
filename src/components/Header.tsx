@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -14,9 +14,16 @@ const navItems = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { openQuizModal } = useQuizModal();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
@@ -54,9 +61,28 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border overflow-hidden transition-colors duration-500 ${
+        scrolled ? "bg-background/90" : "bg-background/70"
+      }`}
     >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Shimmer stripes */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute inset-0 w-[200%] h-full"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.08) 50%, transparent 100%)",
+            animation: "shimmer-ltr 8s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute inset-0 w-[200%] h-full"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.06) 50%, transparent 100%)",
+            animation: "shimmer-rtl 12s ease-in-out infinite",
+          }}
+        />
+      </div>
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
           <img
             src={logo}
