@@ -51,10 +51,10 @@ const Guide = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich kenne das Hamsterrad aus eigener Erfahrung. Ich habe selbst mehrere Businesses aufgebaut und weiß wie es sich anfühlt, wenn eine Woche Urlaub bedeutet: Chaos im Hintergrund.
+                Ich kenne das Hamsterrad aus eigener Erfahrung. Ich bin seit über 5 Jahren im Online-Business und habe selbst mehrere Projekte aufgebaut. Ich weiß wie es sich anfühlt, wenn eine Woche Urlaub bedeutet: Chaos im Hintergrund.
               </p>
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Seit über 5 Jahren baue ich Systeme für Selbstständige, Coaches und Berater im DACH-Raum. Nicht als Tool-Erklärer. Nicht als Berater der eine Empfehlung schreibt und verschwindet. Ich baue es. Komplett. Und ich übergebe es so, dass du es wirklich nutzt.
+                Was ich dabei gelernt habe: Wer wächst ohne System, wächst in die falsche Richtung. Nicht als Tool-Erklärer. Nicht als Berater der eine Empfehlung schreibt und verschwindet. Ich baue es. Komplett. Und ich übergebe es so, dass du es wirklich nutzt.
               </p>
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
                 Das Ergebnis ist kein Tool. Es ist ein Business das ohne dich funktioniert – damit du endlich das lebst, weswegen du dich selbstständig gemacht hast.
