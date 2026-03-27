@@ -7,29 +7,19 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-white/20" />
-
-      {/* Subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(190_85%_38%/0.06)_0%,_transparent_70%)]" />
-
-      {/* Shimmer stripes */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-y-0 w-[70%] animate-shimmer-hero-fast"
-          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.03) 30%, hsla(190,90%,40%,0.04) 50%, hsla(190,90%,40%,0.03) 70%, transparent 100%)' }}
-        />
-        <div
-          className="absolute inset-y-0 w-[60%] animate-shimmer-hero-slow"
-          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.02) 30%, hsla(190,90%,40%,0.03) 50%, hsla(190,90%,40%,0.02) 70%, transparent 100%)' }}
-        />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20"></div>
 
       {/* Floating Orbs */}
+      <div className="absolute -top-20 -left-20 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[radial-gradient(circle,_hsl(var(--primary)/0.08)_0%,_transparent_70%)] rounded-full animate-orb-float pointer-events-none"></div>
+      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-[radial-gradient(circle,_hsl(var(--accent)/0.06)_0%,_transparent_70%)] rounded-full animate-orb-float-reverse pointer-events-none"></div>
+
+      {/* Hero Shimmer */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute floating-orb-primary" style={{ top: "10%", left: "-5%" }} />
-        <div className="absolute floating-orb-accent" style={{ bottom: "5%", right: "-10%" }} />
+        <div className="absolute top-0 bottom-0 left-0 w-1/2 bg-primary/[0.04] animate-shimmer-hero-fast"></div>
+        <div className="absolute top-0 bottom-0 left-0 w-2/3 bg-primary/[0.03] animate-shimmer-hero-slow"></div>
       </div>
+
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(190_90%_50%/0.08)_0%,_transparent_70%)] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

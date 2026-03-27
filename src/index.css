@@ -178,10 +178,11 @@
 
 @layer utilities {
   .text-gradient-primary {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60;
+  }
+
+  .text-gradient-shimmer {
+    @apply bg-clip-text text-transparent bg-[linear-gradient(110deg,hsl(var(--primary)),hsl(var(--primary)/0.5),hsl(var(--primary)))] bg-[length:200%_auto] animate-text-shimmer;
   }
 
   .text-gradient-accent {
@@ -237,92 +238,59 @@
   .glow-gold {
     box-shadow: var(--shadow-primary);
   }
+
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] hover:border-primary/30 transition-all duration-500 hover:shadow-[0_4px_32px_-8px_hsl(var(--primary)/0.2)];
+  }
+
+  .glass-card-premium {
+    @apply bg-white/30 backdrop-blur-2xl border border-white/80 shadow-[0_8px_32px_0_rgba(0,0,0,0.04)] hover:border-primary/20 transition-all duration-700 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_hsl(var(--primary)/0.15)];
+  }
+
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-3xl border border-white/60 shadow-xl;
+  }
+
+  /* Glass section background for alternating sections */
+  .glass-section {
+    @apply bg-white/35 backdrop-blur-xl;
+  }
+
+  .animate-shimmer-fast {
+    animation: shimmer 8s ease-in-out infinite;
+  }
+  .animate-shimmer-slow {
+    animation: shimmer 12s ease-in-out infinite reverse;
+  }
+  .animate-shimmer-hero-fast {
+    animation: shimmer 10s ease-in-out infinite;
+  }
+  .animate-shimmer-hero-slow {
+    animation: shimmer 14s ease-in-out infinite reverse;
+  }
+  .animate-orb-float {
+    animation: orb-float 16s ease-in-out infinite;
+  }
+  .animate-orb-float-reverse {
+    animation: orb-float 20s ease-in-out infinite reverse;
+  }
 }
-
-/* ── Glassmorphism Card System ── */
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.30);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.60);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
-  border-radius: 0.75rem;
-  transition: all 0.5s ease;
-}
-
-.glass-card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-}
-
-.glass-card-premium {
-  background: rgba(255, 255, 255, 0.40);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.80);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-  border-radius: 0.75rem;
-  transition: all 0.7s ease;
-}
-
-.glass-card-premium:hover {
-  transform: translateY(-4px);
-  border-color: hsl(var(--primary) / 0.20);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
-              0 0 30px hsl(var(--primary) / 0.15);
-}
-
-/* Glass section background for alternating sections */
-.glass-section {
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* ── Shimmer Keyframe ── */
 
 @keyframes shimmer {
-  0%   { transform: translateX(-150%) skewX(-15deg); }
+  0% { transform: translateX(-150%) skewX(-15deg); }
   100% { transform: translateX(150%) skewX(-15deg); }
 }
 
-@layer utilities {
-  .animate-shimmer-fast { animation: shimmer 8s ease-in-out infinite; }
-  .animate-shimmer-slow { animation: shimmer 12s ease-in-out infinite reverse; }
-  .animate-shimmer-hero-fast { animation: shimmer 10s ease-in-out infinite; }
-  .animate-shimmer-hero-slow { animation: shimmer 14s ease-in-out infinite reverse; }
+@keyframes orb-float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
-/* ── Floating Orb Keyframes ── */
-
-@keyframes float-orb-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25%      { transform: translate(80px, -60px) scale(1.05); }
-  50%      { transform: translate(-40px, -100px) scale(0.95); }
-  75%      { transform: translate(-80px, -30px) scale(1.02); }
-}
-
-@keyframes float-orb-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25%      { transform: translate(-70px, 50px) scale(0.96); }
-  50%      { transform: translate(60px, 80px) scale(1.04); }
-  75%      { transform: translate(90px, -40px) scale(0.98); }
-}
-
-/* ── Floating orb classes (subtler on light) ── */
-
-.floating-orb-primary {
-  width: 500px;
-  height: 500px;
-  border-radius: 9999px;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%);
-  animation: float-orb-1 16s ease-in-out infinite;
-}
-
-.floating-orb-accent {
-  width: 600px;
-  height: 600px;
-  border-radius: 9999px;
-  background: radial-gradient(circle, hsl(var(--accent) / 0.05) 0%, transparent 70%);
-  animation: float-orb-2 20s ease-in-out infinite reverse;
+@keyframes orb-float-reverse {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 50px) scale(1.1); }
+  66% { transform: translate(20px, -20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }

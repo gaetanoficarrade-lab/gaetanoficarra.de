@@ -114,6 +114,10 @@ export default {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        "text-shimmer": {
+          "0%": { backgroundPosition: "200% center" },
+          "100%": { backgroundPosition: "-200% center" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -121,6 +125,7 @@ export default {
         "fade-in": "fade-in 0.8s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "gradient-shift": "gradient-shift 3s ease-in-out infinite",
+        "text-shimmer": "text-shimmer 4s ease-in-out infinite",
       },
     },
   },

@@ -59,22 +59,16 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b overflow-hidden transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
         scrolled
-          ? "bg-white/70 border-white/60 shadow-[0_4px_30px_rgba(0,0,0,0.05)]"
-          : "bg-white/40 border-white/40"
+          ? "bg-background/70 backdrop-blur-2xl border-black/5 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
+          : "bg-transparent border-transparent"
       }`}
     >
       {/* Shimmer stripes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-y-0 w-[60%] animate-shimmer-fast"
-          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.06) 30%, hsla(190,90%,40%,0.08) 50%, hsla(190,90%,40%,0.06) 70%, transparent 100%)' }}
-        />
-        <div
-          className="absolute inset-y-0 w-[50%] animate-shimmer-slow"
-          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.05) 30%, hsla(190,90%,40%,0.07) 50%, hsla(190,90%,40%,0.05) 70%, transparent 100%)' }}
-        />
+        <div className="absolute top-0 bottom-0 left-0 w-1/3 bg-primary/[0.08] animate-shimmer-fast"></div>
+        <div className="absolute top-0 bottom-0 left-0 w-1/2 bg-primary/[0.06] animate-shimmer-slow"></div>
       </div>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
