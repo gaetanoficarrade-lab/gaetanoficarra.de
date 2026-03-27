@@ -4,17 +4,16 @@ import { useRef } from "react";
 import { Check, X } from "lucide-react";
 
 const suitableFor = [
-  "Selbstständige, Coaches und Berater mit laufendem Business",
-  "Unternehmer, die regelmäßig Anfragen oder Leads bekommen",
-  "Menschen, deren Wachstum an fehlender Struktur scheitert, nicht am Marketing",
-  "Unternehmer, die verstanden haben: Ordnung und Prozesse sind Voraussetzung für planbares Wachstum",
-  "Alle, die sich auf Kunden und Umsatz konzentrieren wollen, statt auf Technik"
+  "Du ein laufendes Business mit aktiven Kunden hast",
+  "Dein Wachstum nicht am Marketing hängt – sondern daran, dass die Prozesse dahinter noch nicht stehen",
+  "Du nicht selbst an Technik sitzen willst – du willst, dass jemand es baut und es danach einfach läuft",
+  "Mehr Kunden für dich mehr Freiheit bedeuten soll, nicht mehr Chaos"
 ];
 
 const notSuitableFor = [
-  "Anfänger, die noch kein laufendes Business haben",
-  "Bastler und Toolspieler, die alles selbst machen wollen",
-  "Wer nicht bereit ist, Verantwortung für Prozesse abzugeben"
+  "Du gerade erst anfängst und noch keine Kunden hast",
+  "Du alles selbst in der Hand behalten und jeden Schritt selbst verstehen willst",
+  "Du ein Tool suchst das du selbst lernst und bedienst"
 ];
 
 const Qualification = () => {
