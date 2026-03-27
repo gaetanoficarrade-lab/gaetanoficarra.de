@@ -59,8 +59,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
             >
-              Ich unterstütze dich dabei, Leads, Termine und Follow-ups sauber zu organisieren, indem ich dir ein zentrales
-              Marketing-System aufsetze, das ohne manuelle Prozesse funktioniert.
+              Ich baue dir in 2 Wochen ein fertiges System – Leads, Onboarding, Follow-ups, alles automatisiert. Dein Business läuft. Du konzentrierst dich auf Kunden. Den Rest übernimmt das System.
             </motion.p>
 
             {/* CTA */}
