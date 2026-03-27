@@ -84,10 +84,11 @@ const applyAllTags = (
   setMeta("name", "twitter:description", ogDescription);
   setMeta("name", "twitter:image", ogImage);
 
+  // ✅ FIX: Richtig setzen statt löschen!
   if (noIndex) {
     setMeta("name", "robots", "noindex, nofollow");
   } else {
-    removeMeta("name", "robots");
+    setMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
   }
 };
 
