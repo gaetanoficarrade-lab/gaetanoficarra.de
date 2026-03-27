@@ -176,7 +176,7 @@ const BlogArticle = () => {
                 src={post.cover_image}
                 alt={post.title}
                 className="w-full aspect-video object-cover"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </motion.div>
           )}
