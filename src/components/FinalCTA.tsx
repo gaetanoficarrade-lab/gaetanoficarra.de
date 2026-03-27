@@ -21,11 +21,11 @@ const FinalCTA = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Nächster Schritt</span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground">
-              Lass uns <span className="text-gradient-primary">Ordnung schaffen</span>
+              <span className="text-gradient-primary">Lass uns kurz sprechen.</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
-              Kein Verkaufsgespräch. Kein Druck. Wir schauen gemeinsam auf deine aktuelle Situation und klären,
-              ob und wie ich dir helfen kann.
+              In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo
+              Potenzial liegt und wie wir Ordnung in dein System bringen können.
             </p>
           </motion.div>
 
