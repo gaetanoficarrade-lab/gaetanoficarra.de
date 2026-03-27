@@ -7,33 +7,33 @@ import systemIntegration from "@/assets/system-integration.jpg";
 const problems = [
   {
     icon: Layers,
-    title: "Zu viele Tools",
-    description: "CRM hier, E-Mail-Tool dort, Funnel-Builder woanders. Du zahlst für ein Dutzend Plattformen und keins spricht wirklich mit dem anderen.",
+    title: "Alles hängt an dir persönlich",
+    description: "Wenn du krank bist oder drei Tage nicht erreichbar, bricht das halbe Business ein. Das ist keine Selbstständigkeit – das ist eine andere Form von Anstellung.",
   },
   {
     icon: Link2Off,
-    title: "Fehlerhafte Schnittstellen",
-    description: "Zapier-Zaps, die brechen. Make-Szenarien, die nicht triggern. Du verbringst Stunden damit, herauszufinden, warum deine Automatisierung nicht funktioniert.",
+    title: "Tool-Chaos ohne Ende",
+    description: "Hier ein CRM, dort ein E-Mail-Tool, woanders ein Funnel-Builder. Du zahlst jeden Monat für ein Dutzend Plattformen die sich nicht kennen – und trotzdem läuft es nicht rund.",
   },
   {
     icon: Clock,
-    title: "Manuelle Prozesse",
-    description: "Listen exportieren, importieren, abgleichen. Kontakte von Hand taggen. Follow-ups manuell verschicken. Jeden Tag die gleichen Routinen.",
+    title: "Follow-ups die niemand verschickt",
+    description: "80 % der Abschlüsse entstehen erst nach mehreren Kontaktpunkten. Aber wer hat die Zeit, jeden Lead manuell nachzufassen? Die meisten kaufen irgendwann bei jemandem der einfach drangeblieben ist.",
   },
   {
     icon: AlertTriangle,
-    title: "Fehlende Übersicht",
-    description: "Wo ist welcher Lead? Wer hat was gekauft? Was wurde schon kontaktiert? Du springst zwischen Tabs und verlierst trotzdem den Überblick.",
-  },
-  {
-    icon: EuroIcon,
-    title: "Steigende Softwarekosten",
-    description: "ActiveCampaign, ClickFunnels, Calendly, Zoom, Kajabi... Jeden Monat gehen Hunderte Euro für Tools drauf, die du nur halb nutzt.",
+    title: "Kein Überblick – nur ein ungutes Gefühl",
+    description: "Wo steht welcher Lead? Wer wurde kontaktiert? Wer ist kurz vorm Abschluss? Du weißt es irgendwie – aber eben nicht wirklich.",
   },
   {
     icon: TrendingDown,
-    title: "Leads gehen verloren",
-    description: "Ohne ein funktionierendes System verschwinden Interessenten im Nirgendwo. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei anderen.",
+    title: "Skalierung die sich anfühlt wie gegen eine Wand laufen",
+    description: "Mehr Kunden bedeutet bei dir mehr Arbeit, nicht mehr Freiheit. Das Hamsterrad dreht sich schneller – aber du kommst nicht vom Fleck.",
+  },
+  {
+    icon: EuroIcon,
+    title: "Softwarekosten die sich nicht rechnen",
+    description: "Hunderte Euro jeden Monat für Tools die du nie zu 20 % nutzt. Und das eine System das alles zusammenhält – das fehlt.",
   },
 ];
 
