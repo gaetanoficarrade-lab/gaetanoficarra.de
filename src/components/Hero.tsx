@@ -40,7 +40,7 @@ const Hero = () => {
             height: "500px",
             top: "10%",
             left: "-5%",
-            background: "radial-gradient(circle, hsl(var(--primary) / 0.07) 0%, transparent 70%)",
+            background: "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)",
             animation: "float-orb-1 16s ease-in-out infinite",
           }}
         />
@@ -51,7 +51,7 @@ const Hero = () => {
             height: "600px",
             bottom: "5%",
             right: "-10%",
-            background: "radial-gradient(circle, hsl(var(--secondary) / 0.05) 0%, transparent 70%)",
+            background: "radial-gradient(circle, hsl(var(--secondary) / 0.12) 0%, transparent 70%)",
             animation: "float-orb-2 20s ease-in-out infinite reverse",
           }}
         />
