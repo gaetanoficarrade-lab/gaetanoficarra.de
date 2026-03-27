@@ -5,10 +5,10 @@ import { UserCheck, BellRing, BarChart3, Rocket, ArrowRight } from "lucide-react
 import { Link } from "react-router-dom";
 
 const outcomes = [
-  { icon: UserCheck, text: "Neue Kunden werden automatisch ongeboardet – ohne dass du dabei sein musst." },
-  { icon: BellRing, text: "Leads die sich heute nicht entscheiden, hören morgen wieder von dir – automatisch." },
+  { icon: UserCheck, text: "Neue Kunden werden automatisch ongeboardet ohne dass du dabei sein musst." },
+  { icon: BellRing, text: "Leads die sich heute nicht entscheiden, hören morgen wieder von dir automatisch." },
   { icon: BarChart3, text: "Du weißt jederzeit wo welcher Kontakt steht, was läuft und was nicht." },
-  { icon: Rocket, text: "Dein Business läuft weiter – auch wenn du es nicht tust." },
+  { icon: Rocket, text: "Dein Business läuft weiter auch wenn du es nicht tust." },
 ];
 
 const Solution = () => {
