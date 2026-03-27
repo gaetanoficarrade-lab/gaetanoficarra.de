@@ -1,22 +1,53 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
 
 const FAQ = () => {
   const faqs = [
-    { question: "Für wen ist das Angebot geeignet?", answer: "Für selbstständige Coaches, Berater und Dienstleister die bereits Kunden haben und deren Prozesse noch manuell laufen. Wenn du gerade erst anfängst oder noch keine aktiven Kunden hast, bist du noch nicht an der richtigen Stelle für dieses Angebot." },
-    { question: "Was genau baust du für mich?", answer: "Je nach Paket baue ich dir ein vollständiges CRM, automatisierte Lead-Pipelines, Follow-up-Sequenzen, ein automatisiertes Onboarding für neue Kunden und einen Funnel samt Landingpages. Alles auf Basis von GoHighLevel – dem All-in-One-System das ich für DACH-Kunden aufsetze und DSGVO-konform konfiguriere." },
-    { question: "Wie lange dauert das Projekt?", answer: "In der Regel 2 Wochen vom Kickoff bis zum Go-Live. Voraussetzung ist, dass du im Kickoff-Gespräch klare Aussagen zu deinen Prozessen, Zielgruppen und Abläufen machen kannst. Je besser wir vorbereitet sind, desto schneller läuft es." },
-    { question: "Ich habe bereits andere Tools im Einsatz – was passiert damit?", answer: "Bestehende Kontakte, Daten und Abläufe werden sauber migriert. Kein Datenverlust, kein Stillstand. Das ist fester Bestandteil jedes Projekts. Du musst nicht von null anfangen." },
-    { question: "Was kostet das?", answer: "Das Starter-Paket beginnt bei 3.000 €, das Growth-Paket bei 4.500 € und das Full System ab 6.000 €. Alles einmalig, kein Abo. In der kostenlosen System-Analyse zeige ich dir welches Paket zu deiner Situation passt." },
-    { question: "Muss ich mich mit GoHighLevel auskennen?", answer: "Nein. Du bekommst bei der Übergabe eine verständliche Einweisung in dein eigenes System. Ziel ist, dass du danach weißt wie du es nutzt – nicht dass du ein Techniker wirst. Und danach ist Support inklusive." },
-    { question: "Wie läuft die Zusammenarbeit ab?", answer: "Erstgespräch und System-Analyse, dann Strategie und Systemplan, dann Aufbau durch mich während du weiterarbeitest, dann Übergabe und Go-Live. Das war es – kein langwieriges Hin-und-Her, keine wochenlangen Abstimmungsschleifen." },
-    { question: "Ist GoHighLevel DSGVO-konform?", answer: "Mit der richtigen Konfiguration ja. Ich richte Server-Standort, Datenschutzeinstellungen und Datenverarbeitungsverträge von Anfang an korrekt ein. Das ist im DACH-Raum nicht optional – deshalb ist es bei mir fester Bestandteil jedes Setups." },
-    { question: "Was passiert nach Go-Live?", answer: "Support ist kein Add-on sondern Pflichtbestandteil. Beim Starter und Growth-Paket 30 Tage, beim Full System 60 Tage. Wenn in dieser Zeit etwas nicht läuft, lösen wir es – ohne extra Rechnung." },
+    {
+      question: "Für wen ist das Angebot geeignet?",
+      answer:
+        "Für selbstständige Coaches, Berater und Dienstleister die bereits Kunden haben und deren Prozesse noch manuell laufen. Wenn du gerade erst anfängst oder noch keine aktiven Kunden hast, bist du noch nicht an der richtigen Stelle für dieses Angebot.",
+    },
+    {
+      question: "Was genau baust du für mich?",
+      answer:
+        "Je nach Paket baue ich dir ein vollständiges CRM, automatisierte Lead-Pipelines, Follow-up-Sequenzen, ein automatisiertes Onboarding für neue Kunden und einen Funnel samt Landingpages. Alles auf Basis von GoHighLevel dem All-in-One-System das ich für DACH-Kunden aufsetze und DSGVO-konform konfiguriere.",
+    },
+    {
+      question: "Wie lange dauert das Projekt?",
+      answer:
+        "In der Regel 2 Wochen vom Kickoff bis zum Go-Live. Voraussetzung ist, dass du im Kickoff-Gespräch klare Aussagen zu deinen Prozessen, Zielgruppen und Abläufen machen kannst. Je besser wir vorbereitet sind, desto schneller läuft es.",
+    },
+    {
+      question: "Ich habe bereits andere Tools im Einsatz, was passiert damit?",
+      answer:
+        "Bestehende Kontakte, Daten und Abläufe werden sauber migriert. Kein Datenverlust, kein Stillstand. Das ist fester Bestandteil jedes Projekts. Du musst nicht von null anfangen.",
+    },
+    {
+      question: "Was kostet das?",
+      answer:
+        "Das Starter-Paket beginnt bei 3.000 €, das Growth-Paket bei 4.500 € und das Full System ab 6.000 €. Alles einmalig, kein Abo. In der kostenlosen System-Analyse zeige ich dir welches Paket zu deiner Situation passt.",
+    },
+    {
+      question: "Muss ich mich mit GoHighLevel auskennen?",
+      answer:
+        "Nein. Du bekommst bei der Übergabe eine verständliche Einweisung in dein eigenes System. Ziel ist, dass du danach weißt wie du es nutzt nicht dass du ein Techniker wirst. Und danach ist Support inklusive.",
+    },
+    {
+      question: "Wie läuft die Zusammenarbeit ab?",
+      answer:
+        "Erstgespräch und System-Analyse, dann Strategie und Systemplan, dann Aufbau durch mich während du weiterarbeitest, dann Übergabe und Go-Live. Das wars. Kein langwieriges Hin-und-Her, keine wochenlangen Abstimmungsschleifen.",
+    },
+    {
+      question: "Ist GoHighLevel DSGVO-konform?",
+      answer:
+        "Mit der richtigen Konfiguration ja. Ich richte Server-Standort, Datenschutzeinstellungen und Datenverarbeitungsverträge von Anfang an korrekt ein. Das ist im DACH-Raum nicht optional, deshalb ist es bei mir fester Bestandteil jedes Setups.",
+    },
+    {
+      question: "Was passiert nach Go-Live?",
+      answer:
+        "Support ist kein Add-on sondern Pflichtbestandteil. Beim Starter und Growth-Paket 30 Tage, beim Full System 60 Tage. Wenn in dieser Zeit etwas nicht läuft, lösen wir es ohne extra Rechnung.",
+    },
   ];
 
   return (
@@ -43,9 +74,7 @@ const FAQ = () => {
                   <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-6 text-base md:text-lg font-medium px-4">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6 px-4">
-                    {faq.answer}
-                  </AccordionContent>
+                  <AccordionContent className="text-muted-foreground pb-6 px-4">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

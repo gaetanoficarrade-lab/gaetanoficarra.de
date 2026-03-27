@@ -5,10 +5,34 @@ import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react"
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const steps = [
-  { icon: MessageCircle, step: "01", title: "System-Analyse", description: "Wir schauen gemeinsam auf dein Business. Was läuft noch manuell? Wo verlierst du Zeit? Wo versickern Leads? Kein Verkaufsgespräch – nur ehrliche Analyse." },
-  { icon: ClipboardCheck, step: "02", title: "Strategie & Systemplan", description: "Ich zeige dir welche Prozesse wir automatisieren, was wegfällt und wie dein System am Ende aussieht. Du weißt genau was entsteht, bevor wir anfangen." },
-  { icon: Rocket, step: "03", title: "Aufbau & Migration", description: "Ich baue. Du arbeitest weiter. Bestehende Kontakte, Daten und Prozesse werden sauber übertragen – ohne Unterbrechung, ohne Datenverlust." },
-  { icon: Headphones, step: "04", title: "Übergabe & Go-Live", description: "Du bekommst dein System erklärt, nicht einfach hingestellt. Und danach bist du nicht allein damit – Support ist fester Bestandteil, kein Add-on." },
+  {
+    icon: MessageCircle,
+    step: "01",
+    title: "System-Analyse",
+    description:
+      "Wir schauen gemeinsam auf dein Business. Was läuft noch manuell? Wo verlierst du Zeit? Wo versickern Leads? Kein Verkaufsgespräch nur ehrliche Analyse.",
+  },
+  {
+    icon: ClipboardCheck,
+    step: "02",
+    title: "Strategie & Systemplan",
+    description:
+      "Ich zeige dir welche Prozesse wir automatisieren, was wegfällt und wie dein System am Ende aussieht. Du weißt genau was entsteht, bevor wir anfangen.",
+  },
+  {
+    icon: Rocket,
+    step: "03",
+    title: "Aufbau & Migration",
+    description:
+      "Ich baue. Du arbeitest weiter. Bestehende Kontakte, Daten und Prozesse werden sauber übertragen ohne Unterbrechung, ohne Datenverlust.",
+  },
+  {
+    icon: Headphones,
+    step: "04",
+    title: "Übergabe & Go-Live",
+    description:
+      "Du bekommst dein System erklärt, nicht einfach hingestellt. Und danach bist du nicht allein damit Support ist fester Bestandteil, kein Add-on.",
+  },
 ];
 
 const Timeline = () => {
@@ -30,7 +54,7 @@ const Timeline = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-             <span className="text-primary text-sm tracking-widest uppercase font-body">Der Ablauf</span>
+            <span className="text-primary text-sm tracking-widest uppercase font-body">Der Ablauf</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Von heute bis zum laufenden System – <span className="text-primary">in 2 Wochen.</span>
             </h2>
@@ -52,20 +76,21 @@ const Timeline = () => {
                   }`}
                 >
                   <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      className="glass-card-premium p-6 md:p-8"
-                    >
+                    <motion.div whileHover={{ scale: 1.02 }} className="glass-card-premium p-6 md:p-8">
                       <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-6 h-6 text-primary" />
                         </div>
                         <div className={index % 2 === 0 ? "lg:text-right" : ""}>
-                          <span className="text-primary text-xs tracking-widest uppercase font-body">Schritt {step.step}</span>
+                          <span className="text-primary text-xs tracking-widest uppercase font-body">
+                            Schritt {step.step}
+                          </span>
                           <h3 className="font-display text-xl text-foreground">{step.title}</h3>
                         </div>
                       </div>
-                      <p className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
+                      <p
+                        className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}
+                      >
                         {step.description}
                       </p>
                     </motion.div>

@@ -9,7 +9,7 @@ const problems = [
     icon: Layers,
     title: "Alles hängt an dir persönlich",
     description:
-      "Wenn du krank bist oder drei Tage nicht erreichbar, bricht das halbe Business ein. Das ist keine Selbstständigkeit – das ist eine andere Form von Anstellung.",
+      "Wenn du krank bist oder drei Tage nicht erreichbar, bricht das halbe Business ein. Das ist keine Selbstständigkeit, das ist eine andere Form von Anstellung.",
   },
   {
     icon: Link2Off,
@@ -25,7 +25,7 @@ const problems = [
   },
   {
     icon: AlertTriangle,
-    title: "Kein Überblick – nur ein ungutes Gefühl",
+    title: "Kein Überblick - nur ein ungutes Gefühl",
     description:
       "Wo steht welcher Lead? Wer wurde kontaktiert? Wer ist kurz vorm Abschluss? Du weißt es irgendwie aber eben nicht wirklich.",
   },

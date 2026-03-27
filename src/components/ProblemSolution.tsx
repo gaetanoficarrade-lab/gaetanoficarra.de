@@ -5,9 +5,24 @@ import { AlertTriangle, Layers, Clock, Zap, ArrowRight } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const problems = [
-  { icon: Layers, title: "Zu viele Tools", description: "CRM, E-Mail-Tool, Funnel-Builder, Terminbuchung – du zahlst für 10 verschiedene Plattformen und verlierst den Überblick." },
-  { icon: AlertTriangle, title: "Leads gehen verloren", description: "Ohne System verschwinden Interessenten. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei der Konkurrenz." },
-  { icon: Clock, title: "Stunden an Handarbeit", description: "Copy-Paste, manuelle E-Mails, ständiges Hin- und Herwechseln. Zeit, die du für dein eigentliches Business verlierst." },
+  {
+    icon: Layers,
+    title: "Zu viele Tools",
+    description:
+      "CRM, E-Mail-Tool, Funnel-Builder, Terminbuchung, du zahlst für 10 verschiedene Plattformen und verlierst den Überblick.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Leads gehen verloren",
+    description:
+      "Ohne System verschwinden Interessenten. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei der Konkurrenz.",
+  },
+  {
+    icon: Clock,
+    title: "Stunden an Handarbeit",
+    description:
+      "Copy-Paste, manuelle E-Mails, ständiges Hin- und Herwechseln. Zeit, die du für dein eigentliches Business verlierst.",
+  },
 ];
 
 const solutions = [
@@ -77,7 +92,8 @@ const ProblemSolution = () => {
                 </h3>
                 <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
                   Mit GoHighLevel bekommst du alles in einer Plattform: CRM, E-Mail-Marketing, Funnels, Terminbuchung,
-                  Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1 funktioniert.
+                  Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1
+                  funktioniert.
                 </p>
                 <button
                   onClick={openQuizModal}

@@ -25,7 +25,7 @@ const Contact = () => {
               Lass uns <span className="text-gradient-primary">sprechen</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto">
-              Ob Fragen, Beratung oder direkte Zusammenarbeit – ich bin für dich da.
+              Ob Fragen, Beratung oder direkte Zusammenarbeit, ich bin für dich da.
             </p>
           </motion.div>
 
@@ -41,7 +41,8 @@ const Contact = () => {
             </div>
             <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">Kostenloses Erstgespräch</h3>
             <p className="text-muted-foreground font-body mb-8 leading-relaxed max-w-xl mx-auto">
-              In 15-30 Minuten besprechen wir deine aktuelle Situation, deine Ziele und wie ich dir helfen kann. Komplett unverbindlich.
+              In 15-30 Minuten besprechen wir deine aktuelle Situation, deine Ziele und wie ich dir helfen kann.
+              Komplett unverbindlich.
             </p>
             <button
               onClick={openQuizModal}
@@ -76,8 +77,19 @@ const Contact = () => {
             className="grid md:grid-cols-3 gap-8 pt-12 border-t border-border/50"
           >
             {[
-              { icon: Mail, label: "E-Mail", value: "kontakt@gaetanoficarra.de", href: "mailto:kontakt@gaetanoficarra.de" },
-              { icon: Phone, label: "WhatsApp", value: "0152 23856537", href: "https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20%0Ainteressiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos.", external: true },
+              {
+                icon: Mail,
+                label: "E-Mail",
+                value: "kontakt@gaetanoficarra.de",
+                href: "mailto:kontakt@gaetanoficarra.de",
+              },
+              {
+                icon: Phone,
+                label: "WhatsApp",
+                value: "0152 23856537",
+                href: "https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20%0Ainteressiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos.",
+                external: true,
+              },
               { icon: MapPin, label: "Standort", value: "Bielefeld, Deutschland", href: null },
             ].map((item, index) => (
               <div key={index} className="text-center group">
