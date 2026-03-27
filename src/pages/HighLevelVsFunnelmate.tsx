@@ -94,6 +94,7 @@ const HighLevelVsFunnelmate = () => {
       <SEOHead
         title="GoHighLevel vs. Funnelmate 2026 — Der direkte Vergleich"
         description="GoHighLevel oder Funnelmate 2026? Zertifizierter Experte aus Bielefeld vergleicht Funktionen, Preise & DSGVO-Vorteile für den DACH-Raum. Kostenloser Vergleich."
+        canonical="https://gaetanoficarra.de/highlevel-vs-funnelmate"
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "GoHighLevel vs. Funnelmate", url: "https://gaetanoficarra.de/highlevel-vs-funnelmate" },
