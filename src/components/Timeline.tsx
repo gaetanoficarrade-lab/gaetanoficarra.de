@@ -5,10 +5,10 @@ import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react"
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const steps = [
-  { icon: MessageCircle, step: "01", title: "Erstgespräch", description: "Wir sprechen über deine Situation, Ziele und Herausforderungen. Kein Verkaufsdruck, nur Klarheit." },
-  { icon: ClipboardCheck, step: "02", title: "Analyse & Planung", description: "Ich analysiere deine bestehenden Tools und erstelle einen konkreten Plan für dein neues System." },
-  { icon: Rocket, step: "03", title: "Einrichtung & Migration", description: "Dein Funnelmate-System wird aufgebaut, bestehende Daten migriert und alles konfiguriert." },
-  { icon: Headphones, step: "04", title: "Go-Live & Support", description: "Dein System geht live. Du bekommst eine Einweisung und laufenden Support für Fragen." },
+  { icon: MessageCircle, step: "01", title: "System-Analyse", description: "Wir schauen gemeinsam auf dein Business. Was läuft noch manuell? Wo verlierst du Zeit? Wo versickern Leads? Kein Verkaufsgespräch – nur ehrliche Analyse." },
+  { icon: ClipboardCheck, step: "02", title: "Strategie & Systemplan", description: "Ich zeige dir welche Prozesse wir automatisieren, was wegfällt und wie dein System am Ende aussieht. Du weißt genau was entsteht, bevor wir anfangen." },
+  { icon: Rocket, step: "03", title: "Aufbau & Migration", description: "Ich baue. Du arbeitest weiter. Bestehende Kontakte, Daten und Prozesse werden sauber übertragen – ohne Unterbrechung, ohne Datenverlust." },
+  { icon: Headphones, step: "04", title: "Übergabe & Go-Live", description: "Du bekommst dein System erklärt, nicht einfach hingestellt. Und danach bist du nicht allein damit – Support ist fester Bestandteil, kein Add-on." },
 ];
 
 const Timeline = () => {
