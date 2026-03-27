@@ -32,7 +32,7 @@ const Qualification = () => {
           >
              <span className="text-primary text-sm tracking-widest uppercase font-body">Zielgruppe</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Für wen das wirklich <span className="text-primary">Sinn macht</span> – und für wen nicht.
+              Für wen das wirklich <span className="text-primary">Sinn macht</span> und für wen nicht.
             </h2>
           </motion.div>
 
