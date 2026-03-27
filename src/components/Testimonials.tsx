@@ -5,6 +5,13 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
+    name: "Martin Smits",
+    role: "Google Bewertung",
+    text: "Ich arbeite aktuell mit Gaetano Ficarra an meiner neuen Webseite sowie der kompletten Implementierung von GoHighLevel (Automatisierungen, Formulare, Termin-Workflows etc.) – und was soll ich sagen? Ich bin absolut begeistert! Was Gaetano für mich besonders auszeichnet, ist seine fast schon unverschämte Lockerheit, mit der er selbst die komplexesten Vorgänge aufnimmt. Man wirft ihm einen Haufen wirrer Anforderungen hin, und er schafft es, das Ganze in kürzester Zeit zu sortieren und absolut strukturiert auf den Punkt zu bringen. Er übersetzt komplexe Herausforderungen so präzise in digitale Tools, dass am Ende alles logisch und kinderleicht wirkt. Der Kontakt ist absolut einwandfrei und professionell. Er arbeitet mit den modernsten Tools und ist dabei extrem verbindlich – wenn Gaetano etwas zusagt, dann steht das. Ich freue mich auf die weitere Zusammenarbeit und kann Gaetano jedem empfehlen, der sein Business digital auf das nächste Level heben will. Top-Experte!",
+    rating: 5,
+    image: "",
+  },
+  {
     name: "Anna-Lena Hickmann",
     role: "Google Bewertung",
     text: "Tolle Erfahrung und ich kann Gaetano nur empfehlen! Er hat mir im 90 Minuten Beratungscall sauber und schnell erklärt und ich konnte direkt umsetzen. Das hätte mich sonst wahrscheinlich Stunden an Recherchearbeit und ganz viele Nerven gekostet. Die Kommunikation war auch schnell und ich bin sehr froh auch kurzfristig einen Termin bekommen zu haben :) Gaetano hat eine freundliche und unkomplizierte Art. Wenn ich ab jetzt ein Thema mit HighLevel / Stripe habe, weiß ich, wem ich als erstes schreibe.",
