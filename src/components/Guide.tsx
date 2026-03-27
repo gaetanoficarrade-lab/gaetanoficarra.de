@@ -19,7 +19,7 @@ const Guide = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Dein Ansprechpartner</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Ich bringe <span className="text-primary">Ordnung in dein System</span>
+              Ich bin Gaetano. Ich baue <span className="text-primary">Systeme die dein Business von dir unabhängig machen.</span>
             </h2>
           </motion.div>
 
