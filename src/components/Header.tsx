@@ -67,8 +67,14 @@ const Header = () => {
     >
       {/* Shimmer stripes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 shimmer-header-1" />
-        <div className="absolute inset-0 shimmer-header-2" />
+        <div
+          className="absolute inset-y-0 w-[60%] animate-shimmer-fast"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.06) 30%, hsla(190,90%,40%,0.08) 50%, hsla(190,90%,40%,0.06) 70%, transparent 100%)' }}
+        />
+        <div
+          className="absolute inset-y-0 w-[50%] animate-shimmer-slow"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.05) 30%, hsla(190,90%,40%,0.07) 50%, hsla(190,90%,40%,0.05) 70%, transparent 100%)' }}
+        />
       </div>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">

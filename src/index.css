@@ -279,17 +279,21 @@
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* ── Shimmer & Orb Keyframes ── */
+/* ── Shimmer Keyframe ── */
 
-@keyframes shimmer-sweep {
-  0%   { transform: translateX(-200%) skewX(-20deg); }
-  100% { transform: translateX(400%) skewX(-20deg); }
+@keyframes shimmer {
+  0%   { transform: translateX(-150%) skewX(-15deg); }
+  100% { transform: translateX(150%) skewX(-15deg); }
 }
 
-@keyframes shimmer-sweep-reverse {
-  0%   { transform: translateX(400%) skewX(20deg); }
-  100% { transform: translateX(-200%) skewX(20deg); }
+@layer utilities {
+  .animate-shimmer-fast { animation: shimmer 8s ease-in-out infinite; }
+  .animate-shimmer-slow { animation: shimmer 12s ease-in-out infinite reverse; }
+  .animate-shimmer-hero-fast { animation: shimmer 10s ease-in-out infinite; }
+  .animate-shimmer-hero-slow { animation: shimmer 14s ease-in-out infinite reverse; }
 }
+
+/* ── Floating Orb Keyframes ── */
 
 @keyframes float-orb-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -303,78 +307,6 @@
   25%      { transform: translate(-70px, 50px) scale(0.96); }
   50%      { transform: translate(60px, 80px) scale(1.04); }
   75%      { transform: translate(90px, -40px) scale(0.98); }
-}
-
-/* ── Header shimmer stripes (subtle on light) ── */
-
-.shimmer-header-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    hsl(var(--primary) / 0.05) 30%,
-    hsl(var(--primary) / 0.08) 50%,
-    hsl(var(--primary) / 0.05) 70%,
-    transparent 100%
-  );
-  animation: shimmer-sweep 8s ease-in-out infinite;
-}
-
-.shimmer-header-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    hsl(var(--primary) / 0.04) 30%,
-    hsl(var(--primary) / 0.06) 50%,
-    hsl(var(--primary) / 0.04) 70%,
-    transparent 100%
-  );
-  animation: shimmer-sweep-reverse 12s ease-in-out infinite;
-}
-
-/* ── Hero shimmer stripes ── */
-
-.shimmer-hero-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    hsl(var(--primary) / 0.05) 30%,
-    hsl(var(--primary) / 0.08) 50%,
-    hsl(var(--primary) / 0.05) 70%,
-    transparent 100%
-  );
-  animation: shimmer-sweep 10s ease-in-out infinite;
-}
-
-.shimmer-hero-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    hsl(var(--primary) / 0.04) 30%,
-    hsl(var(--primary) / 0.06) 50%,
-    hsl(var(--primary) / 0.04) 70%,
-    transparent 100%
-  );
-  animation: shimmer-sweep-reverse 14s ease-in-out infinite;
 }
 
 /* ── Floating orb classes (subtler on light) ── */

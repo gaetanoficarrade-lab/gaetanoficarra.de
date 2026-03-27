@@ -15,8 +15,14 @@ const Hero = () => {
 
       {/* Shimmer stripes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 shimmer-hero-1" />
-        <div className="absolute inset-0 shimmer-hero-2" />
+        <div
+          className="absolute inset-y-0 w-[70%] animate-shimmer-hero-fast"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.03) 30%, hsla(190,90%,40%,0.04) 50%, hsla(190,90%,40%,0.03) 70%, transparent 100%)' }}
+        />
+        <div
+          className="absolute inset-y-0 w-[60%] animate-shimmer-hero-slow"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, hsla(190,90%,40%,0.02) 30%, hsla(190,90%,40%,0.03) 50%, hsla(190,90%,40%,0.02) 70%, transparent 100%)' }}
+        />
       </div>
 
       {/* Floating Orbs */}
