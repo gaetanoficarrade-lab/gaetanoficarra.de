@@ -6,7 +6,7 @@ import funnelmateBadge from "@/assets/funnelmate-certified-expert.png";
 
 const Footer = () => {
   return (
-    <footer className="py-16 border-t border-white/40 glass-section">
+    <footer className="py-16 border-t border-border glass-section">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-5 gap-12 mb-12">
           <div className="md:col-span-1">
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/30 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-muted-foreground text-sm font-body">
             © {new Date().getFullYear()} Gaetano Ficarra. Alle Rechte vorbehalten.
           </div>

@@ -61,14 +61,14 @@ const Header = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b overflow-hidden transition-all duration-500 ${
         scrolled
-          ? "bg-white/70 border-white/60 shadow-[0_4px_30px_rgba(0,0,0,0.05)]"
-          : "bg-white/40 border-white/40"
+          ? "bg-background/90 border-border shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          : "bg-background/70 border-border/50"
       }`}
     >
       {/* Shimmer stripes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 shimmer-header-1" />
-        <div className="absolute inset-0 shimmer-header-2" />
+        <div className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-primary/[0.06] to-transparent animate-shimmer-fast" />
+        <div className="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-primary/[0.04] to-transparent animate-shimmer-slow" />
       </div>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
@@ -95,7 +95,7 @@ const Header = () => {
           ))}
           <button
             onClick={openQuizModal}
-            className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
+            className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
           >
             Termin buchen
           </button>
@@ -119,7 +119,7 @@ const Header = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white/80 backdrop-blur-xl border-t border-white/60"
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => (
