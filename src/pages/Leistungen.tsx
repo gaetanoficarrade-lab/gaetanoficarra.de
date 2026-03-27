@@ -3,17 +3,14 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import {
   CheckCircle,
-  Settings,
-  Users,
-  Headphones,
-  TrendingUp,
-  Zap,
-  Repeat,
   ArrowRight,
+  Headphones,
+  Repeat,
+  TrendingUp,
   Building2,
-  Clock,
-  Shield,
-  Sparkles,
+  Rocket,
+  Zap,
+  Crown,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,129 +18,91 @@ import { useQuizModal } from "@/context/QuizModalContext";
 
 const mainServices = [
   {
-    icon: Settings,
-    title: "Komplett-Setup",
-    subtitle: "Ich mache alles für dich",
+    title: "Starter",
+    tagline: "der erste Schritt raus aus dem manuellen Alltag",
+    duration: "ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
+      "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart. Richtig für dich wenn du noch kein System hast – oder von einem anderen Tool wechselst und einen sauberen, soliden Einstieg willst.",
     features: [
-      "Komplette GoHighLevel Einrichtung von A bis Z",
-      "Funnels, Landingpages & Webseiten",
-      "CRM-Setup mit Pipeline-Management",
-      "E-Mail-Sequenzen & SMS-Automationen",
-      "Terminbuchung & Kalender-Integration",
-      "Integrationen mit deinen bestehenden Tools",
-      "Individuelle Schulung zur Nutzung",
-      "30 Tage Support nach Projektabschluss",
+      "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
+      "Eine zentrale Automatisierung nach deinen Prozessen",
+      "Terminbuchung und Kalender-Integration",
+      "Einweisung und Übergabe – du verstehst was läuft und warum",
+      "30 Tage Support nach Go-Live",
     ],
-    benefits: [
-      { icon: Clock, text: "Du arbeitest mit einem vollständig eingerichteten System" },
-      { icon: Shield, text: "Routineaufgaben laufen im Hintergrund" },
-      { icon: Sparkles, text: "Technikfragen spielen im Alltag keine Rolle mehr" },
+    price: "ab 3.000 €",
+    popular: false,
+    icon: Zap,
+  },
+  {
+    title: "Growth",
+    tagline: "das System das dein Business skalierbar macht",
+    duration: "ca. 2 Wochen | Einmaliges Projekt, kein Abo",
+    description:
+      "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet. Richtig für dich wenn du bereits Kunden hast, alles noch manuell läuft und endlich ein System willst das die Arbeit übernimmt.",
+    features: [
+      "Alles aus dem Starter-Paket",
+      "Funnel und Landingpages – fertig aufgebaut, keine Bastelei",
+      "E-Mail-Sequenzen und automatisierte Follow-ups",
+      "Automatisiertes Kunden-Onboarding",
+      "Migration deiner bestehenden Kontakte und Daten",
+      "30 Tage Support nach Go-Live",
     ],
-    cta: "System-Analyse starten",
-    ctaType: "erstgespraech" as const,
+    price: "ab 4.500 €",
     popular: true,
-    price: "Auf Anfrage",
-    priceNote: "Individuell nach Projektumfang",
+    icon: Rocket,
   },
   {
-    icon: Users,
-    title: "Gemeinsam aufbauen",
-    subtitle: "Wir bauen es zusammen",
+    title: "Full System",
+    tagline: "wenn du es ein für alle Mal richtig machen willst",
+    duration: "Komplettaufbau | ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
+      "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen – von der ersten Anfrage bis zur laufenden Kundenbeziehung. Richtig für dich wenn dein Business wächst, mehrere Prozesse noch manuell laufen und du einmal alles richtig aufgebaut haben willst.",
     features: [
-      "Live Zusammenarbeit per Video-Call",
-      "Du lernst während wir bauen",
-      "Alle deine Fragen werden direkt beantwortet",
-      "Alles wird vollständig eingerichtet",
-      "Mehrere Sessions nach Bedarf",
-      "Aufnahmen aller Sessions zum Nachschauen",
-      "60 Tage Support nach Projektabschluss",
+      "Alles aus dem Growth-Paket",
+      "Gemeinsame Strategieentwicklung: wir bauen was wirklich zu dir passt",
+      "Vollständige Prozessautomatisierung über alle Bereiche",
+      "Mitgliederbereich falls du Kurse oder Inhalte anbietest",
+      "60 Tage Support nach Go-Live",
     ],
-    benefits: [
-      { icon: Clock, text: "Du verstehst, wie dein System funktioniert" },
-      { icon: Shield, text: "Änderungen kannst du sicher einschätzen" },
-      { icon: Sparkles, text: "Alle Abläufe sind dokumentiert und nachvollziehbar" },
-    ],
-    cta: "System-Analyse starten",
-    ctaType: "erstgespraech" as const,
+    price: "ab 6.000 €",
     popular: false,
-    price: "Auf Anfrage",
-    priceNote: "Nach Anzahl der Sessions",
-  },
-  {
-    icon: Headphones,
-    title: "Support-Call",
-    subtitle: "Schnelle Hilfe bei Problemen",
-    description:
-      "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
-    features: [
-      "1:1 Video-Call mit Bildschirmfreigabe",
-      "Problemlösung in Echtzeit",
-      "Technische Fragen werden beantwortet",
-      "Strategische Tipps für dein Setup",
-      "Aufnahme des Calls inklusive",
-      "Nachbereitung per E-Mail",
-    ],
-    benefits: [
-      { icon: Clock, text: "Du bekommst eine klare Antwort auf dein konkretes Problem" },
-      { icon: Shield, text: "Lösungen statt langem Suchen" },
-      { icon: Sparkles, text: "Direkte Umsetzung im Call" },
-    ],
-    cta: "Call buchen",
-    ctaType: "support" as const,
-    popular: false,
-    price: "250€",
-    priceNote: "Pro Stunde",
+    icon: Crown,
   },
 ];
 
 const additionalServices = [
   {
+    icon: Repeat,
+    title: "Migration von anderen Tools",
+    description:
+      "Du wechselst von einem anderen Tool? Ich übertrage deine Kontakte, Daten und Abläufe sauber rüber – ohne Datenverlust, ohne dass dein Business auch nur einen Tag stillsteht.",
+  },
+  {
     icon: TrendingUp,
     title: "Strategieberatung",
     description:
-      "Du weißt nicht, wo du anfangen sollst? Gemeinsam entwickeln wir eine Strategie, wie du das Maximum aus HighLevel herausholst und dein Marketing auf das nächste Level bringst.",
-  },
-  {
-    icon: Zap,
-    title: "Automation & Workflows",
-    description:
-      "Automatisiere deine Prozesse und spare wertvolle Zeit. Ich erstelle intelligente Workflows, die für dich arbeiten – von Lead-Nurturing bis zur Kundenbindung.",
-  },
-  {
-    icon: Repeat,
-    title: "Migration & Umzug",
-    description:
-      "Du wechselst von einem anderen Tool zu HighLevel? Ich übertrage deine Funnels, Kontakte und Daten sauber und reibungslos – ohne Datenchaos oder Ausfallzeiten.",
+      "Du weißt noch nicht welche Prozesse du automatisieren sollst oder wo der größte Hebel liegt? Wir entwickeln gemeinsam einen konkreten Plan bevor wir irgendetwas bauen.",
   },
   {
     icon: Building2,
     title: "SaaS-Partner Support",
     description:
-      "Du bist SaaS-Anbieter mit HighLevel als Basis? Ich übernehme Q&A-Calls, technischen Support und Troubleshooting für deine Endkunden – professionell und zuverlässig.",
+      "Du bietest dein eigenes System als White-Label an und brauchst jemanden der technischen Support für deine Kunden übernimmt? Das biete ich als ausgelagerten Support-Service an.",
   },
 ];
 
 const Leistungen = () => {
   const { openQuizModal } = useQuizModal();
 
-  const handleCTAClick = (ctaType: "erstgespraech" | "support") => {
-    if (ctaType === "erstgespraech") {
-      openQuizModal();
-    } else {
-      window.open("https://lp.gaetanoficarra.de/support_call", "_blank");
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Leistungen & Preise: Marketing Automation Setup | Gaetano Ficarra"
-        description="Komplett-Setup, gemeinsam aufbauen oder Support-Call: Ich richte dir dein Marketing-System ein. CRM, Automationen, Follow-ups — fertig übergeben. Zertifizierter GoHighLevel Admin aus Bielefeld."
+        title="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
+        description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         canonical="https://gaetanoficarra.de/leistungen"
+        ogTitle="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
+        ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Leistungen", url: "https://gaetanoficarra.de/leistungen" },
@@ -151,24 +110,32 @@ const Leistungen = () => {
         jsonLd={[
           {
             "@type": "Service",
-            "name": "GoHighLevel Komplett-Setup",
-            "description": "Komplette Einrichtung deines GoHighLevel/Funnelmate Systems: CRM, Pipelines, Automationen, Funnels und Integrationen.",
+            "name": "Starter",
+            "description": "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart.",
+            "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+            "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
+            "serviceType": "CRM & Automation Setup"
+          },
+          {
+            "@type": "Service",
+            "name": "Growth",
+            "description": "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
             "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
             "serviceType": "Marketing Automation Setup"
           },
           {
             "@type": "Service",
-            "name": "GoHighLevel Coaching & Begleitung",
-            "description": "Gemeinsamer Systemaufbau mit strategischer und technischer Begleitung durch einen zertifizierten GoHighLevel Admin.",
+            "name": "Full System",
+            "description": "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen.",
             "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
-            "serviceType": "CRM Consulting"
+            "serviceType": "Full Business System Setup"
           },
           {
             "@type": "Service",
-            "name": "GoHighLevel Support-Call",
-            "description": "Individuelle Support-Calls für konkrete Fragen und Probleme mit GoHighLevel oder Funnelmate.",
+            "name": "Support-Call",
+            "description": "Du nutzt dein System bereits und hast ein konkretes Problem. Wir teilen den Bildschirm und ich löse es mit dir live.",
             "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
             "serviceType": "Technical Support"
@@ -188,11 +155,10 @@ const Leistungen = () => {
             >
               <span className="text-primary text-sm tracking-widest uppercase font-body">Leistungen</span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
-                GoHighLevel & Funnelmate Setup — <span className="text-gradient-primary">Leistungen & Preise</span>
+                Drei Wege wie wir <span className="text-gradient-primary">zusammenarbeiten können.</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
-                Ob du alles abgeben, gemeinsam lernen oder schnelle Hilfe brauchst – ich habe das richtige Angebot für
-                dich.
+                Ob du alles abgeben oder gemeinsam aufbauen willst – hier findest du die Option die zu deiner Situation passt. Keine versteckten Kosten, kein Abo, keine Überraschungen.
               </p>
             </motion.div>
 
@@ -210,7 +176,7 @@ const Leistungen = () => {
                 >
                   {service.popular && (
                     <div className="bg-primary text-primary-foreground text-center py-2 text-xs uppercase tracking-widest font-body">
-                      Meistgebucht
+                      Beliebtestes Paket
                     </div>
                   )}
 
@@ -218,41 +184,34 @@ const Leistungen = () => {
                     <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
                       {/* Left Column - Info */}
                       <div>
-                        <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-center gap-4 mb-2">
                           <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
                             <service.icon className="w-7 h-7 text-primary" />
                           </div>
                           <div>
                             <h2 className="font-display text-2xl md:text-3xl text-foreground">{service.title}</h2>
-                            <p className="text-primary text-sm font-body">{service.subtitle}</p>
+                            <p className="text-primary text-sm font-body">{service.tagline}</p>
                           </div>
                         </div>
+
+                        <p className="text-muted-foreground/70 text-xs font-body tracking-wide uppercase mb-6">
+                          {service.duration}
+                        </p>
 
                         <p className="text-muted-foreground font-body text-lg leading-relaxed mb-8">
                           {service.description}
                         </p>
 
-                        {/* Benefits */}
-                        <div className="space-y-4 mb-8">
-                          {service.benefits.map((benefit, i) => (
-                            <div key={i} className="flex items-center gap-3">
-                              <benefit.icon className="w-5 h-5 text-primary" />
-                              <span className="text-foreground font-body">{benefit.text}</span>
-                            </div>
-                          ))}
-                        </div>
-
                         {/* Price & CTA */}
                         <div className="flex flex-wrap items-center gap-6">
                           <div>
                             <p className="font-display text-3xl text-primary">{service.price}</p>
-                            <p className="text-muted-foreground text-sm font-body">{service.priceNote}</p>
                           </div>
                           <button
-                            onClick={() => handleCTAClick(service.ctaType)}
+                            onClick={openQuizModal}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
                           >
-                            {service.cta} <ArrowRight className="w-4 h-4" />
+                            System-Analyse starten <ArrowRight className="w-4 h-4" />
                           </button>
                         </div>
                       </div>
@@ -275,6 +234,65 @@ const Leistungen = () => {
               ))}
             </div>
 
+            {/* Support-Call Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-5xl mx-auto mb-24"
+            >
+              <div className="bg-card border border-border rounded-xl p-8 md:p-12">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+                  <div>
+                    <div className="flex items-center gap-4 mb-2">
+                      <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Headphones className="w-7 h-7 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-2xl md:text-3xl text-foreground">Support-Call</h3>
+                        <p className="text-primary text-sm font-body">du steckst fest, wir lösen es</p>
+                      </div>
+                    </div>
+
+                    <p className="font-display text-3xl text-primary mb-6">250 € / Stunde</p>
+
+                    <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
+                      Du nutzt dein System bereits und hast ein konkretes Problem. Eine Automatisierung läuft nicht. Ein Funnel konvertiert nicht. Wir teilen den Bildschirm und ich löse es mit dir live. Kein Drumherum, keine langen Vorgespräche, keine Verpflichtung.
+                    </p>
+
+                    <p className="text-muted-foreground font-body text-sm leading-relaxed mb-8">
+                      Als zertifizierter GoHighLevel Berater in Deutschland löse ich technische Probleme direkt im Call.
+                    </p>
+
+                    <button
+                      onClick={() => window.open("https://lp.gaetanoficarra.de/support_call", "_blank")}
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
+                    >
+                      Call buchen <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="bg-muted/30 rounded-lg p-6 md:p-8">
+                    <h3 className="font-display text-lg text-foreground mb-6">Was du bekommst:</h3>
+                    <ul className="space-y-4">
+                      {[
+                        "60-minütiger 1:1 Video-Call mit Bildschirmfreigabe",
+                        "Direktlösung im Call",
+                        "Konkrete Antworten auf dein konkretes Problem",
+                        "Aufnahme des Calls zum Nachschauen",
+                      ].map((feature, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm font-body text-muted-foreground">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Additional Services */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -283,13 +301,12 @@ const Leistungen = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <span className="text-primary text-sm tracking-widest uppercase font-body">Weitere Services</span>
-              <h2 className="font-display text-3xl md:text-4xl text-foreground mt-4">
-                Das biete ich <span className="text-gradient-primary">außerdem</span> an
-              </h2>
+              <h3 className="font-display text-3xl md:text-4xl text-foreground">
+                Das biete ich <span className="text-gradient-primary">außerdem an.</span>
+              </h3>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {additionalServices.map((service, index) => (
                 <motion.div
                   key={service.title}
@@ -321,13 +338,12 @@ const Leistungen = () => {
               className="max-w-2xl mx-auto"
             >
               <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-                Nicht sicher, was zu dir passt?
+                Nicht sicher welches Paket zu dir passt?
               </h2>
               <p className="text-muted-foreground font-body mb-8 text-lg">
-                Kein Problem. In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Option für deine
-                Situation am besten geeignet ist.
+                In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo Potenzial liegt und was wirklich Sinn macht – ohne Druck, ohne vorher festgelegtes Ergebnis.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex flex-col items-center gap-3">
                 <button
                   onClick={openQuizModal}
                   className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
@@ -337,15 +353,11 @@ const Leistungen = () => {
                 >
                   System-Analyse starten <ArrowRight className="w-4 h-4" />
                 </button>
-                <Link
-                  to="/highlevel-vs-funnelmate"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
-                >
-                  GoHighLevel vs. Funnelmate vergleichen <ArrowRight className="w-4 h-4" />
-                </Link>
+                <span className="text-muted-foreground text-sm font-body">
+                  Kurz sprechen, Setup verstehen, nächsten Schritt klären.
+                </span>
               </div>
             </motion.div>
-
           </div>
         </section>
       </main>
