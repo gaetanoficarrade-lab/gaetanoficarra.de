@@ -8,38 +8,32 @@ const problems = [
   {
     icon: Layers,
     title: "Zu viele Tools",
-    description:
-      "CRM hier, E-Mail-Tool dort, Funnel-Builder woanders. Du zahlst für ein Dutzend Plattformen und keins spricht wirklich mit dem anderen.",
+    description: "CRM hier, E-Mail-Tool dort, Funnel-Builder woanders. Du zahlst für ein Dutzend Plattformen und keins spricht wirklich mit dem anderen.",
   },
   {
     icon: Link2Off,
     title: "Fehlerhafte Schnittstellen",
-    description:
-      "Zapier-Zaps, die brechen. Make-Szenarien, die nicht triggern. Du verbringst Stunden damit, herauszufinden, warum deine Automatisierung nicht funktioniert.",
+    description: "Zapier-Zaps, die brechen. Make-Szenarien, die nicht triggern. Du verbringst Stunden damit, herauszufinden, warum deine Automatisierung nicht funktioniert.",
   },
   {
     icon: Clock,
     title: "Manuelle Prozesse",
-    description:
-      "Listen exportieren, importieren, abgleichen. Kontakte von Hand taggen. Follow-ups manuell verschicken. Jeden Tag die gleichen Routinen.",
+    description: "Listen exportieren, importieren, abgleichen. Kontakte von Hand taggen. Follow-ups manuell verschicken. Jeden Tag die gleichen Routinen.",
   },
   {
     icon: AlertTriangle,
     title: "Fehlende Übersicht",
-    description:
-      "Wo ist welcher Lead? Wer hat was gekauft? Was wurde schon kontaktiert? Du springst zwischen Tabs und verlierst trotzdem den Überblick.",
+    description: "Wo ist welcher Lead? Wer hat was gekauft? Was wurde schon kontaktiert? Du springst zwischen Tabs und verlierst trotzdem den Überblick.",
   },
   {
     icon: EuroIcon,
     title: "Steigende Softwarekosten",
-    description:
-      "ActiveCampaign, ClickFunnels, Calendly, Zoom, Kajabi... Jeden Monat gehen Hunderte Euro für Tools drauf, die du nur halb nutzt.",
+    description: "ActiveCampaign, ClickFunnels, Calendly, Zoom, Kajabi... Jeden Monat gehen Hunderte Euro für Tools drauf, die du nur halb nutzt.",
   },
   {
     icon: TrendingDown,
     title: "Leads gehen verloren",
-    description:
-      "Ohne ein funktionierendes System verschwinden Interessenten im Nirgendwo. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei anderen.",
+    description: "Ohne ein funktionierendes System verschwinden Interessenten im Nirgendwo. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei anderen.",
   },
 ];
 
@@ -77,7 +71,8 @@ const Problem = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
-                className="bg-card border border-destructive/20 p-8 rounded-lg hover:border-destructive/40 transition-colors"
+                className="glass-card p-8"
+                style={{ borderColor: "hsl(var(--destructive) / 0.15)" }}
               >
                 <div className="flex items-center justify-center w-14 h-14 bg-destructive/10 rounded-full mb-6">
                   <problem.icon className="w-7 h-7 text-destructive" />
@@ -99,7 +94,7 @@ const Problem = () => {
               <img
                 src={systemIntegration}
                 alt="Verstreute Tools konsolidieren"
-                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border border-border/50 shadow-lg"
+                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-xl border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
                 width={256}
                 height={256}
                 loading="lazy"
