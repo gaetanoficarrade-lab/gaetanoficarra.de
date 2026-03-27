@@ -25,6 +25,7 @@ const staticRoutes = [
 // Blog-Artikel aus Supabase laden
 let blogRoutes = [];
 let blogPosts = [];
+
 try {
   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   const { data: posts } = await supabase
@@ -56,7 +57,6 @@ const address = server.httpServer.address();
 const port = address.port;
 
 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-
 const fallbackTitle = 'Gaetano Ficarra — GoHighLevel & Funnelmate Experte für Marketing Automation';
 
 for (const route of routes) {
@@ -75,11 +75,9 @@ for (const route of routes) {
   ).catch(() => console.warn(`Warning: title may not have updated for ${route}`));
 
   const html = await page.content();
-
   const dir = path.join('/app/dist', route);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
-
   console.log(`Prerendered: ${route}`);
   await page.close();
 }
@@ -87,12 +85,21 @@ for (const route of routes) {
 await browser.close();
 server.httpServer.close();
 
-// Sitemap mit Blog-Artikeln anreichern
+// SITEMAP AKTUALISIEREN — mit automatischen lastmod-Daten
 try {
   const sitemapPath = path.join('/app/dist', 'sitemap.xml');
   let sitemap = fs.readFileSync(sitemapPath, 'utf-8');
   const today = new Date().toISOString().slice(0, 10);
 
+  // 1. Alle statischen Seiten: lastmod = heute
+  staticRoutes.forEach((route) => {
+    const loc = route === '/' ? BASE_URL + '/' : BASE_URL + route;
+    const oldPattern = `<loc>${loc}</loc>\\s*<lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>`;
+    const replacement = `<loc>${loc}</loc>\n    <lastmod>${today}</lastmod>`;
+    sitemap = sitemap.replace(new RegExp(oldPattern), replacement);
+  });
+
+  // 2. Blog-Artikel: lastmod = updated_at (oder published_at falls nicht vorhanden)
   if (blogPosts.length > 0) {
     const blogUrls = blogPosts.map((post) => {
       const lastmod = (post.updated_at || post.published_at || today).slice(0, 10);
@@ -105,11 +112,13 @@ try {
     }).join('\n');
 
     sitemap = sitemap.replace('</urlset>', `${blogUrls}\n</urlset>`);
-    fs.writeFileSync(sitemapPath, sitemap);
     console.log(`Sitemap angereichert mit ${blogPosts.length} Blog-Artikel(n).`);
   } else {
     console.log('Keine Blog-Artikel — Sitemap unverändert.');
   }
+
+  fs.writeFileSync(sitemapPath, sitemap);
+  console.log(`✅ Sitemap aktualisiert — alle lastmod-Daten sind aktuell (${today}).`);
 } catch (err) {
   console.error('Sitemap konnte nicht angereichert werden:', err.message);
 }
