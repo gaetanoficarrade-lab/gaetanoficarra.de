@@ -15,46 +15,14 @@ const Hero = () => {
 
       {/* Shimmer stripes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-0 w-[200%] h-full"
-          style={{
-            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.18) 50%, transparent 100%)",
-            animation: "shimmer-ltr 10s ease-in-out infinite",
-          }}
-        />
-        <div
-          className="absolute inset-0 w-[200%] h-full"
-          style={{
-            background: "linear-gradient(90deg, transparent 0%, hsl(var(--secondary) / 0.12) 50%, transparent 100%)",
-            animation: "shimmer-rtl 14s ease-in-out infinite",
-          }}
-        />
+        <div className="absolute inset-0 shimmer-hero-1" />
+        <div className="absolute inset-0 shimmer-hero-2" />
       </div>
 
       {/* Floating Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: "500px",
-            height: "500px",
-            top: "10%",
-            left: "-5%",
-            background: "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)",
-            animation: "float-orb-1 16s ease-in-out infinite",
-          }}
-        />
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: "600px",
-            height: "600px",
-            bottom: "5%",
-            right: "-10%",
-            background: "radial-gradient(circle, hsl(var(--secondary) / 0.12) 0%, transparent 70%)",
-            animation: "float-orb-2 20s ease-in-out infinite reverse",
-          }}
-        />
+        <div className="absolute floating-orb-primary" style={{ top: "10%", left: "-5%" }} />
+        <div className="absolute floating-orb-accent" style={{ bottom: "5%", right: "-10%" }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
