@@ -55,7 +55,7 @@ const Problem = () => {
              <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">Das Problem</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Du kennst das Gefühl.{" "}
-              <span className="text-gradient-primary">Selbstständig – und trotzdem selbst und ständig.</span>
+              <span className="text-gradient-primary">Selbstständig und trotzdem selbst und ständig.</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
               Du hast dir das anders vorgestellt. Mehr Freiheit. Mehr Kontrolle. Selbst entscheiden wann, wo und mit wem du arbeitest.
