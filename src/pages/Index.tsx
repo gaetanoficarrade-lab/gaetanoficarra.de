@@ -19,11 +19,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Marketing Automation Berater für Selbstständige | Gaetano Ficarra"
-        description="Ich baue dir ein zentrales Marketing-System: Leads, Termine und Follow-ups — automatisiert, ohne Tool-Chaos. Zertifizierter Admin aus Bielefeld für Coaches, Berater und Dienstleister."
+        title="Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
+        description="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System das dein Business von dir unabhängig macht. Jetzt starten."
         canonical="https://gaetanoficarra.de/"
-        ogTitle="Marketing Automation Berater für Selbstständige | Gaetano Ficarra"
-        ogDescription="Ich baue dir ein zentrales Marketing-System: Leads, Termine und Follow-ups — automatisiert, ohne Tool-Chaos."
+        ogTitle="Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
+        ogDescription="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System das dein Business von dir unabhängig macht."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
         ]}
