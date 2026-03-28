@@ -311,7 +311,7 @@ const HighLevelVsFunnelmate = () => {
               <div className="space-y-6 font-body text-muted-foreground text-lg leading-relaxed">
                 <p>
                   Als zertifizierter GoHighLevel Admin arbeite ich täglich mit beiden Plattformen. Für Unternehmer und
-                  Agenturen im deutschsprachigen Raum empfehle ich in den meisten Fällen Funnelmate – und zwar aus drei
+                  Agenturen im deutschsprachigen Raum empfehle ich in den meisten Fällen Funnelmate, und zwar aus drei
                   Gründen:
                 </p>
                 <div className="space-y-4">
