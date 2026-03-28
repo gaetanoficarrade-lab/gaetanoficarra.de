@@ -177,7 +177,7 @@ const BlogArticle = () => {
         description={post.description}
         canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
         ogType="article"
-        ogImage={coverImg || "https://gaetanoficarra.de/og-image.png"}
+        ogImage={absoluteCoverImg || "https://gaetanoficarra.de/og-image.png"}
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Blog", url: "https://gaetanoficarra.de/blog" },
