@@ -116,7 +116,7 @@ const HighLevelVsFunnelmate = () => {
                 GoHighLevel vs. Funnelmate 2026. <span className="text-gradient-primary">Der direkte Vergleich</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
-                Beide Plattformen nutzen die gleiche Technologie – aber welche ist die richtige für dein Business im
+                Beide Plattformen nutzen die gleiche Technologie, aber welche ist die richtige für dein Business im
                 DACH-Raum? Als zertifizierter GoHighLevel Admin und Funnelmate Experte zeige ich dir die Unterschiede,
                 Kosten und Vorteile.
               </p>

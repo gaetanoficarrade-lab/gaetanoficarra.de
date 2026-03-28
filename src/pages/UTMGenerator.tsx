@@ -336,7 +336,7 @@ const UTMGenerator = () => {
               {[
                 {
                   q: "Sind UTM-Parameter kostenlos?",
-                  a: "Ja, UTM-Parameter sind komplett kostenlos. Sie sind ein offener Standard und werden von allen gängigen Analytics-Tools unterstützt – darunter Google Analytics, Funnelmate, GoHighLevel, HubSpot und viele weitere."
+                  a: "Ja, UTM-Parameter sind komplett kostenlos. Sie sind ein offener Standard und werden von allen gängigen Analytics-Tools unterstützt, darunter Google Analytics, Funnelmate, GoHighLevel, HubSpot und viele weitere."
                 },
                 {
                   q: "Funktionieren UTM-Parameter mit Google Analytics 4 (GA4)?",

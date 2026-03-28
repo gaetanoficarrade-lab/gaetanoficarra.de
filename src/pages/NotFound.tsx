@@ -37,7 +37,7 @@ const NotFound = () => {
             <p className="text-lg mb-8 leading-relaxed" style={{ color: "#6E6E73" }}>
               Diese Seite existiert leider nicht oder wurde verschoben.
               <br />
-              Keine Sorge – es gibt noch viel zu entdecken.
+              Keine Sorge, es gibt noch viel zu entdecken.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

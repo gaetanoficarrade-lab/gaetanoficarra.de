@@ -119,7 +119,7 @@ const Leistungen = () => {
           {
             "@type": "Service",
             "name": "Growth",
-            "description": "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
+            "description": "Funnel, Automatisierungen, CRM und automatisiertes Onboarding, alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
             "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
             "serviceType": "Marketing Automation Setup"
