@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "Ist Funnelmate wirklich dasselbe wie GoHighLevel?",
     answer:
-      "Ja. Funnelmate basiert technisch zu 100% auf GoHighLevel. Es handelt sich um einen sogenannten White-Label-Reseller – das bedeutet, du bekommst exakt dieselbe Software, dieselben Funktionen und dieselbe Infrastruktur. Der Unterschied liegt in der Lokalisierung: deutsche Oberfläche, deutschsprachiger Support, deutsche Community und DSGVO-orientierte Konfiguration.",
+      "Ja. Funnelmate basiert technisch zu 100% auf GoHighLevel. Es handelt sich um einen sogenannten White-Label-Reseller, das bedeutet, du bekommst exakt dieselbe Software, dieselben Funktionen und dieselbe Infrastruktur. Der Unterschied liegt in der Lokalisierung: deutsche Oberfläche, deutschsprachiger Support, deutsche Community und DSGVO-orientierte Konfiguration.",
   },
   {
     question: "Kann ich von GoHighLevel zu Funnelmate wechseln (oder umgekehrt)?",
