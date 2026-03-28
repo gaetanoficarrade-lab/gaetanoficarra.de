@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, X } from "lucide-react";
+import solutionBg from "@/assets/solution-bg.jpg";
 
 const suitableFor = [
   "Du ein laufendes Business mit aktiven Kunden hast",
@@ -21,8 +22,17 @@ const Qualification = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 md:py-32 relative" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <img
+          src={solutionBg}
+          alt=""
+          className="w-full h-full object-cover opacity-40"
+          loading="lazy"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
