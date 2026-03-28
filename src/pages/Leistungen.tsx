@@ -76,7 +76,7 @@ const additionalServices = [
     icon: Repeat,
     title: "Migration von anderen Tools",
     description:
-      "Du wechselst von einem anderen Tool? Ich übertrage deine Kontakte, Daten und Abläufe sauber rüber – ohne Datenverlust, ohne dass dein Business auch nur einen Tag stillsteht.",
+      "Du wechselst von einem anderen Tool? Ich übertrage deine Kontakte, Daten und Abläufe sauber rüber, ohne Datenverlust, ohne dass dein Business auch nur einen Tag stillsteht.",
   },
   {
     icon: TrendingUp,
