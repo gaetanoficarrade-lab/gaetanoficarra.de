@@ -315,7 +315,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Nicht für interne Links</strong> – UTM-Parameter sind nur für externe Quellen gedacht. Interne Links mit UTM-Tags verfälschen deine Analytics-Daten.</span>
+                <span><strong className="text-foreground">Nicht für interne Links</strong>. UTM-Parameter sind nur für externe Quellen gedacht. Interne Links mit UTM-Tags verfälschen deine Analytics-Daten.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
