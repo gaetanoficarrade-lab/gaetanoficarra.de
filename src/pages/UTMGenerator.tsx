@@ -79,7 +79,8 @@ const UTMGenerator = () => {
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "UTM Generator", url: "https://gaetanoficarra.de/utm-generator" },
         ]}
-        jsonLd={{
+        jsonLd={[
+          {
             "@type": "WebApplication",
             "name": "UTM-Generator",
             "url": "https://gaetanoficarra.de/utm-generator",
@@ -88,7 +89,53 @@ const UTMGenerator = () => {
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
             "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "description": "Erstelle UTM-Parameter für Google Analytics in Sekunden. Kostenloser Tool-Rechner."
-        }}
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Sind UTM-Parameter kostenlos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja, UTM-Parameter sind komplett kostenlos. Sie sind ein offener Standard und werden von allen gängigen Analytics-Tools unterstützt, darunter Google Analytics, Funnelmate, GoHighLevel, HubSpot und viele weitere."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Funktionieren UTM-Parameter mit Google Analytics 4 (GA4)?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja. GA4 erkennt UTM-Parameter automatisch und ordnet sie den richtigen Dimensionen zu (Quelle, Medium, Kampagne). Du siehst die Daten unter Akquisition → Traffic-Akquisition."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kann ich UTM-Parameter auch in GoHighLevel / Funnelmate nutzen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolut. GoHighLevel und Funnelmate können UTM-Parameter aus eingehenden Links automatisch auslesen und im Kontaktprofil speichern. So weißt du für jeden Lead, woher er kam."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie viele UTM-Parameter sollte ich verwenden?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Mindestens drei: utm_source, utm_medium und utm_campaign. Die beiden optionalen (utm_term und utm_content) sind nützlich für bezahlte Kampagnen und A/B-Tests."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Beeinflusst die UTM-URL mein SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nein, UTM-Parameter haben keinen direkten Einfluss auf dein SEO-Ranking. Google ignoriert sie beim Crawlen. Achte aber darauf, Canonical-Tags korrekt zu setzen, damit keine Duplikate entstehen."
+                }
+              }
+            ]
+          }
+        ]}
       />
       <Header />
       <main className="pt-32 pb-20">
@@ -103,7 +150,7 @@ const UTMGenerator = () => {
               <LinkIcon className="w-8 h-8 text-primary" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-              UTM <span className="text-primary">Parameter Generator</span>
+              Kostenloser UTM <span className="text-primary">Parameter Generator</span>
             </h1>
             <p className="text-muted-foreground font-body">
               Erstelle trackbare Links mit UTM-Parametern für dein Marketing
