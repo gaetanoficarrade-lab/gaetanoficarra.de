@@ -75,7 +75,22 @@ const applyAllTags = (
   setMeta("property", "og:description", ogDescription);
   setMeta("property", "og:url", canonicalUrl);
   setMeta("property", "og:image", ogImage);
-  setMeta("property", "og:image:alt", `${ogTitle} — Gaetano Ficarra`);
+
+  // Fix K2: og:image:alt ohne Duplikat
+  const altText = ogTitle.includes("Gaetano Ficarra") ? ogTitle : `${ogTitle} — Gaetano Ficarra`;
+  setMeta("property", "og:image:alt", altText);
+
+  // Fix H6: og:image:width/height nur für Standard-Bild
+  if (ogImage === `${BASE_URL}/og-image.png`) {
+    setMeta("property", "og:image:width", "1200");
+    setMeta("property", "og:image:height", "630");
+    setMeta("property", "og:image:type", "image/png");
+  } else {
+    removeMeta("property", "og:image:width");
+    removeMeta("property", "og:image:height");
+    removeMeta("property", "og:image:type");
+  }
+
   setMeta("property", "og:type", ogType);
   setMeta("property", "og:site_name", "Gaetano Ficarra");
   setMeta("property", "og:locale", "de_DE");
@@ -85,6 +100,8 @@ const applyAllTags = (
   setMeta("name", "twitter:title", ogTitle);
   setMeta("name", "twitter:description", ogDescription);
   setMeta("name", "twitter:image", ogImage);
+  // Fix N4: twitter:image:alt setzen
+  setMeta("name", "twitter:image:alt", altText);
 
   if (noIndex) {
     setMeta("name", "robots", "noindex, nofollow");
@@ -109,7 +126,6 @@ const SEOHead = ({
   const resolvedOgTitle = ogTitle || title;
   const resolvedOgDesc = ogDescription || description;
 
-  // Synchronous render — für Puppeteer Prerendering kritisch
   const appliedRef = useRef<string>("");
   const currentKey = `${title}|${canonicalUrl}|${noIndex}`;
   if (appliedRef.current !== currentKey) {
@@ -118,7 +134,6 @@ const SEOHead = ({
   }
 
   useEffect(() => {
-    // Beim Client-Side-Navigation nochmals setzen
     applyAllTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType, noIndex);
 
     const scriptIds: string[] = [];
@@ -131,11 +146,8 @@ const SEOHead = ({
       url: BASE_URL,
       image: `${BASE_URL}/og-image.png`,
       address: { "@type": "PostalAddress", addressLocality: "Bielefeld", addressCountry: "DE" },
-      sameAs: [
-        "https://www.linkedin.com/in/gaetano-ficarra/",
-        "https://www.instagram.com/gaetano.ficarra/",
-        "https://share.google/x4un2oyPVnb9DxDXL",
-      ],
+      // Fix M7: share.google entfernt, nur valide sameAs-URLs
+      sameAs: ["https://www.linkedin.com/in/gaetano-ficarra/", "https://www.instagram.com/gaetano.ficarra/"],
     });
     scriptIds.push("seo-person-ld");
 
@@ -147,7 +159,7 @@ const SEOHead = ({
         "Done-for-you Business Systeme für selbstständige Coaches, Berater und Dienstleister. Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – in 2 Wochen.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.png`,
-      telephone: "+49-152-23856537",
+      telephone: "+4915223856537",
       email: "kontakt@gaetanoficarra.de",
       address: {
         "@type": "PostalAddress",
