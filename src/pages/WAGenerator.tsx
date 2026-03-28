@@ -2,7 +2,7 @@ import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Copy, Check, MessageCircle, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -282,6 +282,10 @@ const WAGenerator = () => {
           </motion.div>
 
           {/* Cross-Links */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-sm font-body">
+            <a href="/utm-generator" className="text-primary hover:underline">→ UTM Parameter Generator</a>
+            <a href="/leistungen" className="text-primary hover:underline">→ Marketing System aufbauen lassen</a>
+          </div>
         </div>
       </main>
       <Footer />
