@@ -8,6 +8,7 @@ const Datenschutz = () => {
       <SEOHead
         title="Datenschutzerklärung | Gaetano Ficarra"
         description="Datenschutzerklärung von Gaetano Ficarra. Informationen zur Datenverarbeitung, Ihren Rechten und den eingesetzten Diensten."
+        noIndex={true}
       />
       <Header />
       <main className="pt-32 pb-20">

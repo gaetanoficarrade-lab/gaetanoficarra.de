@@ -9,6 +9,7 @@ const Impressum = () => {
       <SEOHead
         title="Impressum | Gaetano Ficarra"
         description="Impressum von Gaetano Ficarra Angaben gemäß § 5 TMG. Kontakt, Adresse und rechtliche Informationen."
+        noIndex={true}
       />
       <Header />
       <main className="pt-32 pb-20">
