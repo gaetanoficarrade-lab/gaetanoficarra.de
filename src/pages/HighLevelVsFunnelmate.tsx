@@ -377,7 +377,7 @@ const HighLevelVsFunnelmate = () => {
                     <h3 className="font-display text-2xl text-foreground">GoHighLevel</h3>
                   </div>
                   <p className="text-muted-foreground font-body mb-6">
-                    Die internationale Originalplattform – ideal für englischsprachige Märkte und Nutzer, die maximale
+                    Die internationale Originalplattform, ideal für englischsprachige Märkte und Nutzer, die maximale
                     Flexibilität und die größte Community weltweit suchen.
                   </p>
                   <ul className="space-y-4">
