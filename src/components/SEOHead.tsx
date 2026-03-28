@@ -173,14 +173,14 @@ const SEOHead = ({
       priceRange: "€€",
       hasMap: "https://maps.google.com/?q=Elverdisser+Str.+51,+33729+Bielefeld",
       knowsAbout: [
-        "GoHighLevel",
-        "Funnelmate",
-        "Marketing Automation",
-        "CRM",
-        "Funnel Building",
-        "Marketing Automation Beratung",
-        "CRM Setup",
         "Business Systeme",
+        "Funnel aufbauen lassen",
+        "CRM einrichten",
+        "Prozesse automatisieren",
+        "GoHighLevel",
+        "Coaching Business skalieren",
+        "Done-for-you Setup",
+        "Marketing Automation",
       ],
     });
     scriptIds.push("seo-professional-service-ld");
