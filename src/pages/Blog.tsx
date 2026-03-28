@@ -58,7 +58,7 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Marketing Automation Blog — Tipps & Insights | Gaetano Ficarra"
+        title="Marketing Automation Blog. Tipps & Insights | Gaetano Ficarra"
         description="Marketing Automation Blog: Praxistipps zu GoHighLevel, Funnelmate & CRM-Strategie. Wissen für Selbstständige, die ihr Business skalieren wollen."
         canonical="https://gaetanoficarra.de/blog"
         breadcrumbs={[
@@ -113,7 +113,7 @@ const Blog = () => {
                 <Clock className="w-8 h-8 text-primary" />
               </div>
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
-                Artikel in Vorbereitung — <span className="text-gradient-primary">bald verfügbar</span>
+                Artikel in Vorbereitung, <span className="text-gradient-primary">bald verfügbar</span>
               </h2>
               <p className="text-muted-foreground font-body text-lg">
                 Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing.
@@ -180,7 +180,7 @@ const Blog = () => {
               to="/highlevel-vs-funnelmate"
               className="inline-flex items-center gap-2 text-primary font-body text-sm tracking-widest uppercase hover:gap-3 transition-all duration-300"
             >
-              GoHighLevel vs. Funnelmate — der direkte Vergleich
+              GoHighLevel vs. Funnelmate, der direkte Vergleich
               <ArrowRight size={16} />
             </Link>
           </motion.div>

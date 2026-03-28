@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "Ist Funnelmate wirklich dasselbe wie GoHighLevel?",
     answer:
-      "Ja. Funnelmate basiert technisch zu 100% auf GoHighLevel. Es handelt sich um einen sogenannten White-Label-Reseller – das bedeutet, du bekommst exakt dieselbe Software, dieselben Funktionen und dieselbe Infrastruktur. Der Unterschied liegt in der Lokalisierung: deutsche Oberfläche, deutschsprachiger Support, deutsche Community und DSGVO-orientierte Konfiguration.",
+      "Ja. Funnelmate basiert technisch zu 100% auf GoHighLevel. Es handelt sich um einen sogenannten White-Label-Reseller, das bedeutet, du bekommst exakt dieselbe Software, dieselben Funktionen und dieselbe Infrastruktur. Der Unterschied liegt in der Lokalisierung: deutsche Oberfläche, deutschsprachiger Support, deutsche Community und DSGVO-orientierte Konfiguration.",
   },
   {
     question: "Kann ich von GoHighLevel zu Funnelmate wechseln (oder umgekehrt)?",
@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "Ist Funnelmate DSGVO-konform?",
     answer:
-      "Funnelmate bietet die technischen Voraussetzungen für eine DSGVO-konforme Nutzung: EU-Server-Standorte, AV-Vertrag, verschlüsselte Datenübertragung. Entscheidend ist aber immer auch die korrekte Konfiguration – z.B. Double-Opt-In bei E-Mails, Cookie-Consent, Datenschutzerklärung. Ich achte bei jedem Setup darauf, dass diese Grundlagen stimmen. Rechtliche Beratung ersetzt das nicht.",
+       "Funnelmate bietet die technischen Voraussetzungen für eine DSGVO-konforme Nutzung: EU-Server-Standorte, AV-Vertrag, verschlüsselte Datenübertragung. Entscheidend ist aber immer auch die korrekte Konfiguration, z.B. Double-Opt-In bei E-Mails, Cookie-Consent, Datenschutzerklärung. Ich achte bei jedem Setup darauf, dass diese Grundlagen stimmen. Rechtliche Beratung ersetzt das nicht.",
   },
   {
     question: "Brauche ich einen Experten oder kann ich GoHighLevel selbst einrichten?",
@@ -59,7 +59,7 @@ const faqs = [
   {
     question: "Was kostet GoHighLevel vs. Funnelmate?",
     answer:
-      "GoHighLevel startet bei $97/Monat (Starter) und geht bis $497/Monat (SaaS Pro). Funnelmate beginnt bei €129/Monat. Beide bieten eine 14-tägige kostenlose Testphase. Für den DACH-Raum empfehle ich Funnelmate, weil der deutsche Support und die DSGVO-Konfiguration den Preisunterschied schnell wettmachen.",
+       "GoHighLevel startet bei $97/Monat (Starter) und geht bis $497/Monat (SaaS Pro). Funnelmate beginnt bei €129/Monat. Beide bieten eine 14-tägige kostenlose Testphase. Für den DACH-Raum empfehle ich Funnelmate, weil der deutsche Support und die DSGVO-Konfiguration den Preisunterschied schnell wettmachen.",
   },
   {
     question: "Welche Plattform eignet sich besser für Agenturen?",
@@ -92,7 +92,7 @@ const HighLevelVsFunnelmate = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="GoHighLevel vs. Funnelmate 2026 — Der direkte Vergleich"
+        title="GoHighLevel vs. Funnelmate 2026. Der direkte Vergleich"
         description="GoHighLevel oder Funnelmate 2026? Zertifizierter Experte aus Bielefeld vergleicht Funktionen, Preise & DSGVO-Vorteile für den DACH-Raum. Kostenloser Vergleich."
         canonical="https://gaetanoficarra.de/highlevel-vs-funnelmate"
         breadcrumbs={[
@@ -113,10 +113,10 @@ const HighLevelVsFunnelmate = () => {
               className="text-center max-w-3xl mx-auto mb-16"
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-                GoHighLevel vs. Funnelmate 2026 — <span className="text-gradient-primary">Der direkte Vergleich</span>
+                GoHighLevel vs. Funnelmate 2026. <span className="text-gradient-primary">Der direkte Vergleich</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
-                Beide Plattformen nutzen die gleiche Technologie – aber welche ist die richtige für dein Business im
+                Beide Plattformen nutzen die gleiche Technologie, aber welche ist die richtige für dein Business im
                 DACH-Raum? Als zertifizierter GoHighLevel Admin und Funnelmate Experte zeige ich dir die Unterschiede,
                 Kosten und Vorteile.
               </p>
@@ -136,7 +136,7 @@ const HighLevelVsFunnelmate = () => {
                 GoHighLevel (oft abgekürzt als GHL) ist eine All-in-One Marketing- und Vertriebsplattform aus den USA.
                 Sie wurde speziell für Agenturen und Unternehmer entwickelt und vereint CRM, E-Mail-Marketing,
                 Funnel-Builder, Terminbuchung, Kursplattform, Automatisierungen und vieles mehr in einem einzigen Tool.
-                Statt 5–10 verschiedene Software-Abos zu bezahlen, deckt GoHighLevel alles ab – für einen festen
+                Statt 5 bis 10 verschiedene Software-Abos zu bezahlen, deckt GoHighLevel alles ab, für einen festen
                 monatlichen Preis.
               </p>
               <p className="text-muted-foreground font-body text-lg leading-relaxed mb-10">
@@ -148,7 +148,7 @@ const HighLevelVsFunnelmate = () => {
                 Was ist <span className="text-gradient-primary">Funnelmate</span>?
               </h2>
               <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
-                Funnelmate ist ein sogenannter White-Label-Reseller von GoHighLevel – speziell für den deutschsprachigen
+                Funnelmate ist ein sogenannter White-Label-Reseller von GoHighLevel, speziell für den deutschsprachigen
                 Markt (Deutschland, Österreich, Schweiz). Das bedeutet: Du bekommst exakt dieselbe Software mit
                 denselben Funktionen, aber mit einer komplett deutschen Oberfläche, deutschsprachigem Support und einer
                 aktiven deutschen Community.
@@ -172,7 +172,7 @@ const HighLevelVsFunnelmate = () => {
                 <span className="text-sm font-medium uppercase tracking-wider font-body">Wichtig zu wissen</span>
               </div>
               <p className="text-foreground font-body text-lg leading-relaxed">
-                Funnelmate basiert auf GoHighLevel und bietet die gleichen Funktionen – aber mit deutschem Support,
+                Funnelmate basiert auf GoHighLevel und bietet die gleichen Funktionen, aber mit deutschem Support,
                 deutscher Community und DSGVO-Konformität. Die Technologie ist identisch, der Service ist lokalisiert.
               </p>
             </motion.div>
@@ -311,7 +311,7 @@ const HighLevelVsFunnelmate = () => {
               <div className="space-y-6 font-body text-muted-foreground text-lg leading-relaxed">
                 <p>
                   Als zertifizierter GoHighLevel Admin arbeite ich täglich mit beiden Plattformen. Für Unternehmer und
-                  Agenturen im deutschsprachigen Raum empfehle ich in den meisten Fällen Funnelmate – und zwar aus drei
+                  Agenturen im deutschsprachigen Raum empfehle ich in den meisten Fällen Funnelmate, und zwar aus drei
                   Gründen:
                 </p>
                 <div className="space-y-4">
@@ -335,7 +335,7 @@ const HighLevelVsFunnelmate = () => {
                       <h3 className="font-display text-xl text-foreground mb-2">Support auf Deutsch</h3>
                       <p>
                         Wenn du um 10 Uhr morgens ein Problem hast, willst du keine englische E-Mail schreiben und auf
-                        US-Geschäftszeiten warten. Funnelmate bietet deutschen Support per Chat und Zoom – in deiner
+                        US-Geschäftszeiten warten. Funnelmate bietet deutschen Support per Chat und Zoom, in deiner
                         Zeitzone.
                       </p>
                     </div>
@@ -377,7 +377,7 @@ const HighLevelVsFunnelmate = () => {
                     <h3 className="font-display text-2xl text-foreground">GoHighLevel</h3>
                   </div>
                   <p className="text-muted-foreground font-body mb-6">
-                    Die internationale Originalplattform – ideal für englischsprachige Märkte und Nutzer, die maximale
+                    Die internationale Originalplattform, ideal für englischsprachige Märkte und Nutzer, die maximale
                     Flexibilität und die größte Community weltweit suchen.
                   </p>
                   <ul className="space-y-4">
@@ -422,7 +422,7 @@ const HighLevelVsFunnelmate = () => {
                     <h3 className="font-display text-2xl text-foreground">Funnelmate</h3>
                   </div>
                   <p className="text-muted-foreground font-body mb-6">
-                    GoHighLevel für den DACH-Raum – mit deutscher Oberfläche, deutschem Support und DSGVO-konformer
+                    GoHighLevel für den DACH-Raum, mit deutscher Oberfläche, deutschem Support und DSGVO-konformer
                     Infrastruktur. Perfekt für deutschsprachige Unternehmer.
                   </p>
                   <ul className="space-y-4">
@@ -566,7 +566,7 @@ const HighLevelVsFunnelmate = () => {
               </h2>
               <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto text-lg">
                 In einem kostenlosen Erstgespräch analysiere ich deine aktuelle Situation und empfehle dir die passende
-                Lösung – unverbindlich und ehrlich.
+                Lösung, unverbindlich und ehrlich.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button

@@ -10,7 +10,7 @@ const Absage = () => {
   return (
     <>
       <SEOHead
-        title="Absage — Gaetano Ficarra"
+        title="Absage. Gaetano Ficarra"
         description="Diese Anfrage wurde leider abgelehnt. Kontaktiere Gaetano Ficarra per WhatsApp für weitere Informationen zu GoHighLevel & Funnelmate."
         noIndex={true}
       />
@@ -53,7 +53,7 @@ const Absage = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-gray-400 font-body text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed"
           >
-            Aber kein Problem – falls du trotzdem Fragen hast, schreib mir gerne per WhatsApp. 
+            Aber kein Problem, falls du trotzdem Fragen hast, schreib mir gerne per WhatsApp. 
             Ich beantworte sie persönlich und meist innerhalb weniger Stunden.
           </motion.p>
 

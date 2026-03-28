@@ -25,13 +25,13 @@ const problems = [
   },
   {
     icon: AlertTriangle,
-    title: "Kein Überblick - nur ein ungutes Gefühl",
+    title: "Kein Überblick, nur ein ungutes Gefühl",
     description:
       "Wo steht welcher Lead? Wer wurde kontaktiert? Wer ist kurz vorm Abschluss? Du weißt es irgendwie aber eben nicht wirklich.",
   },
   {
     icon: TrendingDown,
-    title: "Skalierung die sich anfühlt wie gegen eine Wand laufen",
+     title: "Skalierung die sich anfühlt wie gegen eine Wand laufen",
     description:
       "Mehr Kunden bedeutet bei dir mehr Arbeit, nicht mehr Freiheit. Das Hamsterrad dreht sich schneller aber du kommst nicht vom Fleck.",
   },

@@ -52,7 +52,7 @@ const WAGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Kostenloser WhatsApp Link Generator — wa.me Link erstellen"
+        title="Kostenloser WhatsApp Link Generator. wa.me Link erstellen"
         description="Kostenloser WhatsApp Link Generator: wa.me-Link mit Nachricht erstellen. Ideal für Lead-Generierung, Kundensupport & GoHighLevel-Automationen."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
@@ -85,7 +85,7 @@ const WAGenerator = () => {
               WhatsApp <span className="text-primary">Link Generator</span>
             </h1>
             <p className="text-muted-foreground font-body text-lg max-w-lg mx-auto">
-              Erstelle einen direkten wa.me-Link mit vordefinierter Nachricht — kostenlos und ohne Anmeldung
+              Erstelle einen direkten wa.me-Link mit vordefinierter Nachricht, kostenlos und ohne Anmeldung
             </p>
           </motion.div>
 
@@ -167,7 +167,7 @@ const WAGenerator = () => {
           >
             <h2 className="font-display text-2xl text-foreground mb-6">Was ist ein WhatsApp Link (wa.me)?</h2>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
-              Ein wa.me-Link ist die offizielle Methode, um einen direkten WhatsApp-Chat zu öffnen – ohne dass der Empfänger deine Nummer vorher speichern muss. Du gibst einfach die Telefonnummer und optional eine vorgefertigte Nachricht ein, und der Generator erstellt den fertigen Link.
+              Ein wa.me-Link ist die offizielle Methode, um einen direkten WhatsApp-Chat zu öffnen, ohne dass der Empfänger deine Nummer vorher speichern muss. Du gibst einfach die Telefonnummer und optional eine vorgefertigte Nachricht ein, und der Generator erstellt den fertigen Link.
             </p>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
               Das Format ist einfach: <code className="text-primary bg-primary/10 px-2 py-0.5 rounded text-sm">https://wa.me/49XXXXXXXXXXX?text=Deine+Nachricht</code>. Auf Mobilgeräten öffnet sich die WhatsApp-App, auf dem Desktop WhatsApp Web oder die Desktop-App.
@@ -177,19 +177,19 @@ const WAGenerator = () => {
             <ul className="font-body text-muted-foreground space-y-3">
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Marketing & Lead-Generierung</strong> – Platziere WhatsApp-Links auf Landingpages, in E-Mails oder Social Media Posts, damit Interessenten dich direkt kontaktieren können.</span>
+                <span><strong className="text-foreground">Marketing & Lead-Generierung</strong>. Platziere WhatsApp-Links auf Landingpages, in E-Mails oder Social Media Posts, damit Interessenten dich direkt kontaktieren können.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Kundensupport</strong> – Biete einen schnellen Draht zum Support, ohne E-Mail-Formulare oder Wartezeiten.</span>
+                <span><strong className="text-foreground">Kundensupport</strong>. Biete einen schnellen Draht zum Support, ohne E-Mail-Formulare oder Wartezeiten.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">GoHighLevel & Funnelmate</strong> – Integriere wa.me-Links in deine Funnels, Automatisierungen und Follow-up-Sequenzen für maximale Conversion.</span>
+                <span><strong className="text-foreground">GoHighLevel & Funnelmate</strong>. Integriere wa.me-Links in deine Funnels, Automatisierungen und Follow-up-Sequenzen für maximale Conversion.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Social Media Bio</strong> – Verwende den Link in deiner Instagram- oder LinkedIn-Bio für direkte Anfragen.</span>
+                <span><strong className="text-foreground">Social Media Bio</strong>. Verwende den Link in deiner Instagram- oder LinkedIn-Bio für direkte Anfragen.</span>
               </li>
             </ul>
           </motion.div>
@@ -206,7 +206,7 @@ const WAGenerator = () => {
               {[
                 {
                   q: "Was ist ein wa.me Link?",
-                  a: "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet – ohne die Nummer speichern zu müssen."
+                  a: "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet, ohne die Nummer speichern zu müssen."
                 },
                 {
                   q: "Funktioniert der WhatsApp-Link auf Desktop und Mobil?",

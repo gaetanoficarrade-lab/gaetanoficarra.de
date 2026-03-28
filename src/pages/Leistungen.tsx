@@ -22,12 +22,12 @@ const mainServices = [
     tagline: "der erste Schritt raus aus dem manuellen Alltag",
     duration: "ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart. Richtig für dich wenn du noch kein System hast – oder von einem anderen Tool wechselst und einen sauberen, soliden Einstieg willst.",
+      "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart. Richtig für dich wenn du noch kein System hast oder von einem anderen Tool wechselst und einen sauberen, soliden Einstieg willst.",
     features: [
       "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
       "Eine zentrale Automatisierung nach deinen Prozessen",
       "Terminbuchung und Kalender-Integration",
-      "Einweisung und Übergabe – du verstehst was läuft und warum",
+      "Einweisung und Übergabe, du verstehst was läuft und warum",
       "30 Tage Support nach Go-Live",
     ],
     price: "",
@@ -39,10 +39,10 @@ const mainServices = [
     tagline: "das System das dein Business skalierbar macht",
     duration: "ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet. Richtig für dich wenn du bereits Kunden hast, alles noch manuell läuft und endlich ein System willst das die Arbeit übernimmt.",
+      "Funnel, Automatisierungen, CRM und automatisiertes Onboarding, alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet. Richtig für dich wenn du bereits Kunden hast, alles noch manuell läuft und endlich ein System willst das die Arbeit übernimmt.",
     features: [
       "Alles aus dem Starter-Paket",
-      "Funnel und Landingpages – fertig aufgebaut, keine Bastelei",
+      "Funnel und Landingpages, fertig aufgebaut, keine Bastelei",
       "E-Mail-Sequenzen und automatisierte Follow-ups",
       "Automatisiertes Kunden-Onboarding",
       "Migration deiner bestehenden Kontakte und Daten",
@@ -57,7 +57,7 @@ const mainServices = [
     tagline: "wenn du es ein für alle Mal richtig machen willst",
     duration: "Komplettaufbau | ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen – von der ersten Anfrage bis zur laufenden Kundenbeziehung. Richtig für dich wenn dein Business wächst, mehrere Prozesse noch manuell laufen und du einmal alles richtig aufgebaut haben willst.",
+      "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen, von der ersten Anfrage bis zur laufenden Kundenbeziehung. Richtig für dich wenn dein Business wächst, mehrere Prozesse noch manuell laufen und du einmal alles richtig aufgebaut haben willst.",
     features: [
       "Alles aus dem Growth-Paket",
       "Gemeinsame Strategieentwicklung: wir bauen was wirklich zu dir passt",
@@ -76,7 +76,7 @@ const additionalServices = [
     icon: Repeat,
     title: "Migration von anderen Tools",
     description:
-      "Du wechselst von einem anderen Tool? Ich übertrage deine Kontakte, Daten und Abläufe sauber rüber – ohne Datenverlust, ohne dass dein Business auch nur einen Tag stillsteht.",
+      "Du wechselst von einem anderen Tool? Ich übertrage deine Kontakte, Daten und Abläufe sauber rüber, ohne Datenverlust, ohne dass dein Business auch nur einen Tag stillsteht.",
   },
   {
     icon: TrendingUp,
@@ -99,10 +99,10 @@ const Leistungen = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
-        description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
+        description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren, done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         canonical="https://gaetanoficarra.de/leistungen"
         ogTitle="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
-        ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
+        ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren, done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Leistungen", url: "https://gaetanoficarra.de/leistungen" },
@@ -119,7 +119,7 @@ const Leistungen = () => {
           {
             "@type": "Service",
             "name": "Growth",
-            "description": "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
+            "description": "Funnel, Automatisierungen, CRM und automatisiertes Onboarding, alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
             "provider": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
             "areaServed": [{ "@type": "Country", "name": "Deutschland" }, { "@type": "Country", "name": "Österreich" }, { "@type": "Country", "name": "Schweiz" }],
             "serviceType": "Marketing Automation Setup"
@@ -158,7 +158,7 @@ const Leistungen = () => {
                 Drei Wege wie wir <span className="text-gradient-primary">zusammenarbeiten können.</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
-                Ob du alles abgeben oder gemeinsam aufbauen willst – hier findest du die Option die zu deiner Situation passt. Keine versteckten Kosten, kein Abo, keine Überraschungen.
+                Ob du alles abgeben oder gemeinsam aufbauen willst, hier findest du die Option die zu deiner Situation passt. Keine versteckten Kosten, kein Abo, keine Überraschungen.
               </p>
             </motion.div>
 
@@ -255,7 +255,7 @@ const Leistungen = () => {
                     <p className="font-display text-3xl text-primary mb-6">250 € / Stunde</p>
 
                     <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
-                      Du nutzt dein System bereits und hast ein konkretes Problem. Eine Automatisierung läuft nicht. Ein Funnel konvertiert nicht. Wir teilen den Bildschirm und ich löse es mit dir live. Kein Drumherum, keine langen Vorgespräche, keine Verpflichtung.
+                       Du nutzt dein System bereits und hast ein konkretes Problem. Eine Automatisierung läuft nicht. Ein Funnel konvertiert nicht. Wir teilen den Bildschirm und ich löse es mit dir live. Kein Drumherum, keine langen Vorgespräche, keine Verpflichtung.
                     </p>
 
                     <p className="text-muted-foreground font-body text-sm leading-relaxed mb-8">
@@ -338,7 +338,7 @@ const Leistungen = () => {
                 Nicht sicher welches Paket zu dir passt?
               </h2>
               <p className="text-muted-foreground font-body mb-8 text-lg">
-                In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo Potenzial liegt und was wirklich Sinn macht – ohne Druck, ohne vorher festgelegtes Ergebnis.
+                In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo Potenzial liegt und was wirklich Sinn macht, ohne Druck, ohne vorher festgelegtes Ergebnis.
               </p>
               <div className="flex flex-col items-center gap-3">
                 <button

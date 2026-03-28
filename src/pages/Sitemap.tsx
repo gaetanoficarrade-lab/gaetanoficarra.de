@@ -33,8 +33,8 @@ const Sitemap = () => {
   return (
     <>
       <SEOHead
-        title="Sitemap — Gaetano Ficarra"
-        description="Übersicht aller Seiten auf gaetanoficarra.de — Marketing Automation, Blog, Tools und mehr."
+        title="Sitemap. Gaetano Ficarra"
+        description="Übersicht aller Seiten auf gaetanoficarra.de. Marketing Automation, Blog, Tools und mehr."
         noIndex={true}
       />
       <Header />
