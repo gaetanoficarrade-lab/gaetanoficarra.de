@@ -158,7 +158,7 @@ const Leistungen = () => {
                 Drei Wege wie wir <span className="text-gradient-primary">zusammenarbeiten können.</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
-                Ob du alles abgeben oder gemeinsam aufbauen willst – hier findest du die Option die zu deiner Situation passt. Keine versteckten Kosten, kein Abo, keine Überraschungen.
+                Ob du alles abgeben oder gemeinsam aufbauen willst, hier findest du die Option die zu deiner Situation passt. Keine versteckten Kosten, kein Abo, keine Überraschungen.
               </p>
             </motion.div>
 
