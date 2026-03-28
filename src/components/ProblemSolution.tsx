@@ -44,7 +44,7 @@ const ProblemSolution = () => {
         <img
           src={solutionBg}
           alt=""
-          className="w-full h-full object-cover opacity-[0.8] saturate-125 contrast-110 scale-[1.03]"
+          className="w-full h-full object-cover opacity-100"
           loading="lazy"
           aria-hidden="true"
         />
