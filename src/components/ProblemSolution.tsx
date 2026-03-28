@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { AlertTriangle, Layers, Clock, Zap, ArrowRight } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
+import solutionBg from "@/assets/solution-bg.jpg";
 
 const problems = [
   {
