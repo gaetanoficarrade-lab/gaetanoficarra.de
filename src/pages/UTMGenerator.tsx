@@ -150,7 +150,7 @@ const UTMGenerator = () => {
               <LinkIcon className="w-8 h-8 text-primary" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-              UTM <span className="text-primary">Parameter Generator</span>
+              Kostenloser UTM <span className="text-primary">Parameter Generator</span>
             </h1>
             <p className="text-muted-foreground font-body">
               Erstelle trackbare Links mit UTM-Parametern für dein Marketing
