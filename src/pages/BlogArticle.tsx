@@ -168,6 +168,7 @@ const BlogArticle = () => {
   const readingTime = getReadingTime(post.content);
   const truncatedTitle = post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title;
   const coverImg = localBanners[post.slug] || post.cover_image;
+  const absoluteCoverImg = coverImg ? (coverImg.startsWith("http") ? coverImg : `https://gaetanoficarra.de${coverImg}`) : undefined;
 
   return (
     <>
