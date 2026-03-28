@@ -191,7 +191,12 @@ const BlogArticle = () => {
           datePublished: post.published_at,
           dateModified: post.updated_at || post.published_at,
           author: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
-          publisher: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
+          publisher: {
+            "@type": "Organization",
+            name: "Gaetano Ficarra",
+            url: "https://gaetanoficarra.de",
+            logo: { "@type": "ImageObject", url: "https://gaetanoficarra.de/og-image.png" }
+          },
           inLanguage: "de-DE",
           mainEntityOfPage: { "@type": "WebPage", "@id": `https://gaetanoficarra.de/blog/${post.slug}` },
         }}
