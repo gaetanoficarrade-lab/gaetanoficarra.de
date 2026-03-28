@@ -30,7 +30,7 @@ const mainServices = [
       "Einweisung und Übergabe – du verstehst was läuft und warum",
       "30 Tage Support nach Go-Live",
     ],
-    price: "ab 3.000 €",
+    price: "",
     popular: false,
     icon: Zap,
   },
