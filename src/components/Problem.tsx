@@ -97,19 +97,17 @@ const Problem = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+            className="mt-16"
           >
-            <div className="flex-shrink-0">
-              <img
-                src={problemChaos}
-                alt="Chaotischer Schreibtisch mit zu vielen Tools und Software"
-                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-xl border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
-                width={768}
-                height={768}
-                loading="lazy"
-              />
-            </div>
-            <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
+            <img
+              src={problemChaos}
+              alt="Chaotischer Schreibtisch mit zu vielen Tools und Software"
+              className="w-full rounded-xl border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.08)] object-cover max-h-[280px]"
+              width={1920}
+              height={512}
+              loading="lazy"
+            />
+            <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto text-center mt-8">
               Kein einziger dieser Punkte ist deine Schuld. Sie haben alle dieselbe Ursache: kein System. Genau das
               ändere ich.
             </p>

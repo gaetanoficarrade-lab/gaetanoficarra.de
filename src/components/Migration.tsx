@@ -97,9 +97,9 @@ const Migration = () => {
             <img
               src={migrationVisual}
               alt="Migration von verstreuten Tools zu einem zentralen System"
-              className="w-full max-w-4xl mx-auto rounded-xl border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.12)] object-cover"
-              width={1200}
-              height={600}
+              className="w-full rounded-xl border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.08)] object-cover max-h-[200px]"
+              width={1920}
+              height={512}
               loading="lazy"
             />
           </motion.div>
