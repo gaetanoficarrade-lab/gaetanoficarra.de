@@ -18,7 +18,7 @@ const Solution = () => {
 
   return (
     <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
-      <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 pointer-events-none z-0" style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)' }}>
         <img
           src={solutionBg}
           alt=""
