@@ -453,7 +453,7 @@ const HighLevelVsFunnelmate = () => {
                     rel="noopener noreferrer"
                     className="block mt-8 text-center py-3 bg-primary text-primary-foreground text-sm uppercase tracking-widest font-body hover:bg-primary/90 transition-all duration-300"
                   >
-                    14 Tage kostenlos testen
+                    Jetzt testen
                   </a>
                 </div>
               </div>
