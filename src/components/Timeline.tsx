@@ -80,16 +80,16 @@ const Timeline = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.15 * (index + 1) }}
                   className={`relative lg:flex lg:items-center lg:gap-8 ${
-                    index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
                 >
-                  <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}>
+                  <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
                     <motion.div whileHover={{ scale: 1.02 }} className="glass-card-premium p-6 md:p-8">
-                      <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "" : "lg:flex-row-reverse"}`}>
+                      <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className={index % 2 === 0 ? "" : "lg:text-right"}>
+                        <div className={index % 2 === 0 ? "lg:text-right" : ""}>
                           <span className="text-primary text-xs tracking-widest uppercase font-body">
                             Schritt {step.step}
                           </span>
