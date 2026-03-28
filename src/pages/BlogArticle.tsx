@@ -65,8 +65,10 @@ const BlogArticle = () => {
     return Math.ceil(wordCount / 200);
   };
 
-  const parseBold = (text: string) =>
-    text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
+  const parseBold = (text: string) => {
+    const html = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
+    return DOMPurify.sanitize(html, { ALLOWED_TAGS: ["strong"], ALLOWED_ATTR: ["class"] });
+  };
 
   const renderContent = (content: string) => {
     const lines = content.trim().split("\n");
