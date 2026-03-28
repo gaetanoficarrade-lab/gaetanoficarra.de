@@ -59,7 +59,7 @@ const Index = () => {
         {/* 4. Guide - Positionierung als technischer Architekt */}
         <Guide />
         
-        {/* 5. Lösung - Funnelmate funktional erklären */}
+        {/* 5. Lösung - System und Nutzen erklären */}
         <Solution />
         
         {/* Leistungen - Oberflächliche Übersicht */}
