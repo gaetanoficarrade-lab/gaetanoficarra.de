@@ -282,6 +282,10 @@ const WAGenerator = () => {
           </motion.div>
 
           {/* Cross-Links */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-sm font-body">
+            <a href="/utm-generator" className="text-primary hover:underline">→ UTM Parameter Generator</a>
+            <a href="/leistungen" className="text-primary hover:underline">→ Marketing System aufbauen lassen</a>
+          </div>
         </div>
       </main>
       <Footer />
