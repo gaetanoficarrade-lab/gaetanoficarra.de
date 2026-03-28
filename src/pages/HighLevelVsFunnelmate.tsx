@@ -172,7 +172,7 @@ const HighLevelVsFunnelmate = () => {
                 <span className="text-sm font-medium uppercase tracking-wider font-body">Wichtig zu wissen</span>
               </div>
               <p className="text-foreground font-body text-lg leading-relaxed">
-                Funnelmate basiert auf GoHighLevel und bietet die gleichen Funktionen – aber mit deutschem Support,
+                Funnelmate basiert auf GoHighLevel und bietet die gleichen Funktionen, aber mit deutschem Support,
                 deutscher Community und DSGVO-Konformität. Die Technologie ist identisch, der Service ist lokalisiert.
               </p>
             </motion.div>
