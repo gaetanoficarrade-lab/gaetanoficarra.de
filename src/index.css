@@ -295,39 +295,6 @@
     @apply bg-white/35 backdrop-blur-xl;
   }
 
-  /* Seamless section blending – top & bottom gradient overlays */
-  .section-blend {
-    position: relative;
-  }
-  .section-blend::before,
-  .section-blend::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 120px;
-    pointer-events: none;
-    z-index: 20;
-  }
-  .section-blend::before {
-    top: 0;
-    background: linear-gradient(
-      to bottom,
-      hsl(var(--background)) 0%,
-      hsl(var(--background) / 0.6) 40%,
-      transparent 100%
-    );
-  }
-  .section-blend::after {
-    bottom: 0;
-    background: linear-gradient(
-      to top,
-      hsl(var(--background)) 0%,
-      hsl(var(--background) / 0.6) 40%,
-      transparent 100%
-    );
-  }
-
   .animate-shimmer-fast {
     animation: shimmer 8s ease-in-out infinite;
   }
