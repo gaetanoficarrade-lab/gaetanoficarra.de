@@ -411,6 +411,10 @@ const UTMGenerator = () => {
           </motion.div>
 
           {/* Cross-Links */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-sm font-body">
+            <a href="/wa-generator" className="text-primary hover:underline">→ WhatsApp Link Generator</a>
+            <a href="/leistungen" className="text-primary hover:underline">→ Marketing System aufbauen lassen</a>
+          </div>
         </div>
       </main>
       <Footer />
