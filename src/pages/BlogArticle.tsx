@@ -157,54 +157,51 @@ const BlogArticle = () => {
 
   const readingTime = getReadingTime(post.content);
   const truncatedTitle = post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title;
+  const coverImg = localBanners[post.slug] || post.cover_image;
 
   return (
     <>
-      {(() => {
-        const coverImg = localBanners[post.slug] || post.cover_image;
-        return (
+      <SEOHead
+        title={`${post.title} | Gaetano Ficarra`}
+        description={post.description}
+        canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
+        ogType="article"
+        ogImage={coverImg || "https://gaetanoficarra.de/og-image.png"}
+        breadcrumbs={[
+          { name: "Startseite", url: "https://gaetanoficarra.de/" },
+          { name: "Blog", url: "https://gaetanoficarra.de/blog" },
+          { name: post.title, url: `https://gaetanoficarra.de/blog/${post.slug}` },
+        ]}
+        jsonLd={{
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.description,
+          image: coverImg || "https://gaetanoficarra.de/og-image.png",
+          url: `https://gaetanoficarra.de/blog/${post.slug}`,
+          datePublished: post.published_at,
+          dateModified: post.updated_at || post.published_at,
+          author: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
+          publisher: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
+          inLanguage: "de-DE",
+          mainEntityOfPage: { "@type": "WebPage", "@id": `https://gaetanoficarra.de/blog/${post.slug}` },
+        }}
+      />
+
+      <Header />
+
+      {/* HERO BANNER */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden">
+        {coverImg ? (
           <>
-            <SEOHead
-              title={`${post.title} | Gaetano Ficarra`}
-              description={post.description}
-              canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
-              ogType="article"
-              ogImage={coverImg || "https://gaetanoficarra.de/og-image.png"}
-              breadcrumbs={[
-                { name: "Startseite", url: "https://gaetanoficarra.de/" },
-                { name: "Blog", url: "https://gaetanoficarra.de/blog" },
-                { name: post.title, url: `https://gaetanoficarra.de/blog/${post.slug}` },
-              ]}
-              jsonLd={{
-                "@type": "BlogPosting",
-                headline: post.title,
-                description: post.description,
-                image: coverImg || "https://gaetanoficarra.de/og-image.png",
-                url: `https://gaetanoficarra.de/blog/${post.slug}`,
-                datePublished: post.published_at,
-                dateModified: post.updated_at || post.published_at,
-                author: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
-                publisher: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
-                inLanguage: "de-DE",
-                mainEntityOfPage: { "@type": "WebPage", "@id": `https://gaetanoficarra.de/blog/${post.slug}` },
-              }}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${coverImg})` }}
             />
-
-            <Header />
-
-            {/* HERO BANNER */}
-            <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden">
-              {coverImg ? (
-                <>
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${coverImg})` }}
-                  />
-                  <div className="absolute inset-0 bg-foreground/85" />
-                </>
-              ) : (
-                <div className="absolute inset-0 bg-foreground" />
-              )}
+            <div className="absolute inset-0 bg-foreground/85" />
+          </>
+        ) : (
+          <div className="absolute inset-0 bg-foreground" />
+        )}
 
         <div className="relative container mx-auto px-6 max-w-3xl text-center">
           {/* Breadcrumbs */}
