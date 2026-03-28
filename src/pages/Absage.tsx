@@ -14,7 +14,7 @@ const Absage = () => {
         description="Diese Anfrage wurde leider abgelehnt. Kontaktiere Gaetano Ficarra per WhatsApp für weitere Informationen zu GoHighLevel & Funnelmate."
         noIndex={true}
       />
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <main className="min-h-screen bg-background flex items-center justify-center">
       <div className="container mx-auto px-6 max-w-xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ const Absage = () => {
           </motion.a>
         </motion.div>
       </div>
-    </div>
+    </main>
     </>
   );
 };

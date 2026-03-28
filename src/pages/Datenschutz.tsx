@@ -93,7 +93,7 @@ const Datenschutz = () => {
             </section>
 
             <p className="text-sm text-muted-foreground mt-12">
-              Stand: Januar 2025
+              Stand: März 2026
             </p>
           </div>
         </div>
