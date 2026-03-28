@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
+import solutionBg from "@/assets/solution-bg.jpg";
 
 const steps = [
   {
