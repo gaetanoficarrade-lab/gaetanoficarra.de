@@ -39,7 +39,7 @@ const mainServices = [
     tagline: "das System das dein Business skalierbar macht",
     duration: "ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet. Richtig für dich wenn du bereits Kunden hast, alles noch manuell läuft und endlich ein System willst das die Arbeit übernimmt.",
+      "Funnel, Automatisierungen, CRM und automatisiertes Onboarding, alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet. Richtig für dich wenn du bereits Kunden hast, alles noch manuell läuft und endlich ein System willst das die Arbeit übernimmt.",
     features: [
       "Alles aus dem Starter-Paket",
       "Funnel und Landingpages – fertig aufgebaut, keine Bastelei",
