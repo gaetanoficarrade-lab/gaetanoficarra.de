@@ -53,25 +53,27 @@ const App = () => (
           <ScrollToTopButton />
           <CookieBanner />
           
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/leistungen" element={<Leistungen />} />
-              <Route path="/links" element={<LinksPage />} />
-              <Route path="/highlevel-vs-funnelmate" element={<HighLevelVsFunnelmate />} />
-              <Route path="/agb" element={<AGB />} />
-              <Route path="/datenschutz" element={<Datenschutz />} />
-              <Route path="/impressum" element={<Impressum />} />
-              <Route path="/wa-generator" element={<WAGenerator />} />
-              <Route path="/utm-generator" element={<UTMGenerator />} />
-              <Route path="/absage" element={<Absage />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogArticle />} />
-              <Route path="/admin/blog" element={<AdminBlog />} />
-              <Route path="/sitemap" element={<Sitemap />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/leistungen" element={<Leistungen />} />
+                <Route path="/links" element={<LinksPage />} />
+                <Route path="/highlevel-vs-funnelmate" element={<HighLevelVsFunnelmate />} />
+                <Route path="/agb" element={<AGB />} />
+                <Route path="/datenschutz" element={<Datenschutz />} />
+                <Route path="/impressum" element={<Impressum />} />
+                <Route path="/wa-generator" element={<WAGenerator />} />
+                <Route path="/utm-generator" element={<UTMGenerator />} />
+                <Route path="/absage" element={<Absage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogArticle />} />
+                <Route path="/admin/blog" element={<AdminBlog />} />
+                <Route path="/sitemap" element={<Sitemap />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
         </QuizModalProvider>
       </BrowserRouter>
     </TooltipProvider>
