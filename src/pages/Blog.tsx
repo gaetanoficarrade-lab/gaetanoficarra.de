@@ -29,7 +29,12 @@ const Blog = () => {
         .select("*")
         .eq("published", true)
         .order("published_at", { ascending: false });
-      setPosts(data || []);
+      // Clean titles: replace colons/dashes used as separators with periods
+      const cleaned = (data || []).map(p => ({
+        ...p,
+        title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, ".")
+      }));
+      setPosts(cleaned);
       setLoading(false);
     };
     fetchPosts();

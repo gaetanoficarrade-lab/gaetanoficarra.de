@@ -38,6 +38,8 @@ const BlogArticle = () => {
       if (!data) {
         setNotFound(true);
       } else {
+        // Clean title: replace colons/dashes used as separators with periods
+        data.title = data.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, ".");
         setPost(data);
       }
       setLoading(false);
