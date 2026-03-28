@@ -335,7 +335,7 @@ const HighLevelVsFunnelmate = () => {
                       <h3 className="font-display text-xl text-foreground mb-2">Support auf Deutsch</h3>
                       <p>
                         Wenn du um 10 Uhr morgens ein Problem hast, willst du keine englische E-Mail schreiben und auf
-                        US-Geschäftszeiten warten. Funnelmate bietet deutschen Support per Chat und Zoom – in deiner
+                        US-Geschäftszeiten warten. Funnelmate bietet deutschen Support per Chat und Zoom, in deiner
                         Zeitzone.
                       </p>
                     </div>
