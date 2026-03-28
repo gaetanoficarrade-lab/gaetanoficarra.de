@@ -189,7 +189,7 @@ const WAGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Social Media Bio</strong> – Verwende den Link in deiner Instagram- oder LinkedIn-Bio für direkte Anfragen.</span>
+                <span><strong className="text-foreground">Social Media Bio</strong>. Verwende den Link in deiner Instagram- oder LinkedIn-Bio für direkte Anfragen.</span>
               </li>
             </ul>
           </motion.div>
