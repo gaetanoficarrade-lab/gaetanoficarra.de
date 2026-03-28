@@ -51,7 +51,7 @@ const TrustLogos = () => {
             {duplicatedPartners.map((partner, index) => {
               const isOctaLogo = partner.name === "OCTA Steuerberater";
               const isLargeLogo = partner.name === "Funnelmate Certified Expert";
-              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "HTML5" || partner.name === "CSS3" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
+              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
               
               let sizeClass = 'h-12 md:h-14 lg:h-16';
               if (isOctaLogo) sizeClass = 'h-16 md:h-20 lg:h-24';
