@@ -57,7 +57,7 @@ const mainServices = [
     tagline: "wenn du es ein für alle Mal richtig machen willst",
     duration: "Komplettaufbau | ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen – von der ersten Anfrage bis zur laufenden Kundenbeziehung. Richtig für dich wenn dein Business wächst, mehrere Prozesse noch manuell laufen und du einmal alles richtig aufgebaut haben willst.",
+      "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen, von der ersten Anfrage bis zur laufenden Kundenbeziehung. Richtig für dich wenn dein Business wächst, mehrere Prozesse noch manuell laufen und du einmal alles richtig aufgebaut haben willst.",
     features: [
       "Alles aus dem Growth-Paket",
       "Gemeinsame Strategieentwicklung: wir bauen was wirklich zu dir passt",
