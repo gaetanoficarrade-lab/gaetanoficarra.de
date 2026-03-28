@@ -181,7 +181,7 @@ const WAGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Kundensupport</strong> – Biete einen schnellen Draht zum Support, ohne E-Mail-Formulare oder Wartezeiten.</span>
+                <span><strong className="text-foreground">Kundensupport</strong>. Biete einen schnellen Draht zum Support, ohne E-Mail-Formulare oder Wartezeiten.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
