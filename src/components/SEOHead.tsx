@@ -148,7 +148,7 @@ const SEOHead = ({
       image: `${BASE_URL}/og-image.png`,
       address: { "@type": "PostalAddress", addressLocality: "Bielefeld", addressCountry: "DE" },
       // Fix M7: share.google entfernt, nur valide sameAs-URLs
-      sameAs: ["https://www.linkedin.com/in/gaetano-ficarra/", "https://www.instagram.com/gaetano.ficarra/"],
+      sameAs: ["https://www.linkedin.com/in/gaetano-ficarra/", "https://www.instagram.com/gaetano.ficarra_/"],
     });
     scriptIds.push("seo-person-ld");
 
