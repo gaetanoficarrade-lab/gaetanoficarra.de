@@ -6,8 +6,9 @@ const AGB = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="AGB | Gaetano Ficarra"
+        title="Allgemeine Geschäftsbedingungen | Gaetano Ficarra"
         description="Allgemeine Geschäftsbedingungen von Gaetano Ficarra. Geltungsbereich, Leistungsumfang, Vergütung und mehr."
+        noIndex={true}
       />
       <Header />
       <main className="pt-32 pb-20">
