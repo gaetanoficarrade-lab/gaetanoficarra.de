@@ -179,6 +179,12 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Technical Support",
+            offers: {
+              "@type": "Offer",
+              price: "250",
+              priceCurrency: "EUR",
+              unitText: "pro Stunde"
+            },
           },
         ]}
       />
