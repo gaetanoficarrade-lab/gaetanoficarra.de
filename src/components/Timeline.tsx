@@ -80,7 +80,7 @@ const Timeline = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.15 * (index + 1) }}
                   className={`relative lg:flex lg:items-center lg:gap-8 ${
-                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                    index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
                   }`}
                 >
                   <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
