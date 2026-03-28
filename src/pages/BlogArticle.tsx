@@ -24,6 +24,7 @@ const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { openQuizModal } = useQuizModal();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -38,9 +39,23 @@ const BlogArticle = () => {
       if (!data) {
         setNotFound(true);
       } else {
-        // Clean title: replace colons/dashes used as separators with periods
         data.title = data.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, ".");
         setPost(data);
+
+        // Fetch related posts (other published posts, exclude current)
+        const { data: others } = await supabase
+          .from("blog_posts")
+          .select("*")
+          .eq("published", true)
+          .neq("slug", slug)
+          .order("published_at", { ascending: false })
+          .limit(3);
+        setRelatedPosts(
+          (others || []).map((p) => ({
+            ...p,
+            title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, "."),
+          }))
+        );
       }
       setLoading(false);
     };
@@ -315,6 +330,59 @@ const BlogArticle = () => {
           </motion.div>
         </article>
       </main>
+
+      {/* RELATED POSTS */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-background py-16 md:py-20">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
+              Weitere <span className="text-gradient-primary">Artikel</span>
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {relatedPosts.map((rp, i) => {
+                const rpCover = localBanners[rp.slug] || rp.cover_image;
+                return (
+                  <motion.article
+                    key={rp.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * i }}
+                  >
+                    <Link
+                      to={`/blog/${rp.slug}`}
+                      className="group flex flex-col h-full rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
+                    >
+                      <div className="aspect-video overflow-hidden">
+                        {rpCover ? (
+                          <img
+                            src={rpCover}
+                            alt={rp.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-muted" />
+                        )}
+                      </div>
+                      <div className="p-6 flex flex-col flex-1">
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                          {rp.title}
+                        </h3>
+                        <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-2 flex-1">
+                          {rp.description}
+                        </p>
+                        <span className="flex items-center gap-1 text-primary text-xs font-body group-hover:gap-2 transition-all mt-auto">
+                          Lesen <ArrowRight size={12} />
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA BOX */}
       <section className="relative py-16 md:py-20 overflow-hidden">
