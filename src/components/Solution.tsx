@@ -22,7 +22,7 @@ const Solution = () => {
         <img
           src={solutionBg}
           alt=""
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover opacity-40"
           loading="lazy"
           aria-hidden="true"
         />
