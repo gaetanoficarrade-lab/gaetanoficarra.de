@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { UserCheck, BellRing, BarChart3, Rocket, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import solutionBg from "@/assets/solution-bg.jpg";
 
 const outcomes = [
   { icon: UserCheck, text: "Neue Kunden werden automatisch ongeboardet ohne dass du dabei sein musst." },
@@ -16,8 +17,17 @@ const Solution = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 md:py-32 relative" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <img
+          src={solutionBg}
+          alt=""
+          className="w-full h-full object-cover opacity-100"
+          loading="lazy"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <motion.div
