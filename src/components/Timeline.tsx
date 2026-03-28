@@ -42,9 +42,16 @@ const Timeline = () => {
   const { openQuizModal } = useQuizModal();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-white/20 to-background" />
+    <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <img
+          src={solutionBg}
+          alt=""
+          className="w-full h-full object-cover opacity-40"
+          loading="lazy"
+          aria-hidden="true"
+        />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
