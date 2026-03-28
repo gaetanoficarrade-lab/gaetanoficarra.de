@@ -64,7 +64,7 @@ const address = server.httpServer.address();
 const port = address.port;
 
 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-const fallbackTitle = 'Gaetano Ficarra — GoHighLevel & Funnelmate Experte für Marketing Automation';
+const fallbackTitle = 'Marketing Automation Berater für Coaches | Gaetano Ficarra';
 
 // Prerendering mit Error Handling pro Route
 let successCount = 0;
