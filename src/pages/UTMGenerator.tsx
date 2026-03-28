@@ -267,7 +267,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_medium</span>
-                <span>– Über welchen Kanal? Z.B. CPC (bezahlte Werbung), Social Media, E-Mail, Organic.</span>
+                <span>Über welchen Kanal? Z.B. CPC (bezahlte Werbung), Social Media, E-Mail, Organic.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_campaign</span>
