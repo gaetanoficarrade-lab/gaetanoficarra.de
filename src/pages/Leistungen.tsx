@@ -110,6 +110,16 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "CRM & Automation Setup",
+            offers: {
+              "@type": "Offer",
+              price: "3000",
+              priceCurrency: "EUR",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                minPrice: "3000",
+                priceCurrency: "EUR"
+              }
+            },
           },
           {
             "@type": "Service",
@@ -123,6 +133,16 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Marketing Automation Setup",
+            offers: {
+              "@type": "Offer",
+              price: "4500",
+              priceCurrency: "EUR",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                minPrice: "4500",
+                priceCurrency: "EUR"
+              }
+            },
           },
           {
             "@type": "Service",
@@ -136,6 +156,16 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Full Business System Setup",
+            offers: {
+              "@type": "Offer",
+              price: "6000",
+              priceCurrency: "EUR",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                minPrice: "6000",
+                priceCurrency: "EUR"
+              }
+            },
           },
           {
             "@type": "Service",
