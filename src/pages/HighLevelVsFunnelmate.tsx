@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "Ist Funnelmate DSGVO-konform?",
     answer:
-      "Funnelmate bietet die technischen Voraussetzungen für eine DSGVO-konforme Nutzung: EU-Server-Standorte, AV-Vertrag, verschlüsselte Datenübertragung. Entscheidend ist aber immer auch die korrekte Konfiguration – z.B. Double-Opt-In bei E-Mails, Cookie-Consent, Datenschutzerklärung. Ich achte bei jedem Setup darauf, dass diese Grundlagen stimmen. Rechtliche Beratung ersetzt das nicht.",
+       "Funnelmate bietet die technischen Voraussetzungen für eine DSGVO-konforme Nutzung: EU-Server-Standorte, AV-Vertrag, verschlüsselte Datenübertragung. Entscheidend ist aber immer auch die korrekte Konfiguration, z.B. Double-Opt-In bei E-Mails, Cookie-Consent, Datenschutzerklärung. Ich achte bei jedem Setup darauf, dass diese Grundlagen stimmen. Rechtliche Beratung ersetzt das nicht.",
   },
   {
     question: "Brauche ich einen Experten oder kann ich GoHighLevel selbst einrichten?",
