@@ -129,7 +129,7 @@ const WAGenerator = () => {
               <MessageCircle className="w-8 h-8 text-primary" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-              WhatsApp <span className="text-primary">Link Generator</span>
+              Kostenloser WhatsApp <span className="text-primary">Link Generator</span>
             </h1>
             <p className="text-muted-foreground font-body text-lg max-w-lg mx-auto">
               Erstelle einen direkten wa.me-Link mit vordefinierter Nachricht, kostenlos und ohne Anmeldung
