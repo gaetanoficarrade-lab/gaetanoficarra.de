@@ -11,7 +11,7 @@ const FAQ = () => {
     {
       question: "Was genau baust du für mich?",
       answer:
-        "Je nach Paket baue ich dir ein vollständiges CRM, automatisierte Lead-Pipelines, Follow-up-Sequenzen, ein automatisiertes Onboarding für neue Kunden und einen Funnel samt Landingpages. Alles auf Basis von GoHighLevel dem All-in-One-System das ich für DACH-Kunden aufsetze und DSGVO-konform konfiguriere.",
+        "Je nach Paket baue ich dir ein vollständiges CRM, automatisierte Lead-Pipelines, Follow-up-Sequenzen, ein automatisiertes Onboarding für neue Kunden und einen Funnel samt Landingpages. Alles auf Basis von GoHighLevel, dem All-in-One-System das ich für DACH-Kunden aufsetze und DSGVO-konform konfiguriere.",
     },
     {
       question: "Wie lange dauert das Projekt?",
@@ -63,7 +63,7 @@ const FAQ = () => {
               Deine <span className="text-gradient-primary">Fragen</span>, meine Antworten
             </h2>
             <p className="text-muted-foreground text-lg">
-              Hier findest du Antworten auf die häufigsten Fragen zu meiner Arbeit und Funnelmate.
+              Hier findest du Antworten auf die häufigsten Fragen zu meiner Arbeit und dem Systemaufbau mit GoHighLevel.
             </p>
           </div>
 
