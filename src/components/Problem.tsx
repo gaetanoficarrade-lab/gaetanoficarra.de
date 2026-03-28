@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Layers, AlertTriangle, Clock, TrendingDown, Link2Off, EuroIcon } from "lucide-react";
-import systemIntegration from "@/assets/system-integration.jpg";
+import problemChaos from "@/assets/problem-chaos.jpg";
 
 const problems = [
   {
