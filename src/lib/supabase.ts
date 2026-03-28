@@ -1,7 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "https://supabase.gaetanoficarra.de";
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc3NDY1NDc0MCwiZXhwIjo0OTMwMzI4MzQwLCJyb2xlIjoiYW5vbiJ9.paW1Vtr0IFHdBv3ErFqCAlmdXu4aDfB-aZtEwiBwa2M";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("VITE_SUPABASE_URL und VITE_SUPABASE_ANON_KEY müssen gesetzt sein.");
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
