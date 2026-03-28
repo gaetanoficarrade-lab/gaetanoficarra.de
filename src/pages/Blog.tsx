@@ -29,11 +29,21 @@ const Blog = () => {
         .select("*")
         .eq("published", true)
         .order("published_at", { ascending: false });
-      // Clean titles: replace colons/dashes used as separators with periods
-      const cleaned = (data || []).map(p => ({
-        ...p,
-        title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, ".")
-      }));
+      // Clean titles and (requested) display dates starting from today with 2-day intervals
+      const today = new Date();
+      today.setHours(12, 0, 0, 0);
+
+      const cleaned = (data || []).map((p, index) => {
+        const displayDate = new Date(today);
+        displayDate.setDate(today.getDate() - index * 2);
+
+        return {
+          ...p,
+          published_at: displayDate.toISOString(),
+          title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, "."),
+        };
+      });
+
       setPosts(cleaned);
       setLoading(false);
     };
