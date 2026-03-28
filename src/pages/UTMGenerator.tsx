@@ -307,7 +307,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Einheitliche Benennung</strong> – Erstelle eine Namenskonvention und halte dich daran. Z.B. immer „instagram" statt abwechselnd „ig", „insta", „Instagram".</span>
+                <span><strong className="text-foreground">Einheitliche Benennung</strong>. Erstelle eine Namenskonvention und halte dich daran. Z.B. immer „instagram" statt abwechselnd „ig", „insta", „Instagram".</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
