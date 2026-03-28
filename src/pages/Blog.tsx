@@ -58,7 +58,7 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Marketing Automation Blog. Tipps & Insights | Gaetano Ficarra"
+        title="Marketing Automation Blog für Coaches | Gaetano Ficarra"
         description="Marketing Automation Blog: Praxistipps zu GoHighLevel, Funnelmate & CRM-Strategie. Wissen für Selbstständige, die ihr Business skalieren wollen."
         canonical="https://gaetanoficarra.de/blog"
         breadcrumbs={[

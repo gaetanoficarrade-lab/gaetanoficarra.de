@@ -20,7 +20,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Marketing Automation Berater für Coaches | Gaetano Ficarra"
-        description="Ich baue dir ein zentrales Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
+        description="Ich baue dir ein Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
         canonical="https://gaetanoficarra.de/"
         ogTitle="Marketing Automation Berater für Coaches | Gaetano Ficarra"
         ogDescription="Ich baue dir ein zentrales Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
