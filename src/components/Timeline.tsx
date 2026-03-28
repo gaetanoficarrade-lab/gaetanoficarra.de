@@ -89,7 +89,7 @@ const Timeline = () => {
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className={index % 2 === 0 ? "lg:text-right" : ""}>
+                        <div className={index % 2 === 0 ? "" : "lg:text-right"}>
                           <span className="text-primary text-xs tracking-widest uppercase font-body">
                             Schritt {step.step}
                           </span>
