@@ -8,7 +8,7 @@ const services = [
   {
     icon: Zap,
     title: "Starter",
-    description: "Du willst anfangen ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart.",
+    description: "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart.",
     benefits: [
       "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
       "Eine zentrale Automatisierung nach deinen Prozessen",
@@ -21,12 +21,13 @@ const services = [
   {
     icon: Users,
     title: "Growth",
-    description: "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
+    description: "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
     benefits: [
-      "Du verstehst, wie dein System funktioniert",
-      "Änderungen kannst du sicher einschätzen",
-      "Alle Abläufe sind dokumentiert und nachvollziehbar",
-      "Wissen bleibt bei dir und geht nicht verloren",
+      "Alles aus dem Starter-Paket",
+      "Funnel und Landingpages fertig aufgebaut, keine Bastelei",
+      "E-Mail-Sequenzen und automatisierte Follow-ups",
+      "Automatisiertes Kunden-Onboarding",
+      "Migration deiner bestehenden Kontakte und Daten",
       "30 Tage Support nach Go-Live",
     ],
     popular: true,
@@ -34,12 +35,12 @@ const services = [
   {
     icon: Settings,
     title: "Full System",
-    description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
+    description: "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen – von der ersten Anfrage bis zur laufenden Kundenbeziehung.",
     benefits: [
-      "Du arbeitest mit einem vollständig eingerichteten System",
-      "Routineaufgaben laufen im Hintergrund",
-      "Technikfragen spielen im Alltag keine Rolle mehr",
-      "Du kannst dich auf Kunden und Umsatz konzentrieren",
+      "Alles aus dem Growth-Paket",
+      "Gemeinsame Strategieentwicklung: wir bauen was wirklich zu dir passt",
+      "Vollständige Prozessautomatisierung über alle Bereiche",
+      "Mitgliederbereich falls du Kurse oder Inhalte anbietest",
       "60 Tage Support nach Go-Live",
     ],
     popular: false,
