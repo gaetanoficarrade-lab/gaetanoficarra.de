@@ -566,7 +566,7 @@ const HighLevelVsFunnelmate = () => {
               </h2>
               <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto text-lg">
                 In einem kostenlosen Erstgespräch analysiere ich deine aktuelle Situation und empfehle dir die passende
-                Lösung – unverbindlich und ehrlich.
+                Lösung, unverbindlich und ehrlich.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
