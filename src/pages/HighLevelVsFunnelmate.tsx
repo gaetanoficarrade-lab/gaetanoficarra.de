@@ -136,7 +136,7 @@ const HighLevelVsFunnelmate = () => {
                 GoHighLevel (oft abgekürzt als GHL) ist eine All-in-One Marketing- und Vertriebsplattform aus den USA.
                 Sie wurde speziell für Agenturen und Unternehmer entwickelt und vereint CRM, E-Mail-Marketing,
                 Funnel-Builder, Terminbuchung, Kursplattform, Automatisierungen und vieles mehr in einem einzigen Tool.
-                Statt 5–10 verschiedene Software-Abos zu bezahlen, deckt GoHighLevel alles ab – für einen festen
+                Statt 5 bis 10 verschiedene Software-Abos zu bezahlen, deckt GoHighLevel alles ab, für einen festen
                 monatlichen Preis.
               </p>
               <p className="text-muted-foreground font-body text-lg leading-relaxed mb-10">
