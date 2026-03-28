@@ -27,7 +27,7 @@ const mainServices = [
       "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
       "Eine zentrale Automatisierung nach deinen Prozessen",
       "Terminbuchung und Kalender-Integration",
-      "Einweisung und Übergabe – du verstehst was läuft und warum",
+      "Einweisung und Übergabe, du verstehst was läuft und warum",
       "30 Tage Support nach Go-Live",
     ],
     price: "",
