@@ -148,7 +148,7 @@ const HighLevelVsFunnelmate = () => {
                 Was ist <span className="text-gradient-primary">Funnelmate</span>?
               </h2>
               <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
-                Funnelmate ist ein sogenannter White-Label-Reseller von GoHighLevel – speziell für den deutschsprachigen
+                Funnelmate ist ein sogenannter White-Label-Reseller von GoHighLevel, speziell für den deutschsprachigen
                 Markt (Deutschland, Österreich, Schweiz). Das bedeutet: Du bekommst exakt dieselbe Software mit
                 denselben Funktionen, aber mit einer komplett deutschen Oberfläche, deutschsprachigem Support und einer
                 aktiven deutschen Community.
