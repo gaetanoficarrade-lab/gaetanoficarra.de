@@ -285,7 +285,7 @@ const UTMGenerator = () => {
 
             <h3 className="font-display text-xl text-foreground mb-4">Warum UTM-Tracking wichtig ist</h3>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
-              Ohne UTM-Parameter weißt du nicht, welche Marketing-Maßnahme wirklich funktioniert. Du investierst Budget in Facebook Ads, Google Ads, Newsletter und Social Media – aber welcher Kanal bringt tatsächlich Leads und Umsatz?
+              Ohne UTM-Parameter weißt du nicht, welche Marketing-Maßnahme wirklich funktioniert. Du investierst Budget in Facebook Ads, Google Ads, Newsletter und Social Media, aber welcher Kanal bringt tatsächlich Leads und Umsatz?
             </p>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
               UTM-Parameter machen genau das sichtbar. In Kombination mit einem CRM wie GoHighLevel oder Funnelmate kannst du den gesamten Kundenweg nachvollziehen: vom ersten Klick bis zum Abschluss.
