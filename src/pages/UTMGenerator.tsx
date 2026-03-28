@@ -271,7 +271,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_campaign</span>
-                <span>– Welche Kampagne? Z.B. „winter_sale_2026" oder „lead_magnet_ebook". Hilft, Kampagnen zu vergleichen.</span>
+                <span>Welche Kampagne? Z.B. „winter_sale_2026" oder „lead_magnet_ebook". Hilft, Kampagnen zu vergleichen.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_term</span>
