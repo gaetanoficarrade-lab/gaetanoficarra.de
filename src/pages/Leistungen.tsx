@@ -99,7 +99,7 @@ const Leistungen = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
-        description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
+        description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren, done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         canonical="https://gaetanoficarra.de/leistungen"
         ogTitle="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
         ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren, done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
