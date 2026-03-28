@@ -42,7 +42,7 @@ const mainServices = [
       "Funnel, Automatisierungen, CRM und automatisiertes Onboarding, alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet. Richtig für dich wenn du bereits Kunden hast, alles noch manuell läuft und endlich ein System willst das die Arbeit übernimmt.",
     features: [
       "Alles aus dem Starter-Paket",
-      "Funnel und Landingpages – fertig aufgebaut, keine Bastelei",
+      "Funnel und Landingpages, fertig aufgebaut, keine Bastelei",
       "E-Mail-Sequenzen und automatisierte Follow-ups",
       "Automatisiertes Kunden-Onboarding",
       "Migration deiner bestehenden Kontakte und Daten",
