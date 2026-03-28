@@ -19,11 +19,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
-        description="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System das dein Business von dir unabhängig macht. Jetzt starten."
+        title="Marketing Automation Berater für Coaches | Gaetano Ficarra"
+        description="Ich baue dir ein zentrales Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
         canonical="https://gaetanoficarra.de/"
-        ogTitle="Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
-        ogDescription="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System das dein Business von dir unabhängig macht."
+        ogTitle="Marketing Automation Berater für Coaches | Gaetano Ficarra"
+        ogDescription="Ich baue dir ein zentrales Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
         ]}
