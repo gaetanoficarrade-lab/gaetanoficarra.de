@@ -83,23 +83,3 @@
     </script>
   </body>
 </html>
-``` --- **Punkt 2 + 11 + 3 + 4** — Lovable-Prompts: **Blog.tsx Fake-Datum:** ``` Bitte ändere in src/pages/Blog.tsx die
-fetchPosts-Funktion. Entferne die Fake-Datumsberechnung und behalte nur die Titel-Bereinigung: Ersetze diesen Block:
-const today = new Date(); today.setHours(12, 0, 0, 0); const cleaned = (data || []).map((p, index) => { const
-displayDate = new Date(today); displayDate.setDate(today.getDate() - index * 2); return { ...p, published_at:
-displayDate.toISOString(), title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, "."), }; });
-Mit: const cleaned = (data || []).map((p) => ({ ...p, title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ".
-").replace(/\.\s*\./g, "."), })); Sonst nichts ändern. ``` --- **Hero.tsx H1:** ``` Bitte ändere in
-src/components/Hero.tsx den H1-Inhalt von: "Du willst dein Coaching Business skalieren – ohne mehr Zeit zu investieren?"
-zu: "Marketing Automation für Coaches: " gefolgt von einem span mit der Klasse "text-gradient-primary" der enthält:
-"Dein Business skalieren ohne mehr Zeit zu investieren." Der H1 soll danach so aussehen:
-<motion.h1 ...>
-  Marketing Automation für Coaches:{" "}
-  <span className="text-gradient-primary"> Dein Business skalieren ohne mehr Zeit zu investieren. </span>
-</motion.h1>
-
-Sonst nichts ändern. ``` --- **HighLevelVsFunnelmate.tsx + Index.tsx Kommentar:** ``` Bitte ändere in zwei Dateien
-jeweils einen kleinen Text: 1. In src/pages/HighLevelVsFunnelmate.tsx den Text: "Als zertifizierter GoHighLevel Admin
-und Funnelmate Experte zeige ich dir" zu: "Als zertifizierter GoHighLevel Admin und Funnelmate-Partner zeige ich dir" 2.
-In src/pages/Index.tsx den Kommentar: {/* 5. Lösung - Funnelmate funktional erklären */} zu: {/* 5. Lösung - System und
-Nutzen erklären */} Sonst nichts ändern.
