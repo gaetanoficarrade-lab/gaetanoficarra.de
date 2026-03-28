@@ -177,7 +177,7 @@ const WAGenerator = () => {
             <ul className="font-body text-muted-foreground space-y-3">
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Marketing & Lead-Generierung</strong> – Platziere WhatsApp-Links auf Landingpages, in E-Mails oder Social Media Posts, damit Interessenten dich direkt kontaktieren können.</span>
+                <span><strong className="text-foreground">Marketing & Lead-Generierung</strong>. Platziere WhatsApp-Links auf Landingpages, in E-Mails oder Social Media Posts, damit Interessenten dich direkt kontaktieren können.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
