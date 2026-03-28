@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Shield, Clock, Database } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
+import migrationVisual from "@/assets/migration-visual.jpg";
 
 const migrationTools = [
   { name: "ClickFunnels", keyword: "ClickFunnels Alternative deutsch" },
@@ -85,6 +86,23 @@ const Migration = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Migration Visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-12 mb-16"
+          >
+            <img
+              src={migrationVisual}
+              alt="Migration von verstreuten Tools zu einem zentralen System"
+              className="w-full max-w-4xl mx-auto rounded-xl border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.12)] object-cover"
+              width={1200}
+              height={600}
+              loading="lazy"
+            />
+          </motion.div>
 
           {/* CTA */}
           <motion.div

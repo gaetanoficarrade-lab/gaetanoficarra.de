@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Layers, AlertTriangle, Clock, TrendingDown, Link2Off, EuroIcon } from "lucide-react";
-import systemIntegration from "@/assets/system-integration.jpg";
+import problemChaos from "@/assets/problem-chaos.jpg";
 
 const problems = [
   {
@@ -101,11 +101,11 @@ const Problem = () => {
           >
             <div className="flex-shrink-0">
               <img
-                src={systemIntegration}
-                alt="Verstreute Tools konsolidieren"
+                src={problemChaos}
+                alt="Chaotischer Schreibtisch mit zu vielen Tools und Software"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-xl border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
-                width={256}
-                height={256}
+                width={768}
+                height={768}
                 loading="lazy"
               />
             </div>
