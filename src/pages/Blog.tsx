@@ -121,24 +121,26 @@ const Blog = () => {
                 >
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="group block rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
+                    className="group flex flex-col h-full rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
                   >
-                    {(localBanners[post.slug] || post.cover_image) && (
-                      <div className="aspect-video overflow-hidden">
+                    <div className="aspect-video overflow-hidden">
+                      {(localBanners[post.slug] || post.cover_image) ? (
                         <img
                           src={localBanners[post.slug] || post.cover_image!}
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
-                      </div>
-                    )}
-                    <div className="p-6">
+                      ) : (
+                        <div className="w-full h-full bg-muted" />
+                      )}
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
                       <h2 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                         {post.title}
                       </h2>
-                      <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-2">{post.description}</p>
-                      <div className="flex items-center justify-between text-xs text-muted-foreground font-body">
+                      <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-2 flex-1">{post.description}</p>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground font-body mt-auto">
                         {post.published_at && (
                           <span className="flex items-center gap-1">
                             <Calendar size={12} />
