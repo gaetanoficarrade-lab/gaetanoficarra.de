@@ -191,7 +191,12 @@ const BlogArticle = () => {
           datePublished: post.published_at,
           dateModified: post.updated_at || post.published_at,
           author: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
-          publisher: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
+          publisher: {
+            "@type": "Organization",
+            name: "Gaetano Ficarra",
+            url: "https://gaetanoficarra.de",
+            logo: { "@type": "ImageObject", url: "https://gaetanoficarra.de/og-image.png" }
+          },
           inLanguage: "de-DE",
           mainEntityOfPage: { "@type": "WebPage", "@id": `https://gaetanoficarra.de/blog/${post.slug}` },
         }}
@@ -246,7 +251,7 @@ const BlogArticle = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-5 line-clamp-2"
+            className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-5"
           >
             {post.title}
           </motion.h1>
