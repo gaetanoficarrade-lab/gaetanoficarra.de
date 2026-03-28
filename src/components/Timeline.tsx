@@ -47,7 +47,7 @@ const Timeline = () => {
         <img
           src={solutionBg}
           alt=""
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-[0.35]"
           loading="lazy"
           aria-hidden="true"
         />
