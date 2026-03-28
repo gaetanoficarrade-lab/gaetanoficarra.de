@@ -35,12 +35,12 @@ const services = [
   {
     icon: Settings,
     title: "Full System",
-    description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
+    description: "Von der Strategie bis zur letzten Automatisierung. Für alle die ihr Business wirklich von sich unabhängig machen wollen – von der ersten Anfrage bis zur laufenden Kundenbeziehung.",
     benefits: [
-      "Du arbeitest mit einem vollständig eingerichteten System",
-      "Routineaufgaben laufen im Hintergrund",
-      "Technikfragen spielen im Alltag keine Rolle mehr",
-      "Du kannst dich auf Kunden und Umsatz konzentrieren",
+      "Alles aus dem Growth-Paket",
+      "Gemeinsame Strategieentwicklung: wir bauen was wirklich zu dir passt",
+      "Vollständige Prozessautomatisierung über alle Bereiche",
+      "Mitgliederbereich falls du Kurse oder Inhalte anbietest",
       "60 Tage Support nach Go-Live",
     ],
     popular: false,
