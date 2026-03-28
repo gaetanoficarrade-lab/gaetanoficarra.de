@@ -167,7 +167,7 @@ const WAGenerator = () => {
           >
             <h2 className="font-display text-2xl text-foreground mb-6">Was ist ein WhatsApp Link (wa.me)?</h2>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
-              Ein wa.me-Link ist die offizielle Methode, um einen direkten WhatsApp-Chat zu öffnen – ohne dass der Empfänger deine Nummer vorher speichern muss. Du gibst einfach die Telefonnummer und optional eine vorgefertigte Nachricht ein, und der Generator erstellt den fertigen Link.
+              Ein wa.me-Link ist die offizielle Methode, um einen direkten WhatsApp-Chat zu öffnen, ohne dass der Empfänger deine Nummer vorher speichern muss. Du gibst einfach die Telefonnummer und optional eine vorgefertigte Nachricht ein, und der Generator erstellt den fertigen Link.
             </p>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
               Das Format ist einfach: <code className="text-primary bg-primary/10 px-2 py-0.5 rounded text-sm">https://wa.me/49XXXXXXXXXXX?text=Deine+Nachricht</code>. Auf Mobilgeräten öffnet sich die WhatsApp-App, auf dem Desktop WhatsApp Web oder die Desktop-App.
