@@ -54,6 +54,7 @@ const WAGenerator = () => {
       <SEOHead
         title="Kostenloser WhatsApp Link Generator. wa.me Link erstellen"
         description="Kostenloser WhatsApp Link Generator: wa.me-Link mit Nachricht erstellen. Ideal für Lead-Generierung, Kundensupport & GoHighLevel-Automationen."
+        canonical="https://gaetanoficarra.de/wa-generator"
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "WhatsApp Link Generator", url: "https://gaetanoficarra.de/wa-generator" },

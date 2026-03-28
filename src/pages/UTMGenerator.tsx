@@ -75,6 +75,7 @@ const UTMGenerator = () => {
       <SEOHead
         title="Kostenloser UTM-Generator. Marketing Links erstellen"
         description="Kostenloser UTM-Generator: Erstelle UTM-Parameter für Google Analytics & GoHighLevel in Sekunden. Kampagnen-URLs tracken leicht gemacht."
+        canonical="https://gaetanoficarra.de/utm-generator"
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "UTM Generator", url: "https://gaetanoficarra.de/utm-generator" },
