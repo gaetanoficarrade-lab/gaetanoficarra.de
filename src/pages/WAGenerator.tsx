@@ -185,7 +185,7 @@ const WAGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">GoHighLevel & Funnelmate</strong> – Integriere wa.me-Links in deine Funnels, Automatisierungen und Follow-up-Sequenzen für maximale Conversion.</span>
+                <span><strong className="text-foreground">GoHighLevel & Funnelmate</strong>. Integriere wa.me-Links in deine Funnels, Automatisierungen und Follow-up-Sequenzen für maximale Conversion.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
