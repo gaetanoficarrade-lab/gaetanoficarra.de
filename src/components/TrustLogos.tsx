@@ -6,8 +6,6 @@ import funnelmateLogo from "@/assets/funnelmate-logo.png";
 import funnelmateCertifiedExpert from "@/assets/funnelmate-certified-expert.png";
 import patrickMentlerLogo from "@/assets/patrick-mentler-logo.png";
 import octaLogo from "@/assets/octa-logo.png";
-import cssIcon from "@/assets/css-icon.png";
-import htmlIcon from "@/assets/html-icon.png";
 
 const partners = [
   { name: "GoHighLevel", alt: "GoHighLevel zertifizierter Partner", logo: gohighlevelLogo, url: "https://www.gohighlevel.com/?fp_ref=gaetano62" },
@@ -15,8 +13,6 @@ const partners = [
   { name: "Funnelmate Certified Expert", alt: "Funnelmate Certified Expert Badge", logo: funnelmateCertifiedExpert, url: "https://funnelmate.io/?am_id=gaetano" },
   { name: "Patrick Mentler", alt: "Patrick Mentler Funnelmate Gründer", logo: patrickMentlerLogo, url: "https://funnelmate.io/?am_id=gaetano" },
   { name: "OCTA Steuerberater", alt: "OCTA Steuerberater Bielefeld Kundenprojekt", logo: octaLogo, url: "#" },
-  { name: "HTML5", alt: "HTML5", logo: htmlIcon, url: "#" },
-  { name: "CSS3", alt: "CSS3", logo: cssIcon, url: "#" },
 ];
 
 const TrustLogos = () => {
@@ -55,7 +51,7 @@ const TrustLogos = () => {
             {duplicatedPartners.map((partner, index) => {
               const isOctaLogo = partner.name === "OCTA Steuerberater";
               const isLargeLogo = partner.name === "Funnelmate Certified Expert";
-              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "HTML5" || partner.name === "CSS3" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
+              const isMediumLogo = partner.name === "GoHighLevel" || partner.name === "Patrick Mentler" || partner.name === "Funnelmate";
               
               let sizeClass = 'h-12 md:h-14 lg:h-16';
               if (isOctaLogo) sizeClass = 'h-16 md:h-20 lg:h-24';
