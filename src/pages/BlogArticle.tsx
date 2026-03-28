@@ -8,17 +8,7 @@ import Footer from "@/components/Footer";
 import { supabase, type BlogPost } from "@/lib/supabase";
 import { useQuizModal } from "@/context/QuizModalContext";
 import portrait from "@/assets/gaetano-portrait.jpg";
-
-// Local blog banner images mapped by slug
-const localBanners: Record<string, string> = Object.fromEntries(
-  Object.entries(import.meta.glob("@/assets/blog/*-banner.{jpg,png,webp}", { eager: true, import: "default" })).map(
-    ([path, url]) => {
-      const filename = path.split("/").pop() || "";
-      const slug = filename.replace(/-banner\.\w+$/, "");
-      return [slug, url as string];
-    }
-  )
-);
+import localBanners from "@/lib/blogBanners";
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();

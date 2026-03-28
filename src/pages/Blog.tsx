@@ -6,17 +6,7 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { supabase, type BlogPost } from "@/lib/supabase";
-
-// Local blog banner images mapped by slug
-const localBanners: Record<string, string> = Object.fromEntries(
-  Object.entries(import.meta.glob("@/assets/blog/*-banner.{jpg,png,webp}", { eager: true, import: "default" })).map(
-    ([path, url]) => {
-      const filename = path.split("/").pop() || "";
-      const slug = filename.replace(/-banner\.\w+$/, "");
-      return [slug, url as string];
-    }
-  )
-);
+import localBanners from "@/lib/blogBanners";
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
