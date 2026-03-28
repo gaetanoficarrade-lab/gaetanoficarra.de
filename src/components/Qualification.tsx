@@ -5,8 +5,8 @@ import { Check, X } from "lucide-react";
 
 const suitableFor = [
   "Du ein laufendes Business mit aktiven Kunden hast",
-  "Dein Wachstum nicht am Marketing hängt – sondern daran, dass die Prozesse dahinter noch nicht stehen",
-  "Du nicht selbst an Technik sitzen willst – du willst, dass jemand es baut und es danach einfach läuft",
+  "Dein Wachstum nicht am Marketing hängt, sondern daran, dass die Prozesse dahinter noch nicht stehen",
+  "Du nicht selbst an Technik sitzen willst. Du willst, dass jemand es baut und es danach einfach läuft",
   "Mehr Kunden für dich mehr Freiheit bedeuten soll, nicht mehr Chaos"
 ];
 

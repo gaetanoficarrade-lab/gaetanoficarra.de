@@ -27,7 +27,7 @@ const problems = [
 
 const solutions = [
   "Ein System für alles: CRM, Funnels, E-Mails, Termine",
-  "Automatische Lead-Nachverfolgung – kein Kunde geht verloren",
+  "Automatische Lead-Nachverfolgung, kein Kunde geht verloren",
   "Zeit sparen durch intelligente Workflows",
   "Voller Überblick über deine Kunden und Prozesse",
 ];

@@ -59,7 +59,7 @@ const faqs = [
   {
     question: "Was kostet GoHighLevel vs. Funnelmate?",
     answer:
-      "GoHighLevel startet bei $97/Monat (Starter) und geht bis $497/Monat (SaaS Pro). Funnelmate beginnt bei €129/Monat. Beide bieten eine 14-tägige kostenlose Testphase. Für den DACH-Raum empfehle ich Funnelmate, weil der deutsche Support und die DSGVO-Konfiguration den Preisunterschied schnell wettmachen.",
+       "GoHighLevel startet bei $97/Monat (Starter) und geht bis $497/Monat (SaaS Pro). Funnelmate beginnt bei €129/Monat. Beide bieten eine 14-tägige kostenlose Testphase. Für den DACH-Raum empfehle ich Funnelmate, weil der deutsche Support und die DSGVO-Konfiguration den Preisunterschied schnell wettmachen.",
   },
   {
     question: "Welche Plattform eignet sich besser für Agenturen?",

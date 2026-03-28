@@ -31,7 +31,7 @@ const problems = [
   },
   {
     icon: TrendingDown,
-    title: "Skalierung die sich anfühlt wie gegen eine Wand laufen",
+     title: "Skalierung die sich anfühlt wie gegen eine Wand laufen",
     description:
       "Mehr Kunden bedeutet bei dir mehr Arbeit, nicht mehr Freiheit. Das Hamsterrad dreht sich schneller aber du kommst nicht vom Fleck.",
   },

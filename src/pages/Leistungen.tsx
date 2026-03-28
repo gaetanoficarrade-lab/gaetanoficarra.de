@@ -338,7 +338,7 @@ const Leistungen = () => {
                 Nicht sicher welches Paket zu dir passt?
               </h2>
               <p className="text-muted-foreground font-body mb-8 text-lg">
-                In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo Potenzial liegt und was wirklich Sinn macht – ohne Druck, ohne vorher festgelegtes Ergebnis.
+                In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo Potenzial liegt und was wirklich Sinn macht, ohne Druck, ohne vorher festgelegtes Ergebnis.
               </p>
               <div className="flex flex-col items-center gap-3">
                 <button

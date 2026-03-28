@@ -311,7 +311,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Keine Leerzeichen</strong> – Verwende Unterstriche (_) oder Bindestriche (-) statt Leerzeichen.</span>
+                <span><strong className="text-foreground">Keine Leerzeichen</strong>. Verwende Unterstriche (_) oder Bindestriche (-) statt Leerzeichen.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>

@@ -206,7 +206,7 @@ const WAGenerator = () => {
               {[
                 {
                   q: "Was ist ein wa.me Link?",
-                  a: "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet – ohne die Nummer speichern zu müssen."
+                  a: "Ein wa.me Link ist ein offizieller WhatsApp-Kurzlink, der beim Klick direkt einen Chat mit der angegebenen Nummer öffnet, ohne die Nummer speichern zu müssen."
                 },
                 {
                   q: "Funktioniert der WhatsApp-Link auf Desktop und Mobil?",

@@ -180,7 +180,7 @@ const Blog = () => {
               to="/highlevel-vs-funnelmate"
               className="inline-flex items-center gap-2 text-primary font-body text-sm tracking-widest uppercase hover:gap-3 transition-all duration-300"
             >
-              GoHighLevel vs. Funnelmate — der direkte Vergleich
+              GoHighLevel vs. Funnelmate, der direkte Vergleich
               <ArrowRight size={16} />
             </Link>
           </motion.div>

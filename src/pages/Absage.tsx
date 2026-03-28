@@ -10,7 +10,7 @@ const Absage = () => {
   return (
     <>
       <SEOHead
-        title="Absage — Gaetano Ficarra"
+        title="Absage. Gaetano Ficarra"
         description="Diese Anfrage wurde leider abgelehnt. Kontaktiere Gaetano Ficarra per WhatsApp für weitere Informationen zu GoHighLevel & Funnelmate."
         noIndex={true}
       />

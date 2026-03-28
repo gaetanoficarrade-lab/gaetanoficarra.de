@@ -56,7 +56,7 @@ const Timeline = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Der Ablauf</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Von heute bis zum laufenden System – <span className="text-primary">in 2 Wochen.</span>
+              Von heute bis zum laufenden System, <span className="text-primary">in 2 Wochen.</span>
             </h2>
           </motion.div>
 

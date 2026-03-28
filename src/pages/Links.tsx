@@ -63,7 +63,7 @@ const LinksPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Alle Links — Gaetano Ficarra | GoHighLevel & Funnelmate"
+        title="Alle Links. Gaetano Ficarra | GoHighLevel & Funnelmate"
         description="Alle wichtigen Links von Gaetano Ficarra auf einen Blick: Erstgespräch, Leistungen, Blog und mehr."
         noIndex={true}
       />
