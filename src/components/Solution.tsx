@@ -38,7 +38,7 @@ const Solution = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Die Lösung</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Was danach <span className="text-gradient-primary">anders ist.</span>
+              So skalierst du <span className="text-gradient-primary">ohne mehr zu arbeiten.</span>
             </h2>
           </motion.div>
 
