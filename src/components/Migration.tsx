@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Shield, Clock, Database } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
+import migrationVisual from "@/assets/migration-visual.jpg";
 
 const migrationTools = [
   { name: "ClickFunnels", keyword: "ClickFunnels Alternative deutsch" },
