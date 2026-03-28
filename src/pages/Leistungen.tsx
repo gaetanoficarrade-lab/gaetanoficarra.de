@@ -48,7 +48,7 @@ const mainServices = [
       "Migration deiner bestehenden Kontakte und Daten",
       "30 Tage Support nach Go-Live",
     ],
-    price: "ab 4.500 €",
+    price: "",
     popular: true,
     icon: Rocket,
   },
