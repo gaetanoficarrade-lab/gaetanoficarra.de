@@ -445,6 +445,17 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                       "Termin bestätigen"
                     )}
                   </button>
+
+                  <div className="mt-6 pt-4 border-t border-border">
+                    <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-body mb-2">
+                      <a href="/impressum" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline">Impressum</a>
+                      <span>|</span>
+                      <a href="/datenschutz" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline">Datenschutz</a>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-body text-center leading-relaxed">
+                      Keine Sorge, deine Daten sind sicher und du kannst dich jederzeit mit einem Klick wieder abmelden. Vorausgesetzt du willst etwas verpassen 😉
+                    </p>
+                  </div>
                 </div>
               )}
 
