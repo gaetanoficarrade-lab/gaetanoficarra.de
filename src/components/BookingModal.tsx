@@ -5,14 +5,13 @@ import { format, startOfMonth, endOfMonth, addMonths, subMonths, isSameDay } fro
 import { de } from "date-fns/locale";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://supabase.gaetanoficarra.de";
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
-const EDGE_FUNCTION_AUTHORIZATION =
-  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc3NDY1NDc0MCwiZXhwIjo0OTMwMzI4MzQwLCJyb2xlIjoiYW5vbiJ9.paW1Vtr0IFHdBv3ErFqCAlmdXu4aDfB-aZtEwiBwa2M";
+const ANON_KEY =
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc3NDY1NDc0MCwiZXhwIjo0OTMwMzI4MzQwLCJyb2xlIjoiYW5vbiJ9.paW1Vtr0IFHdBv3ErFqCAlmdXu4aDfB-aZtEwiBwa2M";
 
 const getEdgeFunctionHeaders = (): HeadersInit => ({
   "Content-Type": "application/json",
-  Authorization: EDGE_FUNCTION_AUTHORIZATION,
-  ...(SUPABASE_ANON_KEY ? { apikey: SUPABASE_ANON_KEY } : {}),
+  Authorization: `Bearer ${ANON_KEY}`,
+  apikey: ANON_KEY,
 });
 
 type Step = "date" | "time" | "form" | "confirmed" | "error";
