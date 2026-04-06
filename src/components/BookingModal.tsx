@@ -3,10 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { format, startOfMonth, endOfMonth, addMonths, subMonths, isSameDay } from "date-fns";
 import { de } from "date-fns/locale";
-import { supabase } from "@/lib/supabase";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://supabase.gaetanoficarra.de";
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
+const EDGE_FUNCTION_AUTHORIZATION =
+  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc3NDY1NDc0MCwiZXhwIjo0OTMwMzI4MzQwLCJyb2xlIjoiYW5vbiJ9.paW1Vtr0IFHdBv3ErFqCAlmdXu4aDfB-aZtEwiBwa2M";
+
+const getEdgeFunctionHeaders = (): HeadersInit => ({
+  "Content-Type": "application/json",
+  Authorization: EDGE_FUNCTION_AUTHORIZATION,
+  ...(SUPABASE_ANON_KEY ? { apikey: SUPABASE_ANON_KEY } : {}),
+});
 
 type Step = "date" | "time" | "form" | "confirmed" | "error";
 
@@ -68,7 +75,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     try {
       const res = await fetch(`${SUPABASE_URL}/functions/v1/ghl-get-slots`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getEdgeFunctionHeaders(),
         body: JSON.stringify({ startDate, endDate, timezone }),
       });
       if (!res.ok) throw new Error("Slots konnten nicht geladen werden.");
@@ -100,38 +107,14 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     return slots[key]?.slots || [];
   }, [selectedDate, slots]);
 
-  const getBookingAccessToken = useCallback(async () => {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-
-    if (session?.access_token) {
-      return session.access_token;
-    }
-
-    const { data, error } = await supabase.auth.signInAnonymously();
-
-    if (error || !data.session?.access_token) {
-      throw new Error("Die Terminbuchung ist aktuell nicht verfügbar. Bitte kontaktiere uns direkt.");
-    }
-
-    return data.session.access_token;
-  }, []);
-
   const handleSubmit = async () => {
     if (!selectedSlot || !name.trim() || !email.trim()) return;
     setSubmitting(true);
     setErrorMsg("");
     try {
-      const accessToken = await getBookingAccessToken();
-
       const res = await fetch(`${SUPABASE_URL}/functions/v1/ghl-book-appointment`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-          apikey: SUPABASE_ANON_KEY,
-        },
+        headers: getEdgeFunctionHeaders(),
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
