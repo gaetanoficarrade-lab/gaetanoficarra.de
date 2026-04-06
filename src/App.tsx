@@ -102,6 +102,7 @@ const App = () => (
               </Routes>
             </Suspense>
           </ErrorBoundary>
+          </BookingModalProvider>
         </QuizModalProvider>
       </BrowserRouter>
     </TooltipProvider>
