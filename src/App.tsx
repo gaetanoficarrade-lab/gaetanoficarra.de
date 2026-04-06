@@ -27,8 +27,10 @@ const Absage = lazy(() => import("./pages/Absage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const RedirectHandler = lazy(() => import("./components/RedirectHandler"));
 
 const queryClient = new QueryClient();
 
