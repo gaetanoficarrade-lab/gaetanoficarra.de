@@ -82,6 +82,7 @@ const additionalServices = [
 
 const Leistungen = () => {
   const { openQuizModal } = useQuizModal();
+  const { openBookingModal } = useBookingModal();
 
   return (
     <div className="min-h-screen bg-background">
