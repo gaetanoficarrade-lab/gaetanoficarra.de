@@ -125,6 +125,30 @@ const OverviewTab = () => {
     return Object.entries(counts).map(([name, value]) => ({ name, value }));
   }, [views]);
 
+  const countryBreakdown = useMemo(() => {
+    const counts: Record<string, number> = {};
+    views.forEach((v) => {
+      const c = v.country || "Unbekannt";
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10);
+  }, [views]);
+
+  const regionBreakdown = useMemo(() => {
+    const counts: Record<string, number> = {};
+    views.forEach((v) => {
+      if (v.region) {
+        const label = v.country === "Germany" ? v.region : `${v.region} (${v.country || "?"})`;
+        counts[label] = (counts[label] || 0) + 1;
+      }
+    });
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10);
+  }, [views]);
+
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
     return d.toLocaleDateString("de-DE", { day: "2-digit", month: "short" });
