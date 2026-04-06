@@ -14,7 +14,7 @@ const getEdgeFunctionHeaders = (): HeadersInit => ({
   apikey: ANON_KEY,
 });
 
-type Step = "date" | "time" | "form" | "confirmed" | "error";
+type Step = "calendar" | "form" | "confirmed" | "error";
 
 interface Slot {
   [date: string]: { slots: string[] };
@@ -28,7 +28,7 @@ interface BookingModalProps {
 const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const timezone = useMemo(() => Intl.DateTimeFormat().resolvedOptions().timeZone, []);
 
-  const [step, setStep] = useState<Step>("date");
+  const [step, setStep] = useState<Step>("calendar");
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [slots, setSlots] = useState<Slot>({});
   const [loading, setLoading] = useState(false);
@@ -40,11 +40,10 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // Reset on close
   useEffect(() => {
     if (!isOpen) {
       setTimeout(() => {
-        setStep("date");
+        setStep("calendar");
         setSelectedDate(null);
         setSelectedSlot(null);
         setName("");
@@ -55,7 +54,6 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     }
   }, [isOpen]);
 
-  // Lock body scroll
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -65,7 +63,6 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  // Fetch slots when month changes
   const fetchSlots = useCallback(async (month: Date) => {
     setLoading(true);
     setErrorMsg("");
@@ -81,7 +78,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
       const data = await res.json();
       setSlots(data);
     } catch {
-      setErrorMsg("Verfügbare Termine konnten nicht geladen werden. Bitte versuche es erneut.");
+      setErrorMsg("Verfügbare Termine konnten nicht geladen werden.");
       setSlots({});
     } finally {
       setLoading(false);
@@ -128,17 +125,16 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
       }
       setStep("confirmed");
     } catch (e: any) {
-      setErrorMsg(e.message || "Ein Fehler ist aufgetreten. Bitte versuche es erneut.");
+      setErrorMsg(e.message || "Ein Fehler ist aufgetreten.");
       setStep("error");
     } finally {
       setSubmitting(false);
     }
   };
 
-  // Calendar helpers
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(currentMonth);
-  const startDay = monthStart.getDay() === 0 ? 6 : monthStart.getDay() - 1; // Monday-based
+  const startDay = monthStart.getDay() === 0 ? 6 : monthStart.getDay() - 1;
   const daysInMonth = monthEnd.getDate();
 
   const calendarDays = useMemo(() => {
@@ -170,23 +166,20 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           className="fixed inset-0 z-[100] flex items-center justify-center p-4"
           onClick={onClose}
         >
-          {/* Backdrop */}
           <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative z-10 w-full max-w-lg bg-card border border-border rounded-xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+            className="relative z-10 w-full max-w-3xl bg-card border border-border rounded-xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-border">
               <h2 className="font-display text-xl text-foreground">
-                {step === "date" && "Termin wählen"}
-                {step === "time" && "Uhrzeit wählen"}
+                {step === "calendar" && "Termin wählen"}
                 {step === "form" && "Deine Daten"}
                 {step === "confirmed" && "Bestätigt"}
                 {step === "error" && "Fehler"}
@@ -204,144 +197,152 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               {/* Step indicators */}
               {step !== "confirmed" && step !== "error" && (
                 <div className="flex items-center gap-2 mb-6">
-                  {["date", "time", "form"].map((s, i) => (
+                  {(["calendar", "form"] as const).map((s, i) => (
                     <div key={s} className="flex items-center gap-2">
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-body font-medium transition-colors ${
                           step === s
                             ? "bg-primary text-primary-foreground"
-                            : ["date", "time", "form"].indexOf(step) > i
+                            : (["calendar", "form"] as const).indexOf(step) > i
                               ? "bg-primary/20 text-primary"
                               : "bg-muted text-muted-foreground"
                         }`}
                       >
                         {i + 1}
                       </div>
-                      {i < 2 && <div className="w-8 h-px bg-border" />}
+                      {i < 1 && <div className="w-8 h-px bg-border" />}
                     </div>
                   ))}
                 </div>
               )}
 
-              {/* DATE STEP */}
-              {step === "date" && (
-                <div>
-                  {/* Month nav */}
-                  <div className="flex items-center justify-between mb-4">
-                    <button
-                      onClick={() => setCurrentMonth((m) => subMonths(m, 1))}
-                      className="p-2 rounded-md hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <span className="font-display text-lg text-foreground">
-                      {format(currentMonth, "MMMM yyyy", { locale: de })}
-                    </span>
-                    <button
-                      onClick={() => setCurrentMonth((m) => addMonths(m, 1))}
-                      className="p-2 rounded-md hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
+              {/* CALENDAR STEP — two columns */}
+              {step === "calendar" && (
+                <div className="flex flex-col md:flex-row gap-6">
+                  {/* Left: Calendar */}
+                  <div className="flex-1 min-w-0">
+                    {/* Month nav */}
+                    <div className="flex items-center justify-between mb-4">
+                      <button
+                        onClick={() => setCurrentMonth((m) => subMonths(m, 1))}
+                        className="p-2 rounded-md hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <span className="font-display text-lg text-foreground">
+                        {format(currentMonth, "MMMM yyyy", { locale: de })}
+                      </span>
+                      <button
+                        onClick={() => setCurrentMonth((m) => addMonths(m, 1))}
+                        className="p-2 rounded-md hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+
+                    {loading ? (
+                      <div className="flex items-center justify-center py-12">
+                        <Loader2 className="w-6 h-6 text-primary animate-spin" />
+                        <span className="ml-3 text-muted-foreground font-body text-sm">Termine werden geladen…</span>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="grid grid-cols-7 gap-1 mb-2">
+                          {["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"].map((d) => (
+                            <div key={d} className="text-center text-xs font-body text-muted-foreground py-1">
+                              {d}
+                            </div>
+                          ))}
+                        </div>
+                        <div className="grid grid-cols-7 gap-1">
+                          {calendarDays.map((day, i) => {
+                            if (!day) return <div key={`e-${i}`} />;
+                            const dateKey = format(day, "yyyy-MM-dd");
+                            const hasSlots = availableDates.has(dateKey);
+                            const isSelected = selectedDate && isSameDay(day, selectedDate);
+                            const isPast = day < new Date(new Date().setHours(0, 0, 0, 0));
+
+                            return (
+                              <button
+                                key={dateKey}
+                                disabled={!hasSlots || isPast}
+                                onClick={() => {
+                                  setSelectedDate(day);
+                                  setSelectedSlot(null);
+                                }}
+                                className={`aspect-square rounded-lg flex items-center justify-center text-sm font-body transition-all ${
+                                  isSelected
+                                    ? "bg-primary text-primary-foreground"
+                                    : hasSlots && !isPast
+                                      ? "text-foreground hover:bg-primary/10 cursor-pointer"
+                                      : "text-muted-foreground/40 cursor-not-allowed"
+                                }`}
+                              >
+                                {day.getDate()}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </>
+                    )}
+
+                    {errorMsg && (
+                      <div className="mt-4 flex items-start gap-2 text-destructive text-sm font-body">
+                        <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                        {errorMsg}
+                      </div>
+                    )}
                   </div>
 
-                  {loading ? (
-                    <div className="flex items-center justify-center py-12">
-                      <Loader2 className="w-6 h-6 text-primary animate-spin" />
-                      <span className="ml-3 text-muted-foreground font-body text-sm">Termine werden geladen…</span>
-                    </div>
-                  ) : (
-                    <>
-                      {/* Weekday headers */}
-                      <div className="grid grid-cols-7 gap-1 mb-2">
-                        {["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"].map((d) => (
-                          <div key={d} className="text-center text-xs font-body text-muted-foreground py-1">
-                            {d}
+                  {/* Right: Time slots */}
+                  <div className="md:w-52 shrink-0">
+                    {selectedDate ? (
+                      <>
+                        <p className="font-body text-muted-foreground text-sm mb-3">
+                          {format(selectedDate, "EEEE, d. MMMM", { locale: de })}
+                        </p>
+                        {slotsForSelectedDate.length > 0 ? (
+                          <div className="flex flex-row flex-wrap md:flex-col gap-2 max-h-[320px] overflow-y-auto pr-1">
+                            {slotsForSelectedDate.map((slot) => (
+                              <button
+                                key={slot}
+                                onClick={() => setSelectedSlot(slot)}
+                                className={`py-2.5 px-4 rounded-lg text-sm font-body transition-all border text-center ${
+                                  selectedSlot === slot
+                                    ? "bg-primary text-primary-foreground border-primary"
+                                    : "border-border text-foreground hover:border-primary/50 hover:bg-primary/5"
+                                }`}
+                              >
+                                {formatSlotTime(slot)}
+                              </button>
+                            ))}
                           </div>
-                        ))}
+                        ) : (
+                          <p className="text-muted-foreground text-sm font-body">
+                            Keine Zeiten verfügbar.
+                          </p>
+                        )}
+                      </>
+                    ) : (
+                      <div className="flex items-center justify-center h-full">
+                        <p className="text-muted-foreground text-sm font-body text-center">
+                          Wähle einen Tag aus, um verfügbare Uhrzeiten zu sehen.
+                        </p>
                       </div>
-
-                      {/* Days */}
-                      <div className="grid grid-cols-7 gap-1">
-                        {calendarDays.map((day, i) => {
-                          if (!day) return <div key={`e-${i}`} />;
-                          const dateKey = format(day, "yyyy-MM-dd");
-                          const hasSlots = availableDates.has(dateKey);
-                          const isSelected = selectedDate && isSameDay(day, selectedDate);
-                          const isPast = day < new Date(new Date().setHours(0, 0, 0, 0));
-
-                          return (
-                            <button
-                              key={dateKey}
-                              disabled={!hasSlots || isPast}
-                              onClick={() => {
-                                setSelectedDate(day);
-                                setSelectedSlot(null);
-                                setStep("time");
-                              }}
-                              className={`aspect-square rounded-lg flex items-center justify-center text-sm font-body transition-all ${
-                                isSelected
-                                  ? "bg-primary text-primary-foreground"
-                                  : hasSlots && !isPast
-                                    ? "text-foreground hover:bg-primary/10 cursor-pointer"
-                                    : "text-muted-foreground/40 cursor-not-allowed"
-                              }`}
-                            >
-                              {day.getDate()}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </>
-                  )}
-
-                  {errorMsg && (
-                    <div className="mt-4 flex items-start gap-2 text-destructive text-sm font-body">
-                      <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
-                      {errorMsg}
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               )}
 
-              {/* TIME STEP */}
-              {step === "time" && selectedDate && (
-                <div>
+              {/* Weiter button for calendar step */}
+              {step === "calendar" && selectedSlot && (
+                <div className="mt-6">
                   <button
-                    onClick={() => setStep("date")}
-                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground font-body mb-4 transition-colors"
+                    onClick={() => setStep("form")}
+                    className="w-full inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md"
                   >
-                    <ChevronLeft className="w-4 h-4" /> Zurück
+                    Weiter
                   </button>
-
-                  <p className="font-body text-muted-foreground text-sm mb-4">
-                    {format(selectedDate, "EEEE, d. MMMM yyyy", { locale: de })}
-                  </p>
-
-                  <div className="grid grid-cols-3 gap-2">
-                    {slotsForSelectedDate.map((slot) => (
-                      <button
-                        key={slot}
-                        onClick={() => {
-                          setSelectedSlot(slot);
-                          setStep("form");
-                        }}
-                        className={`py-3 px-4 rounded-lg text-sm font-body transition-all border ${
-                          selectedSlot === slot
-                            ? "bg-primary text-primary-foreground border-primary"
-                            : "border-border text-foreground hover:border-primary/50 hover:bg-primary/5"
-                        }`}
-                      >
-                        {formatSlotTime(slot)}
-                      </button>
-                    ))}
-                  </div>
-
-                  {slotsForSelectedDate.length === 0 && (
-                    <p className="text-muted-foreground text-sm font-body text-center py-8">
-                      Keine verfügbaren Zeiten für diesen Tag.
-                    </p>
-                  )}
                 </div>
               )}
 
@@ -349,7 +350,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               {step === "form" && (
                 <div>
                   <button
-                    onClick={() => setStep("time")}
+                    onClick={() => setStep("calendar")}
                     className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground font-body mb-4 transition-colors"
                   >
                     <ChevronLeft className="w-4 h-4" /> Zurück
