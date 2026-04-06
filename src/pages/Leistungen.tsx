@@ -5,6 +5,7 @@ import { CheckCircle, ArrowRight, Headphones, Repeat, TrendingUp, Building2, Roc
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuizModal } from "@/context/QuizModalContext";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 const mainServices = [
   {
