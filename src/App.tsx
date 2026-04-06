@@ -9,6 +9,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import CookieBanner from "./components/CookieBanner";
 
 import { QuizModalProvider } from "./context/QuizModalContext";
+import { BookingModalProvider } from "./context/BookingModalContext";
 
 // Critical route - loaded eagerly
 import Index from "./pages/Index";
@@ -75,6 +76,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <QuizModalProvider>
+          <BookingModalProvider>
           <ScrollToTop />
           <ScrollToTopButton />
           <CookieBanner />
@@ -100,6 +102,7 @@ const App = () => (
               </Routes>
             </Suspense>
           </ErrorBoundary>
+          </BookingModalProvider>
         </QuizModalProvider>
       </BrowserRouter>
     </TooltipProvider>

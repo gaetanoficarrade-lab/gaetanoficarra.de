@@ -5,6 +5,7 @@ import { CheckCircle, ArrowRight, Headphones, Repeat, TrendingUp, Building2, Roc
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuizModal } from "@/context/QuizModalContext";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 const mainServices = [
   {
@@ -81,6 +82,7 @@ const additionalServices = [
 
 const Leistungen = () => {
   const { openQuizModal } = useQuizModal();
+  const { openBookingModal } = useBookingModal();
 
   return (
     <div className="min-h-screen bg-background">
@@ -283,7 +285,7 @@ const Leistungen = () => {
                     </p>
 
                     <button
-                      onClick={() => window.open("https://lp.gaetanoficarra.de/support_call", "_blank")}
+                      onClick={() => openBookingModal()}
                       className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
                     >
                       Call buchen <ArrowRight className="w-4 h-4" />
