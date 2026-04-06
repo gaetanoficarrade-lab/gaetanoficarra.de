@@ -82,6 +82,8 @@ const App = () => (
         <QuizModalProvider>
           <BookingModalProvider>
           <ScrollToTop />
+          <TrackingProvider />
+          <DynamicScripts />
           <ScrollToTopButton />
           <CookieBanner />
           
@@ -101,7 +103,9 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogArticle />} />
                 <Route path="/admin/blog" element={<AdminBlog />} />
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route path="/sitemap" element={<Sitemap />} />
+                <Route path="/r/:slug" element={<RedirectHandler />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
