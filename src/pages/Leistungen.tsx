@@ -138,17 +138,7 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Full Business System Setup",
-            offers: {
-              "@type": "Offer",
-              price: "6000",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "6000",
-                priceCurrency: "EUR",
-                description: "Einmaliges Projekt, kein Abo"
-              }
-            },
+            serviceOutput: "Einmaliges Projekt, kein Abo",
           },
           {
             "@type": "Service",

@@ -26,7 +26,7 @@ const FAQ = () => {
     {
       question: "Was kostet das?",
       answer:
-        "Das Starter-Paket beginnt bei 3.000 €, das Growth-Paket bei 4.500 € und das Full System ab 6.000 €. Alles einmalig, kein Abo. In der kostenlosen System-Analyse zeige ich dir welches Paket zu deiner Situation passt.",
+        "Die Preise richten sich nach deinem individuellen Bedarf. Alles einmalig, kein Abo. In der kostenlosen System-Analyse zeige ich dir welches Paket zu deiner Situation passt.",
     },
     {
       question: "Muss ich mich mit GoHighLevel auskennen?",
