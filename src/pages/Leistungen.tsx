@@ -124,17 +124,7 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Marketing Automation Setup",
-            offers: {
-              "@type": "Offer",
-              price: "4500",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "4500",
-                priceCurrency: "EUR",
-                description: "Einmaliges Projekt, kein Abo"
-              }
-            },
+            serviceOutput: "Einmaliges Projekt, kein Abo",
           },
           {
             "@type": "Service",
