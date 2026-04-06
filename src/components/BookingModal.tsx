@@ -123,7 +123,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || err.message || "Buchung fehlgeschlagen.");
       }
-      window.location.href = "https://funnelpay.de/checkout/90-minuten-highlevel-setup-call";
+      window.location.href = "https://funnelpay.de/checkout/test--90-minuten-highlevel-setup-call";
     } catch (e: any) {
       setErrorMsg(e.message || "Ein Fehler ist aufgetreten.");
       setStep("error");
