@@ -5,6 +5,7 @@ import { format, startOfMonth, endOfMonth, addMonths, subMonths, isSameDay, pars
 import { de } from "date-fns/locale";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://supabase.gaetanoficarra.de";
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
 
 type Step = "date" | "time" | "form" | "confirmed" | "error";
 
@@ -105,7 +106,11 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     try {
       const res = await fetch(`${SUPABASE_URL}/functions/v1/ghl-book-appointment`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+          "apikey": SUPABASE_ANON_KEY,
+        },
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
