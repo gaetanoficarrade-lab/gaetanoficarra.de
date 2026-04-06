@@ -121,6 +121,8 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           phone: phone.trim(),
           selectedSlot,
           timezone,
+          anliegen: anliegen.trim(),
+          newsletter,
         }),
       });
       if (!res.ok) {
