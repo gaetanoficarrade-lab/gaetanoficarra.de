@@ -37,7 +37,6 @@ const mainServices = [
       "Migration deiner bestehenden Kontakte und Daten",
       "30 Tage Support nach Go-Live",
     ],
-    price: "Preis auf Anfrage",
     popular: true,
     icon: Rocket,
   },
