@@ -1,6 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { supabase } from "@/lib/supabase";
 import { Card, CardContent } from "@/components/ui/card";
+import { Minus, Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface ClickEvent {
   id: string;
@@ -19,7 +21,7 @@ interface HeatSpot {
   intensity: number;
 }
 
-function clusterClicks(dots: { x: number; y: number }[], radius = 3): HeatSpot[] {
+function clusterClicks(dots: { x: number; y: number }[], radius = 2.5): HeatSpot[] {
   const spots: HeatSpot[] = [];
   const used = new Set<number>();
 
@@ -59,6 +61,12 @@ const HeatmapTab = () => {
   const [pages, setPages] = useState<string[]>([]);
   const [selectedPage, setSelectedPage] = useState<string>("");
   const [loading, setLoading] = useState(true);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [opacity, setOpacity] = useState(0.6);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Get the base URL for iframe
+  const baseUrl = window.location.origin;
 
   useEffect(() => {
     supabase
@@ -79,6 +87,7 @@ const HeatmapTab = () => {
   useEffect(() => {
     if (!selectedPage) return;
     setLoading(true);
+    setIframeLoaded(false);
     supabase
       .from("click_events")
       .select("*")
@@ -106,11 +115,11 @@ const HeatmapTab = () => {
       <div>
         <h2 className="font-display text-xl font-bold">Klick-Heatmap</h2>
         <p className="text-sm text-muted-foreground font-body">
-          Visualisiere, wo Besucher klicken. Farben zeigen die Klick-Dichte: <span className="text-blue-400">wenig</span> → <span className="text-green-400">mittel</span> → <span className="text-yellow-400">viel</span> → <span className="text-red-400">heiß</span>
+          Klicks direkt auf der echten Seite visualisiert. Farben zeigen die Dichte: <span className="text-blue-400">wenig</span> → <span className="text-green-400">mittel</span> → <span className="text-yellow-400">viel</span> → <span className="text-red-400">heiß</span>
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 flex-wrap">
         <select
           value={selectedPage}
           onChange={(e) => setSelectedPage(e.target.value)}
@@ -120,11 +129,23 @@ const HeatmapTab = () => {
             <option key={p} value={p}>{p}</option>
           ))}
         </select>
+
         {!loading && (
           <span className="text-xs text-muted-foreground font-body">
             {clicks.length} Klicks · {heatSpots.length} Bereiche
           </span>
         )}
+
+        <div className="flex items-center gap-2 ml-auto">
+          <span className="text-xs text-muted-foreground font-body">Heatmap-Deckkraft:</span>
+          <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => setOpacity((o) => Math.max(0.2, o - 0.1))}>
+            <Minus size={14} />
+          </Button>
+          <span className="text-xs font-body w-8 text-center">{Math.round(opacity * 100)}%</span>
+          <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => setOpacity((o) => Math.min(1, o + 0.1))}>
+            <Plus size={14} />
+          </Button>
+        </div>
       </div>
 
       {loading ? (
@@ -139,58 +160,64 @@ const HeatmapTab = () => {
         </Card>
       ) : (
         <Card>
-          <CardContent className="p-4">
+          <CardContent className="p-0 overflow-hidden rounded-lg">
             <div
-              className="relative w-full rounded-lg overflow-hidden"
-              style={{
-                paddingBottom: "180%",
-                background: "linear-gradient(180deg, hsl(var(--muted) / 0.2) 0%, hsl(var(--muted) / 0.05) 100%)",
-              }}
+              ref={containerRef}
+              className="relative w-full overflow-y-auto"
+              style={{ height: "70vh" }}
             >
-              {/* Seitenstruktur-Andeutung */}
-              {[0, 8, 20, 35, 50, 65, 80].map((top) => (
+              {/* Echte Seite als Hintergrund */}
+              <iframe
+                src={`${baseUrl}${selectedPage}`}
+                title="Seitenvorschau"
+                className="absolute inset-0 w-full border-0 pointer-events-none"
+                style={{
+                  height: "5000px",
+                  transformOrigin: "top left",
+                }}
+                onLoad={() => setIframeLoaded(true)}
+              />
+
+              {/* Heatmap-Overlay */}
+              {iframeLoaded && (
                 <div
-                  key={top}
-                  className="absolute left-[5%] right-[5%] h-px bg-border/30"
-                  style={{ top: `${top}%` }}
-                />
-              ))}
-              <div className="absolute top-[1%] left-[5%] text-[10px] text-muted-foreground/40 font-body">
-                Header
-              </div>
-              <div className="absolute top-[50%] left-[5%] text-[10px] text-muted-foreground/40 font-body">
-                Mitte
-              </div>
-              <div className="absolute top-[90%] left-[5%] text-[10px] text-muted-foreground/40 font-body">
-                Footer
-              </div>
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    height: "5000px",
+                    opacity,
+                  }}
+                >
+                  {heatSpots.map((spot, i) => {
+                    const size = 20 + Math.min(spot.intensity * 8, 60);
+                    const blur = 4 + Math.min(spot.intensity * 3, 16);
+                    return (
+                      <div
+                        key={i}
+                        className="absolute rounded-full"
+                        style={{
+                          left: `${spot.x}%`,
+                          top: `${spot.y}%`,
+                          width: `${size}px`,
+                          height: `${size}px`,
+                          transform: "translate(-50%, -50%)",
+                          background: `radial-gradient(circle, ${intensityColor(spot.intensity, maxIntensity)} 0%, transparent 70%)`,
+                          filter: `blur(${blur}px)`,
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              )}
 
-              {/* Heat spots */}
-              {heatSpots.map((spot, i) => {
-                const size = 16 + Math.min(spot.intensity * 6, 50);
-                const blur = 3 + Math.min(spot.intensity * 2, 12);
-                return (
-                  <div
-                    key={i}
-                    className="absolute rounded-full pointer-events-none"
-                    style={{
-                      left: `${spot.x}%`,
-                      top: `${spot.y}%`,
-                      width: `${size}px`,
-                      height: `${size}px`,
-                      transform: "translate(-50%, -50%)",
-                      background: `radial-gradient(circle, ${intensityColor(spot.intensity, maxIntensity)} 0%, transparent 70%)`,
-                      filter: `blur(${blur}px)`,
-                    }}
-                  />
-                );
-              })}
-
-              {/* Grid overlay */}
-              <div className="absolute inset-0 pointer-events-none" style={{
-                backgroundImage: "linear-gradient(hsl(var(--border) / 0.15) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.15) 1px, transparent 1px)",
-                backgroundSize: "10% 5%",
-              }} />
+              {/* Loading overlay for iframe */}
+              {!iframeLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-background/80">
+                  <div className="text-center">
+                    <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                    <p className="text-xs text-muted-foreground font-body">Seite wird geladen…</p>
+                  </div>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
