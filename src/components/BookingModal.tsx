@@ -100,17 +100,37 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     return slots[key]?.slots || [];
   }, [selectedDate, slots]);
 
+  const getBookingAccessToken = useCallback(async () => {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    if (session?.access_token) {
+      return session.access_token;
+    }
+
+    const { data, error } = await supabase.auth.signInAnonymously();
+
+    if (error || !data.session?.access_token) {
+      throw new Error("Die Terminbuchung ist aktuell nicht verfügbar. Bitte kontaktiere uns direkt.");
+    }
+
+    return data.session.access_token;
+  }, []);
+
   const handleSubmit = async () => {
     if (!selectedSlot || !name.trim() || !email.trim()) return;
     setSubmitting(true);
     setErrorMsg("");
     try {
+      const accessToken = await getBookingAccessToken();
+
       const res = await fetch(`${SUPABASE_URL}/functions/v1/ghl-book-appointment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
-          "apikey": SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${accessToken}`,
+          apikey: SUPABASE_ANON_KEY,
         },
         body: JSON.stringify({
           name: name.trim(),
@@ -122,7 +142,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
       });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || "Buchung fehlgeschlagen.");
+        throw new Error(err.error || err.message || "Buchung fehlgeschlagen.");
       }
       setStep("confirmed");
     } catch (e: any) {
