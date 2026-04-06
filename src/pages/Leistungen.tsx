@@ -220,11 +220,8 @@ const Leistungen = () => {
                           {service.description}
                         </p>
 
-                        {/* Price & CTA */}
+                        {/* CTA */}
                         <div className="flex flex-wrap items-center gap-6">
-                          <div>
-                            <p className="font-display text-3xl text-primary">{service.price}</p>
-                          </div>
                           <button
                             onClick={openQuizModal}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
