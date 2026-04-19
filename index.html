@@ -12,14 +12,6 @@
         'wait_for_update': 500
       });
     </script>
-    <script defer src="https://supabase.next.gaetanoficarra.de/functions/v1/tracker/script.js" data-site-id="12b20fd6-34d9-4224-acbd-664031ec3d76">
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "w80duoihgy");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
@@ -40,13 +32,15 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- Preload critical fonts -->
+    <!-- Preload critical fonts (only those used above-the-fold) -->
     <link rel="preload" href="/fonts/cormorant-garamond-700.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
-    <!-- Preconnect to external origins -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <!-- Preconnect to third-party origins used after load -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://supabase.next.gaetanoficarra.de" crossorigin />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gaetanoficarra.de/" />
     <meta property="og:title" content="Marketing Automation Berater für Coaches | Gaetano Ficarra" />
@@ -75,18 +69,34 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- GTM loaded after DOM is ready to avoid render-blocking -->
+    <!-- Tracker + Clarity loaded after window load to avoid render blocking -->
     <script>
       window.addEventListener('load', function() {
-        if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6GTNR9L14T';
-        s.async = true;
-        s.onload = function() {
-          gtag('js', new Date());
-          gtag('config', 'G-6GTNR9L14T');
-        };
-        document.head.appendChild(s);
+        // Internal tracker
+        if (!document.querySelector('script[data-site-id="12b20fd6-34d9-4224-acbd-664031ec3d76"]')) {
+          var t = document.createElement('script');
+          t.defer = true;
+          t.src = 'https://supabase.next.gaetanoficarra.de/functions/v1/tracker/script.js';
+          t.setAttribute('data-site-id', '12b20fd6-34d9-4224-acbd-664031ec3d76');
+          document.head.appendChild(t);
+        }
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "w80duoihgy");
+        // Google Tag Manager (gtag.js)
+        if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+          var s = document.createElement('script');
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6GTNR9L14T';
+          s.async = true;
+          s.onload = function() {
+            gtag('js', new Date());
+            gtag('config', 'G-6GTNR9L14T');
+          };
+          document.head.appendChild(s);
+        }
       });
     </script>
   </body>
