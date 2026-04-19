@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { ArrowRight, Shield, Clock, Database } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
 import migrationVisual from "@/assets/migration-visual.jpg";
+import migrationVisualWebp from "@/assets/migration-visual.webp";
+import migrationVisualAvif from "@/assets/migration-visual.avif";
+import Picture from "@/components/Picture";
 
 const migrationTools = [
   { name: "ClickFunnels", keyword: "ClickFunnels Alternative deutsch" },
@@ -94,13 +97,14 @@ const Migration = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12 mb-16"
           >
-            <img
+            <Picture
               src={migrationVisual}
+              webp={migrationVisualWebp}
+              avif={migrationVisualAvif}
               alt="Migration von verstreuten Tools zu einem zentralen System"
               className="w-full rounded-xl border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.08)] object-cover max-h-[200px]"
               width={1920}
               height={512}
-              loading="lazy"
             />
           </motion.div>
 

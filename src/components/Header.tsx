@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import logoWebp from "@/assets/logo.webp";
+import logoAvif from "@/assets/logo.avif";
+import Picture from "@/components/Picture";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const navItems = [
@@ -72,10 +75,16 @@ const Header = () => {
       </div>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
         <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
-          <img
+          <Picture
             src={logo}
+            webp={logoWebp}
+            avif={logoAvif}
             alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld"
+            width={120}
+            height={56}
             className="h-12 md:h-14 w-auto"
+            loading="eager"
+            fetchPriority="high"
           />
         </Link>
 

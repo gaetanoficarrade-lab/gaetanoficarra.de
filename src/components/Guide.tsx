@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import portrait from "@/assets/gaetano-portrait.jpg";
+import portraitWebp from "@/assets/gaetano-portrait.webp";
+import portraitAvif from "@/assets/gaetano-portrait.avif";
+import Picture from "@/components/Picture";
 
 const Guide = () => {
   const ref = useRef(null);
@@ -34,13 +37,14 @@ const Guide = () => {
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl blur-2xl scale-105" />
-                <img
+                <Picture
                   src={portrait}
+                  webp={portraitWebp}
+                  avif={portraitAvif}
                   alt="Gaetano Ficarra — Zertifizierter GoHighLevel Admin aus Bielefeld"
                   className="relative w-full max-w-md rounded-2xl border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
                   width={448}
                   height={448}
-                  loading="lazy"
                 />
               </div>
             </motion.div>

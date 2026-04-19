@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
 import solutionBg from "@/assets/solution-bg.jpg";
+import solutionBgWebp from "@/assets/solution-bg.webp";
+import solutionBgAvif from "@/assets/solution-bg.avif";
+import Picture from "@/components/Picture";
 
 const steps = [
   {
@@ -44,11 +47,14 @@ const Timeline = () => {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
       <div className="absolute inset-0 pointer-events-none z-0">
-        <img
+        <Picture
           src={solutionBg}
+          webp={solutionBgWebp}
+          avif={solutionBgAvif}
           alt=""
           className="w-full h-full object-cover opacity-[0.35]"
-          loading="lazy"
+          width={1920}
+          height={1080}
           aria-hidden="true"
         />
       </div>
