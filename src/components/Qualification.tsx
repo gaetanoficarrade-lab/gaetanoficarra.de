@@ -3,6 +3,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, X } from "lucide-react";
 import solutionBg from "@/assets/solution-bg.jpg";
+import solutionBgWebp from "@/assets/solution-bg.webp";
+import solutionBgAvif from "@/assets/solution-bg.avif";
+import Picture from "@/components/Picture";
 
 const suitableFor = [
   "Du ein laufendes Business mit aktiven Kunden hast",
@@ -24,11 +27,14 @@ const Qualification = () => {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
       <div className="absolute inset-0 pointer-events-none z-0">
-        <img
+        <Picture
           src={solutionBg}
+          webp={solutionBgWebp}
+          avif={solutionBgAvif}
           alt=""
           className="w-full h-full object-cover opacity-40"
-          loading="lazy"
+          width={1920}
+          height={1080}
           aria-hidden="true"
         />
       </div>

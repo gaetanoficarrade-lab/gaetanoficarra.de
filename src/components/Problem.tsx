@@ -3,6 +3,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Layers, AlertTriangle, Clock, TrendingDown, Link2Off, EuroIcon } from "lucide-react";
 import problemChaos from "@/assets/problem-chaos.jpg";
+import problemChaosWebp from "@/assets/problem-chaos.webp";
+import problemChaosAvif from "@/assets/problem-chaos.avif";
+import Picture from "@/components/Picture";
 
 const problems = [
   {
@@ -99,13 +102,14 @@ const Problem = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-16"
           >
-            <img
+            <Picture
               src={problemChaos}
+              webp={problemChaosWebp}
+              avif={problemChaosAvif}
               alt="Chaotischer Schreibtisch mit zu vielen Tools und Software"
               className="w-full rounded-xl border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.08)] object-cover max-h-[280px]"
               width={1920}
               height={512}
-              loading="lazy"
             />
             <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto text-center mt-8">
               Kein einziger dieser Punkte ist deine Schuld. Sie haben alle dieselbe Ursache: kein System. Genau das

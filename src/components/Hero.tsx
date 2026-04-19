@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import portrait from "@/assets/gaetano-portrait.jpg";
+import portraitWebp from "@/assets/gaetano-portrait.webp";
+import portraitAvif from "@/assets/gaetano-portrait.avif";
+import Picture from "@/components/Picture";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const Hero = () => {
@@ -101,13 +104,16 @@ const Hero = () => {
             <div className="relative">
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-secondary/10 rounded-full blur-3xl scale-110" />
-              <img
+              <Picture
                 src={portrait}
+                webp={portraitWebp}
+                avif={portraitAvif}
                 alt="Gaetano Ficarra — Marketing Automation Berater für Coaches und Berater"
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.1)] animate-glow-pulse"
                 width={500}
                 height={500}
                 fetchPriority="high"
+                loading="eager"
               />
 
               {/* GoHighLevel Badge */}

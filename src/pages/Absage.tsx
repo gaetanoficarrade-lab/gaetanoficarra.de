@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
 import gaetanoAbsage from "@/assets/gaetano-absage.png";
+import gaetanoAbsageWebp from "@/assets/gaetano-absage.webp";
+import gaetanoAbsageAvif from "@/assets/gaetano-absage.avif";
+import Picture from "@/components/Picture";
 
 const Absage = () => {
   const whatsappNumber = "+4915223856537";
@@ -29,9 +32,14 @@ const Absage = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-8"
           >
-            <img
+            <Picture
               src={gaetanoAbsage}
+              webp={gaetanoAbsageWebp}
+              avif={gaetanoAbsageAvif}
               alt="Gaetano Ficarra"
+              width={160}
+              height={160}
+              loading="eager"
               className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-top mx-auto border-2 border-[#D4A853]/50"
             />
           </motion.div>

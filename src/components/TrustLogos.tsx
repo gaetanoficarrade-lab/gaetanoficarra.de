@@ -2,17 +2,28 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import gohighlevelLogo from "@/assets/gohighlevel-logo.jpg";
+import gohighlevelLogoWebp from "@/assets/gohighlevel-logo.webp";
+import gohighlevelLogoAvif from "@/assets/gohighlevel-logo.avif";
 import funnelmateLogo from "@/assets/funnelmate-logo.png";
+import funnelmateLogoWebp from "@/assets/funnelmate-logo.webp";
+import funnelmateLogoAvif from "@/assets/funnelmate-logo.avif";
 import funnelmateCertifiedExpert from "@/assets/funnelmate-certified-expert.png";
+import funnelmateCertifiedExpertWebp from "@/assets/funnelmate-certified-expert.webp";
+import funnelmateCertifiedExpertAvif from "@/assets/funnelmate-certified-expert.avif";
 import patrickMentlerLogo from "@/assets/patrick-mentler-logo.png";
+import patrickMentlerLogoWebp from "@/assets/patrick-mentler-logo.webp";
+import patrickMentlerLogoAvif from "@/assets/patrick-mentler-logo.avif";
 import octaLogo from "@/assets/octa-logo.png";
+import octaLogoWebp from "@/assets/octa-logo.webp";
+import octaLogoAvif from "@/assets/octa-logo.avif";
+import Picture from "@/components/Picture";
 
 const partners = [
-  { name: "GoHighLevel", alt: "GoHighLevel zertifizierter Partner", logo: gohighlevelLogo, url: "https://www.gohighlevel.com/?fp_ref=gaetano62" },
-  { name: "Funnelmate", alt: "Funnelmate White-Label Partner", logo: funnelmateLogo, url: "https://funnelmate.io/?am_id=gaetano" },
-  { name: "Funnelmate Certified Expert", alt: "Funnelmate Certified Expert Badge", logo: funnelmateCertifiedExpert, url: "https://funnelmate.io/?am_id=gaetano" },
-  { name: "Patrick Mentler", alt: "Patrick Mentler Funnelmate Gründer", logo: patrickMentlerLogo, url: "https://funnelmate.io/?am_id=gaetano" },
-  { name: "OCTA Steuerberater", alt: "OCTA Steuerberater Bielefeld Kundenprojekt", logo: octaLogo, url: "#" },
+  { name: "GoHighLevel", alt: "GoHighLevel zertifizierter Partner", logo: gohighlevelLogo, webp: gohighlevelLogoWebp, avif: gohighlevelLogoAvif, w: 200, h: 80, url: "https://www.gohighlevel.com/?fp_ref=gaetano62" },
+  { name: "Funnelmate", alt: "Funnelmate White-Label Partner", logo: funnelmateLogo, webp: funnelmateLogoWebp, avif: funnelmateLogoAvif, w: 200, h: 80, url: "https://funnelmate.io/?am_id=gaetano" },
+  { name: "Funnelmate Certified Expert", alt: "Funnelmate Certified Expert Badge", logo: funnelmateCertifiedExpert, webp: funnelmateCertifiedExpertWebp, avif: funnelmateCertifiedExpertAvif, w: 400, h: 160, url: "https://funnelmate.io/?am_id=gaetano" },
+  { name: "Patrick Mentler", alt: "Patrick Mentler Funnelmate Gründer", logo: patrickMentlerLogo, webp: patrickMentlerLogoWebp, avif: patrickMentlerLogoAvif, w: 200, h: 80, url: "https://funnelmate.io/?am_id=gaetano" },
+  { name: "OCTA Steuerberater", alt: "OCTA Steuerberater Bielefeld Kundenprojekt", logo: octaLogo, webp: octaLogoWebp, avif: octaLogoAvif, w: 400, h: 160, url: "#" },
 ];
 
 const TrustLogos = () => {
@@ -67,11 +78,14 @@ const TrustLogos = () => {
                   className="flex-shrink-0 transition-all duration-300 hover:scale-110"
                   title={partner.name}
                 >
-                  <img 
-                    src={partner.logo} 
+                  <Picture
+                    src={partner.logo}
+                    webp={partner.webp}
+                    avif={partner.avif}
                     alt={partner.alt}
+                    width={partner.w}
+                    height={partner.h}
                     className={`w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
-                    loading="lazy"
                   />
                 </a>
               );

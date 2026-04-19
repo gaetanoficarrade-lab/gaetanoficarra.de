@@ -4,6 +4,9 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import badge from "@/assets/ghl-badge.png";
+import badgeWebp from "@/assets/ghl-badge.webp";
+import badgeAvif from "@/assets/ghl-badge.avif";
+import Picture from "@/components/Picture";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const LinksPage = () => {
@@ -83,9 +86,14 @@ const LinksPage = () => {
               rel="noopener noreferrer"
               className="inline-block mb-6"
             >
-              <img
+              <Picture
                 src={badge}
+                webp={badgeWebp}
+                avif={badgeAvif}
                 alt="GoHighLevel Certified Admin Badge"
+                width={160}
+                height={160}
+                loading="eager"
                 className="h-32 md:h-40 w-auto mx-auto hover:scale-105 transition-transform duration-300"
               />
             </a>

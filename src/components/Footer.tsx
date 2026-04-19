@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Facebook, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
+import logoWebp from "@/assets/logo.webp";
+import logoAvif from "@/assets/logo.avif";
 import ghlBadge from "@/assets/ghl-badge.png";
+import ghlBadgeWebp from "@/assets/ghl-badge.webp";
+import ghlBadgeAvif from "@/assets/ghl-badge.avif";
 import funnelmateBadge from "@/assets/funnelmate-certified-expert.png";
+import funnelmateBadgeWebp from "@/assets/funnelmate-certified-expert.webp";
+import funnelmateBadgeAvif from "@/assets/funnelmate-certified-expert.avif";
+import Picture from "@/components/Picture";
 
 const Footer = () => {
   return (
@@ -11,7 +18,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-5 gap-12 mb-12">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Gaetano Ficarra Logo" className="h-14 w-auto" />
+              <Picture src={logo} webp={logoWebp} avif={logoAvif} alt="Gaetano Ficarra Logo" width={120} height={56} className="h-14 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm font-body leading-relaxed">
               Marketing-Systemberater für Selbstständige. Zertifizierter HighLevel-Experte.
@@ -55,10 +62,10 @@ const Footer = () => {
             <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Zertifizierungen</h4>
             <div className="flex items-center gap-4">
               <a href="https://www.gohighlevel.com" target="_blank" rel="noopener noreferrer" className="block">
-                <img src={ghlBadge} alt="Gaetano Ficarra GoHighLevel Certified Admin Badge" className="h-20 w-auto object-contain" loading="lazy" />
+                <Picture src={ghlBadge} webp={ghlBadgeWebp} avif={ghlBadgeAvif} alt="Gaetano Ficarra GoHighLevel Certified Admin Badge" width={160} height={80} className="h-20 w-auto object-contain" />
               </a>
               <a href="https://funnelmate.io/?am_id=gaetano" target="_blank" rel="noopener noreferrer" className="block">
-                <img src={funnelmateBadge} alt="Gaetano Ficarra Funnelmate Certified Expert Badge" className="h-20 w-auto object-contain" loading="lazy" />
+                <Picture src={funnelmateBadge} webp={funnelmateBadgeWebp} avif={funnelmateBadgeAvif} alt="Gaetano Ficarra Funnelmate Certified Expert Badge" width={160} height={80} className="h-20 w-auto object-contain" />
               </a>
             </div>
           </div>
